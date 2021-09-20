@@ -1,11 +1,12 @@
 
 import './App.css';
+import { Cabecalho } from './components/yes/index.js';
 
 function App() {
   return (
-    <div className="App">
-      <h1>OLA </h1>
-    </div>
+    <>
+      <Cabecalho/>
+    </>
   );
 }
 
