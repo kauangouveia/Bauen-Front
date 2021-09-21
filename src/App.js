@@ -1,11 +1,11 @@
-
-import './App.css';
-import { Cabecalho } from './components/yes/index.js';
+import { GlobalStyles } from "./GlobalStyles";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-      <Cabecalho/>
+      <GlobalStyles />
+      <Header />
     </>
   );
 }
