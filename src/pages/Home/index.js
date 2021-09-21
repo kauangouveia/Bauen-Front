@@ -1,11 +1,13 @@
-import { Slogan } from "./styles";
+import { SloganHome} from "./styles";
 
 function HomeSlogan() {
   return (
     <>
-      <Slogan>
-        
-      </Slogan>
+      <SloganHome>
+        <div>
+          
+        </div>
+      </SloganHome>
     </>
   );
 }

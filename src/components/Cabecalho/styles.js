@@ -8,12 +8,13 @@ export const Header = styled.header`
   justify-content: center;
   border-bottom: solid 0.3px #dadada;
   div {
-    width: 85%;
+    width: 1360px;
     height: 100%;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     text-align : center;
+    background-color:red;
     div {
       span {
         display: flex;
