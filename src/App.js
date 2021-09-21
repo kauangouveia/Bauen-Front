@@ -1,13 +1,12 @@
 import { GlobalStyles } from "./GlobalStyles";
-import Header from "./components/Cabecalho/Header";
-import HomeSlogan from "./pages/Home";
+import Header from "./components/Header";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <Header/>
-      <HomeSlogan/>
+      <Home/>
     </>
   );
 }

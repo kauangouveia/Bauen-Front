@@ -7,6 +7,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: center;
   border-bottom: solid 0.3px #dadada;
+  
   div {
     width: 1360px;
     height: 100%;
@@ -14,7 +15,8 @@ export const Header = styled.header`
     flex-direction: row-reverse;
     align-items: center;
     text-align : center;
-    background-color:red;
+    overflow: hidden;
+    
     div {
       span {
         display: flex;
