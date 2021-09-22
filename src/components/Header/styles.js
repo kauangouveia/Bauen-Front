@@ -31,6 +31,7 @@ export const Header = styled.header`
         font-weight: bolder;
       }
       span:hover {
+        cursor: pointer;
         background-color: #074ead;
         transition: 0.5s;
         color: white;
