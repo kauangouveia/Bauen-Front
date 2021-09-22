@@ -34,9 +34,6 @@ function ListServices(){
                 <Profile>
 
                 </Profile>
-                <Contact>
-                    
-                </Contact>
             </CardContainer>
         </Container>
     </>

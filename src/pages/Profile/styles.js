@@ -47,16 +47,16 @@ export const ProfileContainer = styled.div`
 export const InformationsContainer = styled.div`
   display: flex;
   width: 100vw;
-  height: 350px;
+  height: 100px;
   border-bottom: solid 0.5px #dadada;
   justify-content: center;
-  
+  background-color: #074ead;
   .Informations {
     display: flex;
     height: 90px;
     width: 1300px;
     justify-content: center;
-  
+
     background-color: white;
 
     .ProfilesText {
@@ -65,36 +65,34 @@ export const InformationsContainer = styled.div`
 
       margin-right: 20px;
       padding-top: 10px;
-      h2{
-        text-align:center;
-       font-family: "Baloo 2";
-        img{
+      h2 {
+        text-align: center;
+        font-family: "Baloo 2";
+        img {
           height: 30px;
           width: 30px;
         }
       }
-      p{
-        text-align:center;
+      p {
+        text-align: center;
         font-family: "Baloo 2";
       }
     }
     .Stars {
-     display: flex;
-      height: auto;
-      width: 400px;
-      justify-content: center;
-      align-items: center;
-     
-      margin-right: 20px;
-  
-    }
-    .ButtonsOfProfile{
       display: flex;
       height: auto;
       width: 400px;
       justify-content: center;
       align-items: center;
-      button{
+      margin-right: 20px;
+    }
+    .ButtonsOfProfile {
+      display: flex;
+      height: auto;
+      width: 400px;
+      justify-content: center;
+      align-items: center;
+      button {
         width: 300px;
         height: 55px;
         border-radius: 5px;
@@ -105,5 +103,14 @@ export const InformationsContainer = styled.div`
         cursor: pointer;
       }
     }
-    }
+  }
+`;
+
+export const SlideContainer = styled.div`
+  display: flex;
+  width: 100vw;
+  height: 350px;
+  border-bottom: solid 0.5px #dadada;
+  justify-content: center;
+  background-color: #074ead;
 `;

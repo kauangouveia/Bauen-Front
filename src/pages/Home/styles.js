@@ -126,13 +126,21 @@ export const CardContainerServices = styled.div`
       background-color: white;
       border-radius:5px;
       padding: 5px;
-      box-shadow: 0 0 1em #48494a;
-      transition: 0.25s;
+      box-shadow: 0 0 0.5em #48494a;
+      /* transition: 0.25s; */
+      transition: 0.3s ease-out;
+
       
     }
     .AreaOfServices:hover{
         background-color:#074EAD;
         color: white;
+        cursor: pointer;
+    transform: translateY(-8px);
+
+        svg{
+          color: white;
+        }
       }
   }
 `;

@@ -1,10 +1,15 @@
 import Header from "../../components/Header";
+import Star from "../../components/Star";
 import location from "../../assets/location.svg";
-import menu from "../../assets/menu.svg"
-import star from "../../assets/star.svg"
-
-import starWhitoutColor from "../../assets/starWhitoutColor.svg"
-import { Container, ProfileContainer, InformationsContainer } from "./styles";
+import menu from "../../assets/menu.svg";
+// import star from "../../assets/star.svg"
+import Slider from "../../components/Slider";
+// import starWhitoutColor from "../../assets/starWhitoutColor.svg"
+import {
+  Container,
+  ProfileContainer,
+  InformationsContainer,
+} from "./styles";
 
 function Profile() {
   return (
@@ -19,27 +24,21 @@ function Profile() {
         <div className="Informations">
           <div className="ProfilesText">
             <h2>
-              <img src={location} />
+              <img src={location} alt="test" />
               Algum Lugar{" "}
             </h2>{" "}
             <p>Mais de 150 projetos realizados</p>
           </div>
           <div className="Stars">
-              <img src={star}/>
-              <img src={star}/>
-              <img src={star}/>
-              <img src={star}/>
-              <img src={starWhitoutColor}/>
-
+            <Star />
           </div>
           <div className="ButtonsOfProfile">
-            <button>
-              ENTRAR EM CONTATO
-            </button>
-            <img src={menu}/>
+            <button>ENTRAR EM CONTATO</button>
+            <img src={menu} alt="test" />
           </div>
         </div>
       </InformationsContainer>
+      <Slider/>
     </Container>
   );
 }
