@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import home from "../../assets/home.svg";
 
 export const Container = styled.div`
   display: flex;
@@ -12,11 +11,11 @@ export const Container = styled.div`
 export const SloganContainer = styled.div`
   display: flex;
   width: 100vw;
-  height: 302px;
+  height: 350px;
   border-bottom: solid 0.5px #dadada;
   align-items: center;
   justify-content: center;
-
+  padding: 20px;
   .InputAndSlogan {
     display: flex;
     width: 900px;
@@ -24,7 +23,6 @@ export const SloganContainer = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
-
     flex-direction: column;
     font-size: 25;
     font-family: "Baloo 2";
@@ -54,6 +52,9 @@ export const SloganContainer = styled.div`
         height: 40px;
         margin-left: 15px;
       }
+      img:hover{
+        cursor: pointer;
+      }
     }
   }
   .Illustration {
@@ -74,6 +75,8 @@ export const CardContainer = styled.div`
   border-bottom: solid 0.5px #dadada;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  overflow-y: hidden;
   .AreaOfPicture {
     width: 280px;
     height: 280px;
@@ -100,7 +103,7 @@ export const CardContainer = styled.div`
 export const CardContainerServices = styled.div`
   display: flex;
   width: 100vw;
-  height: 350px;
+  height: 330px;
   border-bottom: solid 0.5px #dadada;
   align-items: center;
   justify-content: center;
@@ -110,7 +113,7 @@ export const CardContainerServices = styled.div`
     flex-direction: row;
     display: flex;
     width: 100vw;
-    height: 160px;
+    height: 150px;
     align-items: center;
     justify-content: center;
     .AreaOfServices {
@@ -119,12 +122,17 @@ export const CardContainerServices = styled.div`
       width: 130px;
       height: 130px;
       background-color: black;
-      margin-left: 10px;
+      margin-left: 20px;
       background-color: white;
       border-radius:5px;
       padding: 5px;
       box-shadow: 0 0 1em #48494a;
-     
+      transition: 0.25s;
+      
     }
+    .AreaOfServices:hover{
+        background-color:#074EAD;
+        color: white;
+      }
   }
 `;

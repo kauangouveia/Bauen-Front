@@ -6,10 +6,10 @@ function HeaderHome() {
     <Header>
       <div>
         <div>
-          <span>Inicio</span>
-          <span>Quem Somos ?</span>
-          <span>Serviços</span>
           <span>Entrar</span>
+          <span>Serviços</span>
+          <span>Quem Somos ?</span>
+          <span>Inicio</span>
         </div>
         <img src={logo} alt="logo" />
       </div>
