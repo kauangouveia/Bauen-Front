@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import home from "../../assets/home.svg";
 
 export const Container = styled.div`
   display: flex;
@@ -6,7 +7,6 @@ export const Container = styled.div`
   height: 1268px;
   display: flex;
   flex-direction: column;
-
 `;
 
 export const SloganContainer = styled.div`
@@ -16,7 +16,6 @@ export const SloganContainer = styled.div`
   border-bottom: solid 0.5px #dadada;
   align-items: center;
   justify-content: center;
-  background-color:black;
 
   .InputAndSlogan {
     display: flex;
@@ -71,16 +70,61 @@ export const SloganContainer = styled.div`
 export const CardContainer = styled.div`
   display: flex;
   width: 100vw;
-  height: 302px;
+  height: 320px;
   border-bottom: solid 0.5px #dadada;
   align-items: center;
   justify-content: center;
-  background-color:blue;
-  >div{
-    width: 230px;
-    height: 230px;
-    border-radius: 100%;
-    background-color:red;
-    margin-left:50px
+  .AreaOfPicture {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      margin-top: 10px;
+      color: #00277d;
+      font-family: "Baloo 2";
+    }
+    div {
+      border-radius: 100%;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      background-color: #cce9ff;
+    }
   }
-`
+`;
+
+export const CardContainerServices = styled.div`
+  display: flex;
+  width: 100vw;
+  height: 350px;
+  border-bottom: solid 0.5px #dadada;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Baloo 2";
+  div {
+    flex-direction: row;
+    display: flex;
+    width: 100vw;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+    .AreaOfServices {
+      font-size: 13px;
+      flex-direction: column;
+      width: 130px;
+      height: 130px;
+      background-color: black;
+      margin-left: 10px;
+      background-color: white;
+      border-radius:5px;
+      padding: 5px;
+      box-shadow: 0 0 1em #48494a;
+     
+    }
+  }
+`;
