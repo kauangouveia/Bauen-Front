@@ -1,4 +1,4 @@
-import { SlideContainer } from "./Styles";
+import { SlideContainer, Title } from "./Styles";
 
 import React, { Component } from "react";
 import Carousel from "react-elastic-carousel";
@@ -10,7 +10,7 @@ class Slider extends Component {
   state = {
     items: [
       { id: 1, title: <img src={Reform} alt="serviço prestado" /> },
-      { id: 2, title: <img src={reforme} alt="serviço prestado" /> },
+      { id: 2, title: <img src={Reform} alt="serviço prestado" /> },
       { id: 3, title: <img src={encanador} alt="serviço prestado" /> },
       { id: 4, title: <img src={Reform} alt="serviço prestado" /> },
       { id: 5, title: <img src={Reform} alt="serviço prestado" /> },
@@ -22,17 +22,24 @@ class Slider extends Component {
   render() {
     const { items } = this.state;
     return (
-      <SlideContainer>
-        <div className="SliderContainer">
-          <Carousel itemsToShow={3}>
-            {items.map((item) => (
-              <div className="CardImagesServices" key={item.id}>
-                {item.title}
-              </div>
-            ))}
-          </Carousel>
-        </div>
-      </SlideContainer>
+      <>
+        <Title>
+          <div>
+            <h1>Portifolio</h1>
+          </div>
+        </Title>
+        <SlideContainer>
+          <div className="SliderContainer">
+            <Carousel itemsToShow={3  } >
+              {items.map((item) => (
+                <div className="CardImagesServices" key={item.id}>
+                  {item.title}
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        </SlideContainer>
+      </>
     );
   }
 }

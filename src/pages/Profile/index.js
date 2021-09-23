@@ -4,6 +4,9 @@ import location from "../../assets/location.svg";
 import menu from "../../assets/menu.svg";
 // import star from "../../assets/star.svg"
 import Slider from "../../components/Slider";
+import SliderComents from "../../components/SliderComents";
+
+
 // import starWhitoutColor from "../../assets/starWhitoutColor.svg"
 import {
   Container,
@@ -39,6 +42,8 @@ function Profile() {
         </div>
       </InformationsContainer>
       <Slider/>
+      <SliderComents/>
+    
     </Container>
   );
 }

@@ -21,7 +21,6 @@ export const Header = styled.header`
       span {
         display: flex;
         justify-content: center;
-        margin-left: 30px;
         width: 135px;
         height: 80px;
         align-items: center;

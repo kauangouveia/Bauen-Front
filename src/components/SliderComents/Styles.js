@@ -1,12 +1,12 @@
 import styled from "styled-components";
-export const SlideContainer = styled.div`
+export const SliderContainerComents = styled.div`
   width: 100vw;
   height: 290px;
   display: flex;
   justify-content: center;
   border-bottom: solid 0.3px #dadada;
   align-items: center;
-  flex-direction: column; 
+  flex-direction: column;
   /* overflow-y:hidden; */
   .SliderContainer {
     width: 1360px;
@@ -21,16 +21,30 @@ export const SlideContainer = styled.div`
       height: 220px;
       border-radius: 5%;
       box-shadow: 0 0 0.4em gray;
-      overflow-y:hidden;
+      overflow-y: hidden;
       margin: 10px;
+      background-color: #074ead;
       img {
         width: 100%;
         height: 100%;
-       
-      
+      }
+      .ContainerInformationProfile {
+        width: 400px;
+        height: 220px;
+        display: flex;
+        justify-content: center;
+        
+        align-items: center;
+        flex-direction: column;
+        background-color: green;
+        .PhotoPerfil {
+          width: 80px;
+          height: 80px;
+          background-color: red;
+        }
       }
     }
-    
+
     .rec.rec-arrow {
       border: 0px !important;
       background-color: transparent;
@@ -50,7 +64,7 @@ export const SlideContainer = styled.div`
   }
 `;
 
-export const Title = styled.div`
+export const TitleComents = styled.div`
   width: 100vw;
   height: 60px;
   color: black;

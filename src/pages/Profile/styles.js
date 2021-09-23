@@ -47,10 +47,9 @@ export const ProfileContainer = styled.div`
 export const InformationsContainer = styled.div`
   display: flex;
   width: 100vw;
-  height: 100px;
-  border-bottom: solid 0.5px #dadada;
+  height: 80px;
+  overflow-y:hidden;
   justify-content: center;
-  background-color: #074ead;
   .Informations {
     display: flex;
     height: 90px;
@@ -68,6 +67,7 @@ export const InformationsContainer = styled.div`
       h2 {
         text-align: center;
         font-family: "Baloo 2";
+        color: #00277D;
         img {
           height: 30px;
           width: 30px;
@@ -76,6 +76,7 @@ export const InformationsContainer = styled.div`
       p {
         text-align: center;
         font-family: "Baloo 2";
+        color: #00277D;
       }
     }
     .Stars {
@@ -106,11 +107,11 @@ export const InformationsContainer = styled.div`
   }
 `;
 
-export const SlideContainer = styled.div`
-  display: flex;
-  width: 100vw;
-  height: 350px;
-  border-bottom: solid 0.5px #dadada;
-  justify-content: center;
-  background-color: #074ead;
-`;
+// export const SlideContainer = styled.div`
+//   display: flex;
+//   width: 100vw;
+//   height: 350px;
+//   border-bottom: solid 0.5px #dadada;
+//   justify-content: center;
+//   background-color: #074ead;
+// `;
