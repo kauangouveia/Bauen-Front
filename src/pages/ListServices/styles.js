@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  background-color: red;
   width: 100vw;
   height: 1268px;
   display: flex;
@@ -10,7 +9,6 @@ export const Container = styled.div`
 `;
 
 export const SearchContainer = styled.div`
-  background-color: green;
   width: 1360px;
   height: 200px;
   margin-left: auto;
@@ -49,41 +47,57 @@ export const SearchContainer = styled.div`
 `;
 
 export const ContainerFilter = styled.div`
-  background-color: aliceblue;
   width: 1360px;
-  min-height: 100px;
+  height: 200px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 30px;
 
     .Filters{
-      background-color: purple;
-      width: 1360px;
-      height: 100px;
+      background-color: #074EAD;
+      width: 1300px;
+      height: 80px;
     }
 
     .Results{
-      background-color: yellowgreen;
-      width: 360px;
-      height: 100px;
+      margin-top: 10px;
+      width: 200px;
+      height: 50px;
+
+      h2{
+      margin-top: 5px;
+      font-size: 25px;
+      font-family: "Baloo 2";
     }
+  }
 `;
 
 export const CardContainer = styled.div`
-  background-color: yellow;
   width: 1390px;
   min-height: 250px;
   height: auto;
   overflow-y: scroll;
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
 `;
 
 export const Profile = styled.div`
-
+  background-color: blue;
+  width: 1000px;
+  height: 200px;
+  margin-bottom: 20px;
+  float: left;
 `;
 
 export const Contact = styled.div`
-
+  background-color: thistle;
+  width: 300px;
+  height: 200px;
+  margin-bottom: 20px;
+  float: right;
 `;
 
 
