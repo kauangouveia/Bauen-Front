@@ -1,15 +1,47 @@
 import styled from "styled-components";
+export const SlideContainer = styled.div`
+  width: 100vw;
+  height: 350px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 0.3px #dadada;
+  .SliderContainer {
+    width: 1360px;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
 
-export const CardImagesServices = styled.div`
-  width: 350px;
-  height: 180px;
-  border-radius:5%;
-  background-color:aquamarine;
-  overflow: hidden;
-  margin-top: 40px;
-  margin-right: 20px;
-  img{
-    width: 100%;
-    height: 200px;
+    /* background-color: black; */
+    img {
+      width: 374px;
+      height: 210px;
+      margin-left: 10px;
+      background-color: bisque;
+      border-radius: 10%;
+    }
+    div {
+      background-color: bisque;
+      div {
+        background-color: black;
+        button {
+          color: white;
+          background-color: blue;
+          border: 0px;
+        }
+        button:hover {
+          background-color: transparent;
+        }
+      }
+    }
+    button {
+      background-color: transparent;
+      border-radius: 0%;
+      color: black;
+    }  
   }
-`
+
+`;
