@@ -2,7 +2,8 @@ import Header from "../../components/Header"
 import {Container} from "./styles"
 import search from "../../assets/search.png";
 import Footer from "../../components/Footer"
-import {SearchContainer, ContainerFilter, CardContainer, Profile, Contact} from "./styles"
+import filter from "../../assets/filter.svg"
+import {SearchContainer, ContainerFilter, CardContainer, Profile, Contact, FeedContainer} from "./styles"
 
 function ListServices(){
     return(
@@ -25,38 +26,50 @@ function ListServices(){
             </SearchContainer>
             <ContainerFilter>
                 <div className="Filters">
-                    
+                    <img src={filter}/>
+                    <h1>Ordenar por:</h1>
+                    <h2>Recentes</h2>
+                    <h2>Avaliação</h2>
+                    <h2>Quantidade de estrelas</h2>
                 </div>
                 <div className="Results">
                   <h2>0 Resultados</h2>
                 </div>
             </ContainerFilter>
-            <CardContainer>
+            <FeedContainer>
+              <CardContainer>
                 <Profile>
 
                 </Profile>
                 <Contact>
 
                 </Contact>
+              </CardContainer>
+              <CardContainer>
                 <Profile>
 
                 </Profile>
                 <Contact>
 
                 </Contact>
+              </CardContainer>
+              <CardContainer>
                 <Profile>
 
                 </Profile>
                 <Contact>
 
                 </Contact>
+              </CardContainer>
+              <CardContainer>
                 <Profile>
 
                 </Profile>
                 <Contact>
 
                 </Contact>
-            </CardContainer>
+              </CardContainer>
+            </FeedContainer>
             <Footer/>
         </Container>
     </>
