@@ -1,8 +1,7 @@
 import React from "react";
 import { Carousel } from "@trendyol-js/react-carousel";
 import { ContainerCarousel } from "./styles";
-import reform from "../../assets/reform.jpg";
-import rigui from "../../assets/rigui.jpg"
+
 
 function SliderComents() {
   return (
