@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "@trendyol-js/react-carousel";
-import { ContainerCarousel, ItemSlide } from "./styles";
+import { ContainerCarousel } from "./styles";
 import reform from "../../assets/reform.jpg";
 import rigui from "../../assets/rigui.jpg"
 
@@ -126,7 +126,7 @@ function SliderComents() {
                 Tem um preço justo e faz reformas de qualidade
               </p>
             </div>
-          </div>v
+          </div>
           
         </Carousel>
       </div>

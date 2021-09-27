@@ -19,11 +19,11 @@ width: 100vw;
     .title{
     height:52px;
     width:1300px;
-   
     flex-direction: row;
     text-align:left;
   }
-    .styles-module_carousel-base__3keqD {
+  
+  .styles-module_carousel-base__3keqD {
       display: flex;
       width: 1360px;
       height: 300px;
@@ -31,11 +31,18 @@ width: 100vw;
       align-items: center;
       padding: 20px;
 
-      button {
+      .styles-module_carousel-arrow__26sRw{
         width: 50px;
         height: 50px;
         border: 0px;
-        background-color: black;
+        background-color: transparent;
+        background-image: url(${next});
+        background-repeat: no-repeat;
+        background-size: 45px;
+     
+      } .styles-module_carousel-arrow__26sRw:hover{
+      cursor: pointer;
+      
       }
     }
   }

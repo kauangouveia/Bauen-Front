@@ -32,11 +32,18 @@ export const ContainerCarousel = styled.div`
       align-items: center;
       padding: 20px;
 
-      button {
+      .styles-module_carousel-arrow__26sRw{
         width: 50px;
         height: 50px;
         border: 0px;
-        background-color: black;
+        background-color: transparent;
+        background-image: url(${next});
+        background-repeat: no-repeat;
+        background-size: 45px;
+     
+      } .styles-module_carousel-arrow__26sRw:hover{
+      cursor: pointer;
+      
       }
     }
   }
