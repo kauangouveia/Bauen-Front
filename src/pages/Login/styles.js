@@ -38,7 +38,7 @@ export const Container = styled.div`
         height: 100px;
         display: flex;
         justify-content: center; 
-        /* border: 1px solid;  */
+
       }
       .ContainerInput {
         width: 400px;
@@ -60,7 +60,11 @@ export const Container = styled.div`
           margin-bottom: 10px;
           border-radius: 3%;
           border: 1px solid #000000;
-        }
+          padding:15px;
+          font-size: 18px;
+        } input::placeholder {
+        color: #5679e0;
+      }
       }
       .EsqueciSenha{
         width: 300px;
@@ -96,7 +100,7 @@ export const Container = styled.div`
         width: 300px;
         height: 2px;
         background-color:gray;
-        margin-top: 40px;
+        margin-top: 30px;
       }
       p{
         text-align: center;
