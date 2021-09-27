@@ -4,7 +4,7 @@ import reward from "../../assets/reward.svg";
 export const Container = styled.div`
   display: flex;
   width: 100vw;
-  height: 1268px;
+  height: 1500px;
   display: flex;
   flex-direction: column;
 `;
@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const ProfileContainer = styled.div`
   display: flex;
   width: 100vw;
-  height: 350px;
+  height: 400px;
   border-bottom: solid 0.5px #dadada;
   align-items: center;
   justify-content: center;
@@ -47,7 +47,7 @@ export const ProfileContainer = styled.div`
 export const InformationsContainer = styled.div`
   display: flex;
   width: 100vw;
-  height: 80px;
+  height: 120px;
   overflow-y:hidden;
   justify-content: center;
   .Informations {

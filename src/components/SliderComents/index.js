@@ -1,49 +1,137 @@
-import { SliderContainerComents, TitleComents } from "./Styles";
+import React from "react";
+import { Carousel } from "@trendyol-js/react-carousel";
+import { ContainerCarousel, ItemSlide } from "./styles";
+import reform from "../../assets/reform.jpg";
+import rigui from "../../assets/rigui.jpg"
 
-import React, { Component } from "react";
-import Carousel from "react-elastic-carousel";
-
-class SliderComents extends Component {
-  state = {
-    items: [
-      { id: 1, title: "" },
-      { id: 2, title: "" },
-      { id: 3, title: "" },
-      { id: 4, title: "" },
-      { id: 5, title: "" },
-      { id: 6, title: "" },
-      { id: 7, title: "" },
-    ],
-  };
-
-  render() {
-    const { items } = this.state;
-    return (
-      <>
-        <TitleComents>
-          <div>
-            <h1>Comentarios</h1>
+function SliderComents() {
+  return (
+    <ContainerCarousel>
+      <div className="container">
+      <div className="title">
+            <h1>
+              Comentários
+            </h1>
           </div>
-        </TitleComents>
-        <SliderContainerComents>
-          <div className="SliderContainer">
-            <Carousel itemsToShow={3}>
-              {items.map((item) => (
-                <div className="CardImagesServices" key={item.id}>
-                  {item.title}
-                  <div className="ContainerInformationProfile">
-                    <div className="PhotoPerfil"></div>
-                    <div className="WeekPotsAndName"></div>
-                  </div>
-                  <div className="InformationOfProfile"></div>
-                </div>
-              ))}
-            </Carousel>
+        <Carousel show={3}>
+        
+          <div className="ItemSlide">
+            <div className="ProfileAndInformation">
+              <div className="PictureComents">
+              </div>
+              <div className="InformationProfile">
+                <h3>Kauan Gouveia Monte</h3>
+                <p>3 semanas</p>
+              </div>
+            </div>
+            <div className="Description">
+              <p>
+                Jose fernando é um otimo prestador <br/>
+                Tem um preço justo e faz reformas de qualidade
+              </p>
+            </div>
           </div>
-        </SliderContainerComents>
-      </>
-    );
-  }
+          <div className="ItemSlide">
+            <div className="ProfileAndInformation">
+              <div className="PictureComents">
+              </div>
+              <div className="InformationProfile">
+                <h3>Kauan Gouveia Monte</h3>
+                <p>3 semanas</p>
+              </div>
+            </div>
+            <div className="Description">
+              <p>
+                Jose fernando é um otimo prestador <br/>
+                Tem um preço justo e faz reformas de qualidade
+              </p>
+            </div>
+          </div>
+          <div className="ItemSlide">
+            <div className="ProfileAndInformation">
+              <div className="PictureComents">
+              </div>
+              <div className="InformationProfile">
+                <h3>Kauan Gouveia Monte</h3>
+                <p>3 semanas</p>
+              </div>
+            </div>
+            <div className="Description">
+              <p>
+                Jose fernando é um otimo prestador <br/>
+                Tem um preço justo e faz reformas de qualidade
+              </p>
+            </div>
+          </div>
+          <div className="ItemSlide">
+            <div className="ProfileAndInformation">
+              <div className="PictureComents">
+              </div>
+              <div className="InformationProfile">
+                <h3>Kauan Gouveia Monte</h3>
+                <p>3 semanas</p>
+              </div>
+            </div>
+            <div className="Description">
+              <p>
+                Jose fernando é um otimo prestador <br/>
+                Tem um preço justo e faz reformas de qualidade
+              </p>
+            </div>
+          </div>
+          <div className="ItemSlide">
+            <div className="ProfileAndInformation">
+              <div className="PictureComents">
+              </div>
+              <div className="InformationProfile">
+                <h3>Kauan Gouveia Monte</h3>
+                <p>3 semanas</p>
+              </div>
+            </div>
+            <div className="Description">
+              <p>
+                Jose fernando é um otimo prestador <br/>
+                Tem um preço justo e faz reformas de qualidade
+              </p>
+            </div>
+          </div>
+          <div className="ItemSlide">
+            <div className="ProfileAndInformation">
+              <div className="PictureComents">
+              </div>
+              <div className="InformationProfile">
+                <h3>Kauan Gouveia Monte</h3>
+                <p>3 semanas</p>
+              </div>
+            </div>
+            <div className="Description">
+              <p>
+                Jose fernando é um otimo prestador <br/>
+                Tem um preço justo e faz reformas de qualidade
+              </p>
+            </div>
+          </div>
+          <div className="ItemSlide">
+            <div className="ProfileAndInformation">
+              <div className="PictureComents">
+              </div>
+              <div className="InformationProfile">
+                <h3>Kauan Gouveia Monte</h3>
+                <p>3 semanas</p>
+              </div>
+            </div>
+            <div className="Description">
+              <p>
+                Jose fernando é um otimo prestador <br/>
+                Tem um preço justo e faz reformas de qualidade
+              </p>
+            </div>
+          </div>v
+          
+        </Carousel>
+      </div>
+    </ContainerCarousel>
+  );
 }
 
 export default SliderComents;

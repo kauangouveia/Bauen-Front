@@ -1,18 +1,11 @@
 import Header from "../../components/Header";
+import Footer from "../../components/Footer"
 import Star from "../../components/Star";
 import location from "../../assets/location.svg";
 import menu from "../../assets/menu.svg";
-// import star from "../../assets/star.svg"
-import Slider from "../../components/Slider";
+import SliderPortifolio from "../../components/SliderPortifolio";
 import SliderComents from "../../components/SliderComents";
-
-
-// import starWhitoutColor from "../../assets/starWhitoutColor.svg"
-import {
-  Container,
-  ProfileContainer,
-  InformationsContainer,
-} from "./styles";
+import { Container, ProfileContainer, InformationsContainer } from "./styles";
 
 function Profile() {
   return (
@@ -41,9 +34,9 @@ function Profile() {
           </div>
         </div>
       </InformationsContainer>
-      <Slider/>
-      <SliderComents/>
-    
+      <SliderPortifolio />
+      <SliderComents />
+      <Footer/>
     </Container>
   );
 }
