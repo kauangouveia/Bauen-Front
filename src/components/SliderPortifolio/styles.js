@@ -52,7 +52,6 @@ width: 100vw;
     border-radius: 5%;
     margin-left: 10px;
     overflow: hidden;
-    /* background-color:aquamarine; */
     border: 1px solid gray;
     box-shadow: 0 0 0.5em gray;
     img {

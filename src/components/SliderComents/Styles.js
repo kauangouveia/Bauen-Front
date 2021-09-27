@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import next from "../../assets/next.svg";
-import rigui from "../../assets/rigui.jpg"
+import rigui from "../../assets/rigui.jpg";
 
 export const ContainerCarousel = styled.div`
   width: 100vw;
@@ -17,13 +17,13 @@ export const ContainerCarousel = styled.div`
     align-items: center;
     text-align: center;
     flex-direction: column;
-    .title{
-    height:60px;
-    width:1300px;
-    flex-direction: row;
-    text-align:left;
-  }
-   
+    .title {
+      height: 60px;
+      width: 1300px;
+      flex-direction: row;
+      text-align: left;
+    }
+
     .styles-module_carousel-base__3keqD {
       display: flex;
       width: 1360px;
@@ -32,7 +32,7 @@ export const ContainerCarousel = styled.div`
       align-items: center;
       padding: 20px;
 
-      .styles-module_carousel-arrow__26sRw{
+      .styles-module_carousel-arrow__26sRw {
         width: 50px;
         height: 50px;
         border: 0px;
@@ -40,10 +40,9 @@ export const ContainerCarousel = styled.div`
         background-image: url(${next});
         background-repeat: no-repeat;
         background-size: 45px;
-     
-      } .styles-module_carousel-arrow__26sRw:hover{
-      cursor: pointer;
-      
+      }
+      .styles-module_carousel-arrow__26sRw:hover {
+        cursor: pointer;
       }
     }
   }
@@ -53,52 +52,48 @@ export const ContainerCarousel = styled.div`
     border-radius: 5%;
     margin-left: 10px;
     overflow: hidden;
-    /* background-color:aquamarine; */
     border: 1px solid gray;
     box-shadow: 0 0 0.5em gray;
-    .ProfileAndInformation{
-      width:380px;
+    .ProfileAndInformation {
+      width: 380px;
       height: 130px;
-      /* background-color:black; */
-      padding:10px;
+      padding: 10px;
       display: flex;
       border-bottom: solid 0.5px #dadada;
-      .PictureComents{
-        width:100px;
-        height:100px;
-        background-color:red;
+      .PictureComents {
+        width: 100px;
+        height: 100px;
+        background-color: red;
         border-radius: 100%;
-        margin-right:10px;
+        margin-right: 10px;
         background-image: url(${rigui});
         background-repeat: no-repeat;
         background-size: cover;
       }
-      .InformationProfile{
+      .InformationProfile {
         display: flex;
-        width:250px;
-        height:100px;
+        width: 250px;
+        height: 100px;
 
         flex-direction: column;
 
         text-align: justify;
         padding: 7px;
-        
-        h3{
-          color: #00277D;
+
+        h3 {
+          color: #00277d;
         }
-        p{
-          color : #00277D;
-          font-size:17px;
+        p {
+          color: #00277d;
+          font-size: 17px;
         }
       }
-    
-     
     }
-    .Description{
-        p{      
-            font-size: 20px;
-            color: black;
-          }
+    .Description {
+      p {
+        font-size: 20px;
+        color: black;
       }
+    }
   }
 `;
