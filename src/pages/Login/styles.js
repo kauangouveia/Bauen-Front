@@ -8,41 +8,72 @@ export const Container = styled.div`
   flex-direction: column;
   overflow: hidden;
   .containerLogin {
-    display: flex;
     width: 100vw;
-    height: 590px;
-    overflow: hidden;
+    height: 800px;
+    background-color: red;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 
     .AreaBlue {
-      width: 70vw;
-      height: 590px;
-      background-color: #074ead;
+      width: 900px;
+      height: 100vh;
+      background-color: blue;
     }
     .AreaLogin {
-      width: 50vw;
-      height: 590px;
-      background-color: red;
       display: flex;
+      width: 400px;
+      height: 100vh;
+      background-color: green;
       justify-content: center;
       align-items: center;
-      flex-direction: row;
-      .AreaOfInput {
-        width: 50vw;
-        height: 150px;
-        background-color: yellow;
+      flex-direction: column;
+      .Logo{
+        width: 400px;
+        height: 100px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;  
+      }
+      .ContainerInput {
+        width: 400px;
+        height: 300px;
+
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        display: flex;
+      }
+      form {
+        width: 300px;
+        height: 100px;
+        background-color: purple;
         input {
-          display: flex;
+          align-items: center;
           width: 300px;
-          height: 50px;
-          font-size: 25;
-          font-family: "Baloo 2";
-            margin-bottom: 10px;
+          height: 40px;
+          margin-bottom: 10px;
+          border-radius: 3%;
+          border: 1px solid #000000;
         }
       }
+      div{
+        width: 300px;
+        height: 30px;
+        background-color:orange;
+        display: flex;
+        justify-content: end;
+      }
+      .title{
+        width: 300px;
+        height: 40px;
+        background-color:orange;
+        display: flex;
+        justify-content: center;
+      }
+    
     }
+  
   }
 `;

@@ -29,7 +29,7 @@ function Profile() {
             <Star />
           </div>
           <div className="ButtonsOfProfile">
-            <button>ENTRAR EM CONTATO</button>
+            <button><h2>ENTRAR EM CONTATO</h2></button>
             <img src={menu} alt="test" />
           </div>
         </div>
