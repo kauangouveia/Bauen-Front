@@ -3,6 +3,7 @@ import {Container} from "./styles"
 import search from "../../assets/search.png";
 import Footer from "../../components/Footer"
 import filter from "../../assets/filter.svg"
+import chat from "../../assets/chat.svg"
 import {SearchContainer, ContainerFilter, CardContainer, Profile, Contact, FeedContainer} from "./styles"
 
 function ListServices(){
@@ -42,7 +43,8 @@ function ListServices(){
 
                 </Profile>
                 <Contact>
-
+                  <img src={chat}/>
+                  <h2>Contatar</h2>
                 </Contact>
               </CardContainer>
               <CardContainer>

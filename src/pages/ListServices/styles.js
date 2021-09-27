@@ -141,7 +141,20 @@ export const Contact = styled.div`
   border-radius: 5px;
   width: 250px;
   height: 180px;
+  text-align: center;
+  padding-top: 20px;
   float: left;
+  cursor: pointer;
+  
+  img{
+      width: 100px;
+      height: 100px;
+    }
+
+    h2{
+      font-size: 30px;
+      color: white;
+    }
 `;
 
 
