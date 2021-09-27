@@ -55,10 +55,30 @@ export const ContainerFilters = styled.div`
   margin-right: auto;
 
   .Filters{
-    width: 1200px;
-    height: 100px;
+    width: 1040px;
+    height: 80px;
+    border-radius: 5px;
     margin:inherit;
     background-color: #074ead;
+
+    img{
+      width: 70px;
+      height: 70px;
+    }
+
+    h1{
+      font-size: 25px;
+      color: white;
+    }
+
+    h2{
+      color : white;
+      font-weight: normal;
+    }
+
+    h2:hover{
+      border-bottom: 2px solid white;
+    }
   }
 `;
 
@@ -67,7 +87,7 @@ export const ContainerResult = styled.div`
   height: 100px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 80px;
+  padding-left: 160px;
 `;
 
 export const ContainerFeed = styled.div`
@@ -78,7 +98,7 @@ export const ContainerFeed = styled.div`
 `;
 
 export const ContainerProfile = styled.div`
-  width: 1360px;
+  width: 1100px;
   min-height: 650px;
   height: auto;
   display: flex;
@@ -87,19 +107,41 @@ export const ContainerProfile = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
-  padding: 5px;
+  padding-left: 20px;
 
   .Profile{
-    width: 800px;
+    width: 820px;
     height: 150px;
+    float: left;
     margin-right: 10px;
-    background-color: thistle;
+    border: 2px solid #DADADA;
+    border-radius: 5px; 
+  }
+
+  .ProfileImage{
+    width: 176px;
+    height: 146px;
+    background-color: #074ead;
   }
 
   .Contact{
-    width: 200px;
+    width: 220px;
     height: 150px;
-    background-color: tomato;
+    border-radius: 5px;
+    padding-top: 15px;
+    text-align: center;
+    background-color: #074ead;
+    cursor: pointer;
+
+    img{
+      width: 80px;
+      height: 80px;
+      
+    }
+
+    h2{
+      color: white;
+    }
   }
 `;
 
