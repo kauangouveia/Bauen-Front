@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import ListServices from "./pages/ListServices";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
-
+import Register from "./pages/Register";
 function Router() {
   return (
     <BrowserRouter>
@@ -19,6 +19,9 @@ function Router() {
       </Route>
       <Route path="/Login">
         <Login/>
+      </Route>
+      <Route path="/Register">
+        <Register/>
       </Route>
     </BrowserRouter>
   );

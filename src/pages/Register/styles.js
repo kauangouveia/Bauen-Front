@@ -17,7 +17,9 @@ export const Container = styled.div`
       }
       form {
         width: 300px;
-        height: 100px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
         input {
           align-items: center;
           width: 300px;

@@ -1,20 +1,11 @@
-
-import logo from "../../assets/logo.png";
-import illustrations from "../../assets/bigrentz_constructionriskmanagement_dribbble_4x.png"
 import { Container } from "./styles";
+import LayoutRegister from "../../components/LayoutRegister";
 
 function Login() {
   return (
     <Container>
-      <div className="containerLogin">
-        <div className="AreaBlue">
-        <img src={illustrations}/>
-        </div>
-        <div className="AreaLogin">
-          <div className="Logo">
-              <img src={logo}/>
-          </div>
-          <div className="ContainerInput">
+      <LayoutRegister>
+      <div className="ContainerInput">
           <div className="title"><h2>LOGIN</h2></div>
             <form>
               <label>
@@ -27,8 +18,7 @@ function Login() {
             <div className="Line"></div>
             <div className="title"><h3>CADASTRAR-SE</h3></div>
           </div>
-        </div>
-      </div>
+      </LayoutRegister>
     </Container>
   );
 }

@@ -5,7 +5,6 @@ import chat from "../../assets/chat.svg";
 import filter from "../../assets/filter.svg";
 import Footer from "../../components/Footer";
 import Star from "../../components/Star";
-import Heart from "../../components/Heart";
 import { SearchContainer, ContainerFilters, ContainerResult, ContainerFeed, ContainerProfile, CardProfile } from "./styles"
 import rigui from "../../assets/rigui.jpg";
 import menu from "../../assets/menu.svg";
@@ -237,7 +236,6 @@ function ListServices() {
                   </div>
                   <div className="Options">
                     <div className="Favorite">
-                          <Heart/>
                       <img src={menu} />
                     </div>
                     <div className="Services">

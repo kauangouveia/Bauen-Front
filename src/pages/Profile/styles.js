@@ -109,7 +109,7 @@ export const InformationsContainer = styled.div`
         box-shadow: 0 0 0.5em gray;
         cursor: pointer;
         font-family: "Baloo 2";
-        /* font-size: 40px; */
+ 
       }
     }
   }
