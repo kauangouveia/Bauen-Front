@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   width: 100vw;
-  height: 2000px;
+  height: auto;
   display: flex;
   flex-direction: column;
 `;
@@ -57,23 +57,32 @@ export const ContainerFilters = styled.div`
   .Filters{
     width: 1040px;
     height: 80px;
+    display: flex;
+    flex-direction: row;
     border-radius: 5px;
+    justify-content: center;
+    align-items: center;
     margin:inherit;
     background-color: #074ead;
 
     img{
       width: 70px;
       height: 70px;
+      margin-right: 15px;
+      cursor: pointer;
     }
 
     h1{
       font-size: 25px;
       color: white;
+      
     }
 
     h2{
       color : white;
       font-weight: normal;
+      margin-left: 20px;
+      cursor: pointer;
     }
 
     h2:hover{
@@ -87,7 +96,7 @@ export const ContainerResult = styled.div`
   height: 100px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 160px;
+  padding-left: 165px;
 `;
 
 export const ContainerFeed = styled.div`
@@ -95,6 +104,7 @@ export const ContainerFeed = styled.div`
   height: 675px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
 `;
 
 export const ContainerProfile = styled.div`
@@ -103,40 +113,126 @@ export const ContainerProfile = styled.div`
   height: auto;
   display: flex;
   justify-content: center;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
   padding-left: 20px;
+  flex-direction: column;
+`;
 
+export const CardProfile = styled.div`
+  width: 850px;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+
+  
   .Profile{
-    width: 820px;
+    width: 680px;
     height: 150px;
-    float: left;
     margin-right: 10px;
     border: 2px solid #DADADA;
-    border-radius: 5px; 
+    display: flex;
+    overflow-y: hidden;
+    
+    .ProfileImage{
+    width: 200px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    img{
+      width: 85%;
+      height: 85%;
+      border: 5px solid #FF5C00;
+      border-radius: 35px; 
+    }
   }
+    .Informations{
+      width: 700px;
+      height: 150px;
+      display: flex;
 
-  .ProfileImage{
-    width: 176px;
-    height: 146px;
-    background-color: #074ead;
+      h2{
+        color: #00277D;
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      h3{
+        color: #5679E0;
+      }
+      
+      .NameAndRating{
+        width: 400px;
+        height: 150px;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+      }
+
+      .Options{
+        width: 150px;
+        height: 150px;
+        display: flex;
+        flex-direction:column;
+        
+        .Favorite{
+          display: flex;
+          padding-right: 20px;
+          align-items: center;
+          justify-content: end;
+          width: 150px;
+          height: 60px;
+
+          img{
+            width: 35px;
+            height: 35px;
+            margin-right: 5px;
+            cursor: pointer;
+          }
+        }
+        
+        .Services{
+          width: 150px;
+          height: 120px;
+          display: flex;
+          text-align:right;
+          padding-right: 40px;
+          padding-bottom: 10px;
+          justify-content: center;
+          flex-direction: column;
+        }
+
+        h4{
+          color: #5679E0;
+          font-size: 18px;
+        }
+      }
+    }
   }
 
   .Contact{
-    width: 220px;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 150px;
     border-radius: 5px;
-    padding-top: 15px;
     text-align: center;
     background-color: #074ead;
     cursor: pointer;
 
     img{
       width: 80px;
-      height: 80px;
-      
+      height: 90px;
     }
 
     h2{
