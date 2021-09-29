@@ -61,6 +61,7 @@ export const Container = styled.div`
         box-shadow: 0 0 0.5em gray;
         cursor: pointer;
         font-family: "Baloo 2";
+        margin-top: 20px;
       }
       .Line{
         width: 300px;
