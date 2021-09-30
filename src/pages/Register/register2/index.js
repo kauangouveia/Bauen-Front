@@ -1,7 +1,6 @@
 import { Container } from "./styles";
 import LayoutRegister from "../../../components/LayoutRegister";
-import { Link } from 'react-router-dom'
-
+import { Link } from "react-router-dom";
 function Register2() {
   return (
     <Container>
@@ -13,18 +12,48 @@ function Register2() {
           <form>
             <label>
               <h3>CEP*</h3>
-              <input type="text" name="text" placeholder="CEP" />
+              <input
+                id="cep"
+                type="text"
+                name="text"
+                placeholder="CEP"
+                required
+              />
               <h3>Rua*</h3>
-              <input type="email" name="text" placeholder="Rua" />
+              <input
+                required
+                id="logradouro"
+                type="email"
+                name="text"
+                placeholder="Rua"
+              />
               <h3>Bairro*</h3>
-              <input type="text" name="text" placeholder="Bairro" />
+              <input
+                id="bairro"
+                required
+                type="text"
+                name="text"
+                placeholder="Bairro"
+              />
               <h3>Cidade*</h3>
-              <input type="text" name="text" placeholder="Cidade" />
+              <input
+                id="localidade"
+                type="text"
+                name="text"
+                placeholder="Cidade"
+                required
+              />
               <h3>Estado*</h3>
-              <input type="text" name="text" placeholder="Estado" />
+              <input
+                id="uf"
+                required
+                type="text"
+                name="text"
+                placeholder="Estado"
+              />
             </label>
             <Link to="register3">
-              <button>
+              <button type="submit">
                 <h2>CONTINUAR -{">"} </h2>
               </button>
             </Link>
