@@ -1,4 +1,4 @@
-import { Footer } from "./styles";
+import { Footer } from "./Styles";
 
 function FooterHome() {
   return (

@@ -55,7 +55,7 @@ export const ContainerFilters = styled.div`
   margin-right: auto;
 
   .Filters{
-    width: 1040px;
+    width: 800px;
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -68,7 +68,7 @@ export const ContainerFilters = styled.div`
     img{
       width: 70px;
       height: 70px;
-      margin-right: 15px;
+      margin-right: 10px;
       cursor: pointer;
     }
 
@@ -93,22 +93,30 @@ export const ContainerFilters = styled.div`
 
 export const ContainerResult = styled.div`
   width: 1360px;
-  height: 100px;
+  height: 150px;
+  display: flex;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 165px;
+
+  .Result{
+    width: 800px;
+    height: 80px;
+    display: flex;
+    margin:inherit;
+  }
 `;
 
 export const ContainerFeed = styled.div`
   width: 1360px;
-  height: 675px;
+   height: 675px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
 `;
 
 export const ContainerProfile = styled.div`
-  width: 1100px;
+  width: 1100px;      
   min-height: 650px;
   height: auto;
   display: flex;
@@ -231,8 +239,8 @@ export const CardProfile = styled.div`
     cursor: pointer;
 
     img{
-      width: 80px;
-      height: 90px;
+      width: 70px;
+      height: 70px;
     }
 
     h2{

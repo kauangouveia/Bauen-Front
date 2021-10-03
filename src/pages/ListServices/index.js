@@ -6,7 +6,7 @@ import filter from "../../assets/filter.svg";
 import Footer from "../../components/Footer";
 import Star from "../../components/Star";
 import { SearchContainer, ContainerFilters, ContainerResult, ContainerFeed, ContainerProfile, CardProfile } from "./styles"
-import rigui from "../../assets/rigui.jpg";
+import user from "../../assets/user.png";
 import menu from "../../assets/menu.svg";
 import love from "../../assets/love.svg";
 
@@ -39,20 +39,22 @@ function ListServices() {
           </div>
         </ContainerFilters>
         <ContainerResult>
+          <div className="Result">
           <h2>0 Resultados</h2>
+          </div>
         </ContainerResult>
         <ContainerFeed>
           <ContainerProfile>
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={rigui} />
+                  <img src={user} />
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
-                    <h2>Rigoni Gouveia Monte</h2>
+                    <h2>Nome do usúario</h2>
                     <Star />
-                    <h3>Mais de 100 projetos realizados</h3>
+                    <h3>Quantidade de projetos realizados</h3>
                   </div>
                   <div className="Options">
                     <div className="Favorite">
@@ -60,9 +62,9 @@ function ListServices() {
                       <img src={menu} />
                     </div>
                     <div className="Services">
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
+                      <h4>Função</h4>
+                      <h4>Função</h4>
+                      <h4>Função</h4>
 
                     </div>
                   </div>
@@ -76,13 +78,13 @@ function ListServices() {
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={rigui} />
+                  <img src={user} />
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
-                    <h2>Rigoni Gouveia Monte</h2>
+                    <h2>Nome do usúario</h2>
                     <Star />
-                    <h3>Mais de 100 projetos realizados</h3>
+                    <h3>Quantidade de projetos realizados</h3>
                   </div>
                   <div className="Options">
                     <div className="Favorite">
@@ -90,9 +92,9 @@ function ListServices() {
                       <img src={menu} />
                     </div>
                     <div className="Services">
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
+                      <h4>Função</h4>
+                      <h4>Função</h4>
+                      <h4>Função</h4>
 
                     </div>
                   </div>
@@ -106,13 +108,13 @@ function ListServices() {
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={rigui} />
+                  <img src={user} />
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
-                    <h2>Rigoni Gouveia Monte</h2>
+                    <h2>Nome do usúario</h2>
                     <Star />
-                    <h3>Mais de 100 projetos realizados</h3>
+                    <h3>Quantidade de projetos realizados</h3>
                   </div>
                   <div className="Options">
                     <div className="Favorite">
@@ -120,9 +122,9 @@ function ListServices() {
                       <img src={menu} />
                     </div>
                     <div className="Services">
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
+                      <h4>Função</h4>
+                      <h4>Função</h4>
+                      <h4>Função</h4>
 
                     </div>
                   </div>
@@ -136,13 +138,13 @@ function ListServices() {
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={rigui} />
+                  <img src={user} />
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
-                    <h2>Rigoni Gouveia Monte</h2>
+                    <h2>Nome do usúario</h2>
                     <Star />
-                    <h3>Mais de 100 projetos realizados</h3>
+                    <h3>Quantidade de projetos realizados</h3>
                   </div>
                   <div className="Options">
                     <div className="Favorite">
@@ -150,9 +152,9 @@ function ListServices() {
                       <img src={menu} />
                     </div>
                     <div className="Services">
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
+                      <h4>Função</h4>
+                      <h4>Função</h4>
+                      <h4>Função</h4>
 
                     </div>
                   </div>
@@ -166,13 +168,13 @@ function ListServices() {
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={rigui} />
+                  <img src={user} />
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
-                    <h2>Rigoni Gouveia Monte</h2>
+                    <h2>Nome do usúario</h2>
                     <Star />
-                    <h3>Mais de 100 projetos realizados</h3>
+                    <h3>Quantidade de projetos realizados</h3>
                   </div>
                   <div className="Options">
                     <div className="Favorite">
@@ -180,68 +182,9 @@ function ListServices() {
                       <img src={menu} />
                     </div>
                     <div className="Services">
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="Contact">
-                <img src={chat} />
-                <h2>Contatar</h2>
-              </div>
-            </CardProfile>
-            <CardProfile>
-              <div className="Profile">
-                <div className="ProfileImage">
-                  <img src={rigui} />
-                </div>
-                <div className="Informations">
-                  <div className="NameAndRating">
-                    <h2>Rigoni Gouveia Monte</h2>
-                    <Star />
-                    <h3>Mais de 100 projetos realizados</h3>
-                  </div>
-                  <div className="Options">
-                    <div className="Favorite">
-                      <img src={love} />
-                      <img src={menu} />
-                    </div>
-                    <div className="Services">
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="Contact">
-                <img src={chat} />
-                <h2>Contatar</h2>
-              </div>
-            </CardProfile>
-            <CardProfile>
-              <div className="Profile">
-                <div className="ProfileImage">
-                  <img src={rigui} />
-                </div>
-                <div className="Informations">
-                  <div className="NameAndRating">
-                    <h2>Rigoni Gouveia Monte</h2>
-                    <Star />
-                    <h3>Mais de 100 projetos realizados</h3>
-                  </div>
-                  <div className="Options">
-                    <div className="Favorite">
-                      <img src={menu} />
-                    </div>
-                    <div className="Services">
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
-                      <h4>jogador</h4>
+                      <h4>Função</h4>
+                      <h4>Função</h4>
+                      <h4>Função</h4>
 
                     </div>
                   </div>
