@@ -50,7 +50,7 @@ function Register2() {
                 onKeyPress={(event) => handleZipCode(event)}
                 {...register("zipcode")}
               />
-              <h3>Rua*</h3>
+              <h3>Numero*</h3>
               <input
                 required
                 id="number"
@@ -59,7 +59,7 @@ function Register2() {
                 placeholder="Numero"
                 {...register("number")}
               />
-               <h3>Nº</h3>
+               <h3>Rua*</h3>
               <input
                 required
                 id="logradouro"

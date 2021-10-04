@@ -17,7 +17,7 @@ export const Container = styled.div`
       }
       form {
         width: 300px;
-        height: 100px;
+        height: 200px;
         input {
           align-items: center;
           width: 300px;
@@ -38,6 +38,7 @@ export const Container = styled.div`
         display: flex;
         justify-content: flex-end;
         margin-bottom: 5px;
+        margin-top: -30px;
       }.EsqueciSenha:hover{
         cursor: pointer;
       }
@@ -64,7 +65,7 @@ export const Container = styled.div`
         width: 300px;
         height: 2px;
         background-color:gray;
-        margin-top: 30px;
+        margin-top: 5px;
       }
       p{
         text-align: center;
