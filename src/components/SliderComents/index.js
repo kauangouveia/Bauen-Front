@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "@trendyol-js/react-carousel";
-import { ContainerCarousel } from "./styles";
+import { ContainerCarousel } from "./Styles";
 
 function SliderComents() {
   return (

@@ -2,6 +2,8 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import ListServices from "./pages/ListServices";
+import FastServices from "./pages/FastServices";
+import PendingServices from "./pages/PendingServices";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
@@ -23,6 +25,12 @@ function Router() {
       </Route>
       <Route path="/listservices">
         <ListServices />
+      </Route>
+      <Route path="/fastservices">
+        <FastServices />
+      </Route>
+      <Route path="/pendingservices">
+        <PendingServices />
       </Route>
       <Route path="/Login">
         <Login />
