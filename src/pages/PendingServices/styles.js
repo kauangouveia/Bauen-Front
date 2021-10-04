@@ -65,7 +65,7 @@ export const ContainerFilters = styled.div`
     margin:inherit;
 
     h1{
-      font-size: 40px;
+      font-size: 35px;
       color: #00277D;
       
     }
@@ -164,6 +164,7 @@ export const CardProfile = styled.div`
         color: #00277D;
         font-size: 25px;
         font-weight: bold;
+        margin-bottom: 15px;
       }
 
       h3{
