@@ -1,9 +1,11 @@
 import { Container } from "./styles";
 import LayoutRegister from "../../components/LayoutRegister";
 import { useForm } from "react-hook-form";
-import {login} from '../../services/index'
-import { Redirect } from "react-router";
+import { login } from "../../services/index";
+import { Redirect, useHistory } from "react-router";
+
 function Login(props) {
+  const history = useHistory();
   const {
     register,
     handleSubmit,
@@ -12,10 +14,9 @@ function Login(props) {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {  
-   const user = await login.authenticateServiceProvide(data)
-   return <Redirect to="/profile" />
-  //  props.history.push('')
+  const onSubmit = async (data) => {
+    const user = await login.authenticateServiceProvide(data);
+    history.push("/profile");
   };
 
   return (
