@@ -33,7 +33,6 @@ export const Container = styled.div`
       justify-content: center;
       text-align: center;
       padding: 50px;
-
       .title{
         width: 1100px;
         height: 300px ;

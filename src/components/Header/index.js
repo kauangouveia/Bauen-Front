@@ -3,6 +3,7 @@ import logo from "../../assets/logo.png";
 
 function HeaderHome() {
   return (
+    
     <Header>
       <div>
         <div>

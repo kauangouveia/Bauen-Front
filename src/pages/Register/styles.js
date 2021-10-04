@@ -15,7 +15,7 @@ export const Container = styled.div`
         justify-content: center;
         border-radius: 5% ;
       }
-      form {
+      /* form {
         width: 300px;
         height: auto;
         display: flex;
@@ -32,7 +32,7 @@ export const Container = styled.div`
         } input::placeholder {
         color: #5679e0;
       }
-      }
+      } */
       .EsqueciSenha{
         width: 300px;
         height: 30px;

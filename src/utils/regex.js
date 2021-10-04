@@ -1,0 +1,1 @@
+export const PATTERN_ZIP_CODE = /[\d]{8}/;
