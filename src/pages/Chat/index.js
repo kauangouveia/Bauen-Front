@@ -7,12 +7,26 @@ function Chat() {
     <Container>
       <Header />
       <ContainerChat>
-          <div className="ChatBox">
-            <div className= "ContainerTalk"></div>
-            <div className="ContainerSendMessage">
-
+        <div className="ChatBox">
+          <div className="ContainerTalk"></div>
+          <div className="ContainerSendMessage">
+            <div className="Emojis"></div>
+            <div className="Messages">
+              <form>
+                <label>
+                  <input
+                    type="email"
+                    name="name"
+                    placeholder="E-mail"
+                  />
+                </label>
+                <button type="submit">
+                  <h2>Enviar</h2>
+                </button>
+              </form>
             </div>
           </div>
+        </div>
       </ContainerChat>
       {/* <Footer /> */}
     </Container>

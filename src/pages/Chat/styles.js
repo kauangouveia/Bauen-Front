@@ -11,23 +11,43 @@ export const Container = styled.div`
 export const ContainerChat = styled.div`
   width: auto;
   height: 850px;
-  background-color: black;  
+  background-color: black;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-  .ChatBox{
+  .ChatBox {
     width: 1360px;
     height: 800px;
     background-color: blue;
   }
-  .ContainerTalk{
+  .ContainerTalk {
     width: auto;
     height: 680px;
     background-color: red;
   }
-  .ContainerSendMessage{
+  .ContainerSendMessage {
     width: auto;
     height: 120px;
     background-color: green;
+    display: flex;
+    flex-direction: row;
+    .Emojis {
+      width: 360px;
+      height: auto;
+      background-color: purple;
+    }
+    .Messages {
+      width: 1000px;
+      height: auto;
+      background-color: orange;
+      display: flex;
+      gap: 30px;
+      input{
+        width:550px;
+        height:50px;
+        border-radius: 8px;
+        font-size:24px;
+      }
+    }
   }
 `;
