@@ -10,7 +10,7 @@ import Register3 from "./pages/Register/register3";
 import Register4 from "./pages/Register/register4";
 import Register5 from "./pages/Register/register5";
 import Register6 from "./pages/Register/register6";
-
+import Chat from './pages/Chat/'
 
 function Router() {
   return (
@@ -44,6 +44,9 @@ function Router() {
       </Route>
       <Route path="/Register6">
         <Register6/>
+      </Route>
+      <Route path="/chat">
+        <Chat/>
       </Route>
     </BrowserRouter>
   );
