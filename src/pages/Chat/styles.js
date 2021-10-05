@@ -24,18 +24,24 @@ export const ContainerChat = styled.div`
     .Conversation {
       width: auto;
       height: 800px;
-      background-color: red;
       .listItem{
         width: auto;
-        height: 50px;
-        background-color: blue;
-        margin-bottom: 30px;
+        height: 5px;
         display: flex;
         padding: 10px;
+        text-align:right;
+        
         .minemessage{
-          width: auto;
-          height: auto;
-          background-color:purple;
+          min-height: 10px;
+          min-width: 95px;
+          max-width: auto;
+          max-height: auto;
+          background-color:#074ead;
+          border-radius: 5px;
+          padding: 5px ;
+          display: flex;
+          color: white;
+         
         }
         .othermessage{
           width: auto;
@@ -46,13 +52,11 @@ export const ContainerChat = styled.div`
       .mine{
         width: auto;
         height: 50px;
-        margin-bottom: 30px;
         flex-direction: row-reverse;
       }
       .other{
         width: auto;
         height: 50px;
-        margin-bottom: 30px;
         flex-direction: row;
       }
 
