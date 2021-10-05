@@ -1,24 +1,49 @@
 import { Container, ContainerChat } from "./styles";
-import Footer from "../../components/Footer";
+// import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import clip from "../../assets/clip.svg";
+import { useState } from "react";
 
 function Chat() {
+  const [message, updateMessage] = useState('');
+  
+  const [messages, updateMessages] = useState([]);
+
+  const handleFormOnSubmit= (event) => {
+    event.preventDefault() 
+    if (message.trim()){
+      updateMessage('')
+    }
+  } 
+
+  const handleInputChange= (event) => {
+      updateMessage(event.target.value)  
+    }
   return (
     <Container>
       <Header />
       <ContainerChat>
         <div className="ChatBox">
-          <div className="ContainerTalk"></div>
+          <div className="Conversation">
+            <ul>
+                {messages.map(m => ())}
+              <li className="listItem mine">
+                <span className="minemessage"><h3>ola porra</h3></span>
+              </li>
+              <li className="listItem  other">
+                <span className="othermessage"><h3>ola porra</h3></span>
+              </li>
+              
+            </ul>
+          </div>
           <div className="ContainerSendMessage">
-            <div className="Emojis"></div>
+            <div className="Emojis">
+              <img src={clip} alt="anexo de imagens" />
+            </div>
             <div className="Messages">
-              <form>
+              <form onSubmit={handleFormOnSubmit}>
                 <label>
-                  <input
-                    type="email"
-                    name="name"
-                    placeholder="E-mail"
-                  />
+                  <input type="text" name="name" placeholder="Digite algo aqui...." onChange={handleInputChange} value={message} />
                 </label>
                 <button type="submit">
                   <h2>Enviar</h2>
@@ -28,7 +53,6 @@ function Chat() {
           </div>
         </div>
       </ContainerChat>
-      {/* <Footer /> */}
     </Container>
   );
 }
