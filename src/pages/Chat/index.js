@@ -4,10 +4,8 @@ import Header from "../../components/Header";
 import clip from "../../assets/clip.svg";
 import { useState } from "react";
 import io from "socket.io-client";
-
 const socket = io('http://localhost:3535')
 socket.on('connect', () => console.log('[IO] Connect => A new connection has been established'))
-
 function Chat() {
 
   // const [username, setUser]
@@ -18,10 +16,13 @@ function Chat() {
   const handleFormOnSubmit = (event) => {
     event.preventDefault();
     if (message.trim()) {
-      updateMessages([...messages, {
-        id : 1,
-        message
-      }])
+      updateMessages([
+        ...messages,
+        {
+          id: 1,
+          message,
+        },
+      ]);
       updateMessage("");
     }
   };
