@@ -5,12 +5,14 @@ import clip from "../../assets/clip.svg";
 import { useState } from "react";
 import io from "socket.io-client";
 
-const socket = io('http://localhost:3334')
+const socket = io('http://localhost:3535')
 socket.on('connect', () => console.log('[IO] Connect => A new connection has been established'))
 
 function Chat() {
-  const [message, updateMessage] = useState("");
 
+  // const [username, setUser]
+
+  const [message, updateMessage] = useState("");
   const [messages, updateMessages] = useState([]);
 
   const handleFormOnSubmit = (event) => {
