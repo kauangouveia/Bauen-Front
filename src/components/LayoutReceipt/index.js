@@ -14,7 +14,7 @@ function LayoutRegister({title,children}) {
         </div>
         <div className="AreaLogin">
           <div className="Logo">
-              <img src={logo}/>
+              <img src={logo} alt="logo"/>
           </div>
           <div >
           {children}

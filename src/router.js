@@ -13,6 +13,7 @@ import Register4 from "./pages/Register/register4";
 import Register5 from "./pages/Register/register5";
 import Register6 from "./pages/Register/register6";
 import Chat from './pages/Chat/'
+import { RegisterProvider } from "./context";
 
 function Router() {
   return (
@@ -35,24 +36,26 @@ function Router() {
       <Route path="/Login">
         <Login />
       </Route>
-      <Route path="/Register">
-        <Register />
-      </Route>
-      <Route path="/Register2">
-        <Register2 />
-      </Route>
-      <Route path="/Register3">
-        <Register3 />
-      </Route>
-      <Route path="/Register4">
-        <Register4/>
-      </Route>
-      <Route path="/Register5">
-        <Register5 />
-      </Route>
-      <Route path="/Register6">
-        <Register6/>
-      </Route>
+      <RegisterProvider>
+        <Route path="/Register">
+          <Register />
+        </Route>
+        <Route path="/Register2">
+          <Register2 />
+        </Route>
+        <Route path="/Register3">
+          <Register3 />
+        </Route>
+        <Route path="/Register4">
+          <Register4/>
+        </Route>
+        <Route path="/Register5">
+          <Register5 />
+        </Route>
+        <Route path="/Register6">
+          <Register6/>
+        </Route>
+      </RegisterProvider>  
       <Route path="/chat">
         <Chat/>
       </Route>

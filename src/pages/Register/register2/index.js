@@ -1,34 +1,41 @@
-import { Container } from "./styles";
 import LayoutRegister from "../../../components/LayoutRegister";
-import { Link } from "react-router-dom";
+import { Container } from "./styles";
 import { useForm } from "react-hook-form";
 import { address } from "../../../services";
-import {PATTERN_ZIP_CODE} from "../../../utils/regex"
+import { PATTERN_ZIP_CODE } from "../../../utils/regex";
+import { Link } from "react-router-dom";
+import { RegisterContext } from "../../../context";
+import { useContext } from "react";
+
 function Register2() {
-  
-  const {
-    register,
-    handleSubmit,
-    watch,
-    setValue,
-    formState: { errors },
-  } = useForm();
+  const { registerValue, setRegisterValue } = useContext(RegisterContext);
 
-  const onSubmit = (data) => console.log(data);
-  
+  console.log(registerValue);
 
-
+  const { register, setValue } = useForm();
   const handleZipCode = async (event) => {
     const zipCode = event.target.value;
-    if (!zipCode.match(PATTERN_ZIP_CODE))return
-    const foundedAddress = await address.findAddressByZipCode(event.target.value);
-    console.log(foundedAddress);
-    setValue('street', foundedAddress.logradouro)
-    setValue('neighborhood', foundedAddress.bairro)
-    setValue('city', foundedAddress.localidade)
-    setValue('state', foundedAddress.uf)
-
     
+    if (!zipCode.match(PATTERN_ZIP_CODE)) return;
+    const { logradouro, bairro, localidade, uf, number} = await address.findAddressByZipCode(
+      event.target.value
+      );    
+
+    setValue("street", logradouro);
+    setValue("neighborhood", bairro);
+    setValue("city", localidade);
+    setValue("state", uf);
+    setValue("number", number);
+    setRegisterValue({
+      ...registerValue,
+      address: {
+        street: logradouro,
+        neighborhood: bairro,
+        city: localidade,
+        state: uf,
+        number: number
+      }
+    });
   };
 
   return (
@@ -42,13 +49,14 @@ function Register2() {
             <label>
               <h3>CEP*</h3>
               <input
-                id="cep"
+                id="zipcode"
                 type="text"
                 name="text"
                 placeholder="CEP"
                 required
-                onKeyPress={(event) => handleZipCode(event)}
-                {...register("zipcode")}
+                {...register("zipcode", {
+                  onChange: handleZipCode,
+                })}
               />
               <h3>Numero*</h3>
               <input
@@ -57,50 +65,60 @@ function Register2() {
                 type="text"
                 name="text"
                 placeholder="Numero"
-                {...register("number")}
+                {...register("number", {
+                  onChange: handleZipCode
+                })}
               />
-               <h3>Rua*</h3>
+              <h3>Rua*</h3>
               <input
                 required
-                id="logradouro"
+                id="street"
                 type="text"
                 name="text"
                 placeholder="Rua"
-                {...register("street")}
+                {...register("street", {
+                  onChange: handleZipCode
+                })}
               />
               <h3>Bairro*</h3>
               <input
-                id="bairro"
+                id="neighborhood"
                 required
                 type="text"
                 name="text"
                 placeholder="Bairro"
-                {...register("neighborhood")}
+                {...register("neighborhood", {
+                  onChange: handleZipCode
+                })}
               />
               <h3>Cidade*</h3>
               <input
-                id="localidade"
+                id="city"
                 type="text"
                 name="text"
                 placeholder="Cidade"
                 required
-                {...register("city")}
+                {...register("city", {
+                  onChange: handleZipCode
+                })}
               />
               <h3>Estado*</h3>
               <input
-                id="uf"
+                id="state"
                 required
                 type="text"
                 name="text"
                 placeholder="Estado"
-                {...register("state")}
+                {...register("state", {
+                  onChange: handleZipCode
+                })}
               />
             </label>
-            {/* <Link to="register3"> */}
-            <button type="submit">
-              <h2>CONTINUAR -{">"} </h2>
-            </button>
-            {/* </Link> */}
+            <Link to="register3">
+              <button>
+                <h2>CONTINUAR -{">"} </h2>
+              </button>
+            </Link>
           </form>
         </div>
       </LayoutRegister>

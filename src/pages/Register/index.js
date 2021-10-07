@@ -1,20 +1,34 @@
 import LayoutRegister from "../../components/LayoutRegister";
-import FormRegister from "../../components/Form";
 import { Container } from "./styles";
-import { Link } from 'react-router-dom'
-import {useForm} from 'react-hook-form'
-
+import { Link } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { RegisterContext } from '../../context'
 
 function Register() {
+  const { registerValue, setRegisterValue } = useContext(RegisterContext);
+
+  const handleInput = (event) => {
+    setRegisterValue({...registerValue, [event.target.id]: event.target.value})
+  }
   return (
     <Container>
       <LayoutRegister>
         <div className="ContainerInput">
-          <div className="title">
-            <h2>Cadastro</h2>
-          </div>
-          <FormRegister>
-          </FormRegister>
+          <div className="title"></div>
+          <h2>Cadastro</h2>
+          <form>
+            <h3>Nome*</h3>
+            <input type="text" id="name" placeholder="Nome" onChange={handleInput} value={registerValue.name}/>
+            <h3>Email*</h3>
+            <input type="email" id="email" placeholder="Email" onChange={handleInput} value={registerValue.email}/>
+            <h3>Celular*</h3>
+            <input type="text" id="phone" placeholder="Celular" onChange={handleInput} value={registerValue.phone}/>
+          </form>
+          <Link to="/register2">
+            <button>
+              <h2>CONTINUAR -{">"} </h2>
+            </button>
+          </Link>
         </div>
       </LayoutRegister>
     </Container>
@@ -22,17 +36,3 @@ function Register() {
 }
 
 export default Register;
-
-{/* <label>
-  <h3>Nome*</h3>
-  <input type="text" name="name" placeholder="Nome" />
-  <h3>Email*</h3>
-  <input type="email" name="name" placeholder="Email" />
-  <h3>Celular*</h3>
-  <input type="text" name="name" placeholder="Celular" />
-</label>
-<Link to="/register2">
-  <button>
-    <h2>CONTINUAR -{">"} </h2>
-  </button>
-</Link> */}
