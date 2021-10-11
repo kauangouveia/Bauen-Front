@@ -4,7 +4,7 @@ import Rating from "@material-ui/core/Rating";
 import Typography from "@material-ui/core/Typography";
 import {Star} from "./styles";
 export default function BasicRating() {
-  const [value] = React.useState(2);
+  // const [value] = React.useState(2);
 
   return (
     <Star>

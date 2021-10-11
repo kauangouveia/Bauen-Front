@@ -26,12 +26,12 @@ function ListServices() {
                 />
               </label>
             </form>
-            <img src={search} alt="" />
+            <img src={search} alt="procurar" />
           </div>
         </SearchContainer>
         <ContainerFilters>
           <div className="Filters">
-            <img src={filter} />
+            <img src={filter} alt="filtros"/>
             <h1>Ordenar por:</h1>
             <h2>Recentes</h2>
             <h2>Avaliação</h2>
@@ -48,7 +48,7 @@ function ListServices() {
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={user} />
+                <img src={user} alt="usuario"/>
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
@@ -58,8 +58,8 @@ function ListServices() {
                   </div>
                   <div className="Options">
                     <div className="Favorite">
-                      <img src={love} />
-                      <img src={menu} />
+                    <img src={love} alt="amei"/>
+                      <img src={menu} alt="menu"/>
                     </div>
                     <div className="Services">
                       <h4>Função</h4>
@@ -71,14 +71,14 @@ function ListServices() {
                 </div>
               </div>
               <div className="Contact">
-                <img src={chat} />
+              <img src={chat} alt="chat" />
                 <h2>Contatar</h2>
               </div>
             </CardProfile>
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={user} />
+                <img src={user} alt="usuario"/>
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
@@ -88,8 +88,8 @@ function ListServices() {
                   </div>
                   <div className="Options">
                     <div className="Favorite">
-                      <img src={love} />
-                      <img src={menu} />
+                      <img src={love} alt="amei"/>
+                      <img src={menu} alt="menu"/>
                     </div>
                     <div className="Services">
                       <h4>Função</h4>
@@ -101,14 +101,14 @@ function ListServices() {
                 </div>
               </div>
               <div className="Contact">
-                <img src={chat} />
+                <img src={chat} alt="chat" />
                 <h2>Contatar</h2>
               </div>
             </CardProfile>
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={user} />
+                  <img src={user} alt="usuario"/>
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
@@ -118,8 +118,8 @@ function ListServices() {
                   </div>
                   <div className="Options">
                     <div className="Favorite">
-                      <img src={love} />
-                      <img src={menu} />
+                      <img src={love} alt="amei"/>
+                      <img src={menu} alt="menu"/>
                     </div>
                     <div className="Services">
                       <h4>Função</h4>
@@ -131,14 +131,14 @@ function ListServices() {
                 </div>
               </div>
               <div className="Contact">
-                <img src={chat} />
+                <img src={chat} alt="chat"/>
                 <h2>Contatar</h2>
               </div>
             </CardProfile>
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={user} />
+                  <img src={user} alt="usuario"/>
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
@@ -148,8 +148,8 @@ function ListServices() {
                   </div>
                   <div className="Options">
                     <div className="Favorite">
-                      <img src={love} />
-                      <img src={menu} />
+                    <img src={love} alt="amei"/>
+                      <img src={menu} alt="menu"/>
                     </div>
                     <div className="Services">
                       <h4>Função</h4>
@@ -161,14 +161,14 @@ function ListServices() {
                 </div>
               </div>
               <div className="Contact">
-                <img src={chat} />
+                <img src={chat} alt="chat" />
                 <h2>Contatar</h2>
               </div>
             </CardProfile>
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={user} />
+                  <img src={user} alt="usuario"/>
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
@@ -178,8 +178,8 @@ function ListServices() {
                   </div>
                   <div className="Options">
                     <div className="Favorite">
-                      <img src={love} />
-                      <img src={menu} />
+                      <img src={love} alt="amei"/>
+                      <img src={menu} alt="menu"/>
                     </div>
                     <div className="Services">
                       <h4>Função</h4>
@@ -191,7 +191,7 @@ function ListServices() {
                 </div>
               </div>
               <div className="Contact">
-                <img src={chat} />
+                <img src={chat} alt="chat"/>
                 <h2>Contatar</h2>
               </div>
             </CardProfile>

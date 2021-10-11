@@ -7,7 +7,7 @@ function Register2() {
     <Container>
       <LayoutReceipt title="Antes de finalizarmos precisamos  apenas de uma foto do seu RG frente e verso para podemos comprovar sua identidade.">
         <div className="ContainerInput">
-          <img src={idcard} />
+          <img src={idcard} alt ="carteira de indentidade" />
           <form>
             <label>
               <input type="file" name="text" placeholder="CPF" />

@@ -8,11 +8,11 @@ function LayoutRegister({children}) {
     <Container>
       <div className="containerLogin">
         <div className="AreaBlue">
-        <img src={illustrations}/>
+        <img src={illustrations} alt="illustrações"/>
         </div>
         <div className="AreaLogin">
           <div className="Logo">
-              <img src={logo}/>
+              <img src={logo} alt="logo"/>
           </div>
           <div >
           {children}

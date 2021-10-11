@@ -30,7 +30,7 @@ function FastServices() {
         </SearchContainer>
         <ContainerFilters>
           <div className="Filters">
-            <img src={thunder} />
+            <img src={thunder} alt="trovao"/>
             <h1>Serviços rápidos</h1>
           </div>
         </ContainerFilters>
@@ -44,7 +44,7 @@ function FastServices() {
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={user} />
+                  <img src={user} alt="usuarios"/>
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
@@ -54,22 +54,22 @@ function FastServices() {
                   </div>
                   <div className="Options">
                     <div className="Favorite">
-                      <img src={menu} />
+                      <img src={menu} alt="menu"/>
                     </div>
                     <div className="Services">
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="Contact">
-                <img src={like} />
+              <div className="Contact" >
+                <img src={like} alt="gostei"/>
                 <h2>Aceitar</h2>
               </div>
             </CardProfile>
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={user} />
+                  <img src={user} alt="usuario"/>
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
@@ -79,7 +79,7 @@ function FastServices() {
                   </div>
                   <div className="Options">
                     <div className="Favorite">
-                      <img src={menu} />
+                      <img src={menu} alt="menu"/>
                     </div>
                     <div className="Services">
                     </div>
@@ -87,14 +87,14 @@ function FastServices() {
                 </div>
               </div>
               <div className="Contact">
-                <img src={like} />
+                <img src={like} alt="gostei"/>
                 <h2>Aceitar</h2>
               </div>
             </CardProfile>
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={user} />
+                  <img src={user} alt="usuario"/>
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
@@ -104,7 +104,7 @@ function FastServices() {
                   </div>
                   <div className="Options">
                     <div className="Favorite">
-                      <img src={menu} />
+                      <img src={menu} alt="menu"/>
                     </div>
                     <div className="Services">
                     </div>
@@ -112,14 +112,14 @@ function FastServices() {
                 </div>
               </div>
               <div className="Contact">
-                <img src={like} />
+                <img src={like} alt="gostei"/>
                 <h2>Aceitar</h2>
               </div>
             </CardProfile>
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={user} />
+                  <img src={user} alt="usuario"/>
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
@@ -129,7 +129,7 @@ function FastServices() {
                   </div>
                   <div className="Options">
                     <div className="Favorite">
-                      <img src={menu} />
+                      <img src={menu} alt="menu" />
                     </div>
                     <div className="Services">
                     </div>
@@ -137,14 +137,14 @@ function FastServices() {
                 </div>
               </div>
               <div className="Contact">
-                <img src={like} />
+                <img src={like} alt="gostei"/>
                 <h2>Aceitar</h2>
               </div>
             </CardProfile>
             <CardProfile>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={user} />
+                  <img src={user} alt="usuario"/>
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
@@ -154,7 +154,7 @@ function FastServices() {
                   </div>
                   <div className="Options">
                     <div className="Favorite">
-                      <img src={menu} />
+                      <img src={menu} alt="menu"/>
                     </div>
                     <div className="Services">
                     </div>
@@ -162,7 +162,7 @@ function FastServices() {
                 </div>
               </div>
               <div className="Contact">
-                <img src={like} />
+                <img src={like} alt="gostei"/>
                 <h2>Aceitar</h2>
               </div>
             </CardProfile>

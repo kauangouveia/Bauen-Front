@@ -7,7 +7,7 @@ function Register2() {
     <Container>
       <LayoutReceipt title="Agora precisamos de uma foto do seu comprovante de residência">
         <div className="ContainerInput">
-          <img src={Receipt} />
+          <img src={Receipt} alt="foto do seu comprovante de residênc"/>
           <form>
             <label>
               <input type="file" name="text" placeholder="CPF" />
