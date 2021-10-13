@@ -15,11 +15,10 @@ function Register2() {
   const { register, setValue } = useForm();
   const handleZipCode = async (event) => {
     const zipCode = event.target.value;
-    
+
     if (!zipCode.match(PATTERN_ZIP_CODE)) return;
-    const { logradouro, bairro, localidade, uf, number} = await address.findAddressByZipCode(
-      event.target.value
-      );    
+    const { logradouro, bairro, localidade, uf, number } =
+      await address.findAddressByZipCode(zipCode);
 
     setValue("street", logradouro);
     setValue("neighborhood", bairro);
@@ -29,14 +28,24 @@ function Register2() {
     setRegisterValue({
       ...registerValue,
       address: {
+        zipCode: zipCode,
         street: logradouro,
         neighborhood: bairro,
         city: localidade,
         state: uf,
-        number: number
-      }
+      },
     });
   };
+  
+  const handleNumber = (event) => {
+    const {address, ...values} = registerValue
+    address.number = event.target.value
+    setRegisterValue({
+      ...values,
+      address,
+    });
+  };
+
 
   return (
     <Container>
@@ -57,6 +66,7 @@ function Register2() {
                 {...register("zipcode", {
                   onChange: handleZipCode,
                 })}
+                value={registerValue.address.zipCode}
               />
               <h3>Numero*</h3>
               <input
@@ -66,8 +76,9 @@ function Register2() {
                 name="text"
                 placeholder="Numero"
                 {...register("number", {
-                  onChange: handleZipCode
+                  onChange: handleNumber ,
                 })}
+                value={registerValue.address.number}
               />
               <h3>Rua*</h3>
               <input
@@ -77,8 +88,9 @@ function Register2() {
                 name="text"
                 placeholder="Rua"
                 {...register("street", {
-                  onChange: handleZipCode
+                  onChange: handleZipCode,
                 })}
+                value={registerValue.address.street}
               />
               <h3>Bairro*</h3>
               <input
@@ -88,8 +100,9 @@ function Register2() {
                 name="text"
                 placeholder="Bairro"
                 {...register("neighborhood", {
-                  onChange: handleZipCode
+                  onChange: handleZipCode,
                 })}
+                value={registerValue.address.neighborhood}
               />
               <h3>Cidade*</h3>
               <input
@@ -99,8 +112,9 @@ function Register2() {
                 placeholder="Cidade"
                 required
                 {...register("city", {
-                  onChange: handleZipCode
+                  onChange: handleZipCode,
                 })}
+                value={registerValue.address.city}
               />
               <h3>Estado*</h3>
               <input
@@ -110,8 +124,9 @@ function Register2() {
                 name="text"
                 placeholder="Estado"
                 {...register("state", {
-                  onChange: handleZipCode
+                  onChange: handleZipCode,
                 })}
+                value={registerValue.address.state}
               />
             </label>
             <Link to="register3">

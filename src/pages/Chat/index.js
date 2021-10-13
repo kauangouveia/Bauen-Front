@@ -1,5 +1,5 @@
 import { Container, ContainerChat } from "./styles";
-// import Footer from "../../components/Footer";
+
 import Header from "../../components/Header";
 import clip from "../../assets/clip.svg";
 import { useState } from "react";
@@ -8,7 +8,6 @@ const socket = io('http://localhost:3535')
 socket.on('connect', () => console.log('[IO] Connect => A new connection has been established'))
 function Chat() {
 
-  // const [username, setUser]
 
   const [message, updateMessage] = useState("");
   const [messages, updateMessages] = useState([]);

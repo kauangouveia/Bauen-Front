@@ -2,12 +2,14 @@ import { Container } from "./styles";
 import LayoutReceipt from "../../../components/LayoutReceipt";
 import { Link } from "react-router-dom";
 import idcard from "../../../assets/idcard.svg";
+// import React, { useState } from "react";
 function Register2() {
+  // const [image, setImage] = useState('');
   return (
     <Container>
       <LayoutReceipt title="Antes de finalizarmos precisamos  apenas de uma foto do seu RG frente e verso para podemos comprovar sua identidade.">
         <div className="ContainerInput">
-          <img src={idcard} alt ="carteira de indentidade" />
+          <img src={idcard} alt="carteira de indentidade" />
           <form>
             <label>
               <input type="file" name="text" placeholder="CPF" />

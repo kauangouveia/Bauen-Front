@@ -10,9 +10,12 @@ import Register from "./pages/Register";
 import Register2 from "./pages/Register/register2";
 import Register3 from "./pages/Register/register3";
 import Register4 from "./pages/Register/register4";
-import Register5 from "./pages/Register/register5";
-import Register6 from "./pages/Register/register6";
+// import Register5 from "./pages/Register/register5";
+// import Register6 from "./pages/Register/register6";
+
 import Chat from './pages/Chat/'
+import ClientOrServiceProvider from './pages/ChoiceClientOrServiceProvider'
+
 import { RegisterProvider } from "./context";
 
 function Router() {
@@ -49,16 +52,20 @@ function Router() {
         <Route path="/Register4">
           <Register4/>
         </Route>
-        <Route path="/Register5">
+        {/* <Route path="/Register5">
           <Register5 />
         </Route>
         <Route path="/Register6">
           <Register6/>
-        </Route>
+        </Route> */}
       </RegisterProvider>  
       <Route path="/chat">
         <Chat/>
       </Route>
+      <Route path="/ClientOrServiceProvider">
+        <ClientOrServiceProvider/>
+      </Route>
+      
     </BrowserRouter>
   );
 }
