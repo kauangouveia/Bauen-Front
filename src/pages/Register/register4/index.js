@@ -13,6 +13,7 @@ function Register2() {
     });
   };
 
+  console.log(registerValue);
   return (
     <Container>
       <LayoutRegister>
@@ -20,6 +21,7 @@ function Register2() {
           <div className="title">
             <h2>Cadastro</h2>
           </div>
+
           <form>
             <label>
               <h3>Senha*</h3>
@@ -42,8 +44,8 @@ function Register2() {
               />
             </label>
             <Link to="register5">
-              <button>
-                <h2>CONTINUAR -{">"} </h2>
+              <button type="submit">
+                <h2>FINALIZAR -{">"} </h2>
               </button>
             </Link>
           </form>

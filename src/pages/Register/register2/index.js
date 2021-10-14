@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { RegisterContext } from "../../../context";
 import { useContext } from "react";
 
+
 function Register2() {
   const { registerValue, setRegisterValue } = useContext(RegisterContext);
 
@@ -36,16 +37,15 @@ function Register2() {
       },
     });
   };
-  
+
   const handleNumber = (event) => {
-    const {address, ...values} = registerValue
-    address.number = event.target.value
+    const { address, ...values } = registerValue;
+    address.number = event.target.value;
     setRegisterValue({
       ...values,
       address,
     });
   };
-
 
   return (
     <Container>
@@ -54,6 +54,7 @@ function Register2() {
           <div className="title">
             <h2>Cadastro</h2>
           </div>
+      
           <form {...register("zipcode")}>
             <label>
               <h3>CEP*</h3>
@@ -76,7 +77,7 @@ function Register2() {
                 name="text"
                 placeholder="Numero"
                 {...register("number", {
-                  onChange: handleNumber ,
+                  onChange: handleNumber,
                 })}
                 value={registerValue.address.number}
               />
