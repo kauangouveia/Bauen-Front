@@ -13,7 +13,6 @@ function Register3() {
       [event.target.id]: event.target.value,
     });
   };
-  // console.log(registerValue);
   return (
     <Container>
       <LayoutRegister>
