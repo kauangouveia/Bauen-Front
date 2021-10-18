@@ -14,12 +14,15 @@ function Register() {
   const { registerValue, setRegisterValue } = useContext(RegisterContext);
 
   const handleInput = (event) => {
+    
+    const key = event.target.type === "radio" ? "userType": event.target.id
+    console.log(key)
     setRegisterValue({
       ...registerValue,
-      [event.target.id]: event.target.value,
+      [key]: event.target.value,
     });
   };
-  console.log(FormControlLabel)
+  
   return (
     <Container>
       <LayoutRegister>
@@ -33,16 +36,21 @@ function Register() {
               aria-label="Escolha como deseja se cadastrar"
               defaultValue="Prestador de Serviços"
               name="radio-buttons-group"
+              id="userType"
+              
             >
               <FormControlLabel
-                value="Service provaider"
+                value="SERVICE_PROVIDER"
                 control={<Radio />}
                 label="Prestador de Serviços"
+                onChange={handleInput}
               />
               <FormControlLabel
-                value="Cliente"
+                register
+                value="CLIENT"
                 control={<Radio />}
                 label="Cliente"
+                onChange={handleInput}
               />
             </RadioGroup>
           </FormControl>

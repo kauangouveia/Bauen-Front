@@ -11,7 +11,6 @@ import { useContext } from "react";
 function Register2() {
   const { registerValue, setRegisterValue } = useContext(RegisterContext);
 
-  console.log(registerValue);
 
   const { register, setValue } = useForm();
   const handleZipCode = async (event) => {

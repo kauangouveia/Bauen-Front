@@ -14,7 +14,7 @@ import Register4 from "./pages/Register/register4";
 // import Register6 from "./pages/Register/register6";
 import Post from "./pages/Post";
 
-import Chat from './pages/Chat/'
+// import Chat from './pages/Chat/'
 import ClientOrServiceProvider from './pages/ChoiceClientOrServiceProvider'
 
 import { RegisterProvider } from "./context";
@@ -60,9 +60,9 @@ function Router() {
           <Register6/>
         </Route> */}
       </RegisterProvider>  
-      <Route path="/chat">
+      {/* <Route path="/chat">
         <Chat/>
-      </Route>
+      </Route> */}
       <Route path="/ClientOrServiceProvider">
         <ClientOrServiceProvider/>
       </Route>
