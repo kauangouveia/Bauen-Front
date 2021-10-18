@@ -1,14 +1,8 @@
 import Header from "../../components/Header"
 import { Container } from "./styles";
-import search from "../../assets/search.png";
-import chat from "../../assets/chat.svg";
-import filter from "../../assets/filter.svg";
+import add from "../../assets/add.svg";
 import Footer from "../../components/Footer";
-import Star from "../../components/Star";
-import { SearchContainer, FeedContainer, ContainerResult, ContainerFeed, ContainerProfile, CardProfile } from "./styles"
-import user from "../../assets/user.png";
-import menu from "../../assets/menu.svg";
-import love from "../../assets/love.svg";
+import { FeedContainer, PostHeader, PostImage, PostButtons } from "./styles"
 
 function Post(){
     return (
@@ -16,7 +10,20 @@ function Post(){
     <Container>
         <Header />
         <FeedContainer>
+            <PostHeader>
 
+            </PostHeader>
+            <PostImage>
+                <div className="post">
+                    <img src={add} alt="add"/>
+                </div>
+            </PostImage>
+            <PostButtons>
+                <div className="areaButtons">
+                    <input type="submit" value="Cancelar" className="Cancel"/>
+                    <input type="submit" value="Confirmar" className="Confirm"/>
+                </div>
+            </PostButtons>
         </FeedContainer>
         <Footer />
     </Container>
