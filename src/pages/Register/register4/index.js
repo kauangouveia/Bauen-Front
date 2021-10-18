@@ -1,6 +1,5 @@
 import { Container } from "./styles";
 import LayoutRegister from "../../../components/LayoutRegister";
-// import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { RegisterContext } from "../../../context";
 import Axios from "axios";
@@ -14,16 +13,17 @@ function Register2() {
       [event.target.id]: event.target.value,
     });
   };
-  console.log(registerValue);
+
+
   const handleClickButton = () => {
     const { userType, ...values } = registerValue;
-    console.log(userType)
+    
     const url =
       userType === "SERVICE_PROVIDER"
         ? "/register/service-provider"
         : "/register/client";
-    
-    Axios.post(`http://localhost:3334${url}`, {
+        Axios.post(`http://localhost:3334${url}`, {
+        
       ...values,
     
     }).then((response) => {

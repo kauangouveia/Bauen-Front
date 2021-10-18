@@ -1,16 +1,20 @@
 import { Container } from "./styles";
 import LayoutRegister from "../../components/LayoutRegister";
 import { useForm } from "react-hook-form";
-// import { login } from "../../services/index";
-import { useHistory } from "react-router";
+import Axios from "axios";
+import api from "../../services/api";
 
 function Login(props) {
-  const history = useHistory();
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
-    // const user = await login.authenticateServiceProvide(data);
-    history.push("/profile");
+    console.log(data);
+    try {
+      const response = await api.post("/login/client", data);
+      console.log(response.data);
+    } catch (error) {
+      alert (error.response.data.errors[0].message);
+    }
   };
 
   return (
@@ -42,11 +46,7 @@ function Login(props) {
           <div className="EsqueciSenha">Esquecia a Senha</div>
           <div className="Line"></div>
           <div className="title">
-            <h3>CADASTRAR-SE COMO CLIENTE </h3>
-          </div>
-           OU<br/>
-          <div className="title">
-            <h3>CADASTRAR-SE COMO PRESTADOR</h3>
+            <h3>CADASTRAR-SE</h3>
           </div>
         </div>
       </LayoutRegister>
