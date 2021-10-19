@@ -1,16 +1,15 @@
 import { Container } from "./styles";
-import LayoutRegister from "../../components/LayoutRegister";
 import { useForm } from "react-hook-form";
 import api from "../../services/api";
-import { Link } from "react-router-dom";
+import LayoutLoginClient from "../../components/LayoutLoginClient";
 
-function Login(props) {
+function LoginClient(props) {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
     console.log(data);
     try {
-      const response = await api.post("/login/service-provider", data);
+      const response = await api.post("/login/client", data);
       console.log(response.data);
     } catch (error) {
       alert(error.response.data.errors[0].message);
@@ -19,7 +18,7 @@ function Login(props) {
 
   return (
     <Container>
-      <LayoutRegister>
+      <LayoutLoginClient>
         <div className="ContainerInput">
           <div className="title">
             <h2>LOGIN</h2>
@@ -39,21 +38,19 @@ function Login(props) {
                 {...register("password")}
               />
             </label>
-            <button >
+            <button type="submit">
               <h2>LOGAR</h2>
             </button>
           </form>
           <div className="EsqueciSenha">Esquecia a Senha</div>
           <div className="Line"></div>
           <div className="title">
-            <Link to="register">
-              <h3>CADASTRAR-SE</h3>
-            </Link>
+            <h3>CADASTRAR-SE</h3>
           </div>
         </div>
-      </LayoutRegister>
+      </LayoutLoginClient>
     </Container>
   );
 }
 
-export default Login;
+export default LoginClient;

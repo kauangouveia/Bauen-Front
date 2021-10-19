@@ -1,23 +1,18 @@
 import { BrowserRouter, Route } from "react-router-dom";
-
+import { RegisterProvider } from "./context";
 import Home from "./pages/Home";
 import ListServices from "./pages/ListServices";
 import FastServices from "./pages/FastServices";
 import PendingServices from "./pages/PendingServices";
 import Login from "./pages/Login";
+import LoginClient from "./pages/LoginClient";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Register2 from "./pages/Register/register2";
 import Register3 from "./pages/Register/register3";
 import Register4 from "./pages/Register/register4";
-// import Register5 from "./pages/Register/register5";
-// import Register6 from "./pages/Register/register6";
 import Post from "./pages/Post";
-
-// import Chat from './pages/Chat/'
-import ClientOrServiceProvider from './pages/ChoiceClientOrServiceProvider'
-
-import { RegisterProvider } from "./context";
+import ClientOrServiceProvider from "./pages/ChoiceClientOrServiceProvider";
 
 function Router() {
   return (
@@ -51,7 +46,7 @@ function Router() {
           <Register3 />
         </Route>
         <Route path="/Register4">
-          <Register4/>
+          <Register4 />
         </Route>
         {/* <Route path="/Register5">
           <Register5 />
@@ -59,16 +54,19 @@ function Router() {
         <Route path="/Register6">
           <Register6/>
         </Route> */}
-      </RegisterProvider>  
+      </RegisterProvider>
       {/* <Route path="/chat">
         <Chat/>
       </Route> */}
       <Route path="/ClientOrServiceProvider">
-        <ClientOrServiceProvider/>
+        <ClientOrServiceProvider />
+      </Route>
+      <Route path="/loginCLient">
+        <LoginClient />
       </Route>
       <Route path="/post">
-          <Post />
-        </Route>
+        <Post />
+      </Route>
     </BrowserRouter>
   );
 }
