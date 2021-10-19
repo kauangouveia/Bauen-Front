@@ -1,7 +1,6 @@
 import Header from "../../components/Header"
 import { Container } from "./styles";
 import add from "../../assets/add.svg";
-import Footer from "../../components/Footer";
 import { FeedContainer, PostHeader, PostImage, PostButtons } from "./styles"
 
 function Post(){
@@ -11,7 +10,18 @@ function Post(){
         <Header />
         <FeedContainer>
             <PostHeader>
+                <div className="PerfilPost">
+                    <div className="PerfilImage">
+                    
+                    </div>
+                </div>
+                <div className="TitlePost">
+                    <h2>Nome do usúario</h2>
+                    <div className="ServicesList">
 
+                </div>
+                </div>
+               
             </PostHeader>
             <PostImage>
                 <div className="post">
@@ -20,12 +30,11 @@ function Post(){
             </PostImage>
             <PostButtons>
                 <div className="areaButtons">
-                    <input type="submit" value="Cancelar" className="Cancel"/>
-                    <input type="submit" value="Confirmar" className="Confirm"/>
+                    <button type="submit" className="Cancel">Cancelar</button>
+                    <button type="submit" className="Confirm">Confirmar</button>
                 </div>
             </PostButtons>
         </FeedContainer>
-        <Footer />
     </Container>
     </>
     )

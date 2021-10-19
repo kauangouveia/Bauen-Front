@@ -19,11 +19,45 @@ export const FeedContainer = styled.div`
 
 export const PostHeader = styled.div`
   display: flex;
-  width: 1200px;
+  width: 800px;
   height: 200px;
   margin-left: auto;
   margin-right: auto;
-  background-color: blue;
+    
+    .PerfilPost{
+      display: flex;
+      justify-content: center;
+      padding-top: 25px;
+      width: 150px;
+      height: 200px;
+    }
+
+    .PerfilImage{
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background-color: #074EAD;
+    }
+
+    .TitlePost{
+      display: flex;
+      width: 500px;
+      height: auto;
+      padding-top: 30px;
+      flex-direction: column;
+    }
+
+    h2{
+      font-size: 25px;
+      font-weight: bold;
+      color: #00277D;
+    }
+
+    .ServicesList{
+      width: 500px;
+      height: 130px;
+      background-color: yellowgreen;
+    }
 `;
 
 export const PostImage = styled.div`
@@ -42,7 +76,7 @@ export const PostImage = styled.div`
     justify-content: center;  
     margin-left: auto;
     margin-right: auto;
-    border : 2px solid #074EAD;
+    border : 4px solid #074EAD;
     border-radius: 5px;
   }
 
@@ -53,6 +87,8 @@ export const PostImage = styled.div`
 
   img:hover{
     cursor: pointer;
+    width: 355px;
+    height: 355px;
   }
 `;
 
@@ -79,10 +115,12 @@ export const PostButtons = styled.div`
     width: 155px;
     height: 55px;
     font-size: 20px;
+    font-weight: bold;
     color: #074EAD;
     border: 2px solid #074EAD;
     border-radius: 5px;
     margin-right: 100px;
+    background-color: white;
   }
 
   .Cancel:hover{
@@ -95,6 +133,7 @@ export const PostButtons = styled.div`
     width: 155px;
     height: 55px;
     font-size: 20px;
+    font-weight: bold;
     color: white;
     border: 2px solid #074EAD;
     border-radius: 5px;
