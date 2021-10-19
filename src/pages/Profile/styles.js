@@ -18,7 +18,8 @@ export const ProfileContainer = styled.div`
   justify-content: center;
   background-color: #074ead;
   flex-direction: row-reverse;
-
+  flex-direction: column;
+  color:white;
   .PictureProfile {
     flex-direction: column-reverse;
     flex-direction: row-reverse;

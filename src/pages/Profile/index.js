@@ -15,6 +15,7 @@ function Profile() {
         <div className="PictureProfile">
           <div className="PictureAward"></div>
         </div>
+          <h1>Kauan gouveia monte</h1>
       </ProfileContainer>
       <InformationsContainer>
         <div className="Informations">

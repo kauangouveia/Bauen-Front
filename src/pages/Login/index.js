@@ -8,10 +8,12 @@ function Login(props) {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
     try {
       const response = await api.post("/login/service-provider", data);
-      console.log(response.data);
+
+      const nameOfProfile = response.data.user.name
+      console.log(nameOfProfile);
     } catch (error) {
       alert(error.response.data.errors[0].message);
     }
