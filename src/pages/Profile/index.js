@@ -2,15 +2,20 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer"
 import Star from "../../components/Star";
 import location from "../../assets/location.svg";
+import warning from "../../assets/warning.svg"
 import menu from "../../assets/menu.svg";
 import SliderPortifolio from "../../components/SliderPortifolio";
 import SliderComents from "../../components/SliderComents";
-import { Container, ProfileContainer, InformationsContainer } from "./styles";
+import { Container, ProfileContainer, InformationsContainer, ModalContainer } from "./styles";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function Profile() {
   const token = localStorage.getItem("token");
   const nameProfile = localStorage.getItem("name");
-  const locationOfServiceProvier = localStorage.getItem("location");
+  const locationOfServiceProvier = localStorage.getItem("location")
+
+  const [isOpen, setIsOpen] = useState(true)
 
   return (
     <Container>
@@ -42,6 +47,16 @@ function Profile() {
       <SliderPortifolio />
       <SliderComents />
       <Footer/>
+      {isOpen && <ModalContainer>
+      <div className="ModalAviso">
+        <img src={warning} alt="warning"/>
+        <h2>Perfil incompleto!</h2>
+        <h3>Por favor, complete seu cadastro para continuar</h3>
+        <div className="AreaButton">
+          <button>Avançar {">"}</button>
+        </div>
+      </div>
+      </ModalContainer>}
     </Container>
   );
 }
