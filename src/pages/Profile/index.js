@@ -7,8 +7,12 @@ import menu from "../../assets/menu.svg";
 import SliderPortifolio from "../../components/SliderPortifolio";
 import SliderComents from "../../components/SliderComents";
 import { Container, ProfileContainer, InformationsContainer, ModalContainer } from "./styles";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function Profile() {
+
+  const [isOpen, setIsOpen] = useState(true)
 
   return (
     <Container>
@@ -40,7 +44,7 @@ function Profile() {
       <SliderPortifolio />
       <SliderComents />
       <Footer/>
-      <ModalContainer>
+      {isOpen && <ModalContainer>
       <div className="ModalAviso">
         <img src={warning} alt="warning"/>
         <h2>Perfil incompleto!</h2>
@@ -49,7 +53,7 @@ function Profile() {
           <button>Avançar {">"}</button>
         </div>
       </div>
-      </ModalContainer>
+      </ModalContainer>}
     </Container>
   );
 }

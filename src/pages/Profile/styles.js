@@ -20,7 +20,7 @@ export const ProfileContainer = styled.div`
   flex-direction: row-reverse;
   flex-direction: column;
   color:white;
-  
+
   .PictureProfile {
     flex-direction: column-reverse;
     flex-direction: row-reverse;
@@ -125,13 +125,9 @@ export const ModalContainer = styled.div`
   top: 0px;
   left: 0px;
   z-index: 2000;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
-
-  .ModalContainer.view{
-    display: flex;
-  }
 
   .ModalAviso{
     display: flex;
@@ -153,10 +149,6 @@ export const ModalContainer = styled.div`
         opacity: 1;
         transform: translate3d(0, 0, 0);
       }
-    }
-
-    .show .modal{
-      animation: modal .3s;
     }
     
     img{
