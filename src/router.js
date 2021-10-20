@@ -13,7 +13,7 @@ import Register3 from "./pages/Register/register3";
 import Register4 from "./pages/Register/register4";
 import Post from "./pages/Post";
 import ClientOrServiceProvider from "./pages/ChoiceClientOrServiceProvider";
-
+import Chat from "./pages/Chat"
 function Router() {
   return (
     <BrowserRouter>
@@ -48,16 +48,11 @@ function Router() {
         <Route path="/Register4">
           <Register4 />
         </Route>
-        {/* <Route path="/Register5">
-          <Register5 />
-        </Route>
-        <Route path="/Register6">
-          <Register6/>
-        </Route> */}
+
       </RegisterProvider>
-      {/* <Route path="/chat">
+      <Route path="/chat">
         <Chat/>
-      </Route> */}
+      </Route>
       <Route path="/ClientOrServiceProvider">
         <ClientOrServiceProvider />
       </Route>

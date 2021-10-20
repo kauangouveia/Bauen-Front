@@ -13,10 +13,10 @@ import {
   ModalContainer,
 } from "./styles";
 import { useState } from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 function Profile() {
-  const token = localStorage.getItem("token");
+  // const token = localStorage.getItem("token");
   const nameProfile = localStorage.getItem("name");
   const locationOfServiceProvier = localStorage.getItem("location");
 

@@ -1,14 +1,13 @@
 import { Container, ContainerChat } from "./styles";
-
 import Header from "../../components/Header";
 import clip from "../../assets/clip.svg";
 import { useState } from "react";
-// import io from "socket.io-client";
-// const socket = io('http://localhost:3535')
-// socket.on('connect', () => console.log('[IO] Connect => A new connection has been established'))
+import io from "socket.io-client"
+
+
+const socket = io.connect("http://localhost:3001")
+
 function Chat() {
-
-
   const [message, updateMessage] = useState("");
   const [messages, updateMessages] = useState([]);
 
