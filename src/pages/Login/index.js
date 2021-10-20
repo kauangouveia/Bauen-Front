@@ -6,24 +6,26 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 function Login(props) {
-      
-      const history = useHistory()
+  const history = useHistory();
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
-   try {
+    try {
       const response = await api.post("/login/service-provider", data);
 
-      const tokenOfProfile =  response.data.token
-      const nameOfProfile =  response.data.user.name
-      const location =  response.data.user.name
+      const {
+        token,
+        user: {
+          address: { city },
+          serviceProvider: { name },
+        },
+      } = response.data;
 
-      localStorage.setItem("token", tokenOfProfile);
-      localStorage.setItem("name", nameOfProfile);
-      localStorage.setItem("location", nameOfProfile);
+      localStorage.setItem("token", token);
+      localStorage.setItem("name", name);
+      localStorage.setItem("location", city);
 
-      history.push("/profile")
+      history.push("/profile");
     } catch (error) {
       alert(error.response.data.errors[0].message);
     }
@@ -33,7 +35,7 @@ function Login(props) {
     <Container>
       <LayoutRegister>
         <div className="ContainerInput">
-          <div className="title">    
+          <div className="title">
             <h2>LOGIN</h2>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -51,11 +53,10 @@ function Login(props) {
                 {...register("password")}
               />
             </label>
-            {/* <Link to="profile"> */}
-            <button >
+
+            <button>
               <h2>LOGAR</h2>
             </button>
-            {/* </Link> */}
           </form>
           <div className="EsqueciSenha">Esquecia a Senha</div>
           <div className="Line"></div>

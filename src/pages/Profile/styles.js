@@ -4,7 +4,7 @@ import reward from "../../assets/reward.svg";
 export const Container = styled.div`
   display: flex;
   width: 100vw;
-  height: 1500px;
+  height: auto;
   display: flex;
   flex-direction: column;
 `;
@@ -190,6 +190,7 @@ export const ModalContainer = styled.div`
       font-size: 20px;
       font-weight: bold;
       color: white;
+      cursor: pointer;
     }
   }
 `;
