@@ -20,6 +20,7 @@ export const ProfileContainer = styled.div`
   flex-direction: row-reverse;
   flex-direction: column;
   color:white;
+  
   .PictureProfile {
     flex-direction: column-reverse;
     flex-direction: row-reverse;
@@ -115,3 +116,89 @@ export const InformationsContainer = styled.div`
     }
   }
 `;  
+
+export const ModalContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 2000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  .ModalContainer.view{
+    display: flex;
+  }
+
+  .ModalAviso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+    height: 290px;
+    border: 2px solid #00277D;
+    border-radius: 10px;
+    background-color: white;
+
+    @keyframes ModalAviso{
+      from{
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+      }
+      to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .show .modal{
+      animation: modal .3s;
+    }
+    
+    img{
+      width: 90px;
+      height: 90px;
+      margin-bottom: 10px;
+    }
+
+    h2{
+      font-size: 25px;
+      color: #00277D;
+      margin-bottom: 15px;
+    }
+
+    h3{
+      font-size: 20px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .AreaButton{
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      height: 50px;
+      margin: 5px;
+    }
+
+    button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 25px;
+      width: 150px;
+      height: 50px;
+      background-color: #00277D;
+      border: 0px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+    }
+  }
+`;
+
