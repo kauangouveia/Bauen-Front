@@ -8,6 +8,10 @@ import SliderComents from "../../components/SliderComents";
 import { Container, ProfileContainer, InformationsContainer } from "./styles";
 
 function Profile() {
+  const token = localStorage.getItem("token");
+  const nameProfile = localStorage.getItem("name");
+  const locationOfServiceProvier = localStorage.getItem("location");
+
   return (
     <Container>
       <Header />
@@ -15,14 +19,14 @@ function Profile() {
         <div className="PictureProfile">
           <div className="PictureAward"></div>
         </div>
-          <h1>Kauan gouveia monte</h1>
+          <h1>{nameProfile}</h1>
       </ProfileContainer>
       <InformationsContainer>
         <div className="Informations">
           <div className="ProfilesText">
             <h2>
               <img src={location} alt="test" />
-              Algum Lugar{" "}
+             {}{" "}
             </h2>{" "}
             <p>Mais de 150 projetos realizados</p>
           </div>
