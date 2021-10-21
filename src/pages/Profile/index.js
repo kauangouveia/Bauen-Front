@@ -14,13 +14,19 @@ import {
   InformationsContainer,
   ModalContainer,
 } from "./styles";
+
 import React, { useState } from "react";
 // import { useEffect } from "react";
 
+import { useState } from "react";
+import io from "socket.io-client";
+
+const socket = io.connect("http://localhost:3001");
 function Profile() {
-  // const token = localStorage.getItem("token");
   const nameProfile = localStorage.getItem("name");
   const locationOfServiceProvier = localStorage.getItem("location");
+  const [isOpen, setIsOpen] = useState(true);
+
 
   const [isModalVisible, setIsModalVisible] = useState(true);
 
@@ -28,6 +34,20 @@ function Profile() {
   const [isOpenModalImageProfile, setIsOpenModalImageProfile] = useState(false);
   const [isOpenModalService, setIsOpenModalService] = useState(false);
 
+  // let [room, setRoom] = useState("");
+
+
+  function getRandomArbitrary(min, max) {
+    return Math.round(Math.random() * (max - min) + min)
+  }
+
+  let room = getRandomArbitrary(1000,1)
+
+  const joinRoom = (sala, name) => {
+    // if (nameProfile !== "" && room !== "") 
+      socket.emit("join_room", room, nameProfile);
+    
+  };
   return (
     <Container>
       <Header />
@@ -50,7 +70,7 @@ function Profile() {
             <Star />
           </div>
           <div className="ButtonsOfProfile">
-            <button>
+            <button onClick={() => joinRoom(room, nameProfile)}>
               <h2>ENTRAR EM CONTATO</h2>
             </button>
             <img src={menu} alt="test" />
@@ -60,6 +80,7 @@ function Profile() {
       <SliderPortifolio />
       <SliderComents />
       <Footer />
+
 
       {isModalVisible && <ModalContainer>
 
@@ -105,6 +126,20 @@ function Profile() {
       </div>}
       
       </ModalContainer>}
+
+
+      {isOpen && (
+        <ModalContainer>
+          <div className="ModalAviso">
+            <img src={warning} alt="warning" />
+            <h2>Perfil incompleto!</h2>
+            <h3>Por favor, complete seu cadastro para continuar</h3>
+            <div className="AreaButton">
+              <button onClick={() => setIsOpen(false)}>Avançar {">"}</button>
+            </div>
+          </div>
+        </ModalContainer>
+      )}
 
     </Container>
   );
