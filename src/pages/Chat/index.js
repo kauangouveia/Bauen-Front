@@ -2,14 +2,27 @@ import { Container, ContainerChat } from "./styles";
 import Header from "../../components/Header";
 import clip from "../../assets/clip.svg";
 import { useState } from "react";
-import io from "socket.io-client"
 
-
-const socket = io.connect("http://localhost:3001")
-
-function Chat() {
+function Chat({ socket, username, room }) {
   const [message, updateMessage] = useState("");
   const [messages, updateMessages] = useState([]);
+
+  const [currentMessage, setCurrentMessage] = useState("");
+
+  const sendMessage = async () => {
+    if (currentMessage !== "") {
+      const messageData = {
+        room: room,
+        author: username,
+        message: currentMessage,
+        time:
+          new Date(Date.now()).getHours() +
+          ":" +
+          new Date(Date.now()).getMinutes(),
+      };
+       await socket.emit("send_message", messageData)
+    }
+  };
 
   const handleFormOnSubmit = (event) => {
     event.preventDefault();
@@ -55,11 +68,12 @@ function Chat() {
                     type="text"
                     name="name"
                     placeholder="Digite algo aqui...."
-                    onChange={handleInputChange}
-                    value={message}
+                    onChange={(event) => {
+                      setCurrentMessage(event.target.value);
+                    }}
                   />
                 </label>
-                <button type="submit">
+                <button onClick={sendMessage}>
                   <h2>Enviar</h2>
                 </button>
               </form>
