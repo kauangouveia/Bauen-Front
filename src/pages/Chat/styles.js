@@ -160,8 +160,8 @@ export const ModalContainer = styled.div`
     }
     
     img{
-      width: 90px;
-      height: 90px;
+      width: 150px;
+      height: 150px;
       margin-bottom: 10px;
     }
 
@@ -186,6 +186,21 @@ export const ModalContainer = styled.div`
     }
 
     .Next{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 25px;
+      width: 150px;
+      height: 50px;
+      background-color: #00277D;
+      border: 0px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    .Back{
       display: flex;
       align-items: center;
       justify-content: center;

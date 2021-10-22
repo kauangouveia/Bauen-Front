@@ -41,7 +41,7 @@ function Profile() {
   // };
 
   const joinRoom = () => {
-    history.push("/chat")
+    history.push("/chat");
   };
 
   return (
@@ -85,12 +85,7 @@ function Profile() {
               <h2>Perfil incompleto!</h2>
               <h3>Por favor, complete seu cadastro para continuar</h3>
               <div className="AreaButton">
-                <button
-                  className="Next"
-                  
-                >
-                  Avançar {">"}
-                </button>
+                <button className="Next"  onClick={()=> setIsOpenModalImageProfile(true, setIsOpenModalWarning(false))}>Avançar {">"}</button>
               </div>
             </div>
           )}
@@ -155,18 +150,6 @@ function Profile() {
         </ModalContainer>
       )}
 
-      {isOpen && (
-        <ModalContainer>
-          <div className="ModalAviso">
-            <img src={warning} alt="warning" />
-            <h2>Perfil incompleto!</h2>
-            <h3>Por favor, complete seu cadastro para continuar</h3>
-            <div className="AreaButton">
-              <button onClick={() => setIsOpen(false)}>Avançar {">"}</button>
-            </div>
-          </div>
-        </ModalContainer>
-      )}
     </Container>
   );
 }

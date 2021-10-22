@@ -3,10 +3,11 @@ import LayoutRegister from "../../../components/LayoutRegister";
 import { useContext } from "react";
 import { RegisterContext } from "../../../context";
 import Axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function Register2() {
   const { registerValue, setRegisterValue } = useContext(RegisterContext);
-
+  const history = useHistory()
   const handleInput = (event) => {
     setRegisterValue({
       ...registerValue,
@@ -29,6 +30,8 @@ function Register2() {
     }).then((response) => {
       console.log(response);
     });
+    history.push("/login")
+
   };
 
   return (

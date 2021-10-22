@@ -3,7 +3,9 @@ import Header from "../../components/Header";
 import clip from "../../assets/clip.svg";
 import { useState } from "react";
 import io from "socket.io-client";
-import warning from "../../assets/warning.svg";
+import constructor from "../../assets/constructor.svg";
+import { useHistory } from "react-router";
+
 const socket = io.connect("http://localhost:3001");
 const nameProfile = localStorage.getItem("name");
 
@@ -16,10 +18,15 @@ let room = getRandomArbitrary(1000, 1);
 const joinRoom = (sala, name) => {
   socket.emit("join_room", room, nameProfile);
 };
-function Chat({ socket, username, room }) {
+
+function Chat() {
   const [isOpenModalWarning, setIsOpenModalWarning] = useState(true);
+
   const [currentMessage, setCurrentMessage] = useState("");
-  const sendMessage = async () => {
+
+  const history = useHistory();
+
+  const sendMessage = async (socket, username, room) => {
     if (currentMessage !== "") {
       console.log("entrei aqui");
       const messageData = {
@@ -34,6 +41,7 @@ function Chat({ socket, username, room }) {
       await socket.emit("send_message", messageData);
     }
   };
+
   return (
     <Container>
       <Header />
@@ -62,29 +70,33 @@ function Chat({ socket, username, room }) {
                     }}
                   />
                 </label>
-                <button onClick={sendMessage}>
+              </form>
+                <button onClick={sendMessage(socket,nameProfile,room)}>
                   <h2>Enviar</h2>
                 </button>
-              </form>
             </div>
           </div>
         </div>
       </ContainerChat>
-
-      <ModalContainer>
-        <div className="ModalWarning">
-          <img src={warning} alt="warning" />
-          <h3>Deseja mesmo iniciar trativas com este prestador ?</h3>
-          <div className="AreaButton">
-            <button
-              className="Next"
-              onClick={() => setIsOpenModalWarning(false)}
-            >
-              Avançar {">"}
-            </button>
+      {isOpenModalWarning && (
+        <ModalContainer>
+          <div className="ModalWarning">
+            <img src={constructor} alt="warning" />
+            <h3>Deseja mesmo iniciar trativas com este prestador ?</h3>
+            <div className="AreaButton">
+              <button className="Back" onClick={() => history.push("/profile")}>
+                Não desejo
+              </button>
+              <button
+                className="Next"
+                onClick={() => setIsOpenModalWarning(false, joinRoom(room, nameProfile))}
+              >
+                Desejo iniciar
+              </button>
+            </div>
           </div>
-        </div>
-      </ModalContainer>
+        </ModalContainer>
+      )}
     </Container>
   );
 }
