@@ -1,19 +1,15 @@
 import { Container, ContainerChat, ModalContainer } from "./styles";
 import Header from "../../components/Header";
 import clip from "../../assets/clip.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import io from "socket.io-client";
 import constructor from "../../assets/constructor.svg";
 import { useHistory } from "react-router";
 
 const socket = io.connect("http://localhost:3001");
 const nameProfile = localStorage.getItem("name");
-
-function getRandomArbitrary(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
-
-let room = getRandomArbitrary(1000, 1);
+let room = localStorage.getItem("room");
+let space = " ";
 
 const joinRoom = (sala, name) => {
   socket.emit("join_room", room, nameProfile);
@@ -26,9 +22,10 @@ function Chat() {
 
   const history = useHistory();
 
+  const [messageList, setMessageList] = useState([]);
+
   const sendMessage = async (socket, username, room) => {
     if (currentMessage !== "") {
-      console.log("entrei aqui");
       const messageData = {
         room: room,
         author: username,
@@ -39,8 +36,17 @@ function Chat() {
           new Date(Date.now()).getMinutes(),
       };
       await socket.emit("send_message", messageData);
+      setMessageList((list) => [...list, messageData]);
+      setCurrentMessage("")
     }
   };
+
+  useEffect(() => {
+    socket.on("receive_message", (data) => {
+      setMessageList((list) => [...list, data]);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [socket]);
 
   return (
     <Container>
@@ -48,32 +54,47 @@ function Chat() {
       <ContainerChat>
         <div className="ChatBox">
           <div className="Conversation">
-            <ul>
-              <li className="listItem mine">
-                <span className="minemessage"></span>
-              </li>
-            </ul>
+            {messageList.map((messageContent) => {
+              return (
+                <div
+                  className="message"
+                  id={nameProfile === messageContent.author ? "you" : "other"}
+                >
+                  <div>
+                    <div className="message-content">
+                      <p>{messageContent.message}</p>
+                    </div>
+                    <div className="message-meta">
+                      <p className="time">{messageContent.time}</p>
+
+                      <p className="name">{messageContent.author}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
           <div className="ContainerSendMessage">
             <div className="Emojis">
               <img src={clip} alt="anexo de imagens" />
             </div>
             <div className="Messages">
-              <form>
-                <label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Digite algo aqui...."
-                    onChange={(event) => {
-                      setCurrentMessage(event.target.value);
-                    }}
-                  />
-                </label>
-              </form>
-                <button onClick={sendMessage(socket,nameProfile,room)}>
-                  <h2>Enviar</h2>
-                </button>
+              <input
+                type="text"
+                value={currentMessage}
+                placeholder="Digite algo aqui...."
+                onChange={(event) => {
+                  setCurrentMessage(event.target.value);
+                }}
+                onKeyPress={(event) => {
+                  event.key === "Enter" &&
+                    sendMessage(socket, nameProfile, room);
+                }}
+              />
+
+              <button onClick={() => sendMessage(socket, nameProfile, room)}>
+                <h2>Enviar</h2>
+              </button>
             </div>
           </div>
         </div>
@@ -89,7 +110,9 @@ function Chat() {
               </button>
               <button
                 className="Next"
-                onClick={() => setIsOpenModalWarning(false, joinRoom(room, nameProfile))}
+                onClick={() =>
+                  setIsOpenModalWarning(false, joinRoom(room, nameProfile))
+                }
               >
                 Desejo iniciar
               </button>

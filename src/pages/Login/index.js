@@ -18,12 +18,15 @@ function Login(props) {
         user: {
           address: { city },
           serviceProvider: { name },
+          serviceProvider:{room}
         },
       } = response.data;
 
       localStorage.setItem("token", token);
       localStorage.setItem("name", name);
       localStorage.setItem("location", city);
+      localStorage.setItem("room", room);
+
 
       history.push("/profile");
     } catch (error) {

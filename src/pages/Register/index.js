@@ -80,6 +80,14 @@ function Register() {
               onChange={handleInput}
               value={registerValue.phone}
             />
+            <h3>Sala*</h3>
+            <input
+              type="text"
+              id="room"
+              placeholder="Sala"
+              onChange={handleInput}
+              value={registerValue.room}
+            />
           </form>
           <Link to="/register2">
             <button>

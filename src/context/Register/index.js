@@ -7,6 +7,7 @@ export const RegisterProvider = ({ children }) => {
     name: "",
     email: "",
     phone: "",
+    room: "",
     address: {
       zipcode: "",
       street: "",

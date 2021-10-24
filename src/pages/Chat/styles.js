@@ -24,42 +24,112 @@ export const ContainerChat = styled.div`
     .Conversation {
       width: auto;
       height: 800px;
-      .listItem{
-        width: auto;
-        height: 5px;
-        display: flex;
-        padding: 10px;
-        text-align:right;
-        
-        .minemessage{
-          min-height: 10px;
-          min-width: 95px;
-          max-width: auto;
-          max-height: auto;
-          background-color:#074ead;
-          border-radius: 5px;
-          padding: 5px ;
-          display: flex;
-          color: white;
-         
-        }
-        .othermessage{
-          width: auto;
-          height: auto;
-          background-color:white;
-        }
-      }
-      .mine{
-        width: auto;
-        height: 50px;
-        flex-direction: row-reverse;
-      }
-      .other{
-        width: auto;
-        height: 50px;
-        flex-direction: row;
-      }
+    }
+    #you {
+      justify-content: flex-end;
+      width: auto;
+      height: auto;
+      align-items: flex-end;
+      display: flex;
+      justify-content: end;
+      flex-direction: column;
+    }
 
+    #you .message-content {
+      width: auto;
+      height: auto;
+      min-height: 40px;
+      max-width: 200px;
+      background-color: #cc4b00;
+      border-radius: 5px;
+      color: white;
+      display: flex;
+      align-items: center;
+      margin-right: 5px;
+      margin-left: 5px;
+      padding-right: 5px;
+      padding-left: 5px;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    #you .message-meta {
+      width: auto;
+      height: auto;
+      align-items: flex-end;
+      display: flex;
+      justify-content: end;
+      flex-direction: row;
+      margin-right: 5px;
+      .time {
+        font-size: 15px;
+        margin-right: 5px;
+      }
+      .name {
+        font-size: 15px;
+        color: black;
+        font-weight: bold;
+      }
+    }
+
+    #other {
+      justify-content: flex-start;
+      width: auto;
+      height: auto;
+      align-items: flex-start;
+      display: flex;
+      justify-content: start;
+      flex-direction: column;
+      /* margin-right: 5px; */
+    }
+
+    #other .message-content {
+      width: auto;
+      height: auto;
+      min-height: 40px;
+      max-width: 200px;
+      background-color: blue;
+      border-radius: 5px;
+      color: white;
+      display: flex;
+      align-items: center;
+      margin-right: 5px;
+      margin-left: 5px;
+      padding-right: 5px;
+      padding-left: 5px;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    #other .message-meta {
+      justify-content: flex-end;
+      width: auto;
+      height: auto;
+      align-items: flex-end;
+      display: flex;
+      justify-content: end;
+      flex-direction: row;
+      margin-right: 5px;
+      .time {
+        font-size: 15px;
+        margin-right: 5px;
+      }
+      .name {
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+
+    .message-meta #author {
+      font-weight: bold;
+      background-color: red;
+      width: auto;
+      height: auto;
+      align-items: flex-end;
+      display: flex;
+      justify-content: end;
+      flex-direction: row;
+      margin-right: 5px;
     }
   }
   .ContainerTalk {
@@ -95,31 +165,27 @@ export const ContainerChat = styled.div`
       align-items: center;
       justify-content: center;
 
-      form {
-        height: 55px;
-        width: 700px;
-        input {
-          width: 550px;
-          height: 50px;
-          border: 2px solid black;
-          border-radius: 4px;
-          font-size: 20px;
-          padding: 15px;
-        }
-        button {
-          width: 100px;
-          height: 50px;
-          border-radius: 10px;
-          margin-left: 40px;
-          border: 0px;
-          color: white;
-          background-color: #074ead;
-        }
-        button:hover {
-          cursor: pointer;
-          box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.24),
-            0 3px 3px 0 rgba(0, 0, 0, 0.19);
-        }
+      input {
+        width: 550px;
+        height: 50px;
+        border: 2px solid black;
+        border-radius: 4px;
+        font-size: 20px;
+        padding: 15px;
+      }
+      button {
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        margin-left: 40px;
+        border: 0px;
+        color: white;
+        background-color: #074ead;
+      }
+      button:hover {
+        cursor: pointer;
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.24),
+          0 3px 3px 0 rgba(0, 0, 0, 0.19);
       }
     }
   }
@@ -127,7 +193,7 @@ export const ContainerChat = styled.div`
 export const ModalContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0px;
   left: 0px;
@@ -136,48 +202,48 @@ export const ModalContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  .ModalWarning{
+  .ModalWarning {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 550px;
     height: 290px;
-    border: 2px solid #00277D;
+    border: 2px solid #00277d;
     border-radius: 10px;
     background-color: white;
     z-index: 1998;
 
-    @keyframes ModalWarning{
-      from{
+    @keyframes ModalWarning {
+      from {
         opacity: 0;
         transform: translate3d(0, -60px, 0);
       }
-      to{
+      to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
       }
     }
-    
-    img{
+
+    img {
       width: 150px;
       height: 150px;
       margin-bottom: 10px;
     }
 
-    h2{
+    h2 {
       font-size: 25px;
-      color: #00277D;
+      color: #00277d;
       margin-bottom: 15px;
     }
 
-    h3{
+    h3 {
       font-size: 20px;
       font-weight: normal;
       margin-bottom: 15px;
     }
 
-    .AreaButton{
+    .AreaButton {
       display: flex;
       justify-content: flex-end;
       width: 100%;
@@ -185,14 +251,14 @@ export const ModalContainer = styled.div`
       margin: 5px;
     }
 
-    .Next{
+    .Next {
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 25px;
       width: 150px;
       height: 50px;
-      background-color: #00277D;
+      background-color: #00277d;
       border: 0px;
       border-radius: 5px;
       font-size: 20px;
@@ -200,14 +266,14 @@ export const ModalContainer = styled.div`
       color: white;
       cursor: pointer;
     }
-    .Back{
+    .Back {
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 25px;
       width: 150px;
       height: 50px;
-      background-color: #00277D;
+      background-color: #00277d;
       border: 0px;
       border-radius: 5px;
       font-size: 20px;
@@ -217,48 +283,48 @@ export const ModalContainer = styled.div`
     }
   }
 
-  .ModalImageProfile{
+  .ModalImageProfile {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 570px;
     height: 310px;
-    border: 2px solid #00277D;
+    border: 2px solid #00277d;
     border-radius: 10px;
     background-color: white;
     z-index: 1999;
 
-    @keyframes ModalImageProfile{
-      from{
+    @keyframes ModalImageProfile {
+      from {
         opacity: 0;
         transform: translate3d(0, -60px, 0);
       }
-      to{
+      to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
       }
     }
-    
-    img{
+
+    img {
       width: 130px;
       height: 130px;
       margin-bottom: 10px;
     }
 
-    h2{
+    h2 {
       font-size: 25px;
-      color: #00277D;
+      color: #00277d;
       margin-bottom: 15px;
     }
 
-    h3{
+    h3 {
       font-size: 20px;
       font-weight: normal;
       margin-bottom: 15px;
     }
 
-    .AreaButton{
+    .AreaButton {
       display: flex;
       justify-content: center;
       width: 100%;
@@ -266,13 +332,13 @@ export const ModalContainer = styled.div`
       margin: 5px;
     }
 
-    .Next{
+    .Next {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 150px;
       height: 50px;
-      background-color: #00277D;
+      background-color: #00277d;
       border: 0px;
       border-radius: 5px;
       font-size: 20px;
@@ -281,14 +347,14 @@ export const ModalContainer = styled.div`
       cursor: pointer;
     }
 
-    button{
+    button {
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 10px;
       width: 250px;
       height: 50px;
-      background-color: #00277D;
+      background-color: #00277d;
       border: 0px;
       border-radius: 5px;
       font-size: 20px;
@@ -298,46 +364,46 @@ export const ModalContainer = styled.div`
     }
   }
 
-  .ModalService{
+  .ModalService {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 560px;
     height: 330px;
-    border: 2px solid #00277D;
+    border: 2px solid #00277d;
     border-radius: 10px;
     background-color: white;
 
-    @keyframes ModalAviso{
-      from{
+    @keyframes ModalAviso {
+      from {
         opacity: 0;
         transform: translate3d(0, -60px, 0);
       }
-      to{
+      to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
       }
     }
-    
-    img{
+
+    img {
       width: 140px;
       height: 130px;
     }
 
-    h2{
+    h2 {
       font-size: 25px;
-      color: #00277D;
+      color: #00277d;
       margin-bottom: 15px;
     }
 
-    h3{
+    h3 {
       font-size: 20px;
       font-weight: normal;
       margin-bottom: 15px;
     }
 
-    .AreaButton{
+    .AreaButton {
       display: flex;
       justify-content: center;
       width: 100%;
@@ -345,7 +411,7 @@ export const ModalContainer = styled.div`
       margin-bottom: 25px;
     }
 
-    select{
+    select {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -354,18 +420,18 @@ export const ModalContainer = styled.div`
       margin-right: 50px;
       padding: 5px;
       background-color: white;
-      border: 2px solid #DADADA;
+      border: 2px solid #dadada;
       border-radius: 5px;
       font-size: 20px;
       font-weight: bold;
-      color: #074EAD;
+      color: #074ead;
       cursor: pointer;
     }
 
-    .Close{
+    .Close {
       display: flex;
       align-items: start;
-      color: #00277D;
+      color: #00277d;
       padding-left: 30px;
       width: 100%;
       height: 65px;
@@ -373,7 +439,7 @@ export const ModalContainer = styled.div`
       background: transparent;
     }
 
-    .Close h2{
+    .Close h2 {
       display: flex;
       width: auto;
       height: auto;
@@ -384,13 +450,13 @@ export const ModalContainer = styled.div`
       cursor: pointer;
     }
 
-    .Next{
+    .Next {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 150px;
       height: 50px;
-      background-color: #00277D;
+      background-color: #00277d;
       border: 0px;
       border-radius: 5px;
       font-size: 20px;
