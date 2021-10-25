@@ -23,7 +23,7 @@ export const PostHeader = styled.div`
   height: 200px;
   margin-left: auto;
   margin-right: auto;
-    
+
     .PerfilPost{
       display: flex;
       justify-content: center;
@@ -55,8 +55,25 @@ export const PostHeader = styled.div`
 
     .ServicesList{
       width: 500px;
-      height: 130px;
-      background-color: yellowgreen;
+      height: 120px;
+      padding-top: 10px;
+    }
+
+    select{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 250px;
+      min-height: 50px;
+      margin-right: 50px;
+      padding: 5px;
+      background-color: white;
+      border: 2px solid #DADADA;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #074EAD;
+      cursor: pointer;
     }
 `;
 
@@ -81,14 +98,14 @@ export const PostImage = styled.div`
   }
 
   img{
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
   }
 
   img:hover{
     cursor: pointer;
-    width: 355px;
-    height: 355px;
+    width: 310px;
+    height: 310px;
   }
 `;
 
@@ -103,7 +120,7 @@ export const PostButtons = styled.div`
   .areaButtons{
     display: flex;
     width: 600px;
-    height: 75px;
+    height: 80px;
     align-items: center;
     flex-direction: row;
     justify-content: center;
