@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Encanador from "../../assets/Encanador.jpg";
+import useDefault from "../../assets/user.png";
 import reward from "../../assets/reward.svg";
 export const Container = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ export const ProfileContainer = styled.div`
     width: 250px;
     background-color: #dadada;
     border-radius: 100%;
-    background-image: url(${Encanador});
+    background-image: url(${useDefault});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

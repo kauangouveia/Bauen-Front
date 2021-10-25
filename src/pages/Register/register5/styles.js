@@ -16,11 +16,19 @@ export const Container = styled.div`
     justify-content: center;
     border-radius: 5%;
 
-    img {
-      width: 350px;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      margin-right: 50px;
+    .PictureProfile{
+      width: 400px;
+      height: 400px;
+      margin: 10px;
+      border-radius:100% ;
+      border: solid 1px blue;
+      overflow: hidden;
+      >img{
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 400px;
+        height: 400px;
+      }
     }
   }
   form {

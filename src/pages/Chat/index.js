@@ -9,7 +9,6 @@ import { useHistory } from "react-router";
 const socket = io.connect("http://localhost:3001");
 const nameProfile = localStorage.getItem("name");
 let room = localStorage.getItem("room");
-let space = " ";
 
 const joinRoom = (sala, name) => {
   socket.emit("join_room", room, nameProfile);
@@ -66,7 +65,6 @@ function Chat() {
                     </div>
                     <div className="message-meta">
                       <p className="time">{messageContent.time}</p>
-
                       <p className="name">{messageContent.author}</p>
                     </div>
                   </div>

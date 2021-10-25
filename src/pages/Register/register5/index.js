@@ -1,22 +1,30 @@
 import { Container } from "./styles";
 import LayoutReceipt from "../../../components/LayoutReceipt";
-import { Link } from "react-router-dom";
-import Receipt from "../../../assets/comprovante.svg";
+import defaultPhoto from "../../../assets/user.png"
+import { useState} from "react";
+import { useRef } from "react";
+
 function Register2() {
+  const imgRef = useRef()
+  const [image, setImage] = useState()
+  const handleFile =(e)=>{ 
+    setImage(e.target.files[0])
+    imgRef.current.src = URL.createObjectURL(e.target.files[0])
+  }
   return (
     <Container>
-      <LayoutReceipt title="Agora precisamos de uma foto do seu comprovante de residência">
+      <LayoutReceipt title="Agora precisamos que coloque uma foto de perfil">
         <div className="ContainerInput">
-          <img src={Receipt} alt="foto do seu comprovante de residênc"/>
+          <div className="PictureProfile" >
+            <img at='foto de perfil' ref={imgRef}/>
+          </div>
           <form>
-            <label>
-              <input type="file" name="text" placeholder="CPF" />
+            <label htmlFor="inputImage">
+              <input type="file" id="inputImage" onChange={handleFile} />
             </label>
-            <Link to="register6">
               <button>
                 <h2>CONTINUAR -{">"} </h2>
               </button>
-            </Link>
           </form>
         </div>
       </LayoutReceipt>

@@ -4,8 +4,13 @@ import { useForm } from "react-hook-form";
 import api from "../../services/api";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { useEffect } from "react";
+import {ToastContainer, toast, Zoom, Bounce} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Login(props) {
+  
   const history = useHistory();
   const { register, handleSubmit } = useForm();
 
@@ -30,12 +35,15 @@ function Login(props) {
 
       history.push("/profile");
     } catch (error) {
-      alert(error.response.data.errors[0].message);
+      toast.error(error.response.data.errors[0].message)
+      // alert();
     }
   };
 
   return (
-    <Container>
+    <>
+        <ToastContainer/>
+  <Container>
       <LayoutRegister>
         <div className="ContainerInput">
           <div className="title">
@@ -71,6 +79,7 @@ function Login(props) {
         </div>
       </LayoutRegister>
     </Container>
+    </>
   );
 }
 

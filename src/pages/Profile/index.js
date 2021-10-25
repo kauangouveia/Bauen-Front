@@ -10,15 +10,12 @@ import menu from "../../assets/menu.svg";
 import bauenBlackLogo from "../../assets/bauenBlackLogo.png";
 import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
-import io from "socket.io-client";
 import {
   Container,
   ProfileContainer,
   InformationsContainer,
   ModalContainer,
 } from "./styles";
-
-const socket = io.connect("http://localhost:3001");
 
 function Profile() {
   const history = useHistory();
@@ -31,15 +28,6 @@ function Profile() {
 
   const locationOfServiceProvier = localStorage.getItem("location");
   const nameProfile = localStorage.getItem("name");
-  // function getRandomArbitrary(min, max) {
-  //   return Math.round(Math.random() * (max - min) + min);
-  // }
-  // let room = getRandomArbitrary(1000, 1);
-  // const joinRoom = (sala, name) => {
-  //   socket.emit("join_room", room, nameProfile);
-  //   history.push("/chat", { socket: socket });
-  // };
-
   const joinRoom = () => {
     history.push("/chat");
   };
