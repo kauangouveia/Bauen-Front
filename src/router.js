@@ -7,6 +7,7 @@ import PendingServices from "./pages/PendingServices";
 import Login from "./pages/Login";
 import LoginClient from "./pages/LoginClient";
 import Profile from "./pages/Profile";
+import ProfileClient from "./pages/ProfileClient";
 import Register from "./pages/Register";
 import Register2 from "./pages/Register/register2";
 import Register3 from "./pages/Register/register3";
@@ -23,6 +24,9 @@ function Router() {
       </Route>
       <Route path="/profile">
         <Profile />
+      </Route>
+      <Route path="/ProfileClient">
+        <ProfileClient />
       </Route>
       <Route path="/listservices">
         <ListServices />
