@@ -83,7 +83,7 @@ function Profile() {
               <img src={imgProfile} alt="profile" />
               <h3>Primeiro, adicione uma foto para reconhecerem você!</h3>
               <div className="AreaButton">
-                <button>Escolher foto de perfil</button>
+                <input type="file">Escolher foto de perfil</input>
                 <button
                   className="Next"
                   onClick={() =>

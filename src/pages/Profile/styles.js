@@ -115,7 +115,7 @@ export const InformationsContainer = styled.div`
       }
     }
   }
-`;  
+`;
 
 export const ModalContainer = styled.div`
   width: 100vw;
@@ -157,7 +157,7 @@ export const ModalContainer = styled.div`
       height: 90px;
       margin-bottom: 10px;
     }
-
+   
     h2{
       font-size: 25px;
       color: #00277D;

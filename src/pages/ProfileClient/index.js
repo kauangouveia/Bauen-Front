@@ -1,21 +1,27 @@
-  import Header from "../../components/Header";
+import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Star from "../../components/Star";
-import location from "../../assets/location.svg";
-import menu from "../../assets/menu.svg";
+import locationWhite from "../../assets/localtionWhite.svg";
 import { Container, ProfileContainer, InformationsContainer } from "./styles";
-
+import chatlogobauen from "../../assets/chatlogobauen.png"
 function ProfileClient() {
-  const locationOfServiceProvier = localStorage.getItem("location");
   const nameProfile = localStorage.getItem("name");
 
   return (
     <Container>
       <Header />
       <ProfileContainer>
-        <div className="PictureProfile">  
+        <div className="PictureProfile">
         </div>
-        <h1>{nameProfile}</h1>
+        <div className="info">
+          <h2>
+            <img src={locationWhite} alt="test" />
+            Algum lugar{" "}
+          </h2>{" "}
+          <h1>Nome do usuario</h1>
+          <div className="chat"> <img src={chatlogobauen} alt="test" /></div>
+
+        </div>
+
       </ProfileContainer>
       <InformationsContainer>
         <div className="Informations">
