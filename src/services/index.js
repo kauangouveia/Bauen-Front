@@ -14,3 +14,10 @@ export const login = {
     return result.data;
   },
 };
+
+export const serviceProvider = {
+  listServiceProvider: async () => {
+    const result = await api.get("/service-provider");
+    return result.data;
+  }
+};

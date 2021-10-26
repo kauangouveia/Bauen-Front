@@ -16,8 +16,20 @@ import {
 import user from "../../assets/user.png";
 import menu from "../../assets/menu.svg";
 import love from "../../assets/love.svg";
+import { useEffect } from "react";
+import { useState } from "react";
+import { serviceProvider } from "../../services";
 
 function ListServices() {
+  const [serviceProviders, setServiceProviders] = useState([]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const data = await serviceProvider.listServiceProvider();
+    setServiceProviders(data.serviceProviders);
+    console.log(data.serviceProviders);
+  }, []);
+
   return (
     <>
       <Container>
@@ -52,141 +64,35 @@ function ListServices() {
         </ContainerResult>
         <ContainerFeed>
           <ContainerProfile>
-            <CardProfile>
-              <div className="Profile">
-                <div className="ProfileImage">
-                  <img src={user} alt="usuario" />
-                </div>
-                <div className="Informations">
-                  <div className="NameAndRating">
-                    <h2>Nome do usúario</h2>
-                    <Star />
-                    <h3>Quantidade de projetos realizados</h3>
+            {serviceProviders.map((item) => (
+              <CardProfile key={item.id_service_provider}>
+                <div className="Profile">
+                  <div className="ProfileImage">
+                    <img src={user} alt="usuario"/>
                   </div>
-                  <div className="Options">
-                    <div className="Favorite">
-                      <img src={love} alt="amei" />
-                      <img src={menu} alt="menu" />
+                  <div className="Informations">
+                    <div className="NameAndRating">
+                      <h2>{item.name}</h2>
+                      <Star />
+                      <h3>Quantidade de projetos realizados</h3>
                     </div>
-                    <div className="Services">
-                      <h4>Função</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="Contact">
-                <img src={chat} alt="chat" />
-                <h2>Contatar</h2>
-              </div>
-            </CardProfile>
-            <CardProfile>
-              <div className="Profile">
-                <div className="ProfileImage">
-                  <img src={user} alt="usuario" />
-                </div>
-                <div className="Informations">
-                  <div className="NameAndRating">
-                    <h2>Nome do usúario</h2>
-                    <Star />
-                    <h3>Quantidade de projetos realizados</h3>
-                  </div>
-                  <div className="Options">
-                    <div className="Favorite">
-                      <img src={love} alt="amei" />
-                      <img src={menu} alt="menu" />
-                    </div>
-                    <div className="Services">
-                      <h4>Função</h4>
+                    <div className="Options">
+                      <div className="Favorite">
+                        <img src={love} alt="amei" />
+                        <img src={menu} alt="menu" />
+                      </div>
+                      <div className="Services">
+                        <h4>Função</h4>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="Contact">
-                <img src={chat} alt="chat" />
-                <h2>Contatar</h2>
-              </div>
-            </CardProfile>
-            <CardProfile>
-              <div className="Profile">
-                <div className="ProfileImage">
-                  <img src={user} alt="usuario" />
+                <div className="Contact">
+                  <img src={chat} alt="chat" />
+                  <h2>Contatar</h2>
                 </div>
-                <div className="Informations">
-                  <div className="NameAndRating">
-                    <h2>Nome do usúario</h2>
-                    <Star />
-                    <h3>Quantidade de projetos realizados</h3>
-                  </div>
-                  <div className="Options">
-                    <div className="Favorite">
-                      <img src={love} alt="amei" />
-                      <img src={menu} alt="menu" />
-                    </div>
-                    <div className="Services">
-                      <h4>Função</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="Contact">
-                <img src={chat} alt="chat" />
-                <h2>Contatar</h2>
-              </div>
-            </CardProfile>
-            <CardProfile>
-              <div className="Profile">
-                <div className="ProfileImage">
-                  <img src={user} alt="usuario" />
-                </div>
-                <div className="Informations">
-                  <div className="NameAndRating">
-                    <h2>Nome do usúario</h2>
-                    <Star />
-                    <h3>Quantidade de projetos realizados</h3>
-                  </div>
-                  <div className="Options">
-                    <div className="Favorite">
-                      <img src={love} alt="amei" />
-                      <img src={menu} alt="menu" />
-                    </div>
-                    <div className="Services">
-                      <h4>Função</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="Contact">
-                <img src={chat} alt="chat" />
-                <h2>Contatar</h2>
-              </div>
-            </CardProfile>
-            <CardProfile>
-              <div className="Profile">
-                <div className="ProfileImage">
-                  <img src={user} alt="usuario" />
-                </div>
-                <div className="Informations">
-                  <div className="NameAndRating">
-                    <h2>Nome do usúario</h2>
-                    <Star />
-                    <h3>Quantidade de projetos realizados</h3>
-                  </div>
-                  <div className="Options">
-                    <div className="Favorite">
-                      <img src={love} alt="amei" />
-                      <img src={menu} alt="menu" />
-                    </div>
-                    <div className="Services">
-                      <h4>Função</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="Contact">
-                <img src={chat} alt="chat" />
-                <h2>Contatar</h2>
-              </div>
-            </CardProfile>
+              </CardProfile>
+            ))}
           </ContainerProfile>
         </ContainerFeed>
         <Footer />

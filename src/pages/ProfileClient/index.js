@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+  import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Star from "../../components/Star";
 import location from "../../assets/location.svg";
@@ -6,6 +6,8 @@ import menu from "../../assets/menu.svg";
 import { Container, ProfileContainer, InformationsContainer } from "./styles";
 
 function ProfileClient() {
+  const locationOfServiceProvier = localStorage.getItem("location");
+  const nameProfile = localStorage.getItem("name");
 
   return (
     <Container>
@@ -13,7 +15,7 @@ function ProfileClient() {
       <ProfileContainer>
         <div className="PictureProfile">  
         </div>
-        <h1>Nome de usuario</h1>
+        <h1>{nameProfile}</h1>
       </ProfileContainer>
       <InformationsContainer>
         <div className="Informations">

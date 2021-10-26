@@ -2,21 +2,40 @@ import { Container } from "./styles";
 import { useForm } from "react-hook-form";
 import api from "../../services/api";
 import LayoutLoginClient from "../../components/LayoutLoginClient";
+import {ToastContainer, toast, Zoom, Bounce} from "react-toastify"
+import { useHistory } from "react-router-dom";
+
 
 function LoginClient(props) {
   const { register, handleSubmit } = useForm();
+  const history = useHistory();
 
   const onSubmit = async (data) => {
-    console.log(data);
     try {
       const response = await api.post("/login/client", data);
-      console.log(response.data);
+      const {
+        token,
+        user: {
+          address: { city },
+          client: { name },
+          client:{room}
+        },
+      } = response.data;
+
+      localStorage.setItem("token", token);
+      localStorage.setItem("name", name);
+      localStorage.setItem("location", city);
+      localStorage.setItem("room", room)
+      console.log("logador");
+      history.push("/profile");
     } catch (error) {
-      alert(error.response.data.errors[0].message);
+      toast.error(error.response.data.errors[0].message)
     }
   };
 
   return (
+    <>
+        <ToastContainer/>
     <Container>
       <LayoutLoginClient>
         <div className="ContainerInput">
@@ -50,6 +69,7 @@ function LoginClient(props) {
         </div>
       </LayoutLoginClient>
     </Container>
+    </>
   );
 }
 
