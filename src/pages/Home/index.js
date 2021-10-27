@@ -13,8 +13,19 @@ import hire from "../../assets/hire.svg";
 import money from "../../assets/money.svg";
 import register from "../../assets/register.svg";
 import home from "../../assets/home.svg";
+import { useEffect } from "react";
+import React, { useState } from "react";
+import { listservice } from "../../services";
 
 function Home() {
+  const [service, setService] = useState([]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const data = await listservice.listService();
+    setService(data.services);
+    // console.log(data.services)
+  }, []);
+
   return (
     <>
       <Container>
@@ -70,32 +81,14 @@ function Home() {
         </CardContainer>
         <CardContainerServices>
           <div>
-            <div className="AreaOfServices">
-              <img src={home} alt="Tipo" />
-              <h1>Trabalho</h1>
-            </div>
-            <div className="AreaOfServices">
-              <img src={home} alt="Tipo" />
-              <h1>Trabalho</h1>
-            </div>
-            <div className="AreaOfServices">
-              <img src={home} alt="Tipo" />
-              <h1>Trabalho</h1>
-            </div>
-            <div className="AreaOfServices">
-              <img src={home} alt="Tipo" />
-              <h1>Trabalho</h1>
-            </div>
-            <div className="AreaOfServices">
-              <img src={home} alt="Tipo" />
-              <h1>Trabalho</h1>
-            </div>
-            <div className="AreaOfServices">
-              <img src={home} alt="Tipo" />
-              <h1>Trabalho</h1>
-            </div>
+            {service.map((item) => (
+              <div className="AreaOfServices" key={item.id_service}>
+                <img src={home} alt="Tipo" />
+                <h1>{item.name}</h1>
+              </div>
+            ))}
           </div>
-          <div>
+          {/* <div>
             <div className="AreaOfServices">
               <img src={home} alt="Tipo" />
               <h1>Trabalho</h1>
@@ -120,9 +113,9 @@ function Home() {
               <img src={home} alt="Tipo" />
               <h1>Trabalho</h1>
             </div>
-          </div>
+          </div> */}
         </CardContainerServices>
-        <Footer/>
+        <Footer />
       </Container>
     </>
   );

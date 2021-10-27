@@ -35,13 +35,13 @@ function Profile() {
   };
 
   const [service, setService] = useState([]);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect(async ()=> {
-      const data = await listservice.listService();
-      setService(data.services);
-      // console.log(data.services)
-    }, [])
- 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const data = await listservice.listService();
+    setService(data.services);
+    // console.log(data.services)
+  }, []);
+
   return (
     <Container>
       <Header />
@@ -132,10 +132,12 @@ function Profile() {
               <img src={bauenBlackLogo} alt="logo" />
               <h3>Escolha o tipo de serviço que deseja prestar</h3>
               <div className="AreaButton">
-                <select  className="OptionsServices">
-                 {service?.map((item)=>(
-                  <option value="Op3" key={item.id_service}>{item.name}</option> 
-                 ))}
+                <select className="OptionsServices">
+                  {service?.map((item) => (
+                    <option value="Op3" key={item.id_service}>
+                      {item.name}
+                    </option>
+                  ))}
                 </select>
                 <button
                   className="Next"

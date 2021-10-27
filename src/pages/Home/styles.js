@@ -103,7 +103,7 @@ export const CardContainer = styled.div`
 export const CardContainerServices = styled.div`
   display: flex;
   width: 100vw;
-  height: 330px;
+  height: 400px;
   border-bottom: solid 0.5px #dadada;
   align-items: center;
   justify-content: center;
@@ -112,21 +112,26 @@ export const CardContainerServices = styled.div`
   div {
     flex-direction: row;
     display: flex;
-    width: 100vw;
-    height: 150px;
+    width: 1100px;
+    height: 350px;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    
     .AreaOfServices {
       font-size: 13px;
       flex-direction: column;
-      width: 130px;
+      width: 150px;
       height: 130px;
       background-color: black;
       margin-left: 20px;
       background-color: white;
       border-radius:5px;
+      margin-bottom: 15px;
       padding: 5px;
       box-shadow: 0 0 0.5em #48494a;
+    
       /* transition: 0.25s; */
       transition: 0.3s ease-out;
 
