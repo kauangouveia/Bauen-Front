@@ -17,19 +17,21 @@ function Login(props) {
   const onSubmit = async (data) => {
     try {
       const response = await api.post("/login/service-provider", data);
-
       const {
         token,
         user: {
           address: { city },
           serviceProvider: { name },
-          serviceProvider:{room}
+          serviceProvider:{room},
+          serviceProvider:{id}
         },
       } = response.data;
-
+      console.log(id)
+      
       localStorage.setItem("token", token);
       localStorage.setItem("name", name);
       localStorage.setItem("location", city);
+      localStorage.setItem("id", id);
       localStorage.setItem("room", room);
 
 
