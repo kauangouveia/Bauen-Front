@@ -131,6 +131,7 @@ export const PostButtons = styled.div`
   .Cancel{
     width: 155px;
     height: 55px;
+    cursor: pointer;
     font-size: 20px;
     font-weight: bold;
     color: #074EAD;
@@ -140,26 +141,15 @@ export const PostButtons = styled.div`
     background-color: white;
   }
 
-  .Cancel:hover{
-    cursor: pointer;
-    width: 156px;
-    height: 56px;
-  }
-
   .Confirm{
     width: 155px;
     height: 55px;
+    cursor: pointer;
     font-size: 20px;
     font-weight: bold;
     color: white;
     border: 2px solid #074EAD;
     border-radius: 5px;
     background-color: #074EAD;
-  }
-
-  .Confirm:hover{
-    cursor: pointer;
-    width: 156px;
-    height: 56px;
   }
 `;
