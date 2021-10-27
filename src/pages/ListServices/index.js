@@ -20,7 +20,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { serviceProvider } from "../../services";
 
-function ListServices() {
+function ListServicesProvider() {
   const [serviceProviders, setServiceProviders] = useState([]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -101,4 +101,4 @@ function ListServices() {
   );
 }
 
-export default ListServices;
+export default ListServicesProvider;

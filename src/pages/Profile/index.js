@@ -16,6 +16,8 @@ import {
   InformationsContainer,
   ModalContainer,
 } from "./styles";
+import { listservice } from "../../services";
+import { useEffect } from "react";
 
 function Profile() {
   const history = useHistory();
@@ -32,6 +34,14 @@ function Profile() {
     history.push("/chat");
   };
 
+  const [service, setService] = useState([]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(async ()=> {
+      const data = await listservice.listService();
+      setService(data.services);
+      // console.log(data.services)
+    }, [])
+ 
   return (
     <Container>
       <Header />
@@ -73,7 +83,17 @@ function Profile() {
               <h2>Perfil incompleto!</h2>
               <h3>Por favor, complete seu cadastro para continuar</h3>
               <div className="AreaButton">
-                <button className="Next"  onClick={()=> setIsOpenModalImageProfile(true, setIsOpenModalWarning(false))}>Avançar {">"}</button>
+                <button
+                  className="Next"
+                  onClick={() =>
+                    setIsOpenModalImageProfile(
+                      true,
+                      setIsOpenModalWarning(false)
+                    )
+                  }
+                >
+                  Avançar {">"}
+                </button>
               </div>
             </div>
           )}
@@ -83,7 +103,7 @@ function Profile() {
               <img src={imgProfile} alt="profile" />
               <h3>Primeiro, adicione uma foto para reconhecerem você!</h3>
               <div className="AreaButton">
-                <input type="file">Escolher foto de perfil</input>
+                <button>Escolher foto de perfil</button>
                 <button
                   className="Next"
                   onClick={() =>
@@ -112,19 +132,10 @@ function Profile() {
               <img src={bauenBlackLogo} alt="logo" />
               <h3>Escolha o tipo de serviço que deseja prestar</h3>
               <div className="AreaButton">
-                <select name="services" className="OptionsServices">
-                  <option value="Op1">Opção 01</option>
-                  <option value="Op2">Opção 02</option>
-                  <option value="Op3">Opção 03</option>
-                  <option value="Op4">Opção 04</option>
-                  <option value="Op5">Opção 05</option>
-                  <option value="Op6">Opção 06</option>
-                  <option value="Op7">Opção 07</option>
-                  <option value="Op8">Opção 08</option>
-                  <option value="Op9">Opção 09</option>
-                  <option value="Op10">Opção 10</option>
-                  <option value="Op11">Opção 11</option>
-                  <option value="Op12">Opção 12</option>
+                <select  className="OptionsServices">
+                 {service?.map((item)=>(
+                  <option value="Op3" key={item.id_service}>{item.name}</option> 
+                 ))}
                 </select>
                 <button
                   className="Next"
@@ -137,7 +148,6 @@ function Profile() {
           )}
         </ModalContainer>
       )}
-
     </Container>
   );
 }

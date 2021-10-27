@@ -187,7 +187,7 @@ export const CardProfile = styled.div`
 
       .Options{
         width: 150px;
-        height: 150px;
+        height: 120px;
         display: flex;
         flex-direction:column;
         

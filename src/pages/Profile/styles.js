@@ -115,7 +115,7 @@ export const InformationsContainer = styled.div`
       }
     }
   }
-`;
+`;  
 
 export const ModalContainer = styled.div`
   width: 100vw;
@@ -157,7 +157,7 @@ export const ModalContainer = styled.div`
       height: 90px;
       margin-bottom: 10px;
     }
-   
+
     h2{
       font-size: 25px;
       color: #00277D;
@@ -327,7 +327,7 @@ export const ModalContainer = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 120px;
+      width: auto;
       min-height: 50px;
       margin-right: 50px;
       padding: 5px;
@@ -378,4 +378,3 @@ export const ModalContainer = styled.div`
     }
   }
 `;
-

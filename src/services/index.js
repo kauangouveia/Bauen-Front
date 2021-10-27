@@ -21,3 +21,10 @@ export const serviceProvider = {
     return result.data;
   }
 };
+
+export const listservice ={
+  listService : async()=>{
+    const result = await api.get("/service");
+    return result.data
+  }
+}
