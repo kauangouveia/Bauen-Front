@@ -17,7 +17,7 @@ function ProfileClient() {
             <img src={locationWhite} alt="test" />
             Algum lugar{" "}
           </h2>{" "}
-          <h1>Nome do usuario</h1>
+          <h1>{nameProfile}</h1>
           <div className="chat"> <img src={chatlogobauen} alt="test" /></div>
 
         </div>

@@ -2,7 +2,7 @@ import { Container } from "./styles";
 import { useForm } from "react-hook-form";
 import api from "../../services/api";
 import LayoutLoginClient from "../../components/LayoutLoginClient";
-import {ToastContainer, toast, Zoom, Bounce} from "react-toastify"
+import {ToastContainer, toast} from "react-toastify"
 import { useHistory } from "react-router-dom";
 
 

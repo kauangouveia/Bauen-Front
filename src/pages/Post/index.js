@@ -9,6 +9,7 @@ import React, { useState } from "react";
 function Post(){
     const profileName = localStorage.getItem("name")
     const [service, setService] = useState([]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(async () => {
         const data = await listservice.listService();
         setService(data.services);

@@ -22,7 +22,6 @@ import { useEffect } from "react";
 function Profile() {
   const history = useHistory();
 
-  const [isOpen, setIsOpen] = useState(true);
   const [isModalVisible, setIsModalVisible] = useState(true);
   const [isOpenModalWarning, setIsOpenModalWarning] = useState(true);
   const [isOpenModalImageProfile, setIsOpenModalImageProfile] = useState(false);
@@ -39,7 +38,7 @@ function Profile() {
   useEffect(async () => {
     const data = await listservice.listService();
     setService(data.services);
-    // console.log(data.services)
+
   }, []);
 
   return (
