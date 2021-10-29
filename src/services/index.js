@@ -28,3 +28,11 @@ export const listservice ={
     return result.data
   }
 }
+
+export const sendPhoto ={
+  sendPhoto : async () =>{
+    const result = await api.post("/photo-profile/",{ headers: { 'Content-type': 'multipart/form-data' }})
+    console.log(result.data)
+    return result.data;
+  }
+}

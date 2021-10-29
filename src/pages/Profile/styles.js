@@ -200,8 +200,8 @@ export const ModalContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 570px;
-    height: 310px;
+    width: 670px;
+    height: 510px;
     border: 2px solid #00277D;
     border-radius: 10px;
     background-color: white;
@@ -219,9 +219,11 @@ export const ModalContainer = styled.div`
     }
     
     img{
-      width: 130px;
-      height: 130px;
-      margin-bottom: 10px;
+      width: 350px;
+      height: 300px;
+      margin-bottom: 10px;  
+      border-radius: 100%;
+      border: 2px solid #00277D;
     }
 
     h2{
@@ -260,6 +262,21 @@ export const ModalContainer = styled.div`
     }
 
     button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      width: 250px;
+      height: 50px;
+      background-color: #00277D;
+      border: 0px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    input{
       display: flex;
       align-items: center;
       justify-content: center;

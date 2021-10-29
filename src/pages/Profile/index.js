@@ -16,19 +16,26 @@ import {
   InformationsContainer,
   ModalContainer,
 } from "./styles";
-import { listservice } from "../../services";
+import { listservice, sendPhoto } from "../../services";
 import { useEffect } from "react";
+import { useRef } from "react";
 
 function Profile() {
-  const history = useHistory();
+  const imgRef = useRef();
+  const [image, setImage] = useState(null);
+  const handleFile = (e) => {
+    setImage(e.target.files[0]);
+    imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+  };
 
+  const history = useHistory();
   const [isModalVisible, setIsModalVisible] = useState(true);
   const [isOpenModalWarning, setIsOpenModalWarning] = useState(true);
   const [isOpenModalImageProfile, setIsOpenModalImageProfile] = useState(false);
   const [isOpenModalService, setIsOpenModalService] = useState(false);
-
   const locationOfServiceProvier = localStorage.getItem("location");
   const nameProfile = localStorage.getItem("name");
+
   const joinRoom = () => {
     history.push("/chat");
   };
@@ -38,8 +45,20 @@ function Profile() {
   useEffect(async () => {
     const data = await listservice.listService();
     setService(data.services);
-
   }, []);
+
+  const onSubmit = async (e) => {
+    // e.preventDefault();
+    const data = new FormData();
+    data.append("photoProfile", image);
+    try {
+      const response = await sendPhoto.sendPhoto();
+
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Container>
@@ -99,21 +118,24 @@ function Profile() {
 
           {isOpenModalImageProfile && (
             <div className="ModalImageProfile">
-              <img src={imgProfile} alt="profile" />
+              <img ref={imgRef} alt="profile" />
               <h3>Primeiro, adicione uma foto para reconhecerem você!</h3>
               <div className="AreaButton">
-                <button>Escolher foto de perfil</button>
-                <button
-                  className="Next"
-                  onClick={() =>
-                    setIsOpenModalService(
-                      true,
-                      setIsOpenModalImageProfile(false)
-                    )
-                  }
-                >
-                  Avançar {">"}
-                </button>
+                <form onSubmit={onSubmit()}>
+                  <input type="file" onChange={handleFile} />
+                  <button
+                    className="Next"
+                    onClick={() =>
+                      setIsOpenModalService(
+                        true,
+                        setIsOpenModalImageProfile(false)
+                      )
+                    }
+                    type="submit"
+                  >
+                    Avançar {">"}
+                  </button>
+                </form>
               </div>
             </div>
           )}

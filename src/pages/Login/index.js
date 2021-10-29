@@ -16,6 +16,8 @@ function Login(props) {
   const onSubmit = async (data) => {
     try {
       const response = await api.post("/login/service-provider", data);
+      
+      
       const {
         token,
         user: {
@@ -25,21 +27,22 @@ function Login(props) {
           serviceProvider:{id}
         },
       } = response.data;
-      console.log(id)
       
       localStorage.setItem("token", token);
       localStorage.setItem("name", name);
       localStorage.setItem("location", city);
       localStorage.setItem("id", id);
       localStorage.setItem("room", room);
-
-
       history.push("/profile");
+
+
+
     } catch (error) {
       toast.error(error.response.data.errors[0].message)
-      // alert();
     }
   };
+
+  
 
   return (
     <>
