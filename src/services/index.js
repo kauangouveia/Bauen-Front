@@ -30,8 +30,10 @@ export const listservice ={
 }
 
 export const sendPhoto ={
-  sendPhoto : async () =>{
-    const result = await api.post("/photo-profile/",{ headers: { 'Content-type': 'multipart/form-data' }})
+  sendPhoto : async (data) =>{
+    const token = localStorage.getItem('token');
+    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    const result = await api.post("/photo-profile/", data,{ headers: { 'Content-type': 'multipart/form-data' }})
     console.log(result.data)
     return result.data;
   }

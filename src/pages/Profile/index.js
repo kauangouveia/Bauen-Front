@@ -21,44 +21,43 @@ import { useEffect } from "react";
 import { useRef } from "react";
 
 function Profile() {
-  const imgRef = useRef();
-  const [image, setImage] = useState(null);
-  const handleFile = (e) => {
-    setImage(e.target.files[0]);
-    imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+  const history = useHistory();
+  const joinRoom = () => {
+    history.push("/chat");
   };
 
-  const history = useHistory();
+  const imgRef = useRef();
+  const [image, setImage] = useState(null);
+
+  const handleFile = async (e) => {
+    console.log("test");
+    setImage(e.target.files[0]);
+    imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+
+    const data = new FormData();
+    data.append("photoProfile", e.target.files[0]);
+    try {
+      const response = await sendPhoto.sendPhoto(data);
+ 
+    } catch (error) {
+
+    }
+  };
+
   const [isModalVisible, setIsModalVisible] = useState(true);
   const [isOpenModalWarning, setIsOpenModalWarning] = useState(true);
   const [isOpenModalImageProfile, setIsOpenModalImageProfile] = useState(false);
   const [isOpenModalService, setIsOpenModalService] = useState(false);
   const locationOfServiceProvier = localStorage.getItem("location");
   const nameProfile = localStorage.getItem("name");
-
-  const joinRoom = () => {
-    history.push("/chat");
-  };
-
+  const idOfProvidfer = localStorage.getItem("id");
+  console.log(idOfProvidfer);
   const [service, setService] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const data = await listservice.listService();
     setService(data.services);
   }, []);
-
-  const onSubmit = async (e) => {
-    // e.preventDefault();
-    const data = new FormData();
-    data.append("photoProfile", image);
-    try {
-      const response = await sendPhoto.sendPhoto();
-
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <Container>
@@ -103,7 +102,7 @@ function Profile() {
               <div className="AreaButton">
                 <button
                   className="Next"
-                  onClick={() =>
+                  onClick={(event) =>
                     setIsOpenModalImageProfile(
                       true,
                       setIsOpenModalWarning(false)
@@ -121,21 +120,27 @@ function Profile() {
               <img ref={imgRef} alt="profile" />
               <h3>Primeiro, adicione uma foto para reconhecerem você!</h3>
               <div className="AreaButton">
-                <form onSubmit={onSubmit()}>
-                  <input type="file" onChange={handleFile} />
-                  <button
-                    className="Next"
-                    onClick={() =>
-                      setIsOpenModalService(
-                        true,
-                        setIsOpenModalImageProfile(false)
-                      )
-                    }
-                    type="submit"
-                  >
-                    Avançar {">"}
-                  </button>
-                </form>
+                <label for="file">Adicionar uma foto</label>
+                <input
+                  type="file"
+                  onChange={(event) => {
+                    handleFile(event);
+                  }}
+                  placeholder="Adicione uma imagem"
+                  name="file"
+                  id='file'
+                />
+                <button
+                  className="Next"
+                  onClick={(event) => {
+                    setIsOpenModalService(
+                      true,
+                      setIsOpenModalImageProfile(false)
+                    );
+                  }}
+                >
+                  Avançar {">"}
+                </button>
               </div>
             </div>
           )}

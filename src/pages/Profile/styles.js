@@ -19,7 +19,7 @@ export const ProfileContainer = styled.div`
   background-color: #074ead;
   flex-direction: row-reverse;
   flex-direction: column;
-  color:white;
+  color: white;
 
   .PictureProfile {
     flex-direction: column-reverse;
@@ -34,10 +34,9 @@ export const ProfileContainer = styled.div`
     background-size: cover;
     background-position: center;
     border: solid 4px #ff5c00;
-    align-items: flex-end;  
+    align-items: flex-end;
 
     .PictureAward {
-      
       height: 150px;
       width: 90px;
       background-image: url(${reward});
@@ -45,7 +44,6 @@ export const ProfileContainer = styled.div`
       background-size: cover;
       background-position: center;
       position: absolute;
-      
     }
   }
 `;
@@ -54,7 +52,7 @@ export const InformationsContainer = styled.div`
   display: flex;
   width: 100vw;
   height: 120px;
-  overflow-y:hidden;
+  overflow-y: hidden;
   justify-content: center;
   font-family: "Baloo 2";
   .Informations {
@@ -73,7 +71,7 @@ export const InformationsContainer = styled.div`
       h2 {
         text-align: center;
         font-family: "Baloo 2";
-        color: #00277D;
+        color: #00277d;
         img {
           height: 30px;
           width: 30px;
@@ -82,7 +80,7 @@ export const InformationsContainer = styled.div`
       p {
         text-align: center;
         font-family: "Baloo 2";
-        color: #00277D;
+        color: #00277d;
       }
     }
     .Stars {
@@ -99,7 +97,7 @@ export const InformationsContainer = styled.div`
       width: 400px;
       justify-content: center;
       align-items: center;
-      
+
       font-family: "Baloo 2";
       button {
         width: 300px;
@@ -107,20 +105,19 @@ export const InformationsContainer = styled.div`
         border-radius: 5px;
         border: 0px;
         color: white;
-        background-color:#074ead;
+        background-color: #074ead;
         box-shadow: 0 0 0.5em gray;
         cursor: pointer;
         font-family: "Baloo 2";
- 
       }
     }
   }
-`;  
+`;
 
 export const ModalContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0px;
   left: 0px;
@@ -129,48 +126,48 @@ export const ModalContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  .ModalWarning{
+  .ModalWarning {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 550px;
     height: 290px;
-    border: 2px solid #00277D;
+    border: 2px solid #00277d;
     border-radius: 10px;
     background-color: white;
     z-index: 1998;
 
-    @keyframes ModalWarning{
-      from{
+    @keyframes ModalWarning {
+      from {
         opacity: 0;
         transform: translate3d(0, -60px, 0);
       }
-      to{
+      to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
       }
     }
-    
-    img{
+
+    img {
       width: 90px;
       height: 90px;
       margin-bottom: 10px;
     }
 
-    h2{
+    h2 {
       font-size: 25px;
-      color: #00277D;
+      color: #00277d;
       margin-bottom: 15px;
     }
 
-    h3{
+    h3 {
       font-size: 20px;
       font-weight: normal;
       margin-bottom: 15px;
     }
 
-    .AreaButton{
+    .AreaButton {
       display: flex;
       justify-content: flex-end;
       width: 100%;
@@ -178,14 +175,14 @@ export const ModalContainer = styled.div`
       margin: 5px;
     }
 
-    .Next{
+    .Next {
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 25px;
       width: 150px;
       height: 50px;
-      background-color: #00277D;
+      background-color: #00277d;
       border: 0px;
       border-radius: 5px;
       font-size: 20px;
@@ -195,50 +192,50 @@ export const ModalContainer = styled.div`
     }
   }
 
-  .ModalImageProfile{
+  .ModalImageProfile {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 670px;
-    height: 510px;
-    border: 2px solid #00277D;
+    width: 700px;
+    height: 600px;
+    border: 2px solid #00277d;
     border-radius: 10px;
     background-color: white;
     z-index: 1999;
 
-    @keyframes ModalImageProfile{
-      from{
+    @keyframes ModalImageProfile {
+      from {
         opacity: 0;
         transform: translate3d(0, -60px, 0);
       }
-      to{
+      to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
       }
     }
-    
-    img{
-      width: 350px;
-      height: 300px;
-      margin-bottom: 10px;  
+
+    img {
+      width: 400px;
+      height: 400px;
+      margin-bottom: 10px;
       border-radius: 100%;
-      border: 2px solid #00277D;
+      border: 2px solid #00277d;
     }
 
-    h2{
+    h2 {
       font-size: 25px;
-      color: #00277D;
+      color: #00277d;
       margin-bottom: 15px;
     }
 
-    h3{
+    h3 {
       font-size: 20px;
       font-weight: normal;
       margin-bottom: 15px;
     }
 
-    .AreaButton{
+    .AreaButton {
       display: flex;
       justify-content: center;
       width: 100%;
@@ -246,13 +243,13 @@ export const ModalContainer = styled.div`
       margin: 5px;
     }
 
-    .Next{
+    .Next {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 150px;
       height: 50px;
-      background-color: #00277D;
+      background-color: #00277d;
       border: 0px;
       border-radius: 5px;
       font-size: 20px;
@@ -261,14 +258,14 @@ export const ModalContainer = styled.div`
       cursor: pointer;
     }
 
-    button{
+    button {
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 10px;
       width: 250px;
       height: 50px;
-      background-color: #00277D;
+      background-color: #00277d;
       border: 0px;
       border-radius: 5px;
       font-size: 20px;
@@ -276,14 +273,19 @@ export const ModalContainer = styled.div`
       color: white;
       cursor: pointer;
     }
-    input{
+    input[type="file"] {
+
+      display: none;
+    }
+    label {
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 10px;
       width: 250px;
       height: 50px;
-      background-color: #00277D;
+      background-color: #00277d;
+
       border: 0px;
       border-radius: 5px;
       font-size: 20px;
@@ -293,46 +295,46 @@ export const ModalContainer = styled.div`
     }
   }
 
-  .ModalService{
+  .ModalService {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 560px;
     height: 330px;
-    border: 2px solid #00277D;
+    border: 2px solid #00277d;
     border-radius: 10px;
     background-color: white;
 
-    @keyframes ModalAviso{
-      from{
+    @keyframes ModalAviso {
+      from {
         opacity: 0;
         transform: translate3d(0, -60px, 0);
       }
-      to{
+      to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
       }
     }
-    
-    img{
+
+    img {
       width: 140px;
       height: 130px;
     }
 
-    h2{
+    h2 {
       font-size: 25px;
-      color: #00277D;
+      color: #00277d;
       margin-bottom: 15px;
     }
 
-    h3{
+    h3 {
       font-size: 20px;
       font-weight: normal;
       margin-bottom: 15px;
     }
 
-    .AreaButton{
+    .AreaButton {
       display: flex;
       justify-content: center;
       width: 100%;
@@ -340,7 +342,7 @@ export const ModalContainer = styled.div`
       margin-bottom: 25px;
     }
 
-    select{
+    select {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -349,18 +351,18 @@ export const ModalContainer = styled.div`
       margin-right: 50px;
       padding: 5px;
       background-color: white;
-      border: 2px solid #DADADA;
+      border: 2px solid #dadada;
       border-radius: 5px;
       font-size: 20px;
       font-weight: bold;
-      color: #074EAD;
+      color: #074ead;
       cursor: pointer;
     }
 
-    .Close{
+    .Close {
       display: flex;
       align-items: start;
-      color: #00277D;
+      color: #00277d;
       padding-left: 30px;
       width: 100%;
       height: 65px;
@@ -368,7 +370,7 @@ export const ModalContainer = styled.div`
       background: transparent;
     }
 
-    .Close h2{
+    .Close h2 {
       display: flex;
       width: auto;
       height: auto;
@@ -379,13 +381,13 @@ export const ModalContainer = styled.div`
       cursor: pointer;
     }
 
-    .Next{
+    .Next {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 150px;
       height: 50px;
-      background-color: #00277D;
+      background-color: #00277d;
       border: 0px;
       border-radius: 5px;
       font-size: 20px;
