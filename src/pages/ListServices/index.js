@@ -21,14 +21,17 @@ import { useState } from "react";
 import { serviceProvider } from "../../services";
 
 function ListServicesProvider() {
-  const [serviceProviders, setServiceProviders] = useState([]);
 
+  const [serviceProviders, setServiceProviders] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const data = await serviceProvider.listServiceProvider();
     setServiceProviders(data.serviceProviders);
     console.log(data.serviceProviders);
   }, []);
+
+  
+
 
   return (
     <>
@@ -68,7 +71,7 @@ function ListServicesProvider() {
               <CardProfile key={item.id_service_provider}>
                 <div className="Profile">
                   <div className="ProfileImage">
-                    <img src={user} alt="usuario"/>
+                    <img src={item.photo} alt="usuario"/>
                   </div>
                   <div className="Informations">
                     <div className="NameAndRating">

@@ -34,7 +34,17 @@ export const sendPhoto ={
     const token = localStorage.getItem('token');
     api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     const result = await api.post("/photo-profile/", data,{ headers: { 'Content-type': 'multipart/form-data' }})
-    console.log(result.data)
+    // console.log(result.data)
     return result.data;
+  }
+}
+
+export const findPhoto = {
+  findPhoto : async()=>{
+    const token = localStorage.getItem('token');
+    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    const result = await api.get("/informations")
+    // console.log(result.data)
+    return result.data
   }
 }

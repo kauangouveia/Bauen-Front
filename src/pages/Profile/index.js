@@ -5,7 +5,6 @@ import SliderPortifolio from "../../components/SliderPortifolio";
 import SliderComents from "../../components/SliderComents";
 import location from "../../assets/location.svg";
 import warning from "../../assets/warning.svg";
-import imgProfile from "../../assets/imgProfile.png";
 import menu from "../../assets/menu.svg";
 import bauenBlackLogo from "../../assets/bauenBlackLogo.png";
 import { useHistory } from "react-router-dom";
@@ -16,7 +15,7 @@ import {
   InformationsContainer,
   ModalContainer,
 } from "./styles";
-import { listservice, sendPhoto } from "../../services";
+import { listservice, sendPhoto, findPhoto } from "../../services";
 import { useEffect } from "react";
 import { useRef } from "react";
 
@@ -30,7 +29,6 @@ function Profile() {
   const [image, setImage] = useState(null);
 
   const handleFile = async (e) => {
-    console.log("test");
     setImage(e.target.files[0]);
     imgRef.current.src = URL.createObjectURL(e.target.files[0]);
 
@@ -38,11 +36,16 @@ function Profile() {
     data.append("photoProfile", e.target.files[0]);
     try {
       const response = await sendPhoto.sendPhoto(data);
- 
-    } catch (error) {
-
-    }
+      // console.log(response)
+    } catch (error) {}
   };
+
+  const [imageProfile, setImageProfile] = useState([]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const data = await findPhoto.findPhoto();
+    setImageProfile(data.photo);
+  }, []);
 
   const [isModalVisible, setIsModalVisible] = useState(true);
   const [isOpenModalWarning, setIsOpenModalWarning] = useState(true);
@@ -50,8 +53,7 @@ function Profile() {
   const [isOpenModalService, setIsOpenModalService] = useState(false);
   const locationOfServiceProvier = localStorage.getItem("location");
   const nameProfile = localStorage.getItem("name");
-  const idOfProvidfer = localStorage.getItem("id");
-  console.log(idOfProvidfer);
+
   const [service, setService] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -64,6 +66,7 @@ function Profile() {
       <Header />
       <ProfileContainer>
         <div className="PictureProfile">
+          <img src={imageProfile} alt="Foto de perfil" />
           <div className="PictureAward"></div>
         </div>
         <h1>{nameProfile}</h1>
@@ -128,7 +131,7 @@ function Profile() {
                   }}
                   placeholder="Adicione uma imagem"
                   name="file"
-                  id='file'
+                  id="file"
                 />
                 <button
                   className="Next"

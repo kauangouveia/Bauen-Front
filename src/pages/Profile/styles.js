@@ -29,12 +29,13 @@ export const ProfileContainer = styled.div`
     width: 250px;
     background-color: #dadada;
     border-radius: 100%;
-    background-image: url(${useDefault});
-    background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
     border: solid 4px #ff5c00;
     align-items: flex-end;
+    img{
+      width: 100%;
+      height: 100%;
+    }
 
     .PictureAward {
       height: 150px;
