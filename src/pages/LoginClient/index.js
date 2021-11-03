@@ -27,7 +27,7 @@ function LoginClient(props) {
       localStorage.setItem("location", city);
       localStorage.setItem("room", room)
       console.log("logador");
-      history.push("/profile");
+      history.push("/profileclient");
     } catch (error) {
       toast.error(error.response.data.errors[0].message)
     }
