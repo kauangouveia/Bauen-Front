@@ -48,3 +48,12 @@ export const findPhoto = {
     return result.data
   }
 }
+
+export const sendTypeOfService = {
+  typeService : async(service)=>{
+    const token = localStorage.getItem('token');
+    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    const result = await api.post("/sendService",service)
+    return result.data
+  }
+}

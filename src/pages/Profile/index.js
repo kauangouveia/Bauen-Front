@@ -15,7 +15,7 @@ import {
   InformationsContainer,
   ModalContainer,
 } from "./styles";
-import { listservice, sendPhoto, findPhoto } from "../../services";
+import { listservice, sendPhoto, findPhoto, sendTypeOfService } from "../../services";
 import { useEffect } from "react";
 import { useRef } from "react";
 
@@ -31,15 +31,15 @@ function Profile() {
   const handleFile = async (e) => {
     setImage(e.target.files[0]);
     imgRef.current.src = URL.createObjectURL(e.target.files[0]);
-
+  };
+  const photoProfile = async() =>{
     const data = new FormData();
-    data.append("photoProfile", e.target.files[0]);
+    data.append("photoProfile", image);
     try {
       const response = await sendPhoto.sendPhoto(data);
-      // console.log(response)
-    } catch (error) {}
-  };
 
+    } catch (error) {}
+  }
   const [imageProfile, setImageProfile] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -61,6 +61,20 @@ function Profile() {
     setService(data.services);
   }, []);
 
+
+  const [typeService, setTypeService] = useState("")
+  const handleChange = (e) => {
+    setTypeService(e.target.value)
+  };
+
+  const envitTypeService = async (photo)=>{
+    try {
+      console.log(typeService);
+      sendTypeOfService.typeService(photo)
+    } catch (error) {
+    console.log("errei")
+    }
+  }
   return (
     <Container>
       <Header />
@@ -138,7 +152,7 @@ function Profile() {
                   onClick={(event) => {
                     setIsOpenModalService(
                       true,
-                      setIsOpenModalImageProfile(false)
+                      setIsOpenModalImageProfile(false), photoProfile()
                     );
                   }}
                 >
@@ -161,16 +175,16 @@ function Profile() {
               <img src={bauenBlackLogo} alt="logo" />
               <h3>Escolha o tipo de serviço que deseja prestar</h3>
               <div className="AreaButton">
-                <select className="OptionsServices">
+                <select className="OptionsServices" onChange={handleChange}>
                   {service?.map((item) => (
-                    <option value="Op3" key={item.id_service}>
+                    <option value={item.name} key={item.id_service}>
                       {item.name}
                     </option>
                   ))}
                 </select>
                 <button
                   className="Next"
-                  onClick={() => setIsModalVisible(false)}
+                  onClick={() => setIsModalVisible(false, envitTypeService({service: typeService}))}
                 >
                   Finalizar
                 </button>
