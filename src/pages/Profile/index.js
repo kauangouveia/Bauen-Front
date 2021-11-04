@@ -21,6 +21,7 @@ import {
   findPhoto,
   sendTypeOfService,
   checkingPhotoModal,
+  showingServices
 } from "../../services";
 import { useEffect } from "react";
 import { useRef } from "react";
@@ -32,21 +33,14 @@ function Profile() {
   useEffect(async () => {
     try {
       const data = await checkingPhotoModal.checking();
-      console.log(data)
-      if (data.message ===  "Contem foto no perfil") {
-        setIsModalVisible(
-          false)
+      console.log(data);
+      if (data.message === "Contem foto no perfil") {
+        setIsModalVisible(false);
       } else {
-        setIsModalVisible(
-          true)
+        setIsModalVisible(true);
       }
-    } catch (error) {
-      
-    }
+    } catch (error) {}
   }, []);
-
-
-
 
   const history = useHistory();
   const joinRoom = () => {
@@ -110,6 +104,14 @@ function Profile() {
       console.log("errei");
     }
   };
+
+  const [ProviderType,setProviderType ] = useState([]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const data = await showingServices.findServices() ;
+    setProviderType(data.nameService)
+  }, []);
+console.log(ProviderType)
   return (
     <Container>
       <Header />
@@ -139,7 +141,13 @@ function Profile() {
             <img src={menu} alt="menu" />
           </div>
         </div>
+        <div className="services">
+          <div className="servicesType">
+            <div className="Card"><h3>{ProviderType}</h3></div>
+          </div>
+        </div>
       </InformationsContainer>
+
       <SliderPortifolio />
       <SliderComents />
       <Footer />
@@ -185,11 +193,7 @@ function Profile() {
                 <button
                   className="Next"
                   onClick={(event) => {
-                    // setIsOpenModalService(
-                    //   true,
-                    //   setIsOpenModalImageProfile(false),
-                    //   );
-                    photoProfile( );
+                    photoProfile();
                   }}
                 >
                   Avançar {">"}

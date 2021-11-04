@@ -32,7 +32,7 @@ export const ProfileContainer = styled.div`
     background-position: center;
     border: solid 4px #ff5c00;
     align-items: flex-end;
-    img{
+    img {
       width: 100%;
       height: 100%;
     }
@@ -52,17 +52,48 @@ export const ProfileContainer = styled.div`
 export const InformationsContainer = styled.div`
   display: flex;
   width: 100vw;
-  height: 120px;
+  height: 180px;
   overflow-y: hidden;
   justify-content: center;
   font-family: "Baloo 2";
+  flex-direction: column;
+  align-items: center;
+  .services {
+    width: 1360px;
+    height: 55px;
+
+    .servicesType {
+      min-width: 1000px;
+      max-width: auto;
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      display: flex;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      overflow-y: hidden;
+      .Card {
+        width: 150px;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color:#074ead;
+        margin-left: 10px;
+        border-radius:10px;
+        h3{
+          color: white;
+        }
+      }
+    }
+  }
   .Informations {
     display: flex;
     height: 100px;
     width: 1300px;
     justify-content: center;
-    background-color: white;
-
     .ProfilesText {
       height: auto;
       width: 400px;
@@ -275,7 +306,6 @@ export const ModalContainer = styled.div`
       cursor: pointer;
     }
     input[type="file"] {
-
       display: none;
     }
     label {

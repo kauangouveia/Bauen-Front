@@ -64,4 +64,14 @@ export const checkingPhotoModal = {
     const result = await api.get("/chekingInformations", data)
     return result.data
   }
+
+ 
+}
+export const showingServices =  {
+    findServices:async(data)=>{
+      const token = localStorage.getItem('token');
+      api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      const result = await api.get("/servicesTypes", data)
+      return result.data
+    }
 }
