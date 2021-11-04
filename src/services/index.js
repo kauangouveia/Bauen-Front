@@ -57,3 +57,11 @@ export const sendTypeOfService = {
     return result.data
   }
 }
+export const checkingPhotoModal = {
+  checking:async(data)=>{
+    const token = localStorage.getItem('token');
+    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    const result = await api.get("/chekingInformations", data)
+    return result.data
+  }
+}

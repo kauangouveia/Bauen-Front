@@ -15,11 +15,39 @@ import {
   InformationsContainer,
   ModalContainer,
 } from "./styles";
-import { listservice, sendPhoto, findPhoto, sendTypeOfService } from "../../services";
+import {
+  listservice,
+  sendPhoto,
+  findPhoto,
+  sendTypeOfService,
+  checkingPhotoModal,
+} from "../../services";
 import { useEffect } from "react";
 import { useRef } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Profile() {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    try {
+      const data = await checkingPhotoModal.checking();
+      console.log(data)
+      if (data.message ===  "Contem foto no perfil") {
+        setIsModalVisible(
+          false)
+      } else {
+        setIsModalVisible(
+          true)
+      }
+    } catch (error) {
+      
+    }
+  }, []);
+
+
+
+
   const history = useHistory();
   const joinRoom = () => {
     history.push("/chat");
@@ -27,19 +55,27 @@ function Profile() {
 
   const imgRef = useRef();
   const [image, setImage] = useState(null);
-
   const handleFile = async (e) => {
     setImage(e.target.files[0]);
     imgRef.current.src = URL.createObjectURL(e.target.files[0]);
   };
-  const photoProfile = async() =>{
-    const data = new FormData();
-    data.append("photoProfile", image);
-    try {
-      const response = await sendPhoto.sendPhoto(data);
 
-    } catch (error) {}
-  }
+  const checkingPhoto = () => {
+    setIsOpenModalService(true, setIsOpenModalImageProfile(false));
+  };
+
+  const photoProfile = async () => {
+    const data = new FormData();
+    if (image === null) {
+      return alert("Por favor adicone uma foto de perfil");
+    } else {
+      checkingPhoto();
+      data.append("photoProfile", image);
+      try {
+        const response = await sendPhoto.sendPhoto(data);
+      } catch (error) {}
+    }
+  };
   const [imageProfile, setImageProfile] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -61,20 +97,19 @@ function Profile() {
     setService(data.services);
   }, []);
 
-
-  const [typeService, setTypeService] = useState("")
+  const [typeService, setTypeService] = useState("");
   const handleChange = (e) => {
-    setTypeService(e.target.value)
+    setTypeService(e.target.value);
   };
 
-  const envitTypeService = async (photo)=>{
+  const envitTypeService = async (photo) => {
     try {
       console.log(typeService);
-      sendTypeOfService.typeService(photo)
+      sendTypeOfService.typeService(photo);
     } catch (error) {
-    console.log("errei")
+      console.log("errei");
     }
-  }
+  };
   return (
     <Container>
       <Header />
@@ -89,7 +124,7 @@ function Profile() {
         <div className="Informations">
           <div className="ProfilesText">
             <h2>
-              <img src={location} alt="test" />
+              <img src={location} alt="localização" />
               {locationOfServiceProvier}{" "}
             </h2>{" "}
             <p>Mais de 150 projetos realizados</p>
@@ -101,7 +136,7 @@ function Profile() {
             <button onClick={() => joinRoom()}>
               <h2>ENTRAR EM CONTATO</h2>
             </button>
-            <img src={menu} alt="test" />
+            <img src={menu} alt="menu" />
           </div>
         </div>
       </InformationsContainer>
@@ -150,10 +185,11 @@ function Profile() {
                 <button
                   className="Next"
                   onClick={(event) => {
-                    setIsOpenModalService(
-                      true,
-                      setIsOpenModalImageProfile(false), photoProfile()
-                    );
+                    // setIsOpenModalService(
+                    //   true,
+                    //   setIsOpenModalImageProfile(false),
+                    //   );
+                    photoProfile( );
                   }}
                 >
                   Avançar {">"}
@@ -184,7 +220,12 @@ function Profile() {
                 </select>
                 <button
                   className="Next"
-                  onClick={() => setIsModalVisible(false, envitTypeService({service: typeService}))}
+                  onClick={() =>
+                    setIsModalVisible(
+                      false,
+                      envitTypeService({ service: typeService })
+                    )
+                  }
                 >
                   Finalizar
                 </button>
