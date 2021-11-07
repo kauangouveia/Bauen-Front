@@ -21,32 +21,43 @@ import {
   findPhoto,
   sendTypeOfService,
   checkingPhotoModal,
-  showingServices
+  showingServices,
 } from "../../services";
 import { useEffect } from "react";
 import { useRef } from "react";
-import { ToastContainer, toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 
 function Profile() {
+  const [isModalVisible, setIsModalVisible] = useState(true);
+  const [isOpenModalWarning, setIsOpenModalWarning] = useState(true);
+  const [isOpenModalImageProfile, setIsOpenModalImageProfile] = useState(false);
+  const [isOpenModalService, setIsOpenModalService] = useState(false);
+  const locationOfServiceProvier = localStorage.getItem("location");
+  const nameProfile = localStorage.getItem("name");
+
+  // Analisando caso haja foto de perfil
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     try {
       const data = await checkingPhotoModal.checking();
       console.log(data);
       if (data.message === "Contem foto no perfil") {
-        setIsModalVisible(false);
+        setIsModalVisible(false,  setIsOpenModalWarning(false));
+       
       } else {
         setIsModalVisible(true);
       }
     } catch (error) {}
   }, []);
 
+  // Função para entrar no chat
   const history = useHistory();
   const joinRoom = () => {
     history.push("/chat");
   };
 
+  // Adicionando preview de foto
   const imgRef = useRef();
   const [image, setImage] = useState(null);
   const handleFile = async (e) => {
@@ -54,10 +65,12 @@ function Profile() {
     imgRef.current.src = URL.createObjectURL(e.target.files[0]);
   };
 
+  // Analisando se existe foto no modal
   const checkingPhoto = () => {
     setIsOpenModalService(true, setIsOpenModalImageProfile(false));
   };
 
+  // Inserindo foto de perfil e fazendo validação caso o campo estaja nulo
   const photoProfile = async () => {
     const data = new FormData();
     if (image === null) {
@@ -66,10 +79,14 @@ function Profile() {
       checkingPhoto();
       data.append("photoProfile", image);
       try {
-        const response = await sendPhoto.sendPhoto(data);
-      } catch (error) {}
+        await sendPhoto.sendPhoto(data);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
+
+  // Buscando foto de perfil
   const [imageProfile, setImageProfile] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -77,13 +94,7 @@ function Profile() {
     setImageProfile(data.photo);
   }, []);
 
-  const [isModalVisible, setIsModalVisible] = useState(true);
-  const [isOpenModalWarning, setIsOpenModalWarning] = useState(true);
-  const [isOpenModalImageProfile, setIsOpenModalImageProfile] = useState(false);
-  const [isOpenModalService, setIsOpenModalService] = useState(false);
-  const locationOfServiceProvier = localStorage.getItem("location");
-  const nameProfile = localStorage.getItem("name");
-
+  // Listando todos os tipos de serviços existentes
   const [service, setService] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -91,27 +102,29 @@ function Profile() {
     setService(data.services);
   }, []);
 
+  // Armazenando tipo de serviços
   const [typeService, setTypeService] = useState("");
   const handleChange = (e) => {
     setTypeService(e.target.value);
   };
-
-  const envitTypeService = async (photo) => {
+  // Enviando tipo de serviço escolhido
+  const envitTypeService = async (service) => {
     try {
-      console.log(typeService);
-      sendTypeOfService.typeService(photo);
+      console.log(service);
+      sendTypeOfService.typeService(service);
     } catch (error) {
       console.log("errei");
     }
   };
 
-  const [ProviderType,setProviderType ] = useState([]);
+  // Exibindo tipo de serviço
+  const [ProviderType, setProviderType] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
-    const data = await showingServices.findServices() ;
-    setProviderType(data.nameService)
+    const data = await showingServices.findServices();
+    setProviderType(data.nameService);
   }, []);
-console.log(ProviderType)
+
   return (
     <Container>
       <Header />
@@ -136,14 +149,16 @@ console.log(ProviderType)
           </div>
           <div className="ButtonsOfProfile">
             <button onClick={() => joinRoom()}>
-              <h2>ENTRAR EM CONTATO</h2>
+              <h2>ENTRAR EM CONTATO</h2> 
             </button>
             <img src={menu} alt="menu" />
           </div>
         </div>
         <div className="services">
           <div className="servicesType">
-            <div className="Card"><h3>{ProviderType}</h3></div>
+            <div className="Card">
+              <h3>{ProviderType}</h3>
+            </div>
           </div>
         </div>
       </InformationsContainer>
