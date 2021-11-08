@@ -39,6 +39,16 @@ export const sendPhoto ={
   }
 }
 
+export const sendPhotoClient ={
+  sendPhotoClient : async (data) =>{
+    const token = localStorage.getItem('token');
+    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    const result = await api.post("/photo-profile-client/", data,{ headers: { 'Content-type': 'multipart/form-data' }})
+    // console.log(result.data)
+    return result.data;
+  }
+}
+
 export const findPhoto = {
   findPhoto : async()=>{
     const token = localStorage.getItem('token');

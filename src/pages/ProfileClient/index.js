@@ -4,12 +4,10 @@ import user from "../../assets/user.png";
 import locationWhite from "../../assets/localtionWhite.svg";
 import { Container, ProfileContainer, InformationsContainer, ModalContainer } from "./styles";
 import chatlogobauen from "../../assets/chatlogobauen.png"
-import { sendPhoto, findPhoto } from "../../services";
+import { sendPhotoClient, findPhoto} from "../../services";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
-
-
 
 function ProfileClient() {
 
@@ -31,12 +29,27 @@ function ProfileClient() {
   const handleFile = async (e) => {
     setImage(e.target.files[0]);
     imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+  };
 
+  const checkingPhoto = () => {
+    setImageProfile(false);
+  };
+  
+  const photoProfileClient = async () => {
     const data = new FormData();
-    data.append("photoProfile", e.target.files[0]);
-    try {
-      const response = await sendPhoto.sendPhoto(data);
-    } catch (error) { }
+    if (image === null) {
+      return alert("Por favor adicone uma foto de perfil");
+    } else {
+      checkingPhoto();
+   data.append("photoProfile", image);
+     
+      
+      try {
+        await sendPhotoClient.sendPhotoClient(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
   };
 
   return (
@@ -94,7 +107,7 @@ function ProfileClient() {
                 />
                 <button
                   className="Next"
-                  onClick={() => setIsModalVisible(false)}
+                  onClick={(event) => photoProfileClient()}
                 >
                   Avançar {">"}
                 </button>
