@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import useDefault from "../../assets/user.png";
+
 import reward from "../../assets/reward.svg";
 export const Container = styled.div`
   display: flex;
