@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import { RegisterProvider } from "./context";
 import Home from "./pages/Home";
 import ListServices from "./pages/ListServices";
@@ -16,18 +16,29 @@ import Register5 from "./pages/Register/register5";
 import Post from "./pages/Post";
 import ClientOrServiceProvider from "./pages/ChoiceClientOrServiceProvider";
 import Chat from "./pages/Chat";
+import { isSignedIn } from "./services/security";
+
+function PrivateRoute({ children, ...rest }) {
+  if (isSignedIn()) {
+    return <Route {...rest}>{children}</Route>;
+  } else {
+    console.log("nao pode entar")
+    return <Redirect to="/" />;
+  }
+}
+
 function Router() {
   return (
     <BrowserRouter>
-      <Route path="/home">
+      <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/profile">
+      <PrivateRoute path="/profile">
         <Profile />
-      </Route>
-      <Route path="/ProfileClient">
+      </PrivateRoute>
+      <PrivateRoute path="/ProfileClient">
         <ProfileClient />
-      </Route>
+      </PrivateRoute>
       <Route path="/listservices">
         <ListServices />
       </Route>
@@ -66,9 +77,9 @@ function Router() {
       <Route path="/loginCLient">
         <LoginClient />
       </Route>
-      <Route path="/post">
+      <PrivateRoute path="/post">
         <Post />
-      </Route>
+      </PrivateRoute>
     </BrowserRouter>
   );
 }

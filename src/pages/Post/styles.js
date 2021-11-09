@@ -91,15 +91,14 @@ export const PostImage = styled.div`
   .postImage {
     width: 600px;
     height: 700px;
-    /* background-color: black; */
     border: 4px solid #074ead;
     border-bottom: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* align-items: initial; */
-    >img {
 
+    >img {
+      display: none;
       padding: 10px;
       width: 550px;
       height: 420px;

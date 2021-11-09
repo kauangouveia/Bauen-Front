@@ -13,15 +13,28 @@ function Post() {
   const [service, setService] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
-    const data = await listservice.listService();
-    setService(data.services);
+    try {      
+      const data = await listservice.listService();
+      setService(data.services);
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
   
   const imgRef = useRef();
   const [image, setImage] = useState(null);
   const handleFile = async (e) => {
-    setImage(e.target.files[0]);
-    imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+    if (e.target.files[0]) {
+      
+      imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+      imgRef.current.style.display = "block"
+    } else {
+      imgRef.current.src = "";
+      imgRef.current.style.display = "none"
+
+      
+    }
+    setImage(e.target.files[0])
   };
 
   return (

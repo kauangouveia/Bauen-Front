@@ -24,6 +24,8 @@ export const serviceProvider = {
 
 export const listservice ={
   listService : async()=>{
+    const token = localStorage.getItem('token');
+    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     const result = await api.get("/service");
     return result.data
   }
