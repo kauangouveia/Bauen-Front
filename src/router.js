@@ -31,7 +31,7 @@ function PrivateRoute({ children, ...rest }) {
 function Router() {
   return (
     <BrowserRouter>
-      <Route exact path="/Home">
+      <Route exact path="/">
         <Home />
       </Route>
       <PrivateRoute path="/profile">
