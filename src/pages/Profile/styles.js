@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const ProfileContainer = styled.div`
   display: flex;
   width: 100vw;
-  height: 400px;
+  height: 370px;
   border-bottom: solid 0.5px #dadada;
   align-items: center;
   justify-content: center;
@@ -20,6 +20,24 @@ export const ProfileContainer = styled.div`
   flex-direction: row-reverse;
   flex-direction: column;
   color: white;
+  position: relative;
+
+  .AreaReward{
+    display: flex;
+    width: 275px;
+    height: 255px;
+    margin-bottom: 52px;
+    position: absolute;
+    overflow-y: hidden;
+
+    .Reward{
+      position: absolute;
+      bottom: -25px;
+      right: -30px;
+      width: 150px;
+      height: 150px;
+    }
+  }
 
   .PictureProfile {
     flex-direction: column-reverse;
@@ -31,21 +49,19 @@ export const ProfileContainer = styled.div`
     border-radius: 100%;
     background-position: center;
     border: solid 4px #ff5c00;
+    margin-top: 10px;
     align-items: flex-end;
+
     img {
       width: 100%;
       height: 100%;
     }
+  }
 
-    .PictureAward {
-      height: 150px;
-      width: 90px;
-      background-image: url(${reward});
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      position: absolute;
-    }
+  .AreaName{
+    width: auto;
+    height: auto;
+    margin-top: 25px;
   }
 `;
 

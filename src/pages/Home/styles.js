@@ -41,7 +41,7 @@ export const SloganContainer = styled.div`
       input {
         margin-top: 20px;
         width: 500px;
-        height: 40px;
+        height: 50px;
         font-size: 20px;
         border: solid 0.5px #dadada;
         padding: 10px;
@@ -53,9 +53,10 @@ export const SloganContainer = styled.div`
 
       img {
         margin-top: 20px;
-        width: 40px;
-        height: 40px;
-        margin-left: 15px;
+        background-color: #074EAD;
+        width: 50px;
+        height: 50px;
+        margin-left: 5px;
       }
 
       img:hover{

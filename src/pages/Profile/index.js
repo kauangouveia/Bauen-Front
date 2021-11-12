@@ -4,6 +4,7 @@ import Star from "../../components/Star";
 import SliderPortifolio from "../../components/SliderPortifolio";
 import SliderComents from "../../components/SliderComents";
 import location from "../../assets/location.svg";
+import reward from "../../assets/reward.svg"
 import warning from "../../assets/warning.svg";
 import menu from "../../assets/menu.svg";
 import bauenBlackLogo from "../../assets/bauenBlackLogo.png";
@@ -105,7 +106,9 @@ function Profile() {
   // Armazenando tipo de serviços
   const [typeService, setTypeService] = useState("");
   const handleChange = (e) => {
+    console.log(e.target.value)
     setTypeService(e.target.value);
+    
   };
   // Enviando tipo de serviço escolhido
   const envitTypeService = async (service) => {
@@ -122,18 +125,23 @@ function Profile() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const data = await showingServices.findServices();
+    console.log(data.nameService)
     setProviderType(data.nameService);
   }, []);
-
+  console.log(ProviderType.nameService )
   return (
     <Container>
       <Header />
       <ProfileContainer>
-        <div className="PictureProfile">
+      <div className="AreaReward">
+      <img className="Reward" src={reward} alt="reward"/>
+      </div>
+        <div className="PictureProfile">          
           <img src={imageProfile} alt="Foto de perfil" />
-          <div className="PictureAward"></div>
         </div>
+        <div className="AreaName">
         <h1>{nameProfile}</h1>
+        </div>
       </ProfileContainer>
       <InformationsContainer>
         <div className="Informations">

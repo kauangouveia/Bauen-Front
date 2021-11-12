@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Footer = styled.footer`
   width: 100vw;
-  height: 200px;
+  height: 210px;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -26,6 +26,10 @@ export const Footer = styled.footer`
       margin-left: 15px;
       padding-top: 15px;
       flex-direction: column;
+      
+      p{
+        margin-bottom: 2px;
+      }
 
       p:hover {
         cursor: pointer;

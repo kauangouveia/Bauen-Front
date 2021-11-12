@@ -43,7 +43,7 @@ function Home() {
                   <input
                     type="text"
                     name="name"
-                    placeholder="O que você precisa"
+                    placeholder="O que você precisa?"
                   />
                 </label>
               </form>
