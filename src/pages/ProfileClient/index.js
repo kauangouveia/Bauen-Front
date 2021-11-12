@@ -1,3 +1,4 @@
+
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import user from "../../assets/user.png";
@@ -12,12 +13,18 @@ import { useRef } from "react";
 function ProfileClient() {
 
   const [imageProfile, setImageProfile] = useState([]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const data = await findPhoto.findPhoto();
-    setImageProfile(data.photo);
+    if (data.message === "Nao contem foto no perfil") {
+      setIsModalVisible(true,  setImageProfile(true));
+    }else{
+      setIsModalVisible(false,  setImageProfile(false));
+      setImageProfile(data.photo);
+    }
   }, []);
 
-  const [isOpenModalService, setIsOpenModalService] = useState(true);
+
   const [isModalVisible, setIsModalVisible] = useState(true);
   const [isOpenModalImageProfile, setIsOpenModalImageProfile] = useState(true);
   const nameProfile = localStorage.getItem("name");
@@ -41,11 +48,10 @@ function ProfileClient() {
       return alert("Por favor adicone uma foto de perfil");
     } else {
       checkingPhoto();
-   data.append("photoProfile", image);
-     
-      
+    data.append("photoProfileClient", image);
       try {
         await sendPhotoClient.sendPhotoClient(data);
+        
       } catch (error) {
         console.log(error);
       }
@@ -57,7 +63,7 @@ function ProfileClient() {
       <Header />
       <ProfileContainer>
         <div className="PictureProfile">
-          <img src={user} alt="Foto de perfil" />
+          <img src={imageProfile} alt="Foto de perfil" />
         </div>
         <div className="AreaInfo">
           <div className="AreaLocation">
@@ -107,7 +113,7 @@ function ProfileClient() {
                 />
                 <button
                   className="Next"
-                  onClick={(event) => photoProfileClient()}
+                  onClick={(event) => photoProfileClient(  setIsOpenModalImageProfile(false, setIsModalVisible(false)))}
                 >
                   Avançar {">"}
                 </button>

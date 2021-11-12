@@ -15,31 +15,60 @@ export const FeedContainer = styled.div`
   height: 800px;
   margin-left: auto;
   margin-right: auto;
+  background-color: red;
 `;
 
 export const PostHeader = styled.div`
   display: flex;
   width: 800px;
-  height: 200px;
+  height: 400px;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-
-  .PerfilPost {
+  background-color: purple;
+  flex-direction: column;
+  .HeaderPost {
     display: flex;
-    justify-content: center;
-    padding-top: 25px;
-    width: 150px;
+    width: 800px;
     height: 200px;
-  }
+    overflow: hidden;
+    .PerfilPost {
+      display: flex;
+      justify-content: center;
+      padding-top: 25px;
+      width: 150px;
+      height: auto;
+    }
 
-  .PerfilImage {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background-color: #074ead;
+    .PerfilImage {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+      }
+    }
+    
   }
-
+  .Description{
+    display: flex;
+    width: 800px;
+    height: 200px;
+    align-items: center;
+    background-color:green;
+    justify-content: center;
+    flex-direction:column;
+    input{
+      width: 300px;
+      height: 35px;
+      margin-right:25px ;
+    }
+  }
   .TitlePost {
     display: flex;
     width: 500px;
@@ -97,17 +126,16 @@ export const PostImage = styled.div`
     align-items: center;
     justify-content: center;
 
-    >img {
+    > img {
       display: none;
       padding: 10px;
       width: 550px;
       height: 420px;
     }
-    >img:hover {
-
+    > img:hover {
       width: 550px;
       height: 420px;
-  }
+    }
   }
   .post {
     display: flex;
