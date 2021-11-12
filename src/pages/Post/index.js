@@ -2,14 +2,13 @@ import Header from "../../components/Header";
 import { Container } from "./styles";
 import add from "../../assets/add.svg";
 import { FeedContainer, PostHeader, PostImage, PostButtons } from "./styles";
-import { listservice } from "../../services";
+import { listservice, getPhotoClient } from "../../services";
 import { useEffect } from "react";
 import React, { useState } from "react";
 import { useRef } from "react";
 
 function Post() {
   const profileName = localStorage.getItem("name");
-  
   const [service, setService] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -20,12 +19,23 @@ function Post() {
       console.log(error);
     }
   }, []);
-  
+  const [photoProfilePost, setPhotoProfilePost] = useState([]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    try {
+      console.log("teste 2")
+      const data = await getPhotoClient.getPhotoClientProfile()
+      console.log(data.photo)
+    } catch (error) {
+      
+    }
+  })
+
+
   const imgRef = useRef();
   const [image, setImage] = useState(null);
   const handleFile = async (e) => {
     if (e.target.files[0]) {
-      
       imgRef.current.src = URL.createObjectURL(e.target.files[0]);
       imgRef.current.style.display = "block"
     } else {
@@ -36,6 +46,10 @@ function Post() {
     }
     setImage(e.target.files[0])
   };
+
+
+
+
 
   return (
     <>
