@@ -46,7 +46,7 @@ function Profile() {
         setIsModalVisible(false,  setIsOpenModalWarning(false));
        
       } else {
-        setIsModalVisible(true);
+        setIsModalVisible(true) ;
       }
     } catch (error) {}
   }, []);
