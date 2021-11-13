@@ -1,15 +1,31 @@
-import Header from "../../components/Header"
+import Header from "../../components/Header";
 import { Container } from "./styles";
 import search from "../../assets/search.png";
 import like from "../../assets/like.svg";
 import thunder from "../../assets/thunder.svg";
 import Footer from "../../components/Footer";
-import { SearchContainer, ContainerFilters, ContainerResult, ContainerFeed, ContainerProfile, CardProfile } from "./styles"
-import user from "../../assets/user.png";
+import {
+  SearchContainer,
+  ContainerFilters,
+  ContainerResult,
+  ContainerFeed,
+  ContainerProfile,
+  CardProfile,
+} from "./styles";
 import menu from "../../assets/menu.svg";
-
+import { listFastServices } from "../../services";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function FastServices() {
+  const [fastService, setFastService] = useState([]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const data = await listFastServices.fastService();
+    setFastService(data.data);
+  }, []);
+
+  console.log(fastService.length)
   return (
     <>
       <Container>
@@ -30,142 +46,45 @@ function FastServices() {
         </SearchContainer>
         <ContainerFilters>
           <div className="Filters">
-            <img src={thunder} alt="trovao"/>
+            <img src={thunder} alt="trovao" />
             <h1>Serviços rápidos</h1>
           </div>
         </ContainerFilters>
         <ContainerResult>
           <div className="Result">
-          <h2>0 Resultados</h2>
+            <h2>{fastService.length} Resultados</h2>
           </div>
         </ContainerResult>
         <ContainerFeed>
           <ContainerProfile>
-            <CardProfile>
+            {fastService.map((item)=>(
+
+            <CardProfile key={item.id_client_fast_services}>
               <div className="Profile">
                 <div className="ProfileImage">
-                  <img src={user} alt="usuarios"/>
+                  <img src={item.photoService} alt="usuarios" />
                 </div>
                 <div className="Informations">
                   <div className="NameAndRating">
-                    <h2>Titulo do projeto</h2>
-                    <h3>Nome do usuario</h3>
-                    <h3>serviço</h3>
-                  </div>
-                  <div className="Options">
-                    <div className="Favorite">
-                      <img src={menu} alt="menu"/>
-                    </div>
-                    <div className="Services">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="Contact" >
-                <img src={like} alt="gostei"/>
-                <h2>Aceitar</h2>
-              </div>
-            </CardProfile>
-            <CardProfile>
-              <div className="Profile">
-                <div className="ProfileImage">
-                  <img src={user} alt="usuario"/>
-                </div>
-                <div className="Informations">
-                  <div className="NameAndRating">
-                    <h2>Titulo do projeto</h2>
-                    <h3>Nome do usuario</h3>
-                    <h3>serviço</h3>
-                  </div>
-                  <div className="Options">
-                    <div className="Favorite">
-                      <img src={menu} alt="menu"/>
-                    </div>
-                    <div className="Services">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="Contact">
-                <img src={like} alt="gostei"/>
-                <h2>Aceitar</h2>
-              </div>
-            </CardProfile>
-            <CardProfile>
-              <div className="Profile">
-                <div className="ProfileImage">
-                  <img src={user} alt="usuario"/>
-                </div>
-                <div className="Informations">
-                  <div className="NameAndRating">
-                    <h2>Titulo do projeto</h2>
-                    <h3>Nome do usuario</h3>
-                    <h3>serviço</h3>
-                  </div>
-                  <div className="Options">
-                    <div className="Favorite">
-                      <img src={menu} alt="menu"/>
-                    </div>
-                    <div className="Services">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="Contact">
-                <img src={like} alt="gostei"/>
-                <h2>Aceitar</h2>
-              </div>
-            </CardProfile>
-            <CardProfile>
-              <div className="Profile">
-                <div className="ProfileImage">
-                  <img src={user} alt="usuario"/>
-                </div>
-                <div className="Informations">
-                  <div className="NameAndRating">
-                    <h2>Titulo do projeto</h2>
-                    <h3>Nome do usuario</h3>
-                    <h3>serviço</h3>
+                    <h2>{item.title}</h2>
+                    <h3>{item.name}</h3>
+                    <h3>{item.typeService}</h3>
                   </div>
                   <div className="Options">
                     <div className="Favorite">
                       <img src={menu} alt="menu" />
                     </div>
-                    <div className="Services">
-                    </div>
+                    <div className="Services"></div>
                   </div>
                 </div>
               </div>
               <div className="Contact">
-                <img src={like} alt="gostei"/>
+                <img src={like} alt="gostei" />
                 <h2>Aceitar</h2>
               </div>
             </CardProfile>
-            <CardProfile>
-              <div className="Profile">
-                <div className="ProfileImage">
-                  <img src={user} alt="usuario"/>
-                </div>
-                <div className="Informations">
-                  <div className="NameAndRating">
-                    <h2>Titulo do projeto</h2>
-                    <h3>Nome do usuario</h3>
-                    <h3>serviço</h3>
-                  </div>
-                  <div className="Options">
-                    <div className="Favorite">
-                      <img src={menu} alt="menu"/>
-                    </div>
-                    <div className="Services">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="Contact">
-                <img src={like} alt="gostei"/>
-                <h2>Aceitar</h2>
-              </div>
-            </CardProfile>
+            ))}
+
           </ContainerProfile>
         </ContainerFeed>
         <Footer />

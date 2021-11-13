@@ -90,21 +90,30 @@ export const showingServices = {
   },
 };
 
-export const getPhotoClient ={
-  getPhotoClientProfile :async (data)=>{
+export const getPhotoClient = {
+  getPhotoClientProfile: async (data) => {
     const token = localStorage.getItem("token");
     api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     const result = await api.get("/photo-client", data);
     return result.data;
-  
-  }
-}
+  },
+};
 
-export const sendFastService = {
-  sendFastService: async (data) => {
+export const fastService = {
+  sendFS: async (data) => {
     const token = localStorage.getItem("token");
     api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    const result = await api.post("/send-fast-service/", data)
+    const result = await api.post("/send-fast-service/", data);
     return result.data;
+  },
+};
+
+export const listFastServices = {
+  fastService: async (data) => {
+    const token = localStorage.getItem("token");
+    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    const result = await api.get("/listFastServices");
+    return result
+
   },
 };

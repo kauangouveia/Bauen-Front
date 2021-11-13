@@ -42,7 +42,7 @@ function Profile() {
   useEffect(async () => {
     try {
       const data = await checkingPhotoModal.checking();
-      console.log(data);
+      
       if (data.message === "Contem foto no perfil") {
         setIsModalVisible(false,  setIsOpenModalWarning(false));
        
@@ -106,14 +106,14 @@ function Profile() {
   // Armazenando tipo de serviços
   const [typeService, setTypeService] = useState("");
   const handleChange = (e) => {
-    console.log(e.target.value)
+
     setTypeService(e.target.value);
     
   };
   // Enviando tipo de serviço escolhido
   const envitTypeService = async (service) => {
     try {
-      console.log(service);
+     
       sendTypeOfService.typeService(service);
     } catch (error) {
       console.log("errei");
@@ -125,10 +125,10 @@ function Profile() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const data = await showingServices.findServices();
-    console.log(data.nameService)
+ 
     setProviderType(data.nameService);
   }, []);
-  console.log(ProviderType.nameService )
+  
   return (
     <Container>
       <Header />
@@ -240,8 +240,8 @@ function Profile() {
               <div className="AreaButton">
                 <select className="OptionsServices" onChange={handleChange}>
                   {service?.map((item) => (
-                    <option value={item.name} key={item.id_service}>
-                      {item.name}
+                    <option value={item.nameService} key={item.id_service}>
+                      {item.nameService}
                     </option>
                   ))}
                 </select>

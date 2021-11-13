@@ -11,23 +11,22 @@ function LoginClient(props) {
 
   const onSubmit = async (data) => {
     try {
-      const response = await api.post("/login/client", data);
-      
+      const response = await api.post("/login-client", data);
+
       const {
         token,
         client: {
-          // eslint-disable-next-line no-useless-rename
-          email:  email ,
-            // eslint-disable-next-line no-useless-rename
-          name:  name ,
-            // eslint-disable-next-line no-useless-rename
-          room:  room ,
-            // eslint-disable-next-line no-useless-rename
-          id: id ,
+          client: { email },
+
+          client: { name },
+
+          client: { room },
+
+          client: { id },
         },
       } = response.data;
       console.log(response.data.client);
-      
+
       localStorage.setItem("token", token);
       localStorage.setItem("name", name);
       localStorage.setItem("email", email);
@@ -38,7 +37,7 @@ function LoginClient(props) {
       history.push("/profileclient");
     } catch (error) {
       console.log(error);
-      // toast.error(error.response.data.errors[0].message)
+      toast.error(error.response.data.errors[0].message)
     }
   };
 

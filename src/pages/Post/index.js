@@ -2,10 +2,13 @@ import Header from "../../components/Header";
 import { Container } from "./styles";
 import add from "../../assets/add.svg";
 import { FeedContainer, PostHeader, PostImage, PostButtons } from "./styles";
-import { listservice, findPhoto, sendTypeOfService } from "../../services";
+import { listservice, getPhotoClient, fastService } from "../../services";
 import { useEffect } from "react";
 import React, { useState } from "react";
 import { useRef } from "react";
+import {ToastContainer, toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Post() {
   const profileName = localStorage.getItem("name");
@@ -13,7 +16,7 @@ function Post() {
   const [imageProfile, setImageProfile] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
-    const data = await findPhoto.findPhoto();
+    const data = await getPhotoClient.getPhotoClientProfile();
     if (data.message === "Nao contem foto no perfil") {
       console.log("Nao contem foto");
     } else {
@@ -46,12 +49,29 @@ function Post() {
   };
 
   const [typeService, setTypeService] = useState("");
-
   const handleChange = (e) => {
     setTypeService(e.target.value);
-    console.log(typeService);
   };
+  // console.log(typeService);
 
+  const [titleFastService, setTitleFastService] = useState("");
+  const sendtitleFastService = (e) => {
+    setTitleFastService(e);
+  };
+  
+  const  sendFastService = async () => {
+    const data = new FormData();
+   
+      data.append("fastService", image);
+      data.append("title", titleFastService);
+      data.append("TypeOfService", typeService);
+      try {
+        await fastService.sendFS(data);
+      } catch (error) {
+        console.log(error);
+      }
+      alert("Serviço Rapido adionado, basta aguardar um dos nossos colaboradores entrar em contato")
+  };
   return (
     <>
       <Container>
@@ -61,7 +81,7 @@ function Post() {
             <div className="HeaderPost">
               <div className="PerfilPost">
                 <div className="PerfilImage">
-                  <img src={imageProfile} />
+                  <img src={imageProfile} alt="foto de perfil" />
                 </div>
               </div>
               <div className="TitlePost">
@@ -73,7 +93,7 @@ function Post() {
                     onChange={handleChange}
                   >
                     {service?.map((item) => (
-                      <option key={item.id_service}>{item.name}</option>
+                      <option key={item.id_service}>{item.nameService}</option>
                     ))}
                   </select>
                 </div>
@@ -81,7 +101,10 @@ function Post() {
             </div>
             <div className="Description">
               <label /> Adicone uma descrição ao projeto
-              <input />
+              <input
+                maxlength="20"
+                onChange={(e) => sendtitleFastService(e.target.value)}
+              />
             </div>
           </PostHeader>
           <PostImage>
@@ -108,7 +131,7 @@ function Post() {
               <button type="submit" className="Cancel">
                 Cancelar
               </button>
-              <button type="submit" className="Confirm">
+              <button type="submit" className="Confirm" onClick={sendFastService}>
                 Confirmar
               </button>
             </div>

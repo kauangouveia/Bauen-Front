@@ -13,7 +13,6 @@ import {
   ContainerProfile,
   CardProfile,
 } from "./styles";
-import user from "../../assets/user.png";
 import menu from "../../assets/menu.svg";
 import love from "../../assets/love.svg";
 import { useEffect } from "react";
@@ -62,7 +61,7 @@ function ListServicesProvider() {
         </ContainerFilters>
         <ContainerResult>
           <div className="Result">
-            <h2>0 Resultados</h2>
+            <h2>{serviceProviders.length} Resultados</h2>
           </div>
         </ContainerResult>
         <ContainerFeed>
@@ -85,7 +84,7 @@ function ListServicesProvider() {
                         <img src={menu} alt="menu" />
                       </div>
                       <div className="Services">
-                        <h4>Função</h4>
+                        <h4>{item.nameService}</h4>
                       </div>
                     </div>
                   </div>

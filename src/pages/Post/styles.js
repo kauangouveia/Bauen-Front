@@ -15,7 +15,6 @@ export const FeedContainer = styled.div`
   height: 800px;
   margin-left: auto;
   margin-right: auto;
-  background-color: red;
 `;
 
 export const PostHeader = styled.div`
@@ -25,7 +24,7 @@ export const PostHeader = styled.div`
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-  background-color: purple;
+
   flex-direction: column;
   .HeaderPost {
     display: flex;
@@ -53,28 +52,36 @@ export const PostHeader = styled.div`
         border-radius: 50%;
       }
     }
-    
   }
-  .Description{
+  .Description {
     display: flex;
     width: 800px;
     height: 200px;
     align-items: center;
-    background-color:green;
+
     justify-content: center;
-    flex-direction:column;
-    input{
-      width: 300px;
-      height: 35px;
-      margin-right:25px ;
+    flex-direction: column;
+
+    input {
+      margin-top: 20px;
+      width: 400px;
+      height: 30px;
+      font-size: 20px;
+      border: solid 0.5px #074ead;
+      padding: 10px;
+      border-radius:5px;
+    }
+    input::placeholder {
+      color: #5679e0;
     }
   }
   .TitlePost {
     display: flex;
     width: 500px;
-    height: auto;
+    height: 200px;
     padding-top: 30px;
     flex-direction: column;
+    overflow: hidden;
   }
 
   h2 {

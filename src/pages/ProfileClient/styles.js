@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import useDefault from "../../assets/user.png";
+
 export const Container = styled.div`
   display: flex;
   width: 100vw;
