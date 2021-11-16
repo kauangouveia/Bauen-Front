@@ -23,7 +23,7 @@ import { useRef } from "react";
 
 import "react-toastify/dist/ReactToastify.css";
 
-function ProfileVProvider() {
+function ProfileVclient() {
   const locationOfServiceProvier = localStorage.getItem("location");
   const nameProfile = localStorage.getItem("name");
   
@@ -125,4 +125,4 @@ function ProfileVProvider() {
   );
 }
 
-export default ProfileVProvider;
+export default ProfileVclient;

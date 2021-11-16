@@ -7,7 +7,7 @@ import PendingServices from "./pages/PendingServices";
 import Login from "./pages/Login";
 import LoginClient from "./pages/LoginClient";
 import Profile from "./pages/Profile";
-import ProfileVProvider from "./pages/ProfileVProvider";
+import ProfileVclient from "./pages/ProfileVclient";
 import ProfileClient from "./pages/ProfileClient";
 import Register from "./pages/Register";
 import Register2 from "./pages/Register/register2";
@@ -37,11 +37,11 @@ function Router() {
       <PrivateRoute path="/profile">
         <Profile />
       </PrivateRoute>
-      <PrivateRoute path="/ProfileClient">
+      <PrivateRoute path="/ProfileVclient">
         <ProfileClient />
       </PrivateRoute>
-      <Route path="/ProfileVProvider">
-        <ProfileVProvider />  
+      <Route path="/ProfileVclient">
+        <ProfileVclient />  
       </Route>
       <Route path="/listservices">
         <ListServices />
