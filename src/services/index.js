@@ -113,7 +113,16 @@ export const listFastServices = {
     const token = localStorage.getItem("token");
     api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     const result = await api.get("/listFastServices");
-    return result
+    return result;
+  },
+};
+
+export const findProviderForClient = {
+  findProvider: async (data) => {
+
+    const result = await api.get(`/findProfile/${data}`);
+    console.log(result);
+    return result;
 
   },
 };

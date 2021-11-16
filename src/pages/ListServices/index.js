@@ -18,6 +18,7 @@ import love from "../../assets/love.svg";
 import { useEffect } from "react";
 import { useState } from "react";
 import { serviceProvider } from "../../services";
+import { useHistory } from "react-router";
 
 function ListServicesProvider() {
 
@@ -29,9 +30,10 @@ function ListServicesProvider() {
   }, []);
 
 
-  
-const teste = ()=>{
-  console.log("teste")
+  const history = useHistory();
+const teste = (id)=>{
+  localStorage.setItem('idServiceProviderSelect', id)
+  history.push("/ProfileVclient")
 }
 
   return (
@@ -69,7 +71,7 @@ const teste = ()=>{
         <ContainerFeed>
           <ContainerProfile>
             {serviceProviders.map((item) => (
-              <CardProfile key={item.id_service_provider} onClick={() => teste()}>
+              <CardProfile key={item.id_service_provider} onClick={() => teste(item.id_service_provider)}>
                 <div className="Profile">
                   <div className="ProfileImage">
                     <img src={item.photo} alt="usuario"/>

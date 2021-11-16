@@ -125,7 +125,7 @@ function Profile() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const data = await showingServices.findServices();
- 
+
     setProviderType(data.nameService);
   }, []);
   
