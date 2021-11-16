@@ -25,12 +25,14 @@ function ListServicesProvider() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const data = await serviceProvider.listServiceProvider();
-    setServiceProviders(data.serviceProviders);
-    console.log(data.serviceProviders);
+    setServiceProviders(data.serviceProviders); 
   }, []);
 
-  
 
+  
+const teste = ()=>{
+  console.log("teste")
+}
 
   return (
     <>
@@ -67,7 +69,7 @@ function ListServicesProvider() {
         <ContainerFeed>
           <ContainerProfile>
             {serviceProviders.map((item) => (
-              <CardProfile key={item.id_service_provider}>
+              <CardProfile key={item.id_service_provider} onClick={() => teste()}>
                 <div className="Profile">
                   <div className="ProfileImage">
                     <img src={item.photo} alt="usuario"/>

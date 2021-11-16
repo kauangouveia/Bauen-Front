@@ -87,7 +87,7 @@ function Home() {
               <div className="AreaOfServices" key={item.id_service}>
                 <img className="HomeLight" src={homelight} alt="Tipo1" />
                 <img className="Home" src={home} alt="Tipo" />
-                <h2>{item.name}</h2>
+                <h2>{item.nameService}</h2>
               </div>
             ))}
           </div>

@@ -138,7 +138,7 @@ export const CardProfile = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
-
+  cursor: pointer;
   
   .Profile{
     width: 680px;

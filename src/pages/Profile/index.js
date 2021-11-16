@@ -53,10 +53,10 @@ function Profile() {
   }, []);
 
   // Função para entrar no chat
-  const history = useHistory();
-  const joinRoom = () => {
-    history.push("/chat");
-  };
+  // const history = useHistory();
+  // // const joinRoom = () => {
+  // //   history.push("/chat");
+  // // };
 
   // Adicionando preview de foto
   const imgRef = useRef();
@@ -156,8 +156,8 @@ function Profile() {
             <Star />
           </div>
           <div className="ButtonsOfProfile">
-            <button onClick={() => joinRoom()}>
-              <h2>ENTRAR EM CONTATO</h2> 
+            <button>
+              <h2>EDITAR PERFIL</h2> 
             </button>
             <img src={menu} alt="menu" />
           </div>
