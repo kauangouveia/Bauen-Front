@@ -37,7 +37,7 @@ function Router() {
       <PrivateRoute path="/profile">
         <Profile />
       </PrivateRoute>
-      <PrivateRoute path="/ProfileVclient">
+      <PrivateRoute path="/ProfileClient">
         <ProfileClient />
       </PrivateRoute>
       <Route path="/ProfileVclient">
