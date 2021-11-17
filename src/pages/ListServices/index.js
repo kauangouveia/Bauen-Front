@@ -21,20 +21,20 @@ import { serviceProvider } from "../../services";
 import { useHistory } from "react-router";
 
 function ListServicesProvider() {
-
   const [serviceProviders, setServiceProviders] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const data = await serviceProvider.listServiceProvider();
-    setServiceProviders(data.serviceProviders); 
+    setServiceProviders(data.serviceProviders);
   }, []);
 
-
   const history = useHistory();
-const teste = (id)=>{
-  localStorage.setItem('idServiceProviderSelect', id)
-  history.push("/ProfileVclient")
-}
+  const teste = (id) => {
+    localStorage.setItem("idServiceProviderSelect", id);
+    history.push("/ProfileVclient");
+  };
+
+  
 
   return (
     <>
@@ -71,10 +71,13 @@ const teste = (id)=>{
         <ContainerFeed>
           <ContainerProfile>
             {serviceProviders.map((item) => (
-              <CardProfile key={item.id_service_provider} onClick={() => teste(item.id_service_provider)}>
+              <CardProfile
+                key={item.id_service_provider}
+                onClick={() => teste(item.id_service_provider)}
+              >
                 <div className="Profile">
                   <div className="ProfileImage">
-                    <img src={item.photo} alt="usuario"/>
+                    <img src={item.photo} alt="usuario" />
                   </div>
                   <div className="Informations">
                     <div className="NameAndRating">

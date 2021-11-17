@@ -26,6 +26,10 @@ function FastServices() {
   }, []);
 
   console.log(fastService.length)
+
+  const teste = (item, nameUser, title, idClient)=>{
+    console.log(item, nameUser, title, idClient)
+    }
   return (
     <>
       <Container>
@@ -78,7 +82,7 @@ function FastServices() {
                   </div>
                 </div>
               </div>
-              <div className="Contact">
+              <div className="Contact" onClick={()=>teste(item.idTableIntermediary, item.name, item.title, item.id)}>
                 <img src={like} alt="gostei" />
                 <h2>Aceitar</h2>
               </div>

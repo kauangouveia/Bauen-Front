@@ -118,8 +118,7 @@ export const listFastServices = {
 };
 
 export const findProviderForClient = {
-  findProvider: async (data) => {
-
+  findProvider: async (data) => { 
     const result = await api.get(`/findProfile/${data}`);
     console.log(result);
     return result;
