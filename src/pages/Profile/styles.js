@@ -59,9 +59,13 @@ export const ProfileContainer = styled.div`
   }
 
   .AreaName{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     width: auto;
     height: auto;
-    margin-top: 25px;
+    margin-top: 20px;
   }
 `;
 
@@ -110,25 +114,30 @@ export const InformationsContainer = styled.div`
     height: 100px;
     width: 1300px;
     justify-content: center;
+
     .ProfilesText {
       height: auto;
       width: 400px;
-
       margin-right: 20px;
       padding-top: 10px;
       h2 {
-        text-align: center;
+        display: flex;
+        align-items: center;
+        height: 45px;
+        text-align: start;
         font-family: "Baloo 2";
         color: #00277d;
         img {
-          height: 30px;
-          width: 30px;
+          height: 35px;
+          width: 35px;
         }
       }
       p {
-        text-align: center;
+        font-weight: bold;
+        text-align: start;
+        padding-left: 10px;
         font-family: "Baloo 2";
-        color: #00277d;
+        color: #074ead;
       }
     }
     .Stars {
@@ -142,11 +151,11 @@ export const InformationsContainer = styled.div`
     .ButtonsOfProfile {
       display: flex;
       height: auto;
-      width: 400px;
+      width: auto;
       justify-content: center;
       align-items: center;
-
       font-family: "Baloo 2";
+
       button {
         width: 300px;
         height: 55px;
