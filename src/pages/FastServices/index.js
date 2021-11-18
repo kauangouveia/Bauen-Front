@@ -26,31 +26,25 @@ function FastServices() {
   }, []);
 
   const providerId = localStorage.getItem("id");
-  console.log(providerId);
-
   const sendAcceptService = async (
     idTableIntermediary,
-    idServiceProvider,
+    id_service_provider,
     nameClient,
     titleProject,
     photoService
   ) => {
     try {
-      const dataService = await acceptServices.accept(
-        idTableIntermediary,
-        idServiceProvider,
-        nameClient,
-        titleProject,
-        photoService
-      );
+      const dataService = await acceptServices.accept({
+        idTableIntermediary: idTableIntermediary,
+        idServiceProvider: id_service_provider,
+        nameClient: nameClient,
+        titleProject: titleProject,
+        photo: photoService,
+      });
       console.log(dataService, "funcionou");
     } catch (error) {
-      console.log("erro")
+      console.log("erro");
     }
-  };
-
-  const teste = (item, nameUser, title, idClient, photoService) => {
-    console.log(item, nameUser, title, idClient, photoService);
   };
   return (
     <>

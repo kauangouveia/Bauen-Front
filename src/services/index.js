@@ -133,3 +133,10 @@ export const acceptServices = {
     return result.data;
   },
 };
+
+export const listAcceptServices = {
+  list:async (data) => {
+    const result = await api.get(`/listPendingServices/${data}`);
+    return result.data;
+  },
+};  
