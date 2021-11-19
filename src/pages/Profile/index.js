@@ -10,6 +10,7 @@ import menu from "../../assets/menu.svg";
 import bauenBlackLogo from "../../assets/bauenBlackLogo.png";
 import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
+import { FaStar } from "react-icons/fa";
 import {
   Container,
   ProfileContainer,
@@ -42,14 +43,14 @@ function Profile() {
   useEffect(async () => {
     try {
       const data = await checkingPhotoModal.checking();
-      
+
       if (data.message === "Contem foto no perfil") {
-        setIsModalVisible(false,  setIsOpenModalWarning(false));
-       
+        setIsModalVisible(false, setIsOpenModalWarning(false));
+
       } else {
-        setIsModalVisible(true) ;
+        setIsModalVisible(true);
       }
-    } catch (error) {}
+    } catch (error) { }
   }, []);
 
   // Função para entrar no chat
@@ -108,12 +109,12 @@ function Profile() {
   const handleChange = (e) => {
 
     setTypeService(e.target.value);
-    
+
   };
   // Enviando tipo de serviço escolhido
   const envitTypeService = async (service) => {
     try {
-     
+
       sendTypeOfService.typeService(service);
     } catch (error) {
       console.log("errei");
@@ -128,19 +129,50 @@ function Profile() {
 
     setProviderType(data.nameService);
   }, []);
-  
+
+  const StarRating = () => {
+    const [rating, setRating] = useState(null);
+    const [hover, setHouver] = useState(null);
+    return(
+      <div>
+        {[...Array(5)].map((star, i) => {
+          const ratingValue = i + 1;
+          return(
+            <label>
+                <input
+                className="ratingButton" 
+                type="radio" 
+                name="rating" 
+                value={ratingValue} 
+                onClick={() => setRating(ratingValue)}
+                />
+                <FaStar 
+                className="Star" 
+                color={ratingValue <= (hover || rating) ? "#FFC700" : "#F2F2F2"} 
+                size={50}
+                onMouseEnter={() => setHouver(ratingValue)}
+                onMouseLeave={() => setHouver(null)}/>
+            </label>
+          );
+        })}
+        <div className="StarText">
+        </div>
+      </div>
+    )
+  }
+
   return (
     <Container>
       <Header />
       <ProfileContainer>
-      <div className="AreaReward">
-      <img className="Reward" src={reward} alt="reward"/>
-      </div>
-        <div className="PictureProfile">          
+        <div className="AreaReward">
+          <img className="Reward" src={reward} alt="reward" />
+        </div>
+        <div className="PictureProfile">
           <img src={imageProfile} alt="Foto de perfil" />
         </div>
         <div className="AreaName">
-        <h1>{nameProfile}</h1>
+          <h1>{nameProfile}</h1>
         </div>
       </ProfileContainer>
       <InformationsContainer>
@@ -152,12 +184,14 @@ function Profile() {
             </h2>{" "}
             <p>Mais de 150 projetos realizados</p>
           </div>
-          <div className="Stars">
-            <Star />
+          <div className="AreaStars">
+            <div className="CenterStar">
+              <StarRating/>
+            </div>
           </div>
           <div className="ButtonsOfProfile">
             <button>
-              <h2>EDITAR PERFIL</h2> 
+              <h2>EDITAR PERFIL</h2>
             </button>
             <img src={menu} alt="menu" />
           </div>

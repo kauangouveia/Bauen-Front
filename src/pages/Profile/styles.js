@@ -119,6 +119,7 @@ export const InformationsContainer = styled.div`
       height: auto;
       width: 400px;
       margin-right: 20px;
+      padding-left: 10px;
       padding-top: 10px;
       h2 {
         display: flex;
@@ -128,6 +129,7 @@ export const InformationsContainer = styled.div`
         font-family: "Baloo 2";
         color: #00277d;
         img {
+          margin-bottom: 5px;
           height: 35px;
           width: 35px;
         }
@@ -140,25 +142,42 @@ export const InformationsContainer = styled.div`
         color: #074ead;
       }
     }
-    .Stars {
+    .AreaStars {
       display: flex;
       height: auto;
       width: 400px;
       justify-content: center;
       align-items: center;
-      margin-right: 20px;
+      
+      .CenterStar{
+        display: flex;
+        width: 250px;
+        height: auto;
+
+        .Star{
+        cursor: pointer;
+        transition: color 200ms;
+        }
+      }
     }
+
+    .ratingButton{
+        display: none;
+      }
+
     .ButtonsOfProfile {
       display: flex;
       height: auto;
-      width: auto;
+      margin-left: 20px;
+      width: 400px;
       justify-content: center;
       align-items: center;
       font-family: "Baloo 2";
 
       button {
-        width: 300px;
+        width: 200px;
         height: 55px;
+        margin-left: 150px;
         border-radius: 5px;
         border: 0px;
         color: white;
