@@ -8,12 +8,12 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Illustration from "../../assets/Illustration.svg";
 import search from "../../assets/search.png";
-import component2 from "../../assets/component2.svg"
-import component3 from "../../assets/component3.svg"
-import component4 from "../../assets/component4.svg"
-import component5 from "../../assets/component5.svg"
+import component2 from "../../assets/component2.svg";
+import component3 from "../../assets/component3.svg";
+import component4 from "../../assets/component4.svg";
+import component5 from "../../assets/component5.svg";
 import home from "../../assets/home.svg";
-import homelight from "../../assets/homelight.svg"
+import homelight from "../../assets/homelight.svg";
 import { useEffect } from "react";
 import React, { useState } from "react";
 import { listservice } from "../../services";
@@ -24,9 +24,11 @@ function Home() {
   useEffect(async () => {
     const data = await listservice.listService();
     setService(data.services);
-    // console.log(data.services)
   }, []);
+  // const date = new Date();
+  // const teste = date.getFullYear() +" "+ date.getMonth() +" "+ date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
+  // console.log(teste);  
   return (
     <>
       <Container>
@@ -81,7 +83,7 @@ function Home() {
           </div>
         </CardContainer>
         <CardContainerServices>
-        <h1>Encontre nossos serviços por categorias</h1>
+          <h1>Encontre nossos serviços por categorias</h1>
           <div>
             {service.map((item) => (
               <div className="AreaOfServices" key={item.id_service}>

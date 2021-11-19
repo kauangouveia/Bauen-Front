@@ -28,6 +28,7 @@ function FastServices() {
   const providerId = localStorage.getItem("id");
   const sendAcceptService = async (
     idTableIntermediary,
+    idclient,
     id_service_provider,
     nameClient,
     titleProject,
@@ -36,6 +37,7 @@ function FastServices() {
     try {
       const dataService = await acceptServices.accept({
         idTableIntermediary: idTableIntermediary,
+        idClient : idclient,
         idServiceProvider: id_service_provider,
         nameClient: nameClient,
         titleProject: titleProject,
@@ -46,6 +48,7 @@ function FastServices() {
       console.log("erro");
     }
   };
+  console.log(fastService)
   return (
     <>
       <Container>
@@ -102,6 +105,7 @@ function FastServices() {
                   onClick={() =>
                     sendAcceptService(
                       item.idTableIntermediary,
+                      item.id,
                       providerId,
                       item.name,
                       item.title,
