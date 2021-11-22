@@ -118,10 +118,25 @@ export const listFastServices = {
 };
 
 export const findProviderForClient = {
-  findProvider: async (data) => { 
+  findProvider: async (data) => {
     const result = await api.get(`/findProfile/${data}`);
     console.log(result);
     return result;
-
   },
 };
+
+export const acceptServices = {
+  accept: async (params) => {
+    const token = localStorage.getItem("token");
+    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    const result = await api.post("/pendingservices", params);
+    return result.data;
+  },
+};
+
+export const listAcceptServices = {
+  list:async (data) => {
+    const result = await api.get(`/listPendingServices/${data}`);
+    return result.data;
+  },
+};  

@@ -59,9 +59,13 @@ export const ProfileContainer = styled.div`
   }
 
   .AreaName{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     width: auto;
     height: auto;
-    margin-top: 25px;
+    margin-top: 20px;
   }
 `;
 
@@ -110,46 +114,70 @@ export const InformationsContainer = styled.div`
     height: 100px;
     width: 1300px;
     justify-content: center;
+
     .ProfilesText {
       height: auto;
       width: 400px;
-
       margin-right: 20px;
+      padding-left: 10px;
       padding-top: 10px;
       h2 {
-        text-align: center;
+        display: flex;
+        align-items: center;
+        height: 45px;
+        text-align: start;
         font-family: "Baloo 2";
         color: #00277d;
         img {
-          height: 30px;
-          width: 30px;
+          margin-bottom: 5px;
+          height: 35px;
+          width: 35px;
         }
       }
       p {
-        text-align: center;
+        font-weight: bold;
+        text-align: start;
+        padding-left: 10px;
         font-family: "Baloo 2";
-        color: #00277d;
+        color: #074ead;
       }
     }
-    .Stars {
+    .AreaStars {
       display: flex;
       height: auto;
       width: 400px;
       justify-content: center;
       align-items: center;
-      margin-right: 20px;
+      
+      .CenterStar{
+        display: flex;
+        width: 250px;
+        height: auto;
+
+        .Star{
+        cursor: pointer;
+        transition: color 200ms;
+        }
+      }
     }
+
+    .ratingButton{
+        display: none;
+      }
+
     .ButtonsOfProfile {
       display: flex;
       height: auto;
+      margin-left: 20px;
       width: 400px;
       justify-content: center;
       align-items: center;
-
       font-family: "Baloo 2";
+
       button {
-        width: 300px;
+        width: 200px;
         height: 55px;
+        margin-left: 150px;
         border-radius: 5px;
         border: 0px;
         color: white;

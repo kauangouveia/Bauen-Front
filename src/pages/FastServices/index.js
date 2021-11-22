@@ -13,7 +13,7 @@ import {
   CardProfile,
 } from "./styles";
 import menu from "../../assets/menu.svg";
-import { listFastServices } from "../../services";
+import { listFastServices, acceptServices } from "../../services";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -25,11 +25,30 @@ function FastServices() {
     setFastService(data.data);
   }, []);
 
-  console.log(fastService.length)
-
-  const teste = (item, nameUser, title, idClient)=>{
-    console.log(item, nameUser, title, idClient)
+  const providerId = localStorage.getItem("id");
+  const sendAcceptService = async (
+    idTableIntermediary,
+    idclient,
+    id_service_provider,
+    nameClient,
+    titleProject,
+    photoService
+  ) => {
+    try {
+      const dataService = await acceptServices.accept({
+        idTableIntermediary: idTableIntermediary,
+        idClient : idclient,
+        idServiceProvider: id_service_provider,
+        nameClient: nameClient,
+        titleProject: titleProject,
+        photo: photoService,
+      });
+      console.log(dataService, "funcionou");
+    } catch (error) {
+      console.log("erro");
     }
+  };
+  console.log(fastService)
   return (
     <>
       <Container>
@@ -61,34 +80,44 @@ function FastServices() {
         </ContainerResult>
         <ContainerFeed>
           <ContainerProfile>
-            {fastService.map((item)=>(
-
-            <CardProfile key={item.id_client_fast_services}>
-              <div className="Profile">
-                <div className="ProfileImage">
-                  <img src={item.photoService} alt="usuarios" />
-                </div>
-                <div className="Informations">
-                  <div className="NameAndRating">
-                    <h2>{item.title}</h2>
-                    <h3>{item.name}</h3>
-                    <h3>{item.typeService}</h3>
+            {fastService.map((item) => (
+              <CardProfile key={item.id_client_fast_services}>
+                <div className="Profile">
+                  <div className="ProfileImage">
+                    <img src={item.photoService} alt="usuarios" />
                   </div>
-                  <div className="Options">
-                    <div className="Favorite">
-                      <img src={menu} alt="menu" />
+                  <div className="Informations">
+                    <div className="NameAndRating">
+                      <h2>{item.title}</h2>
+                      <h3>{item.name}</h3>
+                      <h3>{item.typeService}</h3>
                     </div>
-                    <div className="Services"></div>
+                    <div className="Options">
+                      <div className="Favorite">
+                        <img src={menu} alt="menu" />
+                      </div>
+                      <div className="Services"></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="Contact" onClick={()=>teste(item.idTableIntermediary, item.name, item.title, item.id)}>
-                <img src={like} alt="gostei" />
-                <h2>Aceitar</h2>
-              </div>
-            </CardProfile>
+                <div
+                  className="Contact"
+                  onClick={() =>
+                    sendAcceptService(
+                      item.idTableIntermediary,
+                      item.id,
+                      providerId,
+                      item.name,
+                      item.title,
+                      item.photoService
+                    )
+                  }
+                >
+                  <img src={like} alt="gostei" />
+                  <h2>Aceitar</h2>
+                </div>
+              </CardProfile>
             ))}
-
           </ContainerProfile>
         </ContainerFeed>
         <Footer />

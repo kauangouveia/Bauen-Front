@@ -17,33 +17,33 @@ export const SearchContainer = styled.div`
   overflow: hidden;
 
   .InputWithImg {
-    width: 100%;
-    height: 150px;
-    display: flex;
+      width: 100%;
+      height: 150px;
+      display: flex;
 
-    justify-content: center;
-    input {
-      margin-top: 20px;
-      width: 500px;
-      border-radius: 5px;
-      height: 40px;
-      font-size: 20px;
-      border: solid 0.5px #dadada;
-      padding: 10px;
+      justify-content: center;
+      input {
+        margin-top: 20px;
+        width: 500px;
+        border-radius: 5px;
+        height: 40px;
+        font-size: 20px;
+        border: solid 0.5px #dadada;
+        padding: 10px;
+      }
+      input::placeholder {
+        color: #5679e0;
+      }
+      img {
+        margin-top: 20px;
+        width: 40px;
+        height: 40px;
+        margin-left: 15px;
+      }
+      img:hover{
+        cursor: pointer;
+      }
     }
-    input::placeholder {
-      color: #5679e0;
-    }
-    img {
-      margin-top: 20px;
-      width: 40px;
-      height: 40px;
-      margin-left: 15px;
-    }
-    img:hover {
-      cursor: pointer;
-    }
-  }
 `;
 
 export const ContainerFilters = styled.div`
@@ -54,37 +54,30 @@ export const ContainerFilters = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  .Filters {
-    width: 300px;
+  .Filters{
+    width: 600px;
     height: 80px;
     display: flex;
     flex-direction: row;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
-    margin: inherit;
-    background-color: #074ead;
+    margin:inherit;
 
-    img {
-      width: 50px;
-      height: 50px;
-      margin-right: 10px;
-      cursor: pointer;
+    h1{
+      font-size: 35px;
+      color: #00277D;
+      
     }
 
-    h1 {
-      font-size: 25px;
-      color: white;
-    }
-
-    h2 {
-      color: white;
+    h2{
+      color : white;
       font-weight: normal;
       margin-left: 20px;
       cursor: pointer;
     }
 
-    h2:hover {
+    h2:hover{
       border-bottom: 2px solid white;
     }
   }
@@ -98,12 +91,12 @@ export const ContainerResult = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  .Result {
-    width: 300px;
+  .Result{
+    width: 800px;
     height: 80px;
     display: flex;
     justify-content: center;
-    margin: inherit;
+    margin:inherit;
   }
 `;
 
@@ -116,7 +109,7 @@ export const ContainerFeed = styled.div`
 `;
 
 export const ContainerProfile = styled.div`
-  width: 1100px;
+  width: 1100px;      
   min-height: 650px;
   height: auto;
   display: flex;
@@ -132,67 +125,67 @@ export const ContainerProfile = styled.div`
 
 export const CardProfile = styled.div`
   width: 850px;
-  height: 180px;
+  height: 150px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
 
-  .Profile {
+  
+  .Profile{
     width: 580px;
-    height: 160px;
+    height: 150px;
     margin-right: 10px;
-    border: 2px solid #dadada;
+    border: 2px solid #DADADA;
     display: flex;
     overflow-y: hidden;
-
-    margin-bottom: 10px;
-    box-shadow: 5px 7px 4px #7d7d7d;
-    .ProfileImage {
-      width: 250px;
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      img {
-        width: 85%;
-        height: 85%;
-        border: 5px solid #dadada;
-        border-radius: 10px;
-      }
+    
+    .ProfileImage{
+    width: 250px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    img{
+      width: 85%;
+      height: 85%;
+      border: 5px solid #DADADA;
+      border-radius: 10px; 
     }
-    .Informations {
+  }
+    .Informations{
       width: 700px;
       height: 150px;
       display: flex;
 
-      h2 {
-        color: #00277d;
+      h2{
+        color: #00277D;
         font-size: 25px;
         font-weight: bold;
+        margin-bottom: 15px;
       }
 
-      h3 {
-        color: #5679e0;
+      h3{
+        color: #5679E0;
       }
-
-      .NameAndRating {
+      
+      .NameAndRating{
         width: 400px;
         height: 150px;
         display: flex;
-        flex-direction: column;
+        flex-direction:column;
         justify-content: center;
       }
 
-      .Options {
+      .Options{
         width: 200px;
         height: 150px;
         display: flex;
-        flex-direction: column;
-
-        .Favorite {
+        flex-direction:column;
+        
+        .Favorite{
           display: flex;
           padding-right: 20px;
           align-items: center;
@@ -200,55 +193,57 @@ export const CardProfile = styled.div`
           width: 150px;
           height: 60px;
 
-          img {
+          img{
             width: 35px;
             height: 35px;
             margin-right: 5px;
             cursor: pointer;
           }
         }
-
-        .Services {
+        
+        .Services{
           width: 150px;
           height: 120px;
           display: flex;
-          text-align: right;
+          text-align:right;
           padding-right: 40px;
           padding-bottom: 10px;
           justify-content: center;
           flex-direction: column;
         }
 
-        h4 {
-          color: #5679e0;
+        h4{
+          color: #5679E0;
           font-size: 18px;
         }
       }
     }
   }
 
-  .Contact {
+  .Contact{
     width: 160px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 160px;
-    box-shadow: 5px 7px 4px #7d7d7d;
-    margin-bottom: 10px;
+    height: 150px;
     border-radius: 5px;
     text-align: center;
     background-color: #074ead;
     cursor: pointer;
 
-    img {
+    img{
       width: 70px;
       height: 70px;
     }
 
-    h2 {
+    h2{
       color: white;
     }
   }
 `;
+
+
+
+
+
