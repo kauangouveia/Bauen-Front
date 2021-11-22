@@ -17,11 +17,9 @@ function LoginClient(props) {
         token,
         client: {
           client: { email },
-
           client: { name },
-
           client: { room },
-
+          address: { city },
           client: { id },
         },
       } = response.data;
@@ -30,6 +28,8 @@ function LoginClient(props) {
       localStorage.setItem("token", token);
       localStorage.setItem("name", name);
       localStorage.setItem("email", email);
+      localStorage.setItem("city", city);
+
       localStorage.setItem("id", id);
 
       localStorage.setItem("room", room);
@@ -37,7 +37,7 @@ function LoginClient(props) {
       history.push("/profileclient");
     } catch (error) {
       console.log(error);
-      toast.error(error.response.data.errors[0].message)
+      toast.error(error.response.data.errors[0].message);
     }
   };
 

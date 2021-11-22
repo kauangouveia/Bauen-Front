@@ -32,60 +32,43 @@ export const ProfileContainer = styled.div`
     background-position: center;
     align-items: flex-end;
     margin-bottom: 25px;
-
     img{
       width: 100%;
       height: 100%;
     }
   }
+  .InfoClient{
+    width: 100vw;
+    height: 60px;
 
-  .AreaInfo{
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    width: 100%;
-    height: auto;
-    
-    .AreaLocation{
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    justify-content: space-between;
+    padding: 30px;
+    overflow-y: hidden;
+    img{
+      height: 50px;
+      width: 50px;
+    }
+    .location{
       width: auto;
       height: auto;
-      font-size: 25px;
-      font-weight: bold;
-
-      img{
-        width: 50px;
-        height: 50px;
-      }
-    }
-
-    .AreaName{
       display: flex;
       align-items: center;
-      justify-content: center;
-      width: auto;
-      height: auto;
     }
-
-    .AreaChat{
+    .name{
+      width: 300px;
+      height: 60px;
+      align-items:center;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 150px;
-      height: auto;
-
-      img{
-        width: 50px;
-        height: 50px;
-      }
     }
-  }
-  
-  img{
-    width: 50px;
-    height: 50px;
+    .chat{
+      height: 60px;
+      width: 60px;
+      align-items: center;
+      display: flex;
+    }
   }
 `;
 
