@@ -1,6 +1,5 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Star from "../../components/Star";
 import SliderPortifolio from "../../components/SliderPortifolio";
 import SliderComents from "../../components/SliderComents";
 import location from "../../assets/location.svg";
@@ -8,7 +7,6 @@ import reward from "../../assets/reward.svg"
 import warning from "../../assets/warning.svg";
 import menu from "../../assets/menu.svg";
 import bauenBlackLogo from "../../assets/bauenBlackLogo.png";
-import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import {
@@ -27,7 +25,7 @@ import {
 } from "../../services";
 import { useEffect } from "react";
 import { useRef } from "react";
-
+import { useHistory } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
 function Profile() {
@@ -54,28 +52,27 @@ function Profile() {
   }, []);
 
   // Função para entrar no chat
-  // const history = useHistory();
   // // const joinRoom = () => {
-  // //   history.push("/chat");
-  // // };
-
-  // Adicionando preview de foto
-  const imgRef = useRef();
-  const [image, setImage] = useState(null);
-  const handleFile = async (e) => {
-    setImage(e.target.files[0]);
-    imgRef.current.src = URL.createObjectURL(e.target.files[0]);
-  };
-
-  // Analisando se existe foto no modal
-  const checkingPhoto = () => {
-    setIsOpenModalService(true, setIsOpenModalImageProfile(false));
-  };
-
-  // Inserindo foto de perfil e fazendo validação caso o campo estaja nulo
-  const photoProfile = async () => {
-    const data = new FormData();
-    if (image === null) {
+    // //   history.push("/chat");
+    // // };
+    
+    // Adicionando preview de foto
+    const imgRef = useRef();
+    const [image, setImage] = useState(null);
+    const handleFile = async (e) => {
+      setImage(e.target.files[0]);
+      imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+    };
+    
+    // Analisando se existe foto no modal
+    const checkingPhoto = () => {
+      setIsOpenModalService(true, setIsOpenModalImageProfile(false));
+    };
+    
+    // Inserindo foto de perfil e fazendo validação caso o campo estaja nulo
+    const photoProfile = async () => {
+      const data = new FormData();
+      if (image === null) {
       return alert("Por favor adicone uma foto de perfil");
     } else {
       checkingPhoto();
@@ -87,7 +84,7 @@ function Profile() {
       }
     }
   };
-
+  
   // Buscando foto de perfil
   const [imageProfile, setImageProfile] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -95,7 +92,7 @@ function Profile() {
     const data = await findPhoto.findPhoto();
     setImageProfile(data.photo);
   }, []);
-
+  
   // Listando todos os tipos de serviços existentes
   const [service, setService] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -103,13 +100,13 @@ function Profile() {
     const data = await listservice.listService();
     setService(data.services);
   }, []);
-
+  
   // Armazenando tipo de serviços
   const [typeService, setTypeService] = useState("");
   const handleChange = (e) => {
-
+    
     setTypeService(e.target.value);
-
+    
   };
   // Enviando tipo de serviço escolhido
   const envitTypeService = async (service) => {
@@ -120,7 +117,7 @@ function Profile() {
       console.log("errei");
     }
   };
-
+  
   // Exibindo tipo de serviço
   const [ProviderType, setProviderType] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -129,29 +126,36 @@ function Profile() {
 
     setProviderType(data.nameService);
   }, []);
-
+  const history = useHistory();
+  const changePageFastServices = () => {
+    history.push("/fastservices")
+  }
+  const changePagePendingServices = () => {
+    history.push("/pendingservices")
+    
+  }
   const StarRating = () => {
     const [rating, setRating] = useState(null);
     const [hover, setHouver] = useState(null);
-    return(
+    return (
       <div>
         {[...Array(5)].map((star, i) => {
           const ratingValue = i + 1;
-          return(
+          return (
             <label>
-                <input
-                className="ratingButton" 
-                type="radio" 
-                name="rating" 
-                value={ratingValue} 
+              <input
+                className="ratingButton"
+                type="radio"
+                name="rating"
+                value={ratingValue}
                 onClick={() => setRating(ratingValue)}
-                />
-                <FaStar 
-                className="Star" 
-                color={ratingValue <= (hover || rating) ? "#FFC700" : "#F2F2F2"} 
+              />
+              <FaStar
+                className="Star"
+                color={ratingValue <= (hover || rating) ? "#FFC700" : "#F2F2F2"}
                 size={50}
                 onMouseEnter={() => setHouver(ratingValue)}
-                onMouseLeave={() => setHouver(null)}/>
+                onMouseLeave={() => setHouver(null)} />
             </label>
           );
         })}
@@ -186,15 +190,18 @@ function Profile() {
           </div>
           <div className="AreaStars">
             <div className="CenterStar">
-              <StarRating/>
+              <StarRating />
             </div>
           </div>
           <div className="ButtonsOfProfile">
-            <button>
-              <h2>EDITAR PERFIL</h2>
+            <button className="ButtonFastServices"  onClick={changePageFastServices}>
+              <h2>SERVIÇOS RÁPIDOS</h2>
             </button>
-            <img src={menu} alt="menu" />
+            <button className="ButtonPendingServices" onClick={changePagePendingServices}>
+              <h2>SERVIÇOS PENDENTES</h2>
+            </button>
           </div>
+          <img className="Menu" src={menu} alt="menu" />
         </div>
         <div className="services">
           <div className="servicesType">

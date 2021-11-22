@@ -145,7 +145,7 @@ export const InformationsContainer = styled.div`
     .AreaStars {
       display: flex;
       height: auto;
-      width: 400px;
+      width: 450px;
       justify-content: center;
       align-items: center;
       
@@ -166,18 +166,16 @@ export const InformationsContainer = styled.div`
       }
 
     .ButtonsOfProfile {
+      align-items: flex-end;
       display: flex;
+      width: 350px;
       height: auto;
       margin-left: 20px;
-      width: 400px;
-      justify-content: center;
-      align-items: center;
       font-family: "Baloo 2";
+      flex-direction:column;
 
-      button {
-        width: 200px;
-        height: 55px;
-        margin-left: 150px;
+      .ButtonFastServices{
+        width: 250px;
         border-radius: 5px;
         border: 0px;
         color: white;
@@ -185,9 +183,30 @@ export const InformationsContainer = styled.div`
         box-shadow: 0 0 0.5em gray;
         cursor: pointer;
         font-family: "Baloo 2";
+        height: 45px;
+        margin-bottom: 5px;
+      }
+
+      .ButtonPendingServices{
+        width: 250px;
+        border-radius: 5px;
+        border: 0px;
+        color: white;
+        background-color: #074ead;
+        box-shadow: 0 0 0.5em gray;
+        cursor: pointer;
+        font-family: "Baloo 2";
+        height: 45px;
+        margin-top: 5px;
       }
     }
-  }
+
+    .Menu{
+        cursor: pointer;
+        width: 45px;
+        height: 45px;
+      }
+    }
 `;
 
 export const ModalContainer = styled.div`
