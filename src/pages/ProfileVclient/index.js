@@ -14,7 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 
 function ProfileVclient() {
-
+  const history = useHistory();
   const getIdSelectProvider = localStorage.getItem("idServiceProviderSelect");
 
   
@@ -31,7 +31,10 @@ function ProfileVclient() {
       console.log("erro")
     }
   }, []);
-  
+     // Função para entrar no chat
+     const joinRoom = () => {
+      history.push("/chat");
+    };
   console.log(informationsProvider.name);
   return (
     <Container>
@@ -56,7 +59,7 @@ function ProfileVclient() {
             <Star />
           </div>
           <div className="ButtonsOfProfile">
-            <button>
+            <button onClick={joinRoom}>
               <h2>ENTRAR EM CONTATO</h2>
             </button>
             <img src={menu} alt="menu" />

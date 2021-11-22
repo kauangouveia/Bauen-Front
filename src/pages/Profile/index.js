@@ -51,10 +51,7 @@ function Profile() {
     } catch (error) { }
   }, []);
 
-  // Função para entrar no chat
-  // // const joinRoom = () => {
-    // //   history.push("/chat");
-    // // };
+
     
     // Adicionando preview de foto
     const imgRef = useRef();

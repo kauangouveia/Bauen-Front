@@ -103,7 +103,7 @@ function Chat() {
             <img src={constructor} alt="warning" />
             <h3>Deseja mesmo iniciar trativas com este prestador ?</h3>
             <div className="AreaButton">
-              <button className="Back" onClick={() => history.push("/profile")}>
+              <button className="Back" onClick={() => history.push("/profilevclient")}>
                 Não desejo
               </button>
               <button
