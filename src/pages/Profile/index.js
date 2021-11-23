@@ -1,7 +1,8 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import SliderPortifolio from "../../components/SliderPortifolio";
-import SliderComents from "../../components/SliderComents";
+import storm from "../../assets/storm.svg";
+import time from "../../assets/time.svg";
+import chat from "../../assets/chat.svg";
 import location from "../../assets/location.svg";
 import reward from "../../assets/reward.svg"
 import warning from "../../assets/warning.svg";
@@ -185,14 +186,14 @@ function Profile() {
             </div>
           </div>
           <div className="ButtonsOfProfile">
-            <button className="ButtonFastServices"  onClick={()=> history.push('/fastservices')}>
-              <h2>SERVIÇOS RÁPIDOS</h2>
+            <button className="ButtonsIcons" onClick={()=> history.push('/fastservices')}>
+              <img className="Storm" src={storm} alt="localização" />
             </button>
-            <button className="ButtonPendingServices" onClick={()=> history.push('/pendingservices')}>
-              <h2>SERVIÇOS PENDENTES</h2>
+            <button className="ButtonsIcons" onClick={()=> history.push('/pendingservices')}>
+              <img className="Time" src={time} alt="localização" />
             </button>
-            <button className="ButtonPendingServices" onClick={()=> history.push('/chat')}>
-              <h2>ENTRE NA SUA SALA</h2>
+            <button className="ButtonsIcons" onClick={()=> history.push('/chat')}>
+              <img className="Chat" src={chat} alt="localização" />
             </button>
           </div>
           <img className="Menu" src={menu} alt="menu" />
@@ -200,13 +201,12 @@ function Profile() {
         <div className="services">
           <div className="servicesType">
             <div className="Card">
+              
               <h3>{ProviderType}</h3>
             </div>
           </div>
         </div>
       </InformationsContainer>
-
-      
       <Footer />
 
       {isModalVisible && (

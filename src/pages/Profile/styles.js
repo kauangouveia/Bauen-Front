@@ -70,7 +70,6 @@ export const ProfileContainer = styled.div`
 `;
 
 export const InformationsContainer = styled.div`
-  background-color: pink;
   display: flex;
   width: 100vw;
   height: 180px;
@@ -82,22 +81,21 @@ export const InformationsContainer = styled.div`
   padding-top: 10px;
 
   .services {
-    background-color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 10px;
     width: 1360px;
     height: 60px;
 
     .servicesType {
-      background-color: green;
       height: 55px;
       display: flex;
       flex-direction: row;
+      align-items: center;
       justify-content: center;
-      margin-left: auto;
-      margin-right: auto;
       
       .Card {
-        background-color: red;
         width: 150px;
         height: 50px;
         display: flex;
@@ -106,6 +104,8 @@ export const InformationsContainer = styled.div`
         align-items: center;
         background-color:#074ead;
         border-radius:10px;
+        margin-left: 5px;
+        margin-right: 5px;
 
         h3{
           color: white;
@@ -172,41 +172,52 @@ export const InformationsContainer = styled.div`
     .ButtonsOfProfile {
       align-items: flex-end;
       display: flex;
+      align-items: center;
+      justify-content: end;
+      flex-direction: row;
       width: 350px;
       height: auto;
       margin-left: 20px;
+      padding-right: 5px;
       font-family: "Baloo 2";
-      flex-direction:column;
 
-      .ButtonFastServices{
-        width: 300px;
-        border-radius: 5px;
+      .ButtonsIcons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        border-radius: 5%;
         border: 0px;
         color: white;
         background-color: #074ead;
         box-shadow: 0 0 0.5em gray;
         cursor: pointer;
         font-family: "Baloo 2";
-        height: 45px;
-        margin-bottom: 5px;
-      }
+        height: 60px;
+        margin-left: 5px;
+        margin-right: 5px;
 
-      .ButtonPendingServices{
-        width: 300px;
-        border-radius: 5px;
-        border: 0px;
-        color: white;
-        background-color: #074ead;
-        box-shadow: 0 0 0.5em gray;
-        cursor: pointer;
-        font-family: "Baloo 2";
-        height: 45px;
-        margin-top: 5px;
+        .Storm{
+          width: 50px;
+          height: 50px;
+        }
+
+        .Time{
+          width: 45px;
+          height: 45px;
+        }
+
+        .Chat{
+          width: 40px;
+          height: 40px;
+        }
       }
     }
 
     .Menu{
         cursor: pointer;
+        margin-top: auto;
+        margin-bottom: auto;
         width: 45px;
         height: 45px;
       }
