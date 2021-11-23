@@ -70,6 +70,7 @@ export const ProfileContainer = styled.div`
 `;
 
 export const InformationsContainer = styled.div`
+  background-color: pink;
   display: flex;
   width: 100vw;
   height: 180px;
@@ -78,31 +79,34 @@ export const InformationsContainer = styled.div`
   font-family: "Baloo 2";
   flex-direction: column;
   align-items: center;
+  padding-top: 10px;
+
   .services {
+    background-color: purple;
+    margin-top: 10px;
     width: 1360px;
-    height: 55px;
+    height: 60px;
 
     .servicesType {
-      min-width: 1000px;
-      max-width: auto;
-      height: 50px;
+      background-color: green;
+      height: 55px;
       display: flex;
       flex-direction: row;
-      display: flex;
       justify-content: center;
       margin-left: auto;
       margin-right: auto;
-      overflow-y: hidden;
+      
       .Card {
+        background-color: red;
         width: 150px;
-        height: auto;
+        height: 50px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         background-color:#074ead;
-        margin-left: 10px;
         border-radius:10px;
+
         h3{
           color: white;
         }
@@ -137,7 +141,7 @@ export const InformationsContainer = styled.div`
       p {
         font-weight: bold;
         text-align: start;
-        padding-left: 10px;
+        padding-left: 35px;
         font-family: "Baloo 2";
         color: #074ead;
       }

@@ -209,8 +209,7 @@ function Profile() {
         </div>
       </InformationsContainer>
 
-      <SliderPortifolio />
-      <SliderComents />
+      
       <Footer />
 
       {isModalVisible && (
