@@ -159,7 +159,7 @@ export const CardProfile = styled.div`
       img {
         width: 85%;
         height: 85%;
-        border: 5px solid #dadada;
+        border: 5px solid #f05800;
         border-radius: 10px;
       }
     }

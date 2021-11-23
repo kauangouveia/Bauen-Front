@@ -140,3 +140,10 @@ export const listAcceptServices = {
     return result.data;
   },
 };  
+
+export const findRoom = {
+  room:async(data)=>{
+    const result = await api.get(`/findroom/${data}`);
+    return result.data;
+  }
+}

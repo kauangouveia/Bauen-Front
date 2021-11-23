@@ -8,21 +8,30 @@ import { useHistory } from "react-router";
 
 const socket = io.connect("http://localhost:3001");
 const nameProfile = localStorage.getItem("name");
-let room = localStorage.getItem("room");
+const userType = localStorage.getItem("type");
 
 const joinRoom = (sala, name) => {
-  socket.emit("join_room", room, nameProfile);
+  socket.emit("join_room", sala, name);
 };
+const providerRoom = localStorage.getItem("room");
+const clientRoom = localStorage.getItem("roomProvider");
 
 function Chat() {
   const [isOpenModalWarning, setIsOpenModalWarning] = useState(true);
-
   const [currentMessage, setCurrentMessage] = useState("");
-
   const history = useHistory();
-
   const [messageList, setMessageList] = useState([]);
+  const [room, setRoom] = useState("");
 
+  useEffect(() => {
+    if (userType === "provider") {
+      setRoom(localStorage.getItem("room"));
+    } else {
+      setRoom(localStorage.getItem("roomProvider"));
+    }
+  
+  },[]);
+console.log(room)
   const sendMessage = async (socket, username, room) => {
     if (currentMessage !== "") {
       const messageData = {

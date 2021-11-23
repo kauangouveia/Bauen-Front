@@ -9,7 +9,7 @@ import menu from "../../assets/menu.svg";
 import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
 import { Container, ProfileContainer, InformationsContainer } from "./styles";
-import { findProviderForClient } from "../../services";
+import { findProviderForClient, findRoom } from "../../services";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 
@@ -31,11 +31,14 @@ function ProfileVclient() {
       console.log("erro")
     }
   }, []);
-     // Função para entrar no chat
-     const joinRoom = () => {
-      history.push("/chat");
-    };
-  console.log(informationsProvider.name);
+  const provider = localStorage.getItem("idServiceProviderSelect")
+  const joinRoom = async () =>{
+    const data = await findRoom.room(provider)
+    localStorage.setItem("roomProvider",data.room)
+    history.push('/chat')
+  }
+
+
   return (
     <Container>
       <Header />
@@ -59,7 +62,7 @@ function ProfileVclient() {
             <Star />
           </div>
           <div className="ButtonsOfProfile">
-            <button onClick={joinRoom}>
+            <button onClick={()=> joinRoom()}>
               <h2>ENTRAR EM CONTATO</h2>
             </button>
             <img src={menu} alt="menu" />

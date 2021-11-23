@@ -30,7 +30,7 @@ function FastServices() {
       console.log("error")
     }
   }, []);
-  console.log(service);
+
   return (
     <>
       <Container>
