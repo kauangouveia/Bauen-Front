@@ -124,13 +124,7 @@ function Profile() {
     setProviderType(data.nameService);
   }, []);
   const history = useHistory();
-  const changePageFastServices = () => {
-    history.push("/fastservices")
-  }
-  const changePagePendingServices = () => {
-    history.push("/pendingservices")
-    
-  }
+
   const StarRating = () => {
     const [rating, setRating] = useState(null);
     const [hover, setHouver] = useState(null);
@@ -191,11 +185,14 @@ function Profile() {
             </div>
           </div>
           <div className="ButtonsOfProfile">
-            <button className="ButtonFastServices"  onClick={changePageFastServices}>
+            <button className="ButtonFastServices"  onClick={()=> history.push('/fastservices')}>
               <h2>SERVIÇOS RÁPIDOS</h2>
             </button>
-            <button className="ButtonPendingServices" onClick={changePagePendingServices}>
+            <button className="ButtonPendingServices" onClick={()=> history.push('/pendingservices')}>
               <h2>SERVIÇOS PENDENTES</h2>
+            </button>
+            <button className="ButtonPendingServices" onClick={()=> history.push('/chat')}>
+              <h2>ENTRE NA SUA SALA</h2>
             </button>
           </div>
           <img className="Menu" src={menu} alt="menu" />

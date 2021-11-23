@@ -175,7 +175,7 @@ export const InformationsContainer = styled.div`
       flex-direction:column;
 
       .ButtonFastServices{
-        width: 250px;
+        width: 300px;
         border-radius: 5px;
         border: 0px;
         color: white;
@@ -188,7 +188,7 @@ export const InformationsContainer = styled.div`
       }
 
       .ButtonPendingServices{
-        width: 250px;
+        width: 300px;
         border-radius: 5px;
         border: 0px;
         color: white;
