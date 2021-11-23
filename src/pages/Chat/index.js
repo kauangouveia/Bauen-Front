@@ -36,7 +36,7 @@ function Chat() {
       };
       await socket.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);
-      setCurrentMessage("")
+      setCurrentMessage("");
     }
   };
 
@@ -47,6 +47,14 @@ function Chat() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [socket]);
 
+  const type = localStorage.getItem("type");
+  const backProfile = () => {
+    if (type === "provider") {
+      history.push("/profile");
+    } else {
+      history.push("/profilevclient");
+    }
+  };
   return (
     <Container>
       <Header />
@@ -103,7 +111,7 @@ function Chat() {
             <img src={constructor} alt="warning" />
             <h3>Deseja mesmo iniciar trativas com este prestador ?</h3>
             <div className="AreaButton">
-              <button className="Back" onClick={() => history.push("/profilevclient")}>
+              <button className="Back" onClick={() => backProfile()}>
                 Não desejo
               </button>
               <button

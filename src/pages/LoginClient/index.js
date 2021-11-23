@@ -22,6 +22,7 @@ function LoginClient(props) {
           address: { city },
           client: { id },
         },
+        clientType: clientType,
       } = response.data;
       console.log(response.data.client);
 
@@ -31,7 +32,7 @@ function LoginClient(props) {
       localStorage.setItem("city", city);
 
       localStorage.setItem("id", id);
-
+      localStorage.setItem("type", clientType)
       localStorage.setItem("room", room);
       console.log("logador");
       history.push("/profileclient");
