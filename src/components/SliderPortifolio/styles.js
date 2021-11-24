@@ -7,7 +7,7 @@ export const ContainerCarousel = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  border-bottom: solid 0.3px #dadada;
+  border-bottom: solid 2px #dadada;
   align-items: center;
 
   .Next{
