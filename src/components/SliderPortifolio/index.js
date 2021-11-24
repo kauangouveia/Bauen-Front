@@ -11,7 +11,7 @@ function SliderPortifolio() {
         <h1 className="Next">{">"}</h1>
         <h1 className="Return">{"<"}</h1>
           <div className="container">
-            <div className="title">
+            <div className="Title">
               <h1>Portifólio</h1>
               <img src={addPhoto} alt="adicionar"/>
             </div>

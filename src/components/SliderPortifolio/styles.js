@@ -1,7 +1,9 @@
 import styled from "styled-components";
 export const ContainerCarousel = styled.div`
-  width: 100vw;
+  width: 1360px;
   height: 400px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   justify-content: center;
   position: relative;
@@ -15,7 +17,7 @@ export const ContainerCarousel = styled.div`
     color: #00277D;
     align-items: center;
     justify-content: center;
-    right: 310px;
+    right: 30px;
     bottom: 150px;
     width: 50px;
     height: 50px;
@@ -30,7 +32,7 @@ export const ContainerCarousel = styled.div`
     color: #00277D;
     align-items: center;
     justify-content: center;
-    left: 310px;
+    left: 30px;
     bottom: 150px;
     width: 50px;
     height: 50px;
@@ -42,7 +44,7 @@ export const ContainerCarousel = styled.div`
     width: 1300px;
     height: auto;
 
-    .title{
+    .Title{
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -92,6 +94,8 @@ export const ContainerCarousel = styled.div`
     img {
       width: 100%;
       height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
       border-radius: 5px;
       border: 2px solid #00277D;
     }

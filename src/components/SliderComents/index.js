@@ -4,120 +4,108 @@ import { ContainerCarousel } from "./styles";
 
 function SliderComents() {
   return (
-    <ContainerCarousel>
-      <div className="container">
-        <div className="title">
-          <h1>Comentários</h1>
-        </div>
-        <Carousel show={3}>
-          <div className="ItemSlide">
-            <div className="ProfileAndInformation">
-              <div className="PictureComents"></div>
-              <div className="InformationProfile">
-                <h3>Kauan Gouveia Monte</h3>
-                <p>3 semanas</p>
+    <>
+      <ContainerCarousel>
+        <h1 className="Next">{">"}</h1>
+        <h1 className="Return">{"<"}</h1>
+          <div className="container">
+            <div className="Title">
+              <h1>Comentários</h1>
+            </div>
+            <Carousel show={4}>
+              <div className="ContainerItem">
+                <div className="ItemSlide">
+                  <h2>Nome do usúario</h2>
+                  <p>
+                    "Comentário comentário comentário 
+                    Comentário comentário comentário 
+                    Comentário comentário comentário 
+                  </p>
+                  <h3>Há quanto tempo</h3>
+                </div>
               </div>
-            </div>
-            <div className="Description">
-              <p>
-                Jose fernando é um otimo prestador <br />
-                Tem um preço justo e faz reformas de qualidade
-              </p>
-            </div>
-          </div>
-          <div className="ItemSlide">
-            <div className="ProfileAndInformation">
-              <div className="PictureComents"></div>
-              <div className="InformationProfile">
-                <h3>Kauan Gouveia Monte</h3>
-                <p>3 semanas</p>
+              <div className="ContainerItem">
+                <div className="ItemSlide">
+                  <h2>Nome do usúario</h2>
+                  <p>
+                    "Comentário comentário comentário 
+                    Comentário comentário comentário 
+                    Comentário comentário comentário 
+                  </p>
+                  <h3>Há quanto tempo</h3>
+                </div>
               </div>
-            </div>
-            <div className="Description">
-              <p>
-                Jose fernando é um otimo prestador <br />
-                Tem um preço justo e faz reformas de qualidade
-              </p>
-            </div>
-          </div>
-          <div className="ItemSlide">
-            <div className="ProfileAndInformation">
-              <div className="PictureComents"></div>
-              <div className="InformationProfile">
-                <h3>Kauan Gouveia Monte</h3>
-                <p>3 semanas</p>
+              <div className="ContainerItem">
+                <div className="ItemSlide">
+                  <h2>Nome do usúario</h2>
+                  <p>
+                    "Comentário comentário comentário 
+                    Comentário comentário comentário 
+                    Comentário comentário comentário 
+                  </p>
+                  <h3>Há quanto tempo</h3>
+                </div>
               </div>
-            </div>
-            <div className="Description">
-              <p>
-                Jose fernando é um otimo prestador <br />
-                Tem um preço justo e faz reformas de qualidade
-              </p>
-            </div>
-          </div>
-          <div className="ItemSlide">
-            <div className="ProfileAndInformation">
-              <div className="PictureComents"></div>
-              <div className="InformationProfile">
-                <h3>Kauan Gouveia Monte</h3>
-                <p>3 semanas</p>
+              <div className="ContainerItem">
+                <div className="ItemSlide">
+                  <h2>Nome do usúario</h2>
+                  <p>
+                    "Comentário comentário comentário 
+                    Comentário comentário comentário 
+                    Comentário comentário comentário 
+                  </p>
+                  <h3>Há quanto tempo</h3>
+                </div>
               </div>
-            </div>
-            <div className="Description">
-              <p>
-                Jose fernando é um otimo prestador <br />
-                Tem um preço justo e faz reformas de qualidade
-              </p>
-            </div>
-          </div>
-          <div className="ItemSlide">
-            <div className="ProfileAndInformation">
-              <div className="PictureComents"></div>
-              <div className="InformationProfile">
-                <h3>Kauan Gouveia Monte</h3>
-                <p>3 semanas</p>
+              <div className="ContainerItem">
+                <div className="ItemSlide">
+                  <h2>Nome do usúario</h2>
+                  <p>
+                    "Comentário comentário comentário 
+                    Comentário comentário comentário 
+                    Comentário comentário comentário 
+                  </p>
+                  <h3>Há quanto tempo</h3>
+                </div>
               </div>
-            </div>
-            <div className="Description">
-              <p>
-                Jose fernando é um otimo prestador <br />
-                Tem um preço justo e faz reformas de qualidade
-              </p>
-            </div>
-          </div>
-          <div className="ItemSlide">
-            <div className="ProfileAndInformation">
-              <div className="PictureComents"></div>
-              <div className="InformationProfile">
-                <h3>Kauan Gouveia Monte</h3>
-                <p>3 semanas</p>
+              <div className="ContainerItem">
+                <div className="ItemSlide">
+                  <h2>Nome do usúario</h2>
+                  <p>
+                    "Comentário comentário comentário 
+                    Comentário comentário comentário 
+                    Comentário comentário comentário 
+                  </p>
+                  <h3>Há quanto tempo</h3>
+                </div>
               </div>
-            </div>
-            <div className="Description">
-              <p>
-                Jose fernando é um otimo prestador <br />
-                Tem um preço justo e faz reformas de qualidade
-              </p>
-            </div>
-          </div>
-          <div className="ItemSlide">
-            <div className="ProfileAndInformation">
-              <div className="PictureComents"></div>
-              <div className="InformationProfile">
-                <h3>Kauan Gouveia Monte</h3>
-                <p>3 semanas</p>
+              <div className="ContainerItem">
+                <div className="ItemSlide">
+                  <h2>Nome do usúario</h2>
+                  <p>
+                    "Comentário comentário comentário 
+                    Comentário comentário comentário 
+                    Comentário comentário comentário 
+                  </p>
+                  <h3>Há quanto tempo</h3>
+                </div>
               </div>
-            </div>
-            <div className="Description">
-              <p>
-                Jose fernando é um otimo prestador <br />
-                Tem um preço justo e faz reformas de qualidade
-              </p>
-            </div>
+              <div className="ContainerItem">
+                <div className="ItemSlide">
+                  <h2>Nome do usúario</h2>
+                  <p>
+                    "Comentário comentário comentário 
+                    Comentário comentário comentário 
+                    Comentário comentário comentário 
+                  </p>
+                  <h3>Há quanto tempo</h3>
+                </div>
+              </div>
+            </Carousel>
           </div>
-        </Carousel>
-      </div>
-    </ContainerCarousel>
+        
+      </ContainerCarousel>
+    </>
   );
 }
 
