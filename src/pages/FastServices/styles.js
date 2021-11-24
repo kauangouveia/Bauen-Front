@@ -229,7 +229,6 @@ export const CardProfile = styled.div`
 
   .Contact {
     width: 160px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;

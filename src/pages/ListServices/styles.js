@@ -132,7 +132,7 @@ export const ContainerProfile = styled.div`
 
 export const CardProfile = styled.div`
   width: 850px;
-  height: 150px;
+  height: 180px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -142,12 +142,13 @@ export const CardProfile = styled.div`
   
   .Profile{
     width: 680px;
-    height: 150px;
+    height: 160px;
     margin-right: 10px;
     border: 2px solid #DADADA;
     display: flex;
     overflow-y: hidden;
-    
+    margin-bottom: 10px;
+    box-shadow: 5px 7px 4px #7d7d7d;
     .ProfileImage{
     width: 200px;
     height: 150px;
@@ -232,7 +233,9 @@ export const CardProfile = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 150px;
+    height: 160px;
+    box-shadow: 5px 7px 4px #7d7d7d;
+    margin-bottom: 10px;
     border-radius: 5px;
     text-align: center;
     background-color: #074ead;
