@@ -1,43 +1,48 @@
 import React from "react";
 import { Carousel } from "@trendyol-js/react-carousel";
 import { ContainerCarousel } from "./styles";
-import reform from "../../assets/reform.jpg";
+import construction from "../../assets/construction.jpg";
+import addPhoto from "../../assets/addPhoto.svg";
 
 function SliderPortifolio() {
   return (
     <>
       <ContainerCarousel>
-        <div className="container">
-          <div className="title">
-            <h1>Portifolio</h1>
+        <h1 className="Next">{">"}</h1>
+        <h1 className="Return">{"<"}</h1>
+          <div className="container">
+            <div className="title">
+              <h1>Portifólio</h1>
+              <img src={addPhoto} alt="adicionar"/>
+            </div>
+            <Carousel show={4}>
+              <div className="ItemSlide">
+                <img src={construction} alt="reforma" />
+              </div>
+              <div className="ItemSlide">
+                <img src={construction} alt="reforma" />
+              </div>
+              <div className="ItemSlide">
+                <img src={construction} alt="reforma" />
+              </div>
+              <div className="ItemSlide">
+                <img src={construction} alt="reforma" />
+              </div>
+              <div className="ItemSlide">
+                <img src={construction} alt="reforma" />
+              </div>
+              <div className="ItemSlide">
+                <img src={construction} alt="reforma" />
+              </div>
+              <div className="ItemSlide">
+                <img src={construction} alt="reforma" />
+              </div>
+              <div className="ItemSlide">
+                <img src={construction} alt="reforma" />
+              </div>
+            </Carousel>
           </div>
-          <Carousel show={3}>
-            <div className="ItemSlide">
-              <img src={reform} alt="reforma" />
-            </div>
-            <div className="ItemSlide">
-              <img src={reform} alt="reforma" />
-            </div>
-            <div className="ItemSlide">
-              <img src={reform} alt="reforma" />
-            </div>
-            <div className="ItemSlide">
-              <img src={reform} alt="reforma" />
-            </div>
-            <div className="ItemSlide">
-              <img src={reform} alt="reforma" />
-            </div>
-            <div className="ItemSlide">
-              <img src={reform} alt="reforma" />
-            </div>
-            <div className="ItemSlide">
-              <img src={reform} alt="reforma" />
-            </div>
-            <div className="ItemSlide">
-              <img src={reform} alt="reforma" />
-            </div>
-          </Carousel>
-        </div>
+        
       </ContainerCarousel>
     </>
   );

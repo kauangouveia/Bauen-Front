@@ -1,6 +1,4 @@
 import styled from "styled-components";
-
-import reward from "../../assets/reward.svg";
 export const Container = styled.div`
   display: flex;
   width: 100vw;
@@ -203,8 +201,8 @@ export const InformationsContainer = styled.div`
         }
 
         .Time{
-          width: 45px;
-          height: 45px;
+          width: 48px;
+          height: 48px;
         }
 
         .Chat{

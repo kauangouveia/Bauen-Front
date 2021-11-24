@@ -1,62 +1,99 @@
 import styled from "styled-components";
-import next from "../../assets/next.svg";
 export const ContainerCarousel = styled.div`
-width: 100vw;
-  height: 500px;
-  background-color: white;
+  width: 100vw;
+  height: 400px;
   display: flex;
   justify-content: center;
+  position: relative;
   border-bottom: solid 0.3px #dadada;
   align-items: center;
 
-  .container {
-    width: 1360px;
-    height: 100%;
+  .Next{
     display: flex;
+    font-size: 55px;
+    padding-left: 5px;
+    color: #00277D;
     align-items: center;
-    text-align: center;
-    flex-direction: column;
-    .title{
-    height:52px;
-    width:1300px;
-    flex-direction: row;
-    text-align:left;
+    justify-content: center;
+    right: 310px;
+    bottom: 150px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    overflow-y: hidden;
   }
-  
-  .styles-module_carousel-base__3keqD {
+
+  .Return{
+    display: flex;
+    font-size: 55px;
+    padding-right: 5px;
+    color: #00277D;
+    align-items: center;
+    justify-content: center;
+    left: 310px;
+    bottom: 150px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    overflow-y: hidden;
+  }
+
+  .container {
+    width: 1300px;
+    height: auto;
+
+    .title{
       display: flex;
-      width: 1360px;
-      height: 300px;
-      justify-content: center;
+      flex-direction: row;
       align-items: center;
-      padding: 20px;
+      height: 55px;
+      width:  1300px;
+      color: #00277D;
+
+      img{
+        cursor: pointer;
+        margin-left: 5px;
+        width: 45px;
+        height: 45px;
+      }
+    }
+    
+  .styles-module_carousel-base__3keqD {
+      width: 1300px;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      position: relative;
 
       .styles-module_carousel-arrow__26sRw{
-        width: 50px;
-        height: 50px;
-        border: 0px;
         background-color: transparent;
-        background-image: url(${next});
-        background-repeat: no-repeat;
+        width: 55px;
+        height: 55px;
+        border: 0px;
         background-size: 45px;
      
       } .styles-module_carousel-arrow__26sRw:hover{
-      cursor: pointer;
-      
+          cursor: pointer;
       }
     }
   }
-  .ItemSlide {
-    width: 380px;
-    height: 240px;
-    border-radius: 5%;
-    margin-left: 10px;
+
+  .ItemSlide {    
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
     overflow: hidden;
-    border: 1px solid gray;
-    box-shadow: 0 0 0.5em gray;
+    border: 5px solid transparent;
+
     img {
       width: 100%;
       height: 100%;
+      border-radius: 5px;
+      border: 2px solid #00277D;
     }
   }
 `;

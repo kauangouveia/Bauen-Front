@@ -1,5 +1,7 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import SliderPortifolio from "../../components/SliderPortifolio";
+import SliderComents from "../../components/SliderComents";
 import storm from "../../assets/storm.svg";
 import time from "../../assets/time.svg";
 import chat from "../../assets/chat.svg";
@@ -207,6 +209,7 @@ function Profile() {
           </div>
         </div>
       </InformationsContainer>
+      <SliderPortifolio/>
       <Footer />
 
       {isModalVisible && (
