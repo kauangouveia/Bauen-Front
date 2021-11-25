@@ -6,12 +6,12 @@ import { listservice, getPhotoClient, fastService } from "../../services";
 import { useEffect } from "react";
 import React, { useState } from "react";
 import { useRef } from "react";
-import {ToastContainer, toast} from "react-toastify"
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Post() {
   const profileName = localStorage.getItem("name");
+  const id = localStorage.getItem("id");
 
   const [imageProfile, setImageProfile] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -49,7 +49,9 @@ function Post() {
   };
 
   const [typeService, setTypeService] = useState("");
+
   const handleChange = (e) => {
+    console.log(e.target.value);
     setTypeService(e.target.value);
   };
   // console.log(typeService);
@@ -58,19 +60,21 @@ function Post() {
   const sendtitleFastService = (e) => {
     setTitleFastService(e);
   };
-  
-  const  sendFastService = async () => {
+
+  const sendFastService = async () => {
     const data = new FormData();
-   
-      data.append("fastService", image);
-      data.append("title", titleFastService);
-      data.append("TypeOfService", typeService);
-      try {
-        await fastService.sendFS(data);
-      } catch (error) {
-        console.log(error);
-      }
-      alert("Serviço Rapido adionado, basta aguardar um dos nossos colaboradores entrar em contato")
+    data.append("userId", id);
+    data.append("fastService", image);
+    data.append("title", titleFastService);
+    data.append("TypeOfService", typeService);
+    try {
+      await fastService.sendFS(data);
+    } catch (error) {
+      console.log(error);
+    }
+    alert(
+      "Serviço Rapido adionado, basta aguardar um dos nossos colaboradores entrar em contato"
+    );
   };
   return (
     <>
@@ -131,7 +135,11 @@ function Post() {
               <button type="submit" className="Cancel">
                 Cancelar
               </button>
-              <button type="submit" className="Confirm" onClick={sendFastService}>
+              <button
+                type="submit"
+                className="Confirm"
+                onClick={sendFastService}
+              >
                 Confirmar
               </button>
             </div>

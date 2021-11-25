@@ -26,6 +26,7 @@ function FastServices() {
   }, []);
 
   const providerId = localStorage.getItem("id");
+
   const sendAcceptService = async (
     idTableIntermediary,
     idclient,
@@ -37,7 +38,7 @@ function FastServices() {
     try {
       const dataService = await acceptServices.accept({
         idTableIntermediary: idTableIntermediary,
-        idClient : idclient,
+        idClient: idclient,
         idServiceProvider: id_service_provider,
         nameClient: nameClient,
         titleProject: titleProject,
@@ -48,7 +49,18 @@ function FastServices() {
       console.log("erro");
     }
   };
-  console.log(fastService)
+
+  // Retornando serviços que ainda não foram aceitos
+  const filteredFastService = (acceptedService) => {
+    if (fastService.length) {
+      const filteredFastServiceArray = fastService.filter(
+        (item) => item.idServiceFast !== acceptedService.idServiceFast
+      );
+
+      setFastService(filteredFastServiceArray);
+    }
+  };
+
   return (
     <>
       <Container>
@@ -102,16 +114,18 @@ function FastServices() {
                 </div>
                 <div
                   className="Contact"
-                  onClick={() =>
-                    sendAcceptService(
-                      item.idTableIntermediary,
-                      item.id,
-                      providerId,
-                      item.name,
-                      item.title,
-                      item.photoService
-                    )
-                  }
+                  onClick={() => {
+                    // sendAcceptService(
+                    //   item.idTableIntermediary,
+                    //   item.id,
+                    //   providerId,
+                    //   item.name,
+                    //   item.title,
+                    //   item.photoService
+                    // );
+
+                    filteredFastService(item);
+                  }}
                 >
                   <img src={like} alt="gostei" />
                   <h2>Aceitar</h2>
