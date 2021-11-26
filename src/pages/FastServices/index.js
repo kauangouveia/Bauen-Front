@@ -13,7 +13,7 @@ import {
   CardProfile,
 } from "./styles";
 import menu from "../../assets/menu.svg";
-import { listFastServices } from "../../services";
+import { listFastServices, acceptAndEnvitFastService } from "../../services";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -24,20 +24,17 @@ function FastServices() {
     const data = await listFastServices.fastService();
     setFastService(data.data);
   }, []);
-  console.log(fastService)
   const providerId = localStorage.getItem("id");
 
-  // Retornando serviços que ainda não foram aceitos
-  // const filteredFastService = (acceptedService) => {
-  //   if (fastService.length) {
-  //     const filteredFastServiceArray = fastService.filter(
-  //       (item) => item.idServiceFast !== acceptedService.idServiceFast
-  //     );
-
-  //     setFastService(filteredFastServiceArray);
-  //   }
-  // };
-
+  const accept = async (idService) => {
+    try {
+      const data = await acceptAndEnvitFastService.acceptService(idService);
+      console.log(data);
+    } catch (error) {
+      console.log("error");
+    }
+  };
+  console.log(fastService);
   return (
     <>
       <Container>
@@ -73,7 +70,7 @@ function FastServices() {
               <CardProfile key={item.id_client_fast_services}>
                 <div className="Profile">
                   <div className="ProfileImage">
-                    <img src={item.photoService} alt="usuarios" />
+                    <img src={item.photo_service} alt="usuarios" />
                   </div>
                   <div className="Informations">
                     <div className="NameAndRating">
@@ -90,7 +87,11 @@ function FastServices() {
                   </div>
                 </div>
                 <div className="Contact">
-                  <img src={like} alt="gostei" />
+                  <img
+                    src={like}
+                    alt="gostei"
+                    onClick={() => accept({ idService: item.id_fast_service, id: parseInt(providerId) })}
+                  />
                   <h2>Aceitar</h2>
                 </div>
               </CardProfile>

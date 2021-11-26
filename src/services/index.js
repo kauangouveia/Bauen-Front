@@ -125,11 +125,16 @@ export const findProviderForClient = {
   },
 };
 
-
-
 export const findRoom = {
-  room:async(data)=>{
+  room: async (data) => {
     const result = await api.get(`/findroom/${data}`);
     return result.data;
-  }
-}
+  },
+};
+
+export const acceptAndEnvitFastService = {
+  acceptService: async (data) => {
+    const result = await api.post("/acceptServices", data)
+    return result.data
+  },
+};
