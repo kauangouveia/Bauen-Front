@@ -9,6 +9,7 @@ export const Container = styled.div`
 `;
 
 export const ProfileContainer = styled.div`
+background-color: red;
   display: flex;
   width: 100vw;
   height: 400px;
@@ -18,10 +19,11 @@ export const ProfileContainer = styled.div`
   background-color: #074ead;
   flex-direction: row-reverse;
   flex-direction: column;
-  padding: 25px;
   color: white;
+  position: relative;
 
   .PictureProfile {
+    background-color: pink;
     flex-direction: column-reverse;
     flex-direction: row-reverse;
     display: flex;
@@ -29,45 +31,68 @@ export const ProfileContainer = styled.div`
     width: 250px;
     background-color: #dadada;
     border-radius: 100%;
+    border: solid 4px #dadada;
     background-position: center;
+    margin-top: 10px;
     align-items: flex-end;
-    margin-bottom: 25px;
+    
     img{
+      background-color: yellowgreen;
       width: 100%;
       height: 100%;
     }
   }
   .InfoClient{
-    width: 100vw;
+    background-color:brown;
+    width: 1360px;
     height: 60px;
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 30px;
+    margin-top: 20px;
     overflow-y: hidden;
+
+    .AreaInfo{
+      background-color: gray;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 1360px;
+      height: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+    }
+
     img{
+      background-color: green;
       height: 50px;
       width: 50px;
     }
     .location{
+      background-color: yellowgreen;
       width: auto;
       height: auto;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
     .name{
-      width: 300px;
-      height: 60px;
+      background-color: black;
+      width: auto;
+      height: auto;
       align-items:center;
       display: flex;
     }
     .chat{
+      background-color:tomato;
       height: 60px;
       width: 60px;
       align-items: center;
       display: flex;
+      justify-content: center;
     }
   }
 `;

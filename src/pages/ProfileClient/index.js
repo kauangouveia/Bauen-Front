@@ -77,15 +77,17 @@ function ProfileClient() {
           <img src={imageProfile} alt="Foto de perfil" />
         </div>
         <div className="InfoClient">
+          <div className="AreaInfo">
           <div className="location">
             <img src={locationWhite} alt="logo" />
             <h2>{locationOfServiceProvier}</h2>
           </div>
           <div className="name">
-            <h2>{nameProfile}</h2>
+            <h1>{nameProfile}</h1>
           </div>
           <div className="chat">
             <img src={chatlogobauen} alt="logo do chat" />
+          </div>
           </div>
         </div>
       </ProfileContainer>
