@@ -69,12 +69,12 @@ function Post() {
     data.append("TypeOfService", typeService);
     try {
       await fastService.sendFS(data);
+      toast.success(
+        "Serviço Rapido adionado, basta aguardar um dos nossos colaboradores entrar em contato"
+      );
     } catch (error) {
       console.log(error);
     }
-    alert(
-      "Serviço Rapido adionado, basta aguardar um dos nossos colaboradores entrar em contato"
-    );
   };
   return (
     <>

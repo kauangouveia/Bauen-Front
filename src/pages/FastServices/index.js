@@ -13,7 +13,7 @@ import {
   CardProfile,
 } from "./styles";
 import menu from "../../assets/menu.svg";
-import { listFastServices, acceptServices } from "../../services";
+import { listFastServices } from "../../services";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -24,42 +24,19 @@ function FastServices() {
     const data = await listFastServices.fastService();
     setFastService(data.data);
   }, []);
-
+  console.log(fastService)
   const providerId = localStorage.getItem("id");
 
-  const sendAcceptService = async (
-    idTableIntermediary,
-    idclient,
-    id_service_provider,
-    nameClient,
-    titleProject,
-    photoService
-  ) => {
-    try {
-      const dataService = await acceptServices.accept({
-        idTableIntermediary: idTableIntermediary,
-        idClient: idclient,
-        idServiceProvider: id_service_provider,
-        nameClient: nameClient,
-        titleProject: titleProject,
-        photo: photoService,
-      });
-      console.log(dataService, "funcionou");
-    } catch (error) {
-      console.log("erro");
-    }
-  };
-
   // Retornando serviços que ainda não foram aceitos
-  const filteredFastService = (acceptedService) => {
-    if (fastService.length) {
-      const filteredFastServiceArray = fastService.filter(
-        (item) => item.idServiceFast !== acceptedService.idServiceFast
-      );
+  // const filteredFastService = (acceptedService) => {
+  //   if (fastService.length) {
+  //     const filteredFastServiceArray = fastService.filter(
+  //       (item) => item.idServiceFast !== acceptedService.idServiceFast
+  //     );
 
-      setFastService(filteredFastServiceArray);
-    }
-  };
+  //     setFastService(filteredFastServiceArray);
+  //   }
+  // };
 
   return (
     <>
@@ -112,21 +89,7 @@ function FastServices() {
                     </div>
                   </div>
                 </div>
-                <div
-                  className="Contact"
-                  onClick={() => {
-                    // sendAcceptService(
-                    //   item.idTableIntermediary,
-                    //   item.id,
-                    //   providerId,
-                    //   item.name,
-                    //   item.title,
-                    //   item.photoService
-                    // );
-
-                    filteredFastService(item);
-                  }}
-                >
+                <div className="Contact">
                   <img src={like} alt="gostei" />
                   <h2>Aceitar</h2>
                 </div>

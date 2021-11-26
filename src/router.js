@@ -14,7 +14,6 @@ import Register2 from "./pages/Register/register2";
 import Register3 from "./pages/Register/register3";
 import Register4 from "./pages/Register/register4";
 import Register5 from "./pages/Register/register5";
-import ConfirmServices from "./pages/ConfrimServices";
 
 import Post from "./pages/Post";
 import ClientOrServiceProvider from "./pages/ChoiceClientOrServiceProvider";
@@ -82,9 +81,6 @@ function Router() {
       </Route>
       <Route path="/loginCLient">
         <LoginClient />
-      </Route>
-      <Route path="/confirm">
-        <ConfirmServices />
       </Route>
       <PrivateRoute path="/post">
         <Post />

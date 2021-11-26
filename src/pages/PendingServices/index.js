@@ -21,15 +21,7 @@ function FastServices() {
   const [service, setService] = useState([]);
   const providerId = localStorage.getItem("id");
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(async () => {
-    try {
-      const data = await listAcceptServices.list(providerId);
-      setService(data);
-      
-    } catch (error) {
-      console.log("error")
-    }
-  }, []);
+
 
   return (
     <>

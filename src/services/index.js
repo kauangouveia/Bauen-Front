@@ -112,7 +112,7 @@ export const listFastServices = {
   fastService: async (data) => {
     const token = localStorage.getItem("token");
     api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    const result = await api.get("/listFastServices");
+    const result = await api.get("/fastService");
     return result;
   },
 };
@@ -125,21 +125,7 @@ export const findProviderForClient = {
   },
 };
 
-export const acceptServices = {
-  accept: async (params) => {
-    const token = localStorage.getItem("token");
-    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    const result = await api.post("/pendingservices", params);
-    return result.data;
-  },
-};
 
-export const listAcceptServices = {
-  list:async (data) => {
-    const result = await api.get(`/listPendingServices/${data}`);
-    return result.data;
-  },
-};  
 
 export const findRoom = {
   room:async(data)=>{
