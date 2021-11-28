@@ -131,7 +131,7 @@ export const ContainerProfile = styled.div`
 `;
 
 export const CardProfile = styled.div`
-  width: 850px;
+  width: 1100px;
   height: 180px;
   display: flex;
   flex-direction: row;
@@ -236,10 +236,12 @@ export const CardProfile = styled.div`
     height: 160px;
     box-shadow: 5px 7px 4px #7d7d7d;
     margin-bottom: 10px;
+    margin-left: 10px;
     border-radius: 5px;
     text-align: center;
     background-color: #074ead;
     cursor: pointer;
+
 
     img {
       width: 70px;

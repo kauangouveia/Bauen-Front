@@ -52,6 +52,9 @@ function ProfileClient() {
   const changePagePost = ()=>{
     history.push("/post")
   }
+  const changePageInProgress = ()=>{
+    history.push("/inprogress")
+  }
 
   const photoProfileClient = async () => {
     const data = new FormData();
@@ -103,8 +106,8 @@ function ProfileClient() {
             <button>
               <h2>PRESTADORES FAVORITADOS</h2>
             </button>
-            <button>
-              <h2>DADOS PARA PAGAMENTO</h2>
+            <button onClick={changePageInProgress}>
+              <h2>SEUS SERVIÇOS EM ANDAMENTO</h2>
             </button>
           </div>
         </div>

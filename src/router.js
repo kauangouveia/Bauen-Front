@@ -14,11 +14,11 @@ import Register2 from "./pages/Register/register2";
 import Register3 from "./pages/Register/register3";
 import Register4 from "./pages/Register/register4";
 import Register5 from "./pages/Register/register5";
-
 import Post from "./pages/Post";
 import ClientOrServiceProvider from "./pages/ChoiceClientOrServiceProvider";
 import Chat from "./pages/Chat";
 import { isSignedIn } from "./services/security";
+import ServicesInProgress from "./pages/ServicesInProgress";
 
 function PrivateRoute({ children, ...rest }) {
   if (isSignedIn()) {
@@ -81,6 +81,9 @@ function Router() {
       </Route>
       <Route path="/loginCLient">
         <LoginClient />
+      </Route>
+      <Route path="/inprogress">
+        <ServicesInProgress/>
       </Route>
       <PrivateRoute path="/post">
         <Post />

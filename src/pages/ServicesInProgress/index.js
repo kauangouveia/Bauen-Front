@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Header from "../../components/Header";
 import { Container } from "./styles";
+import { listServicesInProgress } from "../../services";
+import chat from "../../assets/chat.png";
 import search from "../../assets/search.png";
-import like from "../../assets/like.svg";
-
-import thunder from "../../assets/thunder.svg";
+import confirmed from "../../assets/confirmed.svg";
 import Footer from "../../components/Footer";
 import {
   SearchContainer,
@@ -14,34 +15,20 @@ import {
   CardProfile,
 } from "./styles";
 import menu from "../../assets/menu.svg";
-import { listFastServices, acceptAndEnvitFastService } from "../../services";
-import { useState } from "react";
 import { useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-function FastServices() {
-  const [fastService, setFastService] = useState([]);
+import { useState } from "react";
+
+function ServicesInProgress() {
+  const idClient = localStorage.getItem("id");
+  const [service, setService] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
-    const data = await listFastServices.fastService();
-    setFastService(data.data);
+    const data = await listServicesInProgress.list(idClient);
+    setService(data);
   }, []);
-  const providerId = localStorage.getItem("id");
-
-  const accept = async (idService) => {
-    try {
-      const data = await acceptAndEnvitFastService.acceptService(idService);
-      toast.success("Serviço rápido aceito com sucesso");
-      console.log(data);
-      
-    } catch (error) {
-      console.log("error");
-    }
-  };
-  console.log(fastService);
+  console.log(service);
   return (
     <>
-      <ToastContainer />
       <Container>
         <Header />
         <SearchContainer>
@@ -60,28 +47,29 @@ function FastServices() {
         </SearchContainer>
         <ContainerFilters>
           <div className="Filters">
-            <img src={thunder} alt="trovao" />
-            <h1>Serviços rápidos</h1>
+            <h1>Serviços em andamento</h1>
           </div>
         </ContainerFilters>
         <ContainerResult>
           <div className="Result">
-            <h2>{fastService.length} Resultados</h2>
+            <h2>Fulano de tal, atualmente você possui serviços em andamento</h2>
           </div>
         </ContainerResult>
         <ContainerFeed>
           <ContainerProfile>
-            {fastService.map((item) => (
-              <CardProfile key={item.id_client_fast_services}>
+            {service.map((item) => (
+              <CardProfile>
                 <div className="Profile">
                   <div className="ProfileImage">
-                    <img src={item.photo_service} alt="usuarios" />
+                    <img src={item.photo_service} alt="imagem do perfil" />
                   </div>
                   <div className="Informations">
                     <div className="NameAndRating">
                       <h2>{item.title}</h2>
-                      <h3>{item.name}</h3>
-                      <h3>{item.typeService}</h3>
+                      <h3>{item.type_service}</h3>
+                      <h3>
+                        {`Aceito por :${item.name}`}
+                      </h3>
                     </div>
                     <div className="Options">
                       <div className="Favorite">
@@ -92,21 +80,16 @@ function FastServices() {
                   </div>
                 </div>
                 <div className="Contact">
-                  <img
-                    src={like}
-                    alt="gostei"
-                    onClick={() =>
-                      accept({
-                        idService: item.id_fast_service,
-                        id: parseInt(providerId),
-                      })
-                    }
-                  />
-                  <h2>Aceitar</h2>
+                  <img src={confirmed} alt="confirmação" />
+                  <h2>Concluído</h2>
                 </div>
-                
+                <div className="Contact">
+                  <img src={chat} alt="chat" />
+                  <h2>Chat</h2>
+                </div>
               </CardProfile>
             ))}
+           
           </ContainerProfile>
         </ContainerFeed>
         <Footer />
@@ -115,4 +98,4 @@ function FastServices() {
   );
 }
 
-export default FastServices;
+export default ServicesInProgress;

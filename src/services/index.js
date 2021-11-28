@@ -138,3 +138,25 @@ export const acceptAndEnvitFastService = {
     return result.data
   },
 };
+
+export const listpendingFastServices = {
+  list:async(data)=>{
+    const result = await api.get(`/listPendingServices/${data}`)
+    return result.data
+  }
+}
+
+export const confirmService = {
+  confirm:async(data)=>{
+    const result = await api.post("/completeService", data)
+    return result.data
+  }
+
+}
+
+export const listServicesInProgress = {
+  list:async(data)=>{
+    const result = await api.get(`/progress/${data}`)
+    return result.data
+  }
+}
