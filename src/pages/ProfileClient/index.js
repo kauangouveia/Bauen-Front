@@ -79,18 +79,19 @@ function ProfileClient() {
         <div className="PictureProfile">
           <img src={imageProfile} alt="Foto de perfil" />
         </div>
-        <div className="InfoClient">
-          <div className="AreaInfo">
-          <div className="location">
-            <img src={locationWhite} alt="logo" />
-            <h2>{locationOfServiceProvier}</h2>
+        < div className="InfoClient">
+          <div className="AreaLocation">
+            <img src={locationWhite} alt="Location"/>
+            <h1>{locationOfServiceProvier}</h1>
           </div>
-          <div className="name">
+          <div className="AreaName">
             <h1>{nameProfile}</h1>
           </div>
-          <div className="chat">
-            <img src={chatlogobauen} alt="logo do chat" />
-          </div>
+          <div className="Chat">
+            <div className="Notification">
+              <h4>Nº</h4>
+            </div>
+            <img src={chatlogobauen} alt="Chat"/>
           </div>
         </div>
       </ProfileContainer>

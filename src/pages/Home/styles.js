@@ -150,6 +150,11 @@ export const CardContainerServices = styled.div`
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       transition: 0.3s ease-out;
 
+      img{
+        width: 70px;
+        height: 70px;
+      }
+
       h2{
         overflow: hidden;
         margin-top: 70px;

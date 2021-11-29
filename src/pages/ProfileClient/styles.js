@@ -9,10 +9,9 @@ export const Container = styled.div`
 `;
 
 export const ProfileContainer = styled.div`
-background-color: red;
   display: flex;
   width: 100vw;
-  height: 400px;
+  height: 380px;
   border-bottom: solid 0.5px #dadada;
   align-items: center;
   justify-content: center;
@@ -23,7 +22,6 @@ background-color: red;
   position: relative;
 
   .PictureProfile {
-    background-color: pink;
     flex-direction: column-reverse;
     flex-direction: row-reverse;
     display: flex;
@@ -37,62 +35,71 @@ background-color: red;
     align-items: flex-end;
     
     img{
-      background-color: yellowgreen;
       width: 100%;
       height: 100%;
     }
   }
+
   .InfoClient{
-    background-color:brown;
-    width: 1360px;
-    height: 60px;
+    width: 1350px;
+    height: 70px;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-    overflow-y: hidden;
+    margin-top: 10px;
 
-    .AreaInfo{
-      background-color: gray;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      width: 1360px;
-      height: 50px;
-      margin-left: auto;
-      margin-right: auto;
-      overflow: hidden;
-    }
+  .AreaLocation{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 350px;
+    height: inherit;
 
     img{
-      background-color: green;
-      height: 50px;
-      width: 50px;
+      width: 45px;
+      height: 45px;
     }
-    .location{
-      background-color: yellowgreen;
-      width: auto;
-      height: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  }
+
+  .AreaName{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 650px;
+    height: inherit;
     }
-    .name{
-      background-color: black;
-      width: auto;
-      height: auto;
-      align-items:center;
-      display: flex;
-    }
-    .chat{
-      background-color:tomato;
-      height: 60px;
+  }
+
+  .Chat{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 350px;
+    height: inherit;
+
+    img{
       width: 60px;
-      align-items: center;
-      display: flex;
-      justify-content: center;
+      height: 60px;
+    }
+
+    .Notification{
+      width: 65px;
+      height: 70px;
+      position: absolute;
+
+      h4{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 100%;
+        overflow: hidden;
+        background-color: red;
+        position: absolute;
+      }
     }
   }
 `;
