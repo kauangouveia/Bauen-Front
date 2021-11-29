@@ -25,6 +25,7 @@ import {
   sendTypeOfService,
   checkingPhotoModal,
   showingServices,
+  portifolio
 } from "../../services";
 import { useEffect } from "react";
 import { useRef } from "react";
@@ -128,9 +129,14 @@ function Profile() {
   }, []);
   const history = useHistory();
 
+
+
+
   const StarRating = () => {
+    
     const [rating, setRating] = useState(null);
     const [hover, setHouver] = useState(null);
+
     return (
       <div>
         {[...Array(5)].map((star, i) => {
@@ -158,6 +164,9 @@ function Profile() {
       </div>
     )
   }
+
+ 
+
 
   return (
     <Container>

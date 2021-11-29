@@ -167,3 +167,10 @@ export const confirmFinishFastService = {
       return result.data;
     }
 }
+
+export const portifolio ={
+  provider:async(data)=>{
+    const result = await api.post("/portifolio", data);
+    return result.data
+  }
+}

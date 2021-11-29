@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const ContainerCarousel = styled.div`
   width: 1360px;
   height: 400px;
@@ -8,12 +9,14 @@ export const ContainerCarousel = styled.div`
   justify-content: center;
   position: relative;
   align-items: center;
-
-  .Next{
+  input[type="file"] {
+    display: none;
+  }
+  .Next {
     display: flex;
     font-size: 55px;
     padding-left: 5px;
-    color: #00277D;
+    color: #00277d;
     align-items: center;
     justify-content: center;
     right: 30px;
@@ -24,11 +27,11 @@ export const ContainerCarousel = styled.div`
     overflow-y: hidden;
   }
 
-  .Return{
+  .Return {
     display: flex;
     font-size: 55px;
     padding-right: 5px;
-    color: #00277D;
+    color: #00277d;
     align-items: center;
     justify-content: center;
     left: 30px;
@@ -43,23 +46,23 @@ export const ContainerCarousel = styled.div`
     width: 1300px;
     height: auto;
 
-    .Title{
+    .Title {
       display: flex;
       flex-direction: row;
       align-items: center;
       height: 55px;
-      width:  1300px;
-      color: #00277D;
+      width: 1300px;
+      color: #00277d;
 
-      img{
+      img {
         cursor: pointer;
         margin-left: 5px;
         width: 45px;
         height: 45px;
       }
     }
-    
-  .styles-module_carousel-base__3keqD {
+
+    .styles-module_carousel-base__3keqD {
       width: 1300px;
       height: 300px;
       margin-left: auto;
@@ -70,20 +73,20 @@ export const ContainerCarousel = styled.div`
       border-radius: 5px;
       position: relative;
 
-      .styles-module_carousel-arrow__26sRw{
+      .styles-module_carousel-arrow__26sRw {
         background-color: transparent;
         width: 55px;
         height: 55px;
         border: 0px;
         background-size: 45px;
-     
-      } .styles-module_carousel-arrow__26sRw:hover{
-          cursor: pointer;
+      }
+      .styles-module_carousel-arrow__26sRw:hover {
+        cursor: pointer;
       }
     }
   }
 
-  .ItemSlide {    
+  .ItemSlide {
     width: 300px;
     height: 200px;
     border-radius: 10px;
@@ -96,7 +99,7 @@ export const ContainerCarousel = styled.div`
       background-position: center;
       background-repeat: no-repeat;
       border-radius: 5px;
-      border: 2px solid #00277D;
+      border: 2px solid #00277d;
     }
   }
 `;
