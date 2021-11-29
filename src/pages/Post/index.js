@@ -79,6 +79,7 @@ function Post() {
   return (
     <>
       <Container>
+      <ToastContainer />
         <Header />
         <FeedContainer>
           <PostHeader>

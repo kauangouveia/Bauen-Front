@@ -1,10 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Header from "../../components/Header";
 import { Container } from "./styles";
-import { listServicesInProgress } from "../../services";
+import {
+  listServicesInProgress,
+  confirmFinishFastService,
+} from "../../services";
 import chat from "../../assets/chat.png";
 import search from "../../assets/search.png";
 import confirmed from "../../assets/confirmed.svg";
+import progress from "../../assets/progress.png";
 import Footer from "../../components/Footer";
 import {
   SearchContainer,
@@ -17,18 +21,39 @@ import {
 import menu from "../../assets/menu.svg";
 import { useEffect } from "react";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
+
 
 function ServicesInProgress() {
   const idClient = localStorage.getItem("id");
+  const name = localStorage.getItem("name");
   const [service, setService] = useState([]);
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const data = await listServicesInProgress.list(idClient);
     setService(data);
   }, []);
   console.log(service);
+
+  const confirmServices = async (idFastService) => {
+    
+    try {
+      const confirmFastService = await confirmFinishFastService.confirmFinished(
+        idFastService
+      );
+      toast.success(confirmFastService.message)
+    } catch (error) {
+      console.log("werr");
+    }
+  };
+
   return (
     <>
+     <ToastContainer />
       <Container>
         <Header />
         <SearchContainer>
@@ -52,7 +77,10 @@ function ServicesInProgress() {
         </ContainerFilters>
         <ContainerResult>
           <div className="Result">
-            <h2>Fulano de tal, atualmente você possui serviços em andamento</h2>
+            <h2>
+              {name}, atualmente você possui {service.length}{" "}
+              {service.length >= 2 ? "serviços" : "serviço"} em andamento
+            </h2>
           </div>
         </ContainerResult>
         <ContainerFeed>
@@ -67,9 +95,7 @@ function ServicesInProgress() {
                     <div className="NameAndRating">
                       <h2>{item.title}</h2>
                       <h3>{item.type_service}</h3>
-                      <h3>
-                        {`Aceito por :${item.name}`}
-                      </h3>
+                      <h3>{`Aceito por :${item.name}`}</h3>
                     </div>
                     <div className="Options">
                       <div className="Favorite">
@@ -79,9 +105,25 @@ function ServicesInProgress() {
                     </div>
                   </div>
                 </div>
-                <div className="Contact">
-                  <img src={confirmed} alt="confirmação" />
-                  <h2>Concluído</h2>
+                <div
+                  className="Contact"
+                  onClick={() =>
+                    confirmServices({ idService: item.id_fast_service })
+                  }
+                >
+                  <img
+                    src={
+                      item.finished_at_by_service_provider === null
+                        ? progress
+                        : confirmed
+                    }
+                    alt="confirmação"
+                  />
+                  <h2>
+                    {item.finished_at_by_service_provider === null
+                      ? "em andamento"
+                      : "confirmar finalização"}
+                  </h2>
                 </div>
                 <div className="Contact">
                   <img src={chat} alt="chat" />
@@ -89,7 +131,6 @@ function ServicesInProgress() {
                 </div>
               </CardProfile>
             ))}
-           
           </ContainerProfile>
         </ContainerFeed>
         <Footer />

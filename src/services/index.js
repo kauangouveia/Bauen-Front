@@ -160,3 +160,10 @@ export const listServicesInProgress = {
     return result.data
   }
 }
+
+export const confirmFinishFastService = {
+    confirmFinished:async(data)=>{
+      const result = await api.post("/confirm", data);
+      return result.data;
+    }
+}
