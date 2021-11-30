@@ -8,30 +8,30 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Illustration from "../../assets/Illustration.svg";
 import search from "../../assets/search.png";
-import arquiteto from "../../assets/arquiteto.svg";
-import arquitetoWhite from "../../assets/arquitetoWhite.svg";
-import azulejista from "../../assets/azulejista.svg";
-import azulejistaWhite from "../../assets/azulejistaWhite.svg";
-import carpinteiro from "../../assets/carpinteiro.svg";
-import carpinteiroWhite from "../../assets/carpinteiroWhite.svg";
-import eletrecista from "../../assets/eletrecista.svg";
-import eletrecistaWhite from "../../assets/eletrecistaWhite.svg";
-import encanador from "../../assets/encanador.svg";
-import encanadorWhite from "../../assets/encanadorWhite.svg";
-import engenheiro from "../../assets/engenheiro.svg";
-import engenheiroWhite from "../../assets/engenheiroWhite.svg";
-import gesseiro from "../../assets/gesseiro.svg";
-import gesseiroWhite from "../../assets/gesseiroWhite.svg";
-import jardineiro from "../../assets/jardineiro.svg";
-import jardineiroWhite from "../../assets/jardineiroWhite.svg";
-import marceneiro from "../../assets/marceneiro.svg";
-import marceneiroWhite from "../../assets/marceneiroWhite.svg";
-import pedreiro from "../../assets/pedreiro.svg";
-import pedreiroWhite from "../../assets/pedreiroWhite.svg";
-import pintor from "../../assets/pintor.svg";
-import pintorWhite from "../../assets/pintorWhite.svg";
-import vidraceiro from "../../assets/vidraceiro.svg";
-import vidraceiroWhite from "../../assets/vidraceiroWhite.svg";
+import arquiteto from "../../assets/arquiteto.png";
+import arquitetoWhite from "../../assets/arquitetoWhite.png";
+import azulejista from "../../assets/azulejista.png";
+import azulejistaWhite from "../../assets/azulejistaWhite.png";
+import carpinteiro from "../../assets/carpinteiro.png";
+import carpinteiroWhite from "../../assets/carpinteiroWhite.png";
+import eletrecista from "../../assets/eletrecista.png";
+import eletrecistaWhite from "../../assets/eletrecistaWhite.png";
+import encanador from "../../assets/encanador.png";
+import encanadorWhite from "../../assets/encanadorWhite.png";
+import engenheiro from "../../assets/engenheiro.png";
+import engenheiroWhite from "../../assets/engenheiroWhite.png";
+import gesseiro from "../../assets/gesseiro.png";
+import gesseiroWhite from "../../assets/gesseiroWhite.png";
+import jardineiro from "../../assets/jardineiro.png";
+import jardineiroWhite from "../../assets/jardineiroWhite.png";
+import marceneiro from "../../assets/marceneiro.png";
+import marceneiroWhite from "../../assets/marceneiroWhite.png";
+import pedreiro from "../../assets/pedreiro.png";
+import pedreiroWhite from "../../assets/pedreiroWhite.png";
+import pintor from "../../assets/pintor.png";
+import pintorWhite from "../../assets/pintorWhite.png";
+import vidraceiro from "../../assets/vidraceiro.png";
+import vidraceiroWhite from "../../assets/vidraceiroWhite.png";
 import component2 from "../../assets/component2.svg";
 import component3 from "../../assets/component3.svg";
 import component4 from "../../assets/component4.svg";
@@ -133,20 +133,20 @@ function Home() {
               </div>
 
               <div className="AreaOfServices" >
-                <img className="HomeLight" src={encanador} alt="Tipo1" />
-                <img className="Home" src={encanadorWhite} alt="Tipo" />
+                <img className="HomeLight" src={encanadorWhite} alt="Tipo1" />
+                <img className="Home" src={encanador} alt="Tipo" />
                 <h2>Encanador</h2>
               </div>
 
               <div className="AreaOfServices" >
-                <img className="HomeLight" src={engenheiro} alt="Tipo1" />
-                <img className="Home" src={engenheiroWhite} alt="Tipo" />
+                <img className="HomeLight" src={engenheiroWhite} alt="Tipo1" />
+                <img className="Home" src={engenheiro} alt="Tipo" />
                 <h2>Engenheiro</h2>
               </div>
 
               <div className="AreaOfServices" >
-                <img className="HomeLight" src={gesseiro} alt="Tipo1" />
-                <img className="Home" src={gesseiroWhite} alt="Tipo" />
+                <img className="HomeLight" src={gesseiroWhite} alt="Tipo1" />
+                <img className="Home" src={gesseiro} alt="Tipo" />
                 <h2>Gesseiro</h2>
               </div>
 

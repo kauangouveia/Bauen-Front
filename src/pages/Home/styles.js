@@ -141,6 +141,7 @@ export const CardContainerServices = styled.div`
       flex-direction: column;
       width: 150px;
       height: 130px;
+      color: #00277d;
       background-color: black;
       margin-left: 20px;
       margin-bottom: 10px;
@@ -150,11 +151,7 @@ export const CardContainerServices = styled.div`
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       transition: 0.3s ease-out;
 
-      img{
-        width: 70px;
-        height: 70px;
-      }
-
+      
       h2{
         overflow: hidden;
         margin-top: 70px;
