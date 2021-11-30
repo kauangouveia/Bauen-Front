@@ -25,11 +25,11 @@ function ListServicesProvider() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const data = await serviceProvider.listServiceProvider();
-    setServiceProviders(data.serviceProviders);
+    setServiceProviders(data);
   }, []);
 
   const history = useHistory();
-  const teste = (id) => {
+  const getProviderId = (id) => {
     localStorage.setItem("idServiceProviderSelect", id);
     history.push("/ProfileVclient");
   };
@@ -73,7 +73,7 @@ function ListServicesProvider() {
             {serviceProviders.map((item) => (
               <CardProfile
                 key={item.id_service_provider}
-                onClick={() => teste(item.id_service_provider)}
+                onClick={() => getProviderId(item.id_service_provider)}
               >
                 <div className="Profile">
                   <div className="ProfileImage">
