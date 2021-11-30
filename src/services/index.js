@@ -134,43 +134,49 @@ export const findRoom = {
 
 export const acceptAndEnvitFastService = {
   acceptService: async (data) => {
-    const result = await api.post("/acceptServices", data)
-    return result.data
+    const result = await api.post("/acceptServices", data);
+    return result.data;
   },
 };
 
 export const listpendingFastServices = {
-  list:async(data)=>{
-    const result = await api.get(`/listPendingServices/${data}`)
-    return result.data
-  }
-}
+  list: async (data) => {
+    const result = await api.get(`/listPendingServices/${data}`);
+    return result.data;
+  },
+};
 
 export const confirmService = {
-  confirm:async(data)=>{
-    const result = await api.post("/completeService", data)
-    return result.data
-  }
-
-}
+  confirm: async (data) => {
+    const result = await api.post("/completeService", data);
+    return result.data;
+  },
+};
 
 export const listServicesInProgress = {
-  list:async(data)=>{
-    const result = await api.get(`/progress/${data}`)
-    return result.data
-  }
-}
+  list: async (data) => {
+    const result = await api.get(`/progress/${data}`);
+    return result.data;
+  },
+};
 
 export const confirmFinishFastService = {
-    confirmFinished:async(data)=>{
-      const result = await api.post("/confirm", data);
-      return result.data;
-    }
-}
+  confirmFinished: async (data) => {
+    const result = await api.post("/confirm", data);
+    return result.data;
+  },
+};
 
-export const portifolio ={
-  provider:async(data)=>{
+export const portifolio = {
+  provider: async (data) => {
     const result = await api.post("/portifolio", data);
-    return result.data
-  }
-}
+    return result.data;
+  },
+};
+
+export const listPhotos = {
+  photosPortifolio: async (data) => {
+    const result = await api.get(`/listportifolio/${data}`);
+    return result.data;
+  },
+};

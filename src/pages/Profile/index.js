@@ -5,8 +5,10 @@ import SliderComents from "../../components/SliderComents";
 import storm from "../../assets/storm.svg";
 import time from "../../assets/time.svg";
 import chat from "../../assets/chat.svg";
+import plus from "../../assets/plus.png";
+
 import location from "../../assets/location.svg";
-import reward from "../../assets/reward.svg"
+import reward from "../../assets/reward.svg";
 import warning from "../../assets/warning.svg";
 import menu from "../../assets/menu.svg";
 import bauenBlackLogo from "../../assets/bauenBlackLogo.png";
@@ -30,6 +32,7 @@ import {
 import { useEffect } from "react";
 import { useRef } from "react";
 import { useHistory } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Profile() {
@@ -48,32 +51,29 @@ function Profile() {
 
       if (data.message === "Contem foto no perfil") {
         setIsModalVisible(false, setIsOpenModalWarning(false));
-
       } else {
         setIsModalVisible(true);
       }
-    } catch (error) { }
+    } catch (error) {}
   }, []);
 
+  // Adicionando preview de foto
+  const imgRef = useRef();
+  const [image, setImage] = useState(null);
+  const handleFile = async (e) => {
+    setImage(e.target.files[0]);
+    imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+  };
 
-    
-    // Adicionando preview de foto
-    const imgRef = useRef();
-    const [image, setImage] = useState(null);
-    const handleFile = async (e) => {
-      setImage(e.target.files[0]);
-      imgRef.current.src = URL.createObjectURL(e.target.files[0]);
-    };
-    
-    // Analisando se existe foto no modal
-    const checkingPhoto = () => {
-      setIsOpenModalService(true, setIsOpenModalImageProfile(false));
-    };
-    
-    // Inserindo foto de perfil e fazendo validação caso o campo estaja nulo
-    const photoProfile = async () => {
-      const data = new FormData();
-      if (image === null) {
+  // Analisando se existe foto no modal
+  const checkingPhoto = () => {
+    setIsOpenModalService(true, setIsOpenModalImageProfile(false));
+  };
+
+  // Inserindo foto de perfil e fazendo validação caso o campo estaja nulo
+  const photoProfile = async () => {
+    const data = new FormData();
+    if (image === null) {
       return alert("Por favor adicone uma foto de perfil");
     } else {
       checkingPhoto();
@@ -85,7 +85,7 @@ function Profile() {
       }
     }
   };
-  
+
   // Buscando foto de perfil
   const [imageProfile, setImageProfile] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -93,7 +93,7 @@ function Profile() {
     const data = await findPhoto.findPhoto();
     setImageProfile(data.photo);
   }, []);
-  
+
   // Listando todos os tipos de serviços existentes
   const [service, setService] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -101,24 +101,21 @@ function Profile() {
     const data = await listservice.listService();
     setService(data.services);
   }, []);
-  
+
   // Armazenando tipo de serviços
   const [typeService, setTypeService] = useState("");
   const handleChange = (e) => {
-    
     setTypeService(e.target.value);
-    
   };
   // Enviando tipo de serviço escolhido
   const envitTypeService = async (service) => {
     try {
-
       sendTypeOfService.typeService(service);
     } catch (error) {
       console.log("errei");
     }
   };
-  
+
   // Exibindo tipo de serviço
   const [ProviderType, setProviderType] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -131,12 +128,32 @@ function Profile() {
 
 
 
+  const idUserProviderService = localStorage.getItem("id");
+  const [imagePortifolio, setImagePortifolio] = useState(null);
+  const handleFilePortifolio = async (e) => {
+    setImagePortifolio(e.target.files[0]);
+    console.log(imagePortifolio);
+  };
+
+  const sendImgPortifolio = async () => {
+    const data = new FormData();
+    data.append("portifolioPhoto", imagePortifolio);
+    data.append("idProvider", idUserProviderService);
+
+    try {
+      await portifolio.provider(data);
+      toast.success(
+        "Foto adicionada ao portifolio com sucesso"
+      );
+    } catch (error) {
+      console.log("erro");
+    }
+  };
+
 
   const StarRating = () => {
-    
     const [rating, setRating] = useState(null);
     const [hover, setHouver] = useState(null);
-
     return (
       <div>
         {[...Array(5)].map((star, i) => {
@@ -155,18 +172,15 @@ function Profile() {
                 color={ratingValue <= (hover || rating) ? "#FFC700" : "#F2F2F2"}
                 size={50}
                 onMouseEnter={() => setHouver(ratingValue)}
-                onMouseLeave={() => setHouver(null)} />
+                onMouseLeave={() => setHouver(null)}
+              />
             </label>
           );
         })}
-        <div className="StarText">
-        </div>
+        <div className="StarText"></div>
       </div>
-    )
-  }
-
- 
-
+    );
+  };
 
   return (
     <Container>
@@ -197,29 +211,52 @@ function Profile() {
             </div>
           </div>
           <div className="ButtonsOfProfile">
-            <button className="ButtonsIcons" onClick={()=> history.push('/fastservices')}>
+            <button
+              className="ButtonsIcons"
+              onClick={() => history.push("/fastservices")}
+            >
               <img className="Storm" src={storm} alt="localização" />
             </button>
-            <button className="ButtonsIcons" onClick={()=> history.push('/pendingservices')}>
+            <button
+              className="ButtonsIcons"
+              onClick={() => history.push("/pendingservices")}
+            >
               <img className="Time" src={time} alt="localização" />
             </button>
-            <button className="ButtonsIcons" onClick={()=> history.push('/chat')}>
+            <button
+              className="ButtonsIcons"
+              onClick={() => history.push("/chat")}
+            >
               <img className="Chat" src={chat} alt="localização" />
             </button>
+            <label for="file" className="plus">
+              
+                <img className="Chat" src={plus} alt="localização" />
+            
+            </label>
+            <input
+              type="file"
+              placeholder="Adicione uma imagem"
+              onChange={(event) => {
+                  handleFilePortifolio(event);
+                  sendImgPortifolio();
+                }}
+              name="file"
+              id="file"
+            />
           </div>
           <img className="Menu" src={menu} alt="menu" />
         </div>
         <div className="services">
           <div className="servicesType">
             <div className="Card">
-              
               <h3>{ProviderType}</h3>
             </div>
           </div>
         </div>
       </InformationsContainer>
-      <SliderPortifolio/>
-      <SliderComents/>
+      <SliderPortifolio />
+      <SliderComents />
       <Footer />
 
       {isModalVisible && (
