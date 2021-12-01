@@ -1,112 +1,57 @@
-import React from "react";
-import { Carousel } from "@trendyol-js/react-carousel";
+import React, { useEffect } from "react";
+
 import { ContainerCarousel } from "./styles";
+import construction from "../../assets/construction.jpg";
+import addPhoto from "../../assets/addPhoto.svg";
+import { useState } from "react";
+import "react-slideshow-image/dist/styles.css";
+import { listPhotos } from "../../services";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Slide } from "react-slideshow-image";
 
-function SliderComents() {
+// function SliderComents() {
+const idUser = localStorage.getItem("id");
+
+const slideImages = [construction, construction, construction];
+
+const Slideshow = () => {
+  const [image, setimage] = useState([]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const data = await listPhotos.photosPortifolio(idUser);
+    setimage(data);
+  }, []);
+
   return (
-    <>
-      <ContainerCarousel>
-        <h1 className="Next">{">"}</h1>
-        <h1 className="Return">{"<"}</h1>
-          <div className="container">
-            <div className="Title">
-              <h1>Comentários</h1>
+    <ContainerCarousel>
+      <div>
+        <Slide easing="ease">
+          {image.map((item) => (
+            <div className="each-slide">
+              <div >
+                <img
+                  className="image-slide"
+                  src={item.photo_portifolio}
+                  alt="teste"
+                />
+              </div>
             </div>
-            <Carousel show={4}>
-              <div className="ContainerItem">
-                <div className="ItemSlide">
-                  <h2>Nome do usúario</h2>
-                  <p>
-                    "Comentário comentário comentário 
-                    Comentário comentário comentário 
-                    Comentário comentário comentário 
-                  </p>
-                  <h3>Há quanto tempo</h3>
-                </div>
-              </div>
-              <div className="ContainerItem">
-                <div className="ItemSlide">
-                  <h2>Nome do usúario</h2>
-                  <p>
-                    "Comentário comentário comentário 
-                    Comentário comentário comentário 
-                    Comentário comentário comentário 
-                  </p>
-                  <h3>Há quanto tempo</h3>
-                </div>
-              </div>
-              <div className="ContainerItem">
-                <div className="ItemSlide">
-                  <h2>Nome do usúario</h2>
-                  <p>
-                    "Comentário comentário comentário 
-                    Comentário comentário comentário 
-                    Comentário comentário comentário 
-                  </p>
-                  <h3>Há quanto tempo</h3>
-                </div>
-              </div>
-              <div className="ContainerItem">
-                <div className="ItemSlide">
-                  <h2>Nome do usúario</h2>
-                  <p>
-                    "Comentário comentário comentário 
-                    Comentário comentário comentário 
-                    Comentário comentário comentário 
-                  </p>
-                  <h3>Há quanto tempo</h3>
-                </div>
-              </div>
-              <div className="ContainerItem">
-                <div className="ItemSlide">
-                  <h2>Nome do usúario</h2>
-                  <p>
-                    "Comentário comentário comentário 
-                    Comentário comentário comentário 
-                    Comentário comentário comentário 
-                  </p>
-                  <h3>Há quanto tempo</h3>
-                </div>
-              </div>
-              <div className="ContainerItem">
-                <div className="ItemSlide">
-                  <h2>Nome do usúario</h2>
-                  <p>
-                    "Comentário comentário comentário 
-                    Comentário comentário comentário 
-                    Comentário comentário comentário 
-                  </p>
-                  <h3>Há quanto tempo</h3>
-                </div>
-              </div>
-              <div className="ContainerItem">
-                <div className="ItemSlide">
-                  <h2>Nome do usúario</h2>
-                  <p>
-                    "Comentário comentário comentário 
-                    Comentário comentário comentário 
-                    Comentário comentário comentário 
-                  </p>
-                  <h3>Há quanto tempo</h3>
-                </div>
-              </div>
-              <div className="ContainerItem">
-                <div className="ItemSlide">
-                  <h2>Nome do usúario</h2>
-                  <p>
-                    "Comentário comentário comentário 
-                    Comentário comentário comentário 
-                    Comentário comentário comentário 
-                  </p>
-                  <h3>Há quanto tempo</h3>
-                </div>
-              </div>
-            </Carousel>
-          </div>
-        
-      </ContainerCarousel>
-    </>
+          ))}
+          {/* <div className="each-slide">
+            <div style={{ backgroundImage: `url(${slideImages[1]})` }}>
+              <span>Slide 2</span>
+            </div>
+          </div> */}
+          {/* <div className="each-slide">
+            <div style={{ backgroundImage: `url(${slideImages[2]})` }}>
+              <span>Slide 3</span>
+            </div>
+          </div> */}
+        </Slide>
+      </div>
+    </ContainerCarousel>
   );
-}
+};
 
-export default SliderComents;
+export default Slideshow;

@@ -27,7 +27,7 @@ import {
   sendTypeOfService,
   checkingPhotoModal,
   showingServices,
-  portifolio
+  portifolio,
 } from "../../services";
 import { useEffect } from "react";
 import { useRef } from "react";
@@ -126,8 +126,6 @@ function Profile() {
   }, []);
   const history = useHistory();
 
-
-
   const idUserProviderService = localStorage.getItem("id");
   const [imagePortifolio, setImagePortifolio] = useState(null);
   const handleFilePortifolio = async (e) => {
@@ -142,14 +140,11 @@ function Profile() {
 
     try {
       await portifolio.provider(data);
-      toast.success(
-        "Foto adicionada ao portifolio com sucesso"
-      );
+      toast.success("Foto adicionada ao portifolio com sucesso");
     } catch (error) {
       console.log("erro");
     }
   };
-
 
   const StarRating = () => {
     const [rating, setRating] = useState(null);
@@ -229,20 +224,18 @@ function Profile() {
             >
               <img className="Chat" src={chat} alt="localização" />
             </button>
-            <label for="file" className="plus">
-              
-                <img className="Chat" src={plus} alt="localização" />
-            
+            <label for="Portifolio" className="plus">
+              <img className="Chat" src={plus} alt="localização" />
             </label>
             <input
               type="file"
               placeholder="Adicione uma imagem"
               onChange={(event) => {
-                  handleFilePortifolio(event);
-                  sendImgPortifolio();
-                }}
-              name="file"
-              id="file"
+                handleFilePortifolio(event);
+                sendImgPortifolio();
+              }}
+              name="Portifolio"
+              id="Portifolio"
             />
           </div>
           <img className="Menu" src={menu} alt="menu" />
