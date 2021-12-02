@@ -81,7 +81,7 @@ export const InformationsContainer = styled.div`
   input[type="file"] {
     display: none;
   }
-  .plus{
+  .plus {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -422,6 +422,196 @@ export const ModalContainer = styled.div`
     }
   }
 
+  .ModalImageProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    height: 600px;
+    border: 2px solid #00277d;
+    border-radius: 10px;
+    background-color: white;
+    z-index: 1999;
+
+    @keyframes ModalImageProfile {
+      from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    img {
+      width: 400px;
+      height: 400px;
+      margin-bottom: 10px;
+      border-radius: 100%;
+      border: 2px solid #00277d;
+    }
+
+    h2 {
+      font-size: 25px;
+      color: #00277d;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .AreaButton {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 50px;
+      margin: 5px;
+    }
+
+    .Next {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 50px;
+      background-color: #00277d;
+      border: 0px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      width: 250px;
+      height: 50px;
+      background-color: #00277d;
+      border: 0px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    input[type="file"] {
+      display: none;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      width: 250px;
+      height: 50px;
+      background-color: #00277d;
+
+      border: 0px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  .ModalPortifolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    height: 600px;
+    border: 2px solid #00277d;
+    border-radius: 10px;
+    background-color: white;
+    z-index: 1999;
+    input[type="file"] {
+    display: none;
+  }
+    .AreaIamge {
+      height: 450px;
+      width: 650px;
+      border-radius: 10px;
+      border: solid 1px #00277d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        width: 400px;
+        width: 600px;
+      }
+    }
+    .fechar {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+
+      .tile{
+        width: 600px;
+       
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+        
+      }
+      .buttonFechar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+
+      }
+    }
+    .AreaButton {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 50px;
+      margin: 5px;
+      .Next {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 250px;
+        height: 50px;
+        background-color: #00277d;
+        border: 0px;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
+      .Adiconar {
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 250px;
+        height: 50px;
+        background-color: #00277d;
+        border: 0px;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
   .ModalService {
     display: flex;
     flex-direction: column;

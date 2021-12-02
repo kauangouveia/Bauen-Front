@@ -30,8 +30,8 @@ const MultipleSlidesExample = () => {
 
   const properties = {
     duration: 3000,
-    slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     autoplay: true,
     indicators: true,
   };

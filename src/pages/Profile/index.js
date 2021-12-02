@@ -12,6 +12,8 @@ import reward from "../../assets/reward.svg";
 import warning from "../../assets/warning.svg";
 import menu from "../../assets/menu.svg";
 import bauenBlackLogo from "../../assets/bauenBlackLogo.png";
+import close from "../../assets/close.png";
+
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import {
@@ -38,6 +40,7 @@ import "react-toastify/dist/ReactToastify.css";
 function Profile() {
   const [isModalVisible, setIsModalVisible] = useState(true);
   const [isOpenModalWarning, setIsOpenModalWarning] = useState(true);
+  const [isOpenModalPortifolio, setOpenModalPortifolio] = useState(false);
   const [isOpenModalImageProfile, setIsOpenModalImageProfile] = useState(false);
   const [isOpenModalService, setIsOpenModalService] = useState(false);
   const locationOfServiceProvier = localStorage.getItem("location");
@@ -129,8 +132,14 @@ function Profile() {
   const idUserProviderService = localStorage.getItem("id");
   const [imagePortifolio, setImagePortifolio] = useState(null);
   const handleFilePortifolio = async (e) => {
+    if (e.target.files[0]) {
+      imgRef.current.src = URL.createObjectURL(e.target.files[0]);
+      imgRef.current.style.display = "block";
+    } else {
+      imgRef.current.src = "";
+      imgRef.current.style.display = "none";
+    }
     setImagePortifolio(e.target.files[0]);
-   
   };
 
   const sendImgPortifolio = async () => {
@@ -179,6 +188,7 @@ function Profile() {
 
   return (
     <Container>
+      <ToastContainer/>
       <Header />
       <ProfileContainer>
         <div className="AreaReward">
@@ -225,18 +235,15 @@ function Profile() {
               <img className="Chat" src={chat} alt="localização" />
             </button>
             <label for="Portifolio" className="plus">
-              <img className="Chat" src={plus} alt="localização" />
+              <img
+                className="Chat"
+                src={plus}
+                alt="localização"
+                onClick={() =>
+                  setIsModalVisible(true, setOpenModalPortifolio(true))
+                }
+              />
             </label>
-            <input
-              type="file"
-              placeholder="Adicione uma imagem"
-              onChange={(event) => {
-                handleFilePortifolio(event);
-                sendImgPortifolio();
-              }}
-              name="Portifolio"
-              id="Portifolio"
-            />
           </div>
           <img className="Menu" src={menu} alt="menu" />
         </div>
@@ -274,7 +281,45 @@ function Profile() {
               </div>
             </div>
           )}
-
+          {isOpenModalPortifolio && (
+            <div className="ModalPortifolio">
+              <div className="fechar">
+                <div className="tile">
+                  <h2>Adicone uma foto ao seu portifolio</h2>
+                </div>
+                <div className="buttonFechar">
+                  <img
+                    src={close}
+                    alt="fechar"
+                    onClick={() =>
+                      setIsModalVisible(false, setOpenModalPortifolio(false))
+                    }
+                  />
+                </div>
+              </div>
+              <div className="AreaIamge">
+                {" "}
+                <img ref={imgRef} alt="post para serviços rapidos" />
+              </div>
+              <div className="AreaButton">
+                <label for="file" className="Adiconar">
+                  Adiconar{" "}
+                </label>
+                <input
+                  type="file"
+                  onChange={(event) => {
+                    handleFilePortifolio(event);
+                  }}
+                  placeholder="Adicione uma imagem"
+                  name="file"
+                  id="file"
+                />
+                <button className="Next" onClick={sendImgPortifolio}>
+                  Avançar {">"}
+                </button>
+              </div>
+            </div>
+          )}
           {isOpenModalImageProfile && (
             <div className="ModalImageProfile">
               <img ref={imgRef} alt="profile" />
