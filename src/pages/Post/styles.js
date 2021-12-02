@@ -11,8 +11,10 @@ export const Container = styled.div`
 export const FeedContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1200px;
+  width: 1000px;
   height: 800px;
+  border-left: 2px solid #dadada;
+  border-right: 2px solid #dadada;
   margin-left: auto;
   margin-right: auto;
 `;
@@ -24,17 +26,18 @@ export const PostHeader = styled.div`
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-
   flex-direction: column;
+
   .HeaderPost {
     display: flex;
     width: 800px;
     height: 200px;
     overflow: hidden;
+    
     .PerfilPost {
       display: flex;
+      align-items: center;
       justify-content: center;
-      padding-top: 25px;
       width: 150px;
       height: auto;
     }
@@ -49,16 +52,17 @@ export const PostHeader = styled.div`
       img {
         width: 90px;
         height: 90px;
+        border: 2px solid #074ead;
         border-radius: 50%;
       }
     }
   }
   .Description {
+    background-color: purple;
     display: flex;
     width: 800px;
     height: 200px;
     align-items: center;
-
     justify-content: center;
     flex-direction: column;
 
@@ -85,6 +89,8 @@ export const PostHeader = styled.div`
   }
 
   h2 {
+    height: auto;
+    width: auto;
     font-size: 25px;
     font-weight: bold;
     color: #00277d;
@@ -93,16 +99,15 @@ export const PostHeader = styled.div`
   .ServicesList {
     width: 500px;
     height: 120px;
-    padding-top: 10px;
+    padding-top: 5px;
   }
 
   select {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 250px;
+    width: 200px;
     min-height: 50px;
-    margin-right: 50px;
     padding: 5px;
     background-color: white;
     border: 2px solid #dadada;
@@ -111,12 +116,18 @@ export const PostHeader = styled.div`
     font-weight: bold;
     color: #074ead;
     cursor: pointer;
+
+    option{
+      background-color: white;
+      font-size: 20px;
+    }
   }
 `;
 
 export const PostImage = styled.div`
+background-color: black;
   display: flex;
-  width: 1200px;
+  width: 1000px;
   height: 650px;
   justify-content: center;
   align-items: center;
@@ -132,6 +143,9 @@ export const PostImage = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
 
     > img {
       display: none;
@@ -145,35 +159,33 @@ export const PostImage = styled.div`
     }
   }
   .post {
+    background-color: yellow;
     display: flex;
     overflow: hidden;
     width: 600px;
-    height: 150px;
     align-items: center;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
     border: 4px solid #074ead;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
   input[type="file"] {
     display: none;
   }
   img {
-    width: 100px;
-    height: 600px;
-  }
-
-  img:hover {
+    display: flex;
+    background-color: red;
     cursor: pointer;
-    width: 105px;
-    height: 605px;
+    width: 100px;
+    height: 120px;
   }
 `;
 
 export const PostButtons = styled.div`
   display: flex;
-  width: 1200px;
+  width: 1000px;
   height: 150px;
   align-items: center;
   margin-left: auto;

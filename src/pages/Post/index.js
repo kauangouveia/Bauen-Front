@@ -1,4 +1,5 @@
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import { Container } from "./styles";
 import add from "../../assets/add.svg";
 import { FeedContainer, PostHeader, PostImage, PostButtons } from "./styles";
@@ -98,7 +99,7 @@ function Post() {
                     onChange={handleChange}
                   >
                     {service?.map((item) => (
-                      <option key={item.id_service}>{item.nameService}</option>
+                      <option key={item.id_service} className='teste'>{item.nameService}</option>
                     ))}
                   </select>
                 </div>
@@ -147,6 +148,7 @@ function Post() {
           </PostButtons>
         </FeedContainer>
       </Container>
+      <Footer/>
     </>
   );
 }
