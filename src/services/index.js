@@ -180,3 +180,17 @@ export const listPhotos = {
     return result.data;
   },
 };
+
+export const sendComments = {
+  comments: async (data) => {
+    const result = await api.post("/coments", data);
+    return result.data;
+  },
+};
+
+export const lisComments = {
+  listCommentsProvider: async (data) => {
+    const result = await api.get(`/list-comments/${data}`);
+    return result.data;
+  },
+};

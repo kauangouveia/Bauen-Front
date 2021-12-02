@@ -5,21 +5,22 @@ import construction from "../../assets/construction.jpg";
 import addPhoto from "../../assets/addPhoto.svg";
 import { useState } from "react";
 import "react-slideshow-image/dist/styles.css";
-import { listPhotos } from "../../services";
+import { lisComments } from "../../services";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Slide } from "react-slideshow-image";
 
-// function SliderComents() {
 const idUser = localStorage.getItem("id");
 
 const MultipleSlidesExample = () => {
-  const [image, setimage] = useState([]);
+  const [comment, setComment] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
-    const data = await listPhotos.photosPortifolio(idUser);
-    setimage(data);
+    const data = await lisComments.listCommentsProvider(idUser);
+    setComment(data);
   }, []);
+
+  console.log(comment);
 
   const style = {
     textAlign: "center",
@@ -32,7 +33,7 @@ const MultipleSlidesExample = () => {
     duration: 3000,
     slidesToShow: 3,
     slidesToScroll: 2,
-    autoplay: true,
+    // autoplay: true,
     indicators: true,
   };
 
@@ -40,14 +41,16 @@ const MultipleSlidesExample = () => {
     <ContainerCarousel>
       <div>
         <Slide {...properties}>
-          {image.map((item) => (
+          {comment.map((item) => (
             <div className="each-slide">
               <div>
-                <img
-                  className="image-slide"
-                  src={item.photo_portifolio}
-                  alt="teste"
-                />
+                <div className="informationsClient">
+                  <img src={item.photo} alt="photo" />
+                  <h2>{item.name}</h2>
+                  <div className="informations">
+                    <p>{item.coment}</p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}

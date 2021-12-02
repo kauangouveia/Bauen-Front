@@ -30,8 +30,8 @@ const MultipleSlidesExample = () => {
 
   const properties = {
     duration: 3000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 3,
+    slidesToScroll: 2,
     autoplay: true,
     indicators: true,
   };
@@ -39,9 +39,10 @@ const MultipleSlidesExample = () => {
   return (
     <ContainerCarousel>
       <div>
-       <h1>Portifolio </h1><img src={addPhoto} alt ='addPhoto' className="add"/>
+       <h1>Portifolio </h1>
         <Slide {...properties}>
           {image.map((item) => (
+            
             <div className="each-slide">
               <div>
                 <img

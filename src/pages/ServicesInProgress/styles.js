@@ -234,7 +234,6 @@ export const CardProfile = styled.div`
     background-color: #074ead;
     cursor: pointer;
 
-
     img {
       width: 70px;
       height: 70px;
@@ -242,6 +241,69 @@ export const CardProfile = styled.div`
 
     h2 {
       color: white;
+    }
+  }
+`;
+
+export const ModalContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .ModalComment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 310px;
+    border: 2px solid #00277d;
+    border-radius: 10px;
+    background-color: white;
+    z-index: 1998;
+    padding: 10px;
+    .message {
+      width: 100%;
+      height: 170px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      input {
+        width: 400px;
+        height: 100px;
+        border-radius: 5px;
+        padding:10px;
+        font-size:15px;
+      }
+    }
+
+    .AreaButton {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 50px;
+      margin-bottom: 25px;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 250px;
+      height: 50px;
+      background-color: #00277d;
+      border: 0px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
     }
   }
 `;
