@@ -99,7 +99,7 @@ function Post() {
                     onChange={handleChange}
                   >
                     {service?.map((item) => (
-                      <option key={item.id_service} className='teste'>{item.nameService}</option>
+                      <option key={item.id_service}>{item.nameService}</option>
                     ))}
                   </select>
                 </div>
