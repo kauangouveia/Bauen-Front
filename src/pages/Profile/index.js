@@ -130,7 +130,7 @@ function Profile() {
   const [imagePortifolio, setImagePortifolio] = useState(null);
   const handleFilePortifolio = async (e) => {
     setImagePortifolio(e.target.files[0]);
-    console.log(imagePortifolio);
+   
   };
 
   const sendImgPortifolio = async () => {

@@ -13,9 +13,7 @@ import { Slide } from "react-slideshow-image";
 // function SliderComents() {
 const idUser = localStorage.getItem("id");
 
-const slideImages = [construction, construction, construction];
-
-const Slideshow = () => {
+const MultipleSlidesExample = () => {
   const [image, setimage] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -23,13 +21,28 @@ const Slideshow = () => {
     setimage(data);
   }, []);
 
+  const style = {
+    textAlign: "center",
+    background: "teal",
+    padding: "200px 0",
+    fontSize: "30px",
+  };
+
+  const properties = {
+    duration: 3000,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    autoplay: true,
+    indicators: true,
+  };
+
   return (
     <ContainerCarousel>
       <div>
-        <Slide easing="ease">
+        <Slide {...properties}>
           {image.map((item) => (
             <div className="each-slide">
-              <div >
+              <div>
                 <img
                   className="image-slide"
                   src={item.photo_portifolio}
@@ -38,20 +51,10 @@ const Slideshow = () => {
               </div>
             </div>
           ))}
-          {/* <div className="each-slide">
-            <div style={{ backgroundImage: `url(${slideImages[1]})` }}>
-              <span>Slide 2</span>
-            </div>
-          </div> */}
-          {/* <div className="each-slide">
-            <div style={{ backgroundImage: `url(${slideImages[2]})` }}>
-              <span>Slide 3</span>
-            </div>
-          </div> */}
         </Slide>
       </div>
     </ContainerCarousel>
   );
 };
 
-export default Slideshow;
+export default MultipleSlidesExample;
