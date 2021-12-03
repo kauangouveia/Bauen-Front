@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const ContainerCarousel = styled.div `
   width: 1360px;
-  height: 450px;
+  height: 400px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
