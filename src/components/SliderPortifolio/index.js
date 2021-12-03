@@ -21,24 +21,17 @@ const MultipleSlidesExample = () => {
     setimage(data);
   }, []);
 
-  const style = {
-    textAlign: "center",
-    background: "teal",
-    padding: "200px 0",
-    fontSize: "30px",
-  };
-
   const properties = {
-    duration: 3000,
+    duration: 2000,
     slidesToShow: 3,
-    slidesToScroll: 2,
-    autoplay: true,
-    indicators: true,
+    slidesToScroll: 1,
+    autoplay: false,
+    indicators: false,
   };
 
   return (
     <ContainerCarousel>
-      <div>
+      <div className="imageContainer">
        <h1>Portifolio </h1>
         <Slide {...properties}>
           {image.map((item) => (
@@ -48,7 +41,7 @@ const MultipleSlidesExample = () => {
                 <img
                   className="image-slide"
                   src={item.photo_portifolio}
-                  alt="teste"
+                  alt="projeto"
                 />
               </div>
             </div>
