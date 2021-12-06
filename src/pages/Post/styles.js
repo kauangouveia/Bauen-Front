@@ -22,7 +22,7 @@ export const FeedContainer = styled.div`
 export const PostHeader = styled.div`
   display: flex;
   width: 800px;
-  height: 400px;
+  height: 270px;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -39,7 +39,7 @@ export const PostHeader = styled.div`
       align-items: center;
       justify-content: center;
       width: 150px;
-      height: auto;
+      height: 135px;
     }
 
     .PerfilImage {
@@ -52,47 +52,49 @@ export const PostHeader = styled.div`
       img {
         width: 90px;
         height: 90px;
-        border: 2px solid #074ead;
+        border: 4px solid #dadada;
         border-radius: 50%;
       }
     }
   }
   .Description {
-    background-color: purple;
+    margin-top: 10px;
     display: flex;
+    padding-left: 150px;
+    padding-right: 150px;
     width: 800px;
-    height: 200px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    height: 100px;
 
     input {
-      margin-top: 20px;
-      width: 400px;
+      width: 100%;
       height: 30px;
       font-size: 20px;
-      border: solid 0.5px #074ead;
-      padding: 10px;
-      border-radius:5px;
+      color: #5679e0;
+      font-weight: bold;
+      border: 0px;
+      border-bottom: 2px solid #00277d;
+      padding-left: 5px;
     }
     input::placeholder {
       color: #5679e0;
+      font-weight: bold;
     }
   }
   .TitlePost {
     display: flex;
+    justify-content: center;
     width: 500px;
-    height: 200px;
-    padding-top: 30px;
+    height: 135px;
     flex-direction: column;
     overflow: hidden;
   }
 
   h2 {
-    height: auto;
-    width: auto;
+    height: 60px;
+    margin-top: 27px;
     font-size: 25px;
     font-weight: bold;
+    overflow: hidden;
     color: #00277d;
   }
 
@@ -106,26 +108,20 @@ export const PostHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
-    min-height: 50px;
+    width: 150px;
+    min-height: 40px;
     padding: 5px;
     background-color: white;
-    border: 2px solid #dadada;
+    border: 2px solid #00277d;
     border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
     color: #074ead;
     cursor: pointer;
-
-    option{
-      background-color: white;
-      font-size: 20px;
-    }
   }
 `;
 
 export const PostImage = styled.div`
-background-color: black;
   display: flex;
   width: 1000px;
   height: 650px;
@@ -143,8 +139,8 @@ background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 
 
     > img {
@@ -159,27 +155,26 @@ background-color: black;
     }
   }
   .post {
-    background-color: yellow;
     display: flex;
     overflow: hidden;
     width: 600px;
+    height: 150px;
     align-items: center;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
     border: 4px solid #074ead;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
   }
   input[type="file"] {
     display: none;
   }
   img {
     display: flex;
-    background-color: red;
     cursor: pointer;
-    width: 100px;
-    height: 120px;
+    width: 120px;
+    height: 90px;
   }
 `;
 

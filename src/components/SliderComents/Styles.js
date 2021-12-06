@@ -1,21 +1,27 @@
 import styled from "styled-components";
-export const ContainerCarousel = styled.div`
-  width: 1300px;
-  height: 500px;
+export const ContainerCarousel = styled.div `
+  width: 1360px;
+  height: 400px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  border-bottom: solid 0.3px #dadada;
-  align-items: center;
-  /* background-color: red; */
+  align-items: center; 
 
+  h1{
+    color: #00277D;
+  }
+  
   div {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
     min-height: 250px;
     min-width: 300px;
   }
+  
   img {
     width: 100px;
     height: 100px;
@@ -23,40 +29,60 @@ export const ContainerCarousel = styled.div`
     margin: 10px;
     border-radius: 50px;
   }
+
   .each-slide > div {
-    
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    height: auto;
-    margin-right: 5px;
-    border-radius: 10px;
-    border: solid 1px black;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 450px;
+      height: 250px;
+      border-radius: 5px;
+      border: 4px solid #074ead;
+      margin: 2px;
+      padding: 50px;
+      overflow: hidden;
+
+      h2{
+        width: 100%;
+        height: 50px;
+        color: #00277D;
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+      }
+
+      p{
+        text-overflow: ellipsis;
+        text-align: justify;
+        width: 100%;
+        height: 150px;
+        color: black;
+      }
   }
 
-  display: flex;
   .each-slide span {
-    padding: 20px;
     font-size: 20px;
     background: #efefef;
+  }
+
+  .react-slideshow-container .default-nav {
+    height: 250px;
+    display: flex;
+    background: #074ead;
+    width: -90px;
+    border: 0;
+    fill: white;
     text-align: center;
-  }
-  .informationsClient {
-    width: 1000px;
-    height: 50px;
-  
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
     display: flex;
-    flex-direction: row;
-    text-align: center;  
-  }
-  .informations{
-    width: 1000px;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    text-align: center;  
-  }
-  .image-slide {
-    max-height: 300px;
-  }
+    align-items: center;
+    justify-content: center;
+}
+
+  .react-slideshow-container .default-nav:hover{
+    background-color: #00277D;
+      fill: white;
+    }
 `;

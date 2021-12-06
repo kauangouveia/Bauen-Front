@@ -106,8 +106,8 @@ function Post() {
               </div>
             </div>
             <div className="Description">
-              <label /> Adicone uma descrição ao projeto
               <input
+                placeholder="Detalhe o tipo de serviço com um título"
                 maxlength="20"
                 onChange={(e) => sendtitleFastService(e.target.value)}
               />
@@ -142,7 +142,7 @@ function Post() {
                 className="Confirm"
                 onClick={sendFastService}
               >
-                Confirmar
+                Publicar
               </button>
             </div>
           </PostButtons>
