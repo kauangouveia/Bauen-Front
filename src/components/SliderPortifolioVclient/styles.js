@@ -20,8 +20,8 @@ export const ContainerCarousel = styled.div `
     margin-right: auto;
     min-height: 250px;
     min-width: 300px;
-
   }
+
     img{
       display: flex;
       justify-content: center;
@@ -39,14 +39,7 @@ export const ContainerCarousel = styled.div `
       width: 45px;
       height: 45px;
     }
-    .each-slide > div {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-size: cover;
-      height:auto;
-      border-radius: 5px;
-    }
+    
 
   .react-slideshow-container .default-nav {
     height: 250px;

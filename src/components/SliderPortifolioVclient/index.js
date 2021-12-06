@@ -11,13 +11,13 @@ import "react-toastify/dist/ReactToastify.css";
 import { Slide } from "react-slideshow-image";
 
 // function SliderComents() {
-const idServiceProviderSelect = localStorage.getItem("idServiceProviderSelect");
+const idUser = localStorage.getItem("id");
 
 const MultipleSlidesExample = () => {
   const [image, setimage] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
-    const data = await listPhotos.photosPortifolio(idServiceProviderSelect);
+    const data = await listPhotos.photosPortifolio(idUser);
     setimage(data);
   }, []);
 
