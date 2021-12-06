@@ -37,9 +37,14 @@ const MultipleSlidesExample = () => {
         <Slide {...properties}>
           {comment.map((item) => (
             <div className="each-slide">
-              <div>
+              <div className="NameComments">
                 <h2>{item.name}</h2>
+              </div>
+              <div className="ContainerComments">
                 <p>{item.coment}</p>
+              </div>
+              <div className="ContainerTime">
+                <h3>postado</h3>
               </div>
             </div>
           ))}
