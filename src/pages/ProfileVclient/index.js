@@ -2,8 +2,8 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Star from "../../components/Star";
-import SliderPortifolio from "../../components/SliderPortifolio";
-import SliderComents from "../../components/SliderComents";
+import SliderPortifolioVclient from "../../components/SliderPortifolioVclient";
+import SliderComentsVclient from "../../components/SliderComentsVclient";
 import location from "../../assets/location.svg";
 import menu from "../../assets/menu.svg";
 import { useHistory } from "react-router-dom";
@@ -77,8 +77,8 @@ function ProfileVclient() {
         </div>
       </InformationsContainer>
 
-      <SliderPortifolio />
-      <SliderComents />
+      <SliderPortifolioVclient/>
+      <SliderComentsVclient />
       <Footer />
     </Container>
   );

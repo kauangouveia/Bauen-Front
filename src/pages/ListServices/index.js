@@ -28,13 +28,15 @@ function ListServicesProvider() {
     setServiceProviders(data);
   }, []);
 
+  const saveRoomProvider = (room) => {
+    localStorage.setItem("roomProvider", room);
+  };
+
   const history = useHistory();
   const getProviderId = (id) => {
     localStorage.setItem("idServiceProviderSelect", id);
     history.push("/ProfileVclient");
   };
-
-  
 
   return (
     <>
@@ -71,11 +73,11 @@ function ListServicesProvider() {
         <ContainerFeed>
           <ContainerProfile>
             {serviceProviders.map((item) => (
-              <CardProfile
-                key={item.id_service_provider}
-                onClick={() => getProviderId(item.id_service_provider)}
-              >
-                <div className="Profile">
+              <CardProfile key={item.id_service_provider}>
+                <div
+                  className="Profile"
+                  onClick={() => getProviderId(item.id_service_provider)}
+                >
                   <div className="ProfileImage">
                     <img src={item.photo} alt="usuario" />
                   </div>
@@ -96,7 +98,13 @@ function ListServicesProvider() {
                     </div>
                   </div>
                 </div>
-                <div className="Contact">
+                <div
+                  className="Contact"
+                  onClick={() => {
+                    saveRoomProvider(item.room);
+                    history.push("/chat");
+                  }}
+                >
                   <img src={chat} alt="chat" />
                   <h2>Contatar</h2>
                 </div>
