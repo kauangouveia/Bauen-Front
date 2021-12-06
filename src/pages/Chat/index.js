@@ -31,7 +31,8 @@ function Chat() {
     }
   
   },[]);
-console.log(room)
+
+  
   const sendMessage = async (socket, username, room) => {
     if (currentMessage !== "") {
       const messageData = {
