@@ -13,25 +13,11 @@ export const ContainerCarousel = styled.div `
   h1{
     color: #00277D;
   }
-  
-  div {
-    box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 250px;
-    min-width: 300px;
-  }
-  
-  img {
-    width: 100px;
-    height: 100px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 10px;
-    border-radius: 50px;
-  }
 
-  .each-slide > div {
+  .each-slide{
       display: flex;
+      align-items: center;
+      justify-content: center;
       flex-direction: column;
       position: relative;
       width: 450px;
@@ -39,31 +25,59 @@ export const ContainerCarousel = styled.div `
       border-radius: 5px;
       border: 4px solid #074ead;
       margin: 2px;
-      padding: 50px;
+      position: relative;
+      overflow: hidden;
+  }
+
+  .PhotoComments{
+      border-radius: 100%;
+      border: 2px solid #dadada;
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 25px;
+      left: 45px;
       overflow: hidden;
 
-      h2{
-        width: 100%;
-        height: 50px;
-        color: #00277D;
-        display: flex;
-        overflow: hidden;
-        align-items: center;
-      }
-
-      p{
-        text-overflow: ellipsis;
-        text-align: justify;
-        width: 100%;
-        height: 150px;
-        color: black;
+      img{
+        width: 70px;
+        height: 70px;
       }
   }
 
-  .each-slide span {
-    font-size: 20px;
-    background: #efefef;
+  .NameComments{
+    text-overflow: ellipsis;
+    color: #00277D;
+    font-size: 15px;
+    height: 40px;
+    width: 60%;
+    margin-top: 20px;
+    margin-left: 65px;
   }
+
+  .ContainerComments{
+    font-size: 18px;
+    height: 80px;
+    width: 65%;
+    color: black;
+    margin-top: 20px;
+    overflow-wrap: break-word;
+
+    p{
+      width: 100%;
+    }
+  }
+
+  .ContainerTime{
+      overflow: hidden;
+      width: 65%;
+      height: 30px;
+      color: #5679E0;
+
+      h3{
+        font-size: 18px;
+      }
+    }
 
   .react-slideshow-container .default-nav {
     height: 250px;

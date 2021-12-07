@@ -145,13 +145,9 @@ export const PostImage = styled.div`
 
     > img {
       display: none;
-      padding: 10px;
-      width: 550px;
-      height: 420px;
-    }
-    > img:hover {
-      width: 550px;
-      height: 420px;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
     }
   }
   .post {
