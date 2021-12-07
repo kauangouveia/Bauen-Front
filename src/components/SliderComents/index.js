@@ -20,7 +20,6 @@ const MultipleSlidesExample = () => {
     setComment(data);
   }, []);
 
-  console.log(comment);
 
   const properties = {
     duration: 2000,
@@ -30,6 +29,14 @@ const MultipleSlidesExample = () => {
     indicators: false,
   };
 
+  let data;
+  let dataF;
+  comment.forEach(item => {
+
+    data =  new Date(item.created_at)
+    dataF = data.getDate() + "-" + (data.getMonth() + 1) + "-" + data.getFullYear()
+});
+
   return (
     <ContainerCarousel>
       <div>
@@ -37,14 +44,18 @@ const MultipleSlidesExample = () => {
         <Slide {...properties}>
           {comment.map((item) => (
             <div className="each-slide">
+              <div className="PhotoComments">
+                <img src={item.photo} />
+              </div>
               <div className="NameComments">
                 <h2>{item.name}</h2>
               </div>
+              
               <div className="ContainerComments">
                 <p>{item.coment}</p>
               </div>
               <div className="ContainerTime">
-                <h3>postado</h3>
+                <h3>postado dia {dataF}</h3>
               </div>
             </div>
           ))}

@@ -25,20 +25,42 @@ export const ContainerCarousel = styled.div `
       border-radius: 5px;
       border: 4px solid #074ead;
       margin: 2px;
+      position: relative;
       overflow: hidden;
   }
 
+  .PhotoComments{
+      border-radius: 100%;
+      border: 2px solid #dadada;
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 25px;
+      left: 45px;
+      overflow: hidden;
+
+      img{
+        width: 70px;
+        height: 70px;
+      }
+  }
+
   .NameComments{
+    text-overflow: ellipsis;
     color: #00277D;
+    font-size: 15px;
     height: 40px;
-    width: 80%;
+    width: 60%;
+    margin-top: 20px;
+    margin-left: 65px;
   }
 
   .ContainerComments{
-    height: 120px;
-    width: 80%;
+    font-size: 18px;
+    height: 80px;
+    width: 65%;
     color: black;
-    padding-left: 5px;
+    margin-top: 20px;
     overflow-wrap: break-word;
 
     p{
@@ -47,11 +69,14 @@ export const ContainerCarousel = styled.div `
   }
 
   .ContainerTime{
-      width: 80%;
+      overflow: hidden;
+      width: 65%;
       height: 30px;
       color: #5679E0;
-      font-size: 15px;
-      padding-left: 5px;
+
+      h3{
+        font-size: 18px;
+      }
     }
 
   .react-slideshow-container .default-nav {
