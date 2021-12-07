@@ -9,11 +9,13 @@ import React, { useState } from "react";
 import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import loadingBuild from "../../assets/building.gif";
+import Loading from "../../components/Loading";
 
 function Post() {
   const profileName = localStorage.getItem("name");
   const id = localStorage.getItem("id");
-
+  const [loadingRun, setLoadingRun] = useState(false);
   const [imageProfile, setImageProfile] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -72,7 +74,8 @@ function Post() {
       await fastService.sendFS(data);
       toast.success(
         "Serviço Rapido adionado, basta aguardar um dos nossos colaboradores entrar em contato"
-      );
+        );
+        setLoadingRun(false)
     } catch (error) {
       console.log(error);
     }
@@ -80,7 +83,8 @@ function Post() {
   return (
     <>
       <Container>
-      <ToastContainer />
+        <ToastContainer />
+        {loadingRun === false ? "" : <Loading />}
         <Header />
         <FeedContainer>
           <PostHeader>
@@ -140,7 +144,10 @@ function Post() {
               <button
                 type="submit"
                 className="Confirm"
-                onClick={sendFastService}
+                onClick={() => {
+                  sendFastService();
+                  setLoadingRun(true);
+                }}
               >
                 Publicar
               </button>
@@ -148,7 +155,7 @@ function Post() {
           </PostButtons>
         </FeedContainer>
       </Container>
-      <Footer/>
+      <Footer />
     </>
   );
 }
