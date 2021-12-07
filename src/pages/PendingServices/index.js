@@ -20,6 +20,8 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
+
 function FastServices() {
   const [service, setService] = useState([]);
   const providerId = localStorage.getItem("id");
@@ -35,6 +37,8 @@ function FastServices() {
     toast.success(service);
   };
 
+
+    const username = localStorage.getItem("name")
   return (
     <>
       <ToastContainer />
@@ -62,7 +66,7 @@ function FastServices() {
         <ContainerResult>
           <div className="Result">
             <h2>
-              Fulano de tal, atualmente você possui {service.length} serviços em
+              {username}, atualmente você possui {service.length} serviços em
               andamento
             </h2>
           </div>

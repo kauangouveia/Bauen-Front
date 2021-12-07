@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Slide } from "react-slideshow-image";
 
 // function SliderComents() {
-const idUser = localStorage.getItem("id");
+const idUser = localStorage.getItem("idServiceProviderSelect");
 
 const MultipleSlidesExample = () => {
   const [image, setimage] = useState([]);

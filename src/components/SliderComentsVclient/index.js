@@ -10,7 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Slide } from "react-slideshow-image";
 
-const idUser = localStorage.getItem("id");
+const idUser = localStorage.getItem("idServiceProviderSelect");
 
 const MultipleSlidesExample = () => {
   const [comment, setComment] = useState([]);
