@@ -5,7 +5,7 @@ import SliderComents from "../../components/SliderComents";
 import storm from "../../assets/storm.svg";
 import time from "../../assets/time.svg";
 import chat from "../../assets/chat.svg";
-import plus from "../../assets/plus.png";
+import addWhite from "../../assets/addWhite.png";
 import LoadingPadrao from "../../components/LoadingPattern";
 import location from "../../assets/location.svg";
 import reward from "../../assets/reward.svg";
@@ -239,8 +239,8 @@ function Profile() {
             </button>
             <label for="Portifolio" className="plus">
               <img
-                className="Chat"
-                src={plus}
+                className="add"
+                src={addWhite}
                 alt="localização"
                 onClick={() =>
                   setIsModalVisible(true, setOpenModalPortifolio(true))
@@ -291,7 +291,7 @@ function Profile() {
             <div className="ModalPortifolio">
               <div className="fechar">
                 <div className="tile">
-                  <h2>Adicone uma foto ao seu portifolio</h2>
+                  <h2>Adicione uma foto ao seu Portfólio</h2>
                 </div>
                 <div className="buttonFechar">
                   <img
@@ -305,12 +305,12 @@ function Profile() {
               </div>
               <div className="AreaIamge">
                 {" "}
-                <img ref={imgRef} alt="post para serviços rapidos" />
+                <img ref={imgRef}/>
                 {loadingRun === false ? "" : <LoadingPadrao />}
               </div>
               <div className="AreaButton">
-                <label for="file" className="Adiconar">
-                  Adiconar{" "}
+                <label for="file" className="Adicionar">
+                  Escolher Foto{" "}
                 </label>
                 <input
                   type="file"
@@ -328,7 +328,7 @@ function Profile() {
                     setLoadingRun(true);
                   }}
                 >
-                  Avançar {">"}
+                  Confirmar
                 </button>
               </div>
             </div>

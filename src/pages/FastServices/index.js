@@ -81,7 +81,7 @@ function FastServices() {
                     <div className="NameAndRating">
                       <h2>{item.title}</h2>
                       <h3>{item.name}</h3>
-                      <h3>{item.type_service}</h3>
+                      <h4>{item.type_service}</h4>
                     </div>
                     <div className="Options">
                       <div className="Favorite">

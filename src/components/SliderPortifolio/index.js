@@ -32,7 +32,7 @@ const MultipleSlidesExample = () => {
   return (
     <ContainerCarousel>
       <div className="imageContainer">
-       <h1>Portifolio </h1>
+       <h1>Portfólio </h1>
         <Slide {...properties}>
           {image.map((item) => (
             

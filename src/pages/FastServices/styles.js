@@ -23,23 +23,23 @@ export const SearchContainer = styled.div`
 
     justify-content: center;
     input {
-      margin-top: 20px;
-      width: 500px;
-      border-radius: 5px;
-      height: 40px;
-      font-size: 20px;
-      border: solid 0.5px #dadada;
-      padding: 10px;
-    }
+        margin-top: 20px;
+        width: 500px;
+        height: 50px;
+        font-size: 20px;
+        border: solid 0.5px #dadada;
+        padding: 10px;
+      }
     input::placeholder {
       color: #5679e0;
     }
     img {
-      margin-top: 20px;
-      width: 40px;
-      height: 40px;
-      margin-left: 15px;
-    }
+        margin-top: 20px;
+        background-color: #074EAD;
+        width: 50px;
+        height: 50px;
+        margin-left: 5px;
+      }
     img:hover {
       cursor: pointer;
     }
@@ -56,10 +56,10 @@ export const ContainerFilters = styled.div`
 
   .Filters {
     width: 300px;
-    height: 80px;
+    height: 65px;
     display: flex;
     flex-direction: row;
-    border-radius: 5px;
+    border-radius: 2.5px;
     justify-content: center;
     align-items: center;
     margin: inherit;
@@ -143,15 +143,17 @@ export const CardProfile = styled.div`
     width: 580px;
     height: 160px;
     margin-right: 10px;
-    border: 2px solid #dadada;
+    border: 1px solid #DADADA;
     display: flex;
     overflow-y: hidden;
+    border-radius: 2.5px;
 
     margin-bottom: 10px;
     box-shadow: 5px 7px 4px #7d7d7d;
+
     .ProfileImage {
-      width: 250px;
-      height: 150px;
+      width: 400px;
+      height: 160px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -159,22 +161,32 @@ export const CardProfile = styled.div`
       img {
         width: 85%;
         height: 85%;
-        border: 5px solid #f05800;
-        border-radius: 10px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 2.5px;
       }
     }
     .Informations {
       width: 700px;
-      height: 150px;
+      height: 160px;
       display: flex;
 
       h2 {
         color: #00277d;
         font-size: 25px;
+        margin-bottom: 20px;
         font-weight: bold;
       }
 
       h3 {
+        color: #5679e0;
+        font-size: 18px;
+        font-weight: normal;
+        margin-bottom: 10px;
+      }
+
+      h4 {
+        font-size: 18px;
+        margin-bottom: 15px;
         color: #5679e0;
       }
 
@@ -203,22 +215,11 @@ export const CardProfile = styled.div`
           img {
             width: 35px;
             height: 35px;
-            margin-right: 5px;
+            margin-top: 10px;
+            margin-right: 15px;
             cursor: pointer;
           }
         }
-
-        .Services {
-          width: 150px;
-          height: 120px;
-          display: flex;
-          text-align: right;
-          padding-right: 40px;
-          padding-bottom: 10px;
-          justify-content: center;
-          flex-direction: column;
-        }
-
         h4 {
           color: #5679e0;
           font-size: 18px;
@@ -230,25 +231,26 @@ export const CardProfile = styled.div`
   .Contact {
     width: 160px;
     display: flex;
+    transition: 0.3s ease-out;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 160px;
-    box-shadow: 5px 7px 4px #7d7d7d;
+    box-shadow: 0px 8px 2px rgba(0, 0, 0, 0.25);
     margin-bottom: 10px;
     margin-left: 10px;
-    border-radius: 5px;
+    border-radius: 2.5px;
     text-align: center;
     background-color: #074ead;
     cursor: pointer;
 
-
     img {
-      width: 70px;
-      height: 70px;
+      width: 85px;
+      height: 85px;
     }
 
     h2 {
+      font-size: 28px;
       color: white;
     }
   }

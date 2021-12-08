@@ -96,6 +96,11 @@ export const InformationsContainer = styled.div`
     height: 60px;
     margin-left: 5px;
     margin-right: 5px;
+    overflow: hidden;
+    .add{
+        width: 60px;
+        height: 60px;
+      }
   }
 
   .services {
@@ -412,13 +417,13 @@ export const ModalContainer = styled.div`
       width: 250px;
       height: 50px;
       background-color: #00277d;
-
       border: 0px;
       border-radius: 5px;
       font-size: 20px;
       font-weight: bold;
       color: white;
       cursor: pointer;
+   
     }
   }
 
@@ -514,7 +519,6 @@ export const ModalContainer = styled.div`
       width: 250px;
       height: 50px;
       background-color: #00277d;
-
       border: 0px;
       border-radius: 5px;
       font-size: 20px;
@@ -530,38 +534,46 @@ export const ModalContainer = styled.div`
     justify-content: center;
     width: 700px;
     height: 600px;
+    font-size: 20px;
+    color: #00277d;
     border: 2px solid #00277d;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: white;
     z-index: 1999;
+    padding-bottom: 10px;
     input[type="file"] {
     display: none;
   }
     .AreaIamge {
       height: 450px;
       width: 650px;
-      border-radius: 10px;
-      border: solid 1px #00277d;
+      border-radius: 5px;
+      border: solid 4px #00277d;
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
+      margin-top: 10px;
+      margin-bottom: 12px;
       img{
-        width: 400px;
-        width: 600px;
+        width: 100%;
+        width: 100%;
       }
     }
     .fechar {
       display: flex;
+      height: auto;
       width: 100%;
       justify-content: center;
       align-items: center;
 
       .tile{
         width: 600px;
-       
+        padding-left: 5px;
+        margin-top: 10px;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-start;
+        justify-content: start;
       }
         
       }
@@ -569,10 +581,21 @@ export const ModalContainer = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        overflow: hidden;
+        height: 65px;
+        padding-top: 8px;
         cursor: pointer;
 
+        img{
+          transition: 0.5s;
+          width: 50px;
+          height: 50px;
+        }
+
+        img:hover{
+          transform: scale(1.1);
+        }
       }
     }
     .AreaButton {
@@ -580,7 +603,6 @@ export const ModalContainer = styled.div`
       justify-content: center;
       width: 100%;
       height: 50px;
-      margin: 5px;
       .Next {
         display: flex;
         align-items: center;
@@ -595,7 +617,7 @@ export const ModalContainer = styled.div`
         color: white;
         cursor: pointer;
       }
-      .Adiconar {
+      .Adicionar {
         margin-right: 20px;
         display: flex;
         align-items: center;
@@ -660,6 +682,7 @@ export const ModalContainer = styled.div`
     }
 
     select {
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -680,7 +703,6 @@ export const ModalContainer = styled.div`
       display: flex;
       align-items: start;
       color: #00277d;
-      padding-left: 30px;
       width: 100%;
       height: 65px;
       border: 0px;
@@ -712,5 +734,4 @@ export const ModalContainer = styled.div`
       color: white;
       cursor: pointer;
     }
-  }
 `;
