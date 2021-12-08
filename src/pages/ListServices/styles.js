@@ -188,7 +188,7 @@ export const CardProfile = styled.div`
 
       .Options{
         width: 150px;
-        height: 120px;
+        height: 150px;
         display: flex;
         flex-direction:column;
         
@@ -197,13 +197,25 @@ export const CardProfile = styled.div`
           padding-right: 20px;
           align-items: center;
           justify-content: end;
-          width: 150px;
-          height: 60px;
-
+          width: 160px;
+          height: 150px;
+          /* background-color: #074ead; */
           img{
             width: 35px;
             height: 35px;
-            margin-right: 5px;
+            /* margin-right: 5px; */
+            cursor: pointer;
+          }
+          .like{
+            width: 35px;
+            height: 50px;
+           
+            cursor: pointer;
+          }
+          .heartlike{
+            width: 65px;
+            height: 70px;
+            margin-right: -15px;
             cursor: pointer;
           }
         }
