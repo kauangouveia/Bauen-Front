@@ -6,7 +6,7 @@ import storm from "../../assets/storm.svg";
 import time from "../../assets/time.svg";
 import chat from "../../assets/chat.svg";
 import plus from "../../assets/plus.png";
-
+import LoadingPadrao from "../../components/LoadingPattern";
 import location from "../../assets/location.svg";
 import reward from "../../assets/reward.svg";
 import warning from "../../assets/warning.svg";
@@ -44,6 +44,8 @@ function Profile() {
   const [isOpenModalImageProfile, setIsOpenModalImageProfile] = useState(false);
   const [isOpenModalService, setIsOpenModalService] = useState(false);
   const locationOfServiceProvier = localStorage.getItem("location");
+  const [loadingRun, setLoadingRun] = useState(false);
+
   const nameProfile = localStorage.getItem("name");
 
   // Analisando caso haja foto de perfil
@@ -149,6 +151,7 @@ function Profile() {
 
     try {
       await portifolio.provider(data);
+      setLoadingRun(false)
       toast.success("Foto adicionada ao portifolio com sucesso");
     } catch (error) {
       console.log("erro");
@@ -188,7 +191,7 @@ function Profile() {
 
   return (
     <Container>
-      <ToastContainer/>
+      <ToastContainer />
       <Header />
       <ProfileContainer>
         <div className="AreaReward">
@@ -281,7 +284,10 @@ function Profile() {
               </div>
             </div>
           )}
+      
+
           {isOpenModalPortifolio && (
+            
             <div className="ModalPortifolio">
               <div className="fechar">
                 <div className="tile">
@@ -300,6 +306,7 @@ function Profile() {
               <div className="AreaIamge">
                 {" "}
                 <img ref={imgRef} alt="post para serviços rapidos" />
+                {loadingRun === false ? "" : <LoadingPadrao />}
               </div>
               <div className="AreaButton">
                 <label for="file" className="Adiconar">
@@ -314,7 +321,13 @@ function Profile() {
                   name="file"
                   id="file"
                 />
-                <button className="Next" onClick={sendImgPortifolio}>
+                <button
+                  className="Next"
+                  onClick={() => {
+                    sendImgPortifolio();
+                    setLoadingRun(true);
+                  }}
+                >
                   Avançar {">"}
                 </button>
               </div>

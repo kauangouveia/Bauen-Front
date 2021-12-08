@@ -74,8 +74,8 @@ function Post() {
       await fastService.sendFS(data);
       toast.success(
         "Serviço Rapido adionado, basta aguardar um dos nossos colaboradores entrar em contato"
-        );
-        setLoadingRun(false)
+      );
+      setLoadingRun(false);
     } catch (error) {
       console.log(error);
     }
@@ -84,7 +84,7 @@ function Post() {
     <>
       <Container>
         <ToastContainer />
-        {loadingRun === false ? "" : <Loading />}
+        {loadingRun === false ? "" : <Loading/>}
         <Header />
         <FeedContainer>
           <PostHeader>
