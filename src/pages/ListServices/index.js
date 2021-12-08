@@ -19,8 +19,11 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { serviceProvider } from "../../services";
 import { useHistory } from "react-router";
+import heartLike from "../../assets/heartLike.gif";
+import likeHurt from "../../assets/heartafeter.png";
 
 function ListServicesProvider() {
+  const [heart, setHeart] = useState(false);
   const [serviceProviders, setServiceProviders] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -37,6 +40,12 @@ function ListServicesProvider() {
     localStorage.setItem("idServiceProviderSelect", id);
     history.push("/ProfileVclient");
   };
+  let type = love;
+  const timeExecution = (boolean) =>
+    setTimeout(() => {
+      setHeart(boolean);
+      type = likeHurt;
+    }, 2500);
 
   return (
     <>
@@ -74,11 +83,11 @@ function ListServicesProvider() {
           <ContainerProfile>
             {serviceProviders.map((item) => (
               <CardProfile key={item.id_service_provider}>
-                <div
-                  className="Profile"
-                  onClick={() => getProviderId(item.id_service_provider)}
-                >
-                  <div className="ProfileImage">
+                <div className="Profile">
+                  <div
+                    className="ProfileImage"
+                    onClick={() => getProviderId(item.id_service_provider)}
+                  >
                     <img src={item.photo} alt="usuario" />
                   </div>
                   <div className="Informations">
@@ -88,8 +97,23 @@ function ListServicesProvider() {
                       <h3>Quantidade de projetos realizados</h3>
                     </div>
                     <div className="Options">
-                      <div className="Favorite">
-                        <img src={love} alt="amei" />
+                      <div
+                        className="Favorite"
+                        onClick={() => {
+                          setHeart(true);
+                          timeExecution(false);
+                        }}
+                      >
+                        {heart === true ? (
+                          <img
+                            src={heartLike}
+                            alt="amei"
+                            className="heartlike"
+                          />
+                        ) : (
+                          <img src={type} alt="amei" className="heartlike" />
+                        )}
+
                         <img src={menu} alt="menu" />
                       </div>
                       <div className="Services">
