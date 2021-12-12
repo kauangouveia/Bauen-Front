@@ -21,15 +21,16 @@ export const Container = styled.div`
     input {
       align-items: center;
       width: 300px;
+      color: #5679E0;
       height: 40px;
       margin-bottom: 10px;
-      border-radius: 3%;
-      border: 1px solid #000000;
+      border-radius: 2.5px;
+      border: 2px solid #dadada;
       padding: 15px;
       font-size: 18px;
     }
     input::placeholder {
-      color: #5679e0;
+      color: #dadada;
     }
   }
   .EsqueciSenha {
@@ -45,6 +46,7 @@ export const Container = styled.div`
     cursor: pointer;
   }
   .title {
+    color: #00277D;
     width: 300px;
     height: auto;
     display: flex;
@@ -52,6 +54,11 @@ export const Container = styled.div`
     align-items: center;
     text-align: center;
   }
+
+  a{
+    text-decoration: none;
+  }
+  
   h3{
     color:#074ead;
   }
@@ -70,7 +77,7 @@ export const Container = styled.div`
   .Line {
     width: 300px;
     height: 2px;
-    background-color: gray;
+    background-color: #dadada;
     margin-top: 5px;
     margin-bottom: 20px;
   }

@@ -15,6 +15,10 @@ export const Container = styled.div`
         justify-content: center;
         border-radius: 5% ;
       }
+
+      h3{
+        color: #00277D;
+      }
       form {
         width: 300px;
         height: auto;
@@ -23,14 +27,15 @@ export const Container = styled.div`
         input {
           align-items: center;
           width: 300px;
+          color: #5679E0;
           height: 40px;
           margin-bottom: 10px;
-          border-radius: 3%;
-          border: 1px solid #000000;
+          border-radius: 2.5px;
+          border: 2px solid #dadada;
           padding:15px;
           font-size: 18px;
         } input::placeholder {
-        color: #5679e0;
+        color: #dadada;
       }
       }
       .EsqueciSenha{
@@ -44,11 +49,12 @@ export const Container = styled.div`
         cursor: pointer;
       }
       .title{
+        color: #00277D;
         width: 300px;
         height: 40px;
         display: flex;
         justify-content: center;
-        margin-bottom: 30PX;
+        margin-bottom: 20PX;
         margin-top: 20px;
       }
       button{

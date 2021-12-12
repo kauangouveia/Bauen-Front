@@ -70,7 +70,7 @@ function LoginClient(props) {
                 <h2>LOGAR</h2>
               </button>
             </form>
-            <div className="EsqueciSenha">Esquecia a Senha</div>
+            <div className="EsqueciSenha">Esqueci a Senha</div>
             <div className="Line"></div>
             <div className="title">
               <h3>CADASTRAR-SE</h3>

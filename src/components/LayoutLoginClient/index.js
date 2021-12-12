@@ -1,6 +1,6 @@
 
 import logo from "../../assets/logo.png";
-import illustrations from "../../assets/LoginClient.jpg"
+import illustrations from "../../assets/iconeCliente.png"
 import { Container } from "./styles";
 
 function LayoutLoginClient({children}) {

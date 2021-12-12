@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  background-color: #074EAD;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -17,12 +18,13 @@ export const Container = styled.div`
     overflow: hidden;
     .AreaBlue {
       width: 1100px;
-      height: 100vh;
+      height: 1080px;
       background-color: #074EAD;
       overflow: hidden;
       img{
-        width: 100%;
-        height: 100%;
+        margin-top: 45px;
+        width: 1024px;
+        height: 1024px;
       }
     }
     .AreaLogin {

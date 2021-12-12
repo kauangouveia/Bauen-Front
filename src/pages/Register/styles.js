@@ -15,23 +15,26 @@ export const Container = styled.div`
     justify-content: center;
     border-radius: 5%;
   }
-  form {
-    width: 300px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
+  h3{
+    color: #00277D;
+  }
+    form {
+      width: 300px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
     input {
       align-items: center;
       width: 300px;
       height: 40px;
+      color: #5679E0;
       margin-bottom: 10px;
-      border-radius: 3%;
-      border: 1px solid #000000;
-      padding: 15px;
+      border-radius: 2.5px;
+      border: 2px solid #dadada;
+      padding:15px;
       font-size: 18px;
-    }
-    input::placeholder {
-      color: #5679e0;
+  }input::placeholder {
+    color: #dadada;
     }
   }
   .EsqueciSenha {

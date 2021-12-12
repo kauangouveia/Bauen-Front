@@ -1,6 +1,6 @@
 
 import logo from "../../assets/logo.png";
-import illustrations from "../../assets/bigrentz_constructionriskmanagement_dribbble_4x.png"
+import illustrations from "../../assets/iconeConstrutor.png"
 import { Container } from "./styles";
 
 function LayoutRegister({children}) {
