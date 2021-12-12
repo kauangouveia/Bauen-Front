@@ -547,7 +547,7 @@ export const ModalContainer = styled.div`
     .AreaIamge {
       height: 450px;
       width: 650px;
-      border-radius: 5px;
+      border-radius: 2.5px;
       border: solid 4px #00277d;
       display: flex;
       justify-content: center;
@@ -644,6 +644,7 @@ export const ModalContainer = styled.div`
     border: 2px solid #00277d;
     border-radius: 10px;
     background-color: white;
+    margin-bottom: 150px;
 
     @keyframes ModalAviso {
       from {
@@ -711,8 +712,12 @@ export const ModalContainer = styled.div`
 
     .Close h2 {
       display: flex;
-      width: auto;
-      height: auto;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      padding-left: 10px;
+      width: 40px;
+      height: 50px;
       padding: 0px;
       margin: 0px;
       font-size: 40px;

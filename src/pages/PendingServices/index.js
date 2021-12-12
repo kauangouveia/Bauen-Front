@@ -2,7 +2,7 @@
 import Header from "../../components/Header";
 import { Container } from "./styles";
 import { listpendingFastServices, confirmService } from "../../services";
-import chat from "../../assets/chat.png";
+import chat from "../../assets/chat.svg";
 import search from "../../assets/search.png";
 import confirmed from "../../assets/confirmed.svg";
 import Footer from "../../components/Footer";
@@ -83,11 +83,11 @@ function FastServices() {
                     <div className="NameAndRating">
                       <h2>{item.title}</h2>
                       <h3>{item.name}</h3>
-                      <h3>
+                      <h4>
                         {item.finished_at_by_service_provider === null
                           ? "Serviço ainda não finalizado"
                           : "Serviço finalizado, aguardando confirmação do cliente"}
-                      </h3>
+                      </h4>
                     </div>
                     <div className="Options">
                       <div className="Favorite">

@@ -149,7 +149,7 @@ export const CardProfile = styled.div`
     border-radius: 2.5px;
 
     margin-bottom: 10px;
-    box-shadow: 5px 7px 4px #7d7d7d;
+    box-shadow: 0px 8px 2px rgba(0, 0, 0, 0.25);
 
     .ProfileImage {
       width: 400px;
@@ -173,21 +173,24 @@ export const CardProfile = styled.div`
       h2 {
         color: #00277d;
         font-size: 25px;
-        margin-bottom: 20px;
+        margin-top: 5px;
+        margin-bottom: 25px;
         font-weight: bold;
+        overflow: hidden;
       }
 
       h3 {
         color: #5679e0;
         font-size: 18px;
         font-weight: normal;
-        margin-bottom: 10px;
+        margin-bottom: 25px;
+        overflow: hidden;
       }
 
       h4 {
         font-size: 18px;
-        margin-bottom: 15px;
         color: #5679e0;
+        overflow: hidden;
       }
 
       .NameAndRating {
