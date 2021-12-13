@@ -548,7 +548,7 @@ export const ModalContainer = styled.div`
       height: 450px;
       width: 650px;
       border-radius: 2.5px;
-      border: solid 4px #00277d;
+      border: solid 2px #00277d;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -588,13 +588,9 @@ export const ModalContainer = styled.div`
         cursor: pointer;
 
         img{
-          transition: 0.5s;
-          width: 50px;
-          height: 50px;
-        }
-
-        img:hover{
-          transform: scale(1.1);
+          margin-top: 5px;
+          width: 55px;
+          height: 55px;
         }
       }
     }
