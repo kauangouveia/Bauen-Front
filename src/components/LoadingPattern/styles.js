@@ -12,6 +12,7 @@ export const ContaineSlide = styled.div`
   background-color: white;
 
   img {
-    width: 200px;
+    width: 100px;
+    height:200px;
   }
 `;

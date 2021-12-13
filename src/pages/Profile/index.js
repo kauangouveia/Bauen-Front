@@ -36,6 +36,7 @@ import { useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loading from "../../components/Loading";
 
 function Profile() {
   const [isModalVisible, setIsModalVisible] = useState(true);
@@ -151,7 +152,8 @@ function Profile() {
 
     try {
       await portifolio.provider(data);
-      setLoadingRun(false)
+      setLoadingRun(false);
+      setIsModalVisible(false)
       toast.success("Foto adicionada ao portifolio com sucesso");
     } catch (error) {
       console.log("erro");
@@ -284,10 +286,9 @@ function Profile() {
               </div>
             </div>
           )}
-      
 
+          {loadingRun === false ? "" : <Loading /> }
           {isOpenModalPortifolio && (
-            
             <div className="ModalPortifolio">
               <div className="fechar">
                 <div className="tile">
@@ -305,8 +306,7 @@ function Profile() {
               </div>
               <div className="AreaIamge">
                 {" "}
-                <img ref={imgRef}/>
-                {loadingRun === false ? "" : <LoadingPadrao />}
+                <img ref={imgRef} />
               </div>
               <div className="AreaButton">
                 <label for="file" className="Adicionar">
@@ -326,6 +326,8 @@ function Profile() {
                   onClick={() => {
                     sendImgPortifolio();
                     setLoadingRun(true);
+                    setOpenModalPortifolio(false)
+
                   }}
                 >
                   Confirmar
