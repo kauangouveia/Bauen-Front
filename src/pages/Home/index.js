@@ -126,7 +126,7 @@ function Home() {
               <div className="AreaOfServices" >
                 <img className="HomeLight" src={eletrecistaWhite} alt="Tipo1" />
                 <img className="Home" src={eletrecista} alt="Tipo" />
-                <h2>Eletrecista</h2>
+                <h2>Eletricista</h2>
               </div>
 
               <div className="AreaOfServices" >

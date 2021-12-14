@@ -140,7 +140,7 @@ export const CardProfile = styled.div`
   margin-bottom: 10px;
 
   .Profile {
-    width: 580px;
+    width: 680px;
     height: 160px;
     margin-right: 10px;
     border: 1px solid #DADADA;

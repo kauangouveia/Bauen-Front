@@ -1,5 +1,6 @@
 import Header from "../../components/Header";
 import { Container } from "./styles";
+import reward from "../../assets/reward.svg";
 import search from "../../assets/search.png";
 import chat from "../../assets/chat.svg";
 import filter from "../../assets/filter.svg";
@@ -88,7 +89,8 @@ function ListServicesProvider() {
                     className="ProfileImage"
                     onClick={() => getProviderId(item.id_service_provider)}
                   >
-                    <img src={item.photo} alt="usuario" />
+                    <img className="RewardUser" src={reward} alt="reward" />
+                    <img className="PhotoUser" src={item.photo} alt="usuario" />
                   </div>
                   <div className="Informations">
                     <div className="NameAndRating">

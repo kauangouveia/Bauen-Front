@@ -112,7 +112,7 @@ function Post() {
             <div className="Description">
               <input
                 placeholder="Detalhe o tipo de serviço com um título"
-                maxlength="20"
+                maxlength="30"
                 onChange={(e) => sendtitleFastService(e.target.value)}
               />
             </div>

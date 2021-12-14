@@ -17,31 +17,31 @@ export const SearchContainer = styled.div`
   overflow: hidden;
 
   .InputWithImg {
-      width: 100%;
-      height: 150px;
-      display: flex;
+    width: 100%;
+    height: 150px;
+    display: flex;
 
-      justify-content: center;
-      input {
+    justify-content: center;
+    input {
         margin-top: 20px;
         width: 500px;
-        border-radius: 5px;
-        height: 40px;
+        height: 50px;
         font-size: 20px;
         border: solid 0.5px #dadada;
         padding: 10px;
       }
-      input::placeholder {
-        color: #5679e0;
-      }
-      img {
+    input::placeholder {
+      color: #5679e0;
+    }
+    img {
         margin-top: 20px;
-        width: 40px;
-        height: 40px;
-        margin-left: 15px;
+        background-color: #074EAD;
+        width: 50px;
+        height: 50px;
+        margin-left: 5px;
       }
-      img:hover{
-        cursor: pointer;
+    img:hover {
+      cursor: pointer;
       }
     }
 `;
@@ -56,10 +56,11 @@ export const ContainerFilters = styled.div`
 
   .Filters{
     width: 800px;
-    height: 80px;
+    height: 65px;
+    overflow: hidden;
     display: flex;
     flex-direction: row;
-    border-radius: 5px;
+    border-radius: 2.5px;
     justify-content: center;
     align-items: center;
     margin:inherit;
@@ -100,6 +101,8 @@ export const ContainerResult = styled.div`
   margin-right: auto;
 
   .Result{
+    display: flex;
+    justify-content: center;
     width: 800px;
     height: 80px;
     display: flex;
@@ -144,23 +147,33 @@ export const CardProfile = styled.div`
     width: 680px;
     height: 160px;
     margin-right: 10px;
-    border: 2px solid #DADADA;
+    border: 1px solid #DADADA;
     display: flex;
     overflow-y: hidden;
+    border-radius: 2.5px;
+    position: relative;
     margin-bottom: 10px;
-    box-shadow: 5px 7px 4px #7d7d7d;
+    box-shadow: 0px 8px 2px rgba(0, 0, 0, 0.25);
     .ProfileImage{
-    width: 200px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    img{
-      width: 85%;
-      height: 85%;
-      border: 5px solid #FF5C00;
-      border-radius: 35px; 
+      width: 200px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    .RewardUser{
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      top: 80px;
+      left: 75px;
+    }
+    
+    .PhotoUser{
+      width: 75%;
+      height: 70%;
+      border-radius: 100%;
+      border: 4px solid #FF5C00;
     }
   }
     .Informations{
@@ -242,13 +255,15 @@ export const CardProfile = styled.div`
   .Contact{
     width: 160px;
     display: flex;
+    transition: 0.3s ease-out;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 160px;
-    box-shadow: 5px 7px 4px #7d7d7d;
+    box-shadow: 0px 8px 2px rgba(0, 0, 0, 0.25);
     margin-bottom: 10px;
-    border-radius: 5px;
+    margin-left: 10px;
+    border-radius: 2.5px;
     text-align: center;
     background-color: #074ead;
     cursor: pointer;
