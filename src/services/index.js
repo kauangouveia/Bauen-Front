@@ -202,3 +202,10 @@ export const lisQuantityServices = {
     return result.data;
   },
 };
+
+export const deleteFastService={
+  deleteService:async(data)=>{
+    const result = await api.post('/cancel', data);
+    return result.data;
+  }
+}
