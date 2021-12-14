@@ -5,6 +5,7 @@ import {
   listServicesInProgress,
   confirmFinishFastService,
   sendComments,
+  deleteFastService
 } from "../../services";
 import chat from "../../assets/chat.png";
 import search from "../../assets/search.png";
@@ -24,8 +25,11 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useHistory } from "react-router-dom";
 
 function ServicesInProgress() {
+  
+  const history = useHistory  ();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isOpenModalComment, setOpenModalComment] = useState(false);
   const [commetClient, setCommentClient] = useState("");
@@ -40,6 +44,10 @@ function ServicesInProgress() {
     const data = await listServicesInProgress.list(client);
     setService(data);
   }, []);
+
+  const saveRoomProvider = (room) => {
+    localStorage.setItem("roomProvider", room);
+  };
 
   const confirmServices = async (idFastService) => {
     try {
@@ -64,6 +72,8 @@ function ServicesInProgress() {
       console.log("erro");
     }
   };
+
+
   return (
     <>
       <ToastContainer />
@@ -143,7 +153,12 @@ function ServicesInProgress() {
                       : "confirmar finalização"}
                   </h2>
                 </div>
-                <div className="Contact">
+                <div className="Contact"
+                  onClick={() => {
+                    saveRoomProvider(item.room);
+                    history.push("/chat");
+                  }}
+                >
                   <img src={chat} alt="chat" />
                   <h2>Chat</h2>
                 </div>

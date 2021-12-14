@@ -9,35 +9,79 @@ import menu from "../../assets/menu.svg";
 import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
 import { Container, ProfileContainer, InformationsContainer } from "./styles";
-import { findProviderForClient, findRoom } from "../../services";
+import {
+  findProviderForClient,
+  findRoom,
+  lisQuantityServices,
+} from "../../services";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
+import { FaStar } from "react-icons/fa";
 
 function ProfileVclient() {
   const history = useHistory();
   const getIdSelectProvider = localStorage.getItem("idServiceProviderSelect");
 
-  
   const [informationsProvider, setInformationsProvider] = useState([]);
 
   useEffect(async () => {
-
     try {
-      const data = await findProviderForClient.findProvider(getIdSelectProvider);
+      const data = await findProviderForClient.findProvider(
+        getIdSelectProvider
+      );
       setInformationsProvider(data.data);
-      
     } catch (error) {
-      console.log(error)
-      console.log("erro")
+      console.log(error);
+      console.log("erro");
     }
   }, []);
-  const provider = localStorage.getItem("idServiceProviderSelect")
-  const joinRoom = async () =>{
-    const data = await findRoom.room(provider)
-    localStorage.setItem("roomProvider",data.room)
-    history.push('/chat')
-  }
+  const provider = localStorage.getItem("idServiceProviderSelect");
+  const joinRoom = async () => {
+    const data = await findRoom.room(provider);
+    localStorage.setItem("roomProvider", data.room);
+    history.push("/chat");
+  };
 
+  const [quantityServices, setQuantityService] = useState([]);
+  // Mostrando quantidade de projetos realizados
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const data = await lisQuantityServices.quantityServices(
+      getIdSelectProvider
+    );
+    setQuantityService(data);
+  }, []);
+
+  const StarRating = () => {
+    const [rating, setRating] = useState(null);
+    const [hover, setHouver] = useState(null);
+    return (
+      <div>
+        {[...Array(5)].map((star, i) => {
+          const ratingValue = i + 1;
+          return (
+            <label>
+              <input
+                className="ratingButton"
+                type="radio"
+                name="rating"
+                value={ratingValue}
+                onClick={() => setRating(ratingValue)}
+              />
+              <FaStar
+                className="Star"
+                color={ratingValue <= (hover || rating) ? "#FFC700" : "#F2F2F2"}
+                size={50}
+                onMouseEnter={() => setHouver(ratingValue)}
+                onMouseLeave={() => setHouver(null)}
+              />
+            </label>
+          );
+        })}
+        <div className="StarText"></div>
+      </div>
+    );
+  };
 
   return (
     <Container>
@@ -56,13 +100,18 @@ function ProfileVclient() {
               <img src={location} alt="localização" />
               {informationsProvider.city}{" "}
             </h2>{" "}
-            <p>Mais de 150 projetos realizados</p>
+            <p>
+              {" "}
+              {quantityServices.length <= 0
+                ? "Nenhum serviço realizado no momento"
+                : `${quantityServices.length} projetos realizados`}
+            </p>
           </div>
           <div className="Stars">
-            <Star />
+            <StarRating />
           </div>
           <div className="ButtonsOfProfile">
-            <button onClick={()=> joinRoom()}>
+            <button onClick={() => joinRoom()}>
               <h2>ENTRAR EM CONTATO</h2>
             </button>
             <img src={menu} alt="menu" />
@@ -77,7 +126,7 @@ function ProfileVclient() {
         </div>
       </InformationsContainer>
 
-      <SliderPortifolioVclient/>
+      <SliderPortifolioVclient />
       <SliderComentsVclient />
       <Footer />
     </Container>

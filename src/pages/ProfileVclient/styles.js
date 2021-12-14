@@ -80,10 +80,10 @@ export const InformationsContainer = styled.div`
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        background-color:#074ead;
+        background-color: #074ead;
         margin-left: 10px;
-        border-radius:10px;
-        h3{
+        border-radius: 10px;
+        h3 {
           color: white;
         }
       }
@@ -115,13 +115,27 @@ export const InformationsContainer = styled.div`
         color: #00277d;
       }
     }
-    .Stars {
+    .AreaStars {
       display: flex;
       height: auto;
-      width: 400px;
+      width: 150px;
       justify-content: center;
       align-items: center;
-      margin-right: 20px;
+
+      .CenterStar {
+        display: flex;
+        width: 350px;
+        height: auto;
+
+        .Star {
+          cursor: pointer;
+          transition: color 200ms;
+        }
+      }
+    }
+
+    .ratingButton {
+      display: none;
     }
     .ButtonsOfProfile {
       display: flex;

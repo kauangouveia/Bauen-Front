@@ -30,6 +30,7 @@ import {
   checkingPhotoModal,
   showingServices,
   portifolio,
+  lisQuantityServices,
 } from "../../services";
 import { useEffect } from "react";
 import { useRef } from "react";
@@ -48,7 +49,7 @@ function Profile() {
   const [loadingRun, setLoadingRun] = useState(false);
 
   const nameProfile = localStorage.getItem("name");
-
+  const id = localStorage.getItem("id");
   // Analisando caso haja foto de perfil
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -153,12 +154,22 @@ function Profile() {
     try {
       await portifolio.provider(data);
       setLoadingRun(false);
-      setIsModalVisible(false)
+      setIsModalVisible(false);
       toast.success("Foto adicionada ao portifolio com sucesso");
     } catch (error) {
       console.log("erro");
     }
   };
+
+  const [quantityServices, setQuantityService] = useState([]);
+  // Mostrando quantidade de projetos realizados
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const data = await lisQuantityServices.quantityServices(id);
+    setQuantityService(data);
+  }, []);
+
+  // console.log(quantityServices.length);
 
   const StarRating = () => {
     const [rating, setRating] = useState(null);
@@ -213,7 +224,12 @@ function Profile() {
               <img src={location} alt="localização" />
               {locationOfServiceProvier}{" "}
             </h2>{" "}
-            <p>Mais de 150 projetos realizados</p>
+            <p>
+              {" "}
+              {quantityServices.length <= 0
+                ? "Nenhum serviço realizado no momento"
+                : `${quantityServices.length} projetos realizados`}
+            </p>
           </div>
           <div className="AreaStars">
             <div className="CenterStar">
@@ -287,7 +303,7 @@ function Profile() {
             </div>
           )}
 
-          {loadingRun === false ? "" : <Loading /> }
+          {loadingRun === false ? "" : <Loading />}
           {isOpenModalPortifolio && (
             <div className="ModalPortifolio">
               <div className="fechar">
@@ -326,8 +342,7 @@ function Profile() {
                   onClick={() => {
                     sendImgPortifolio();
                     setLoadingRun(true);
-                    setOpenModalPortifolio(false)
-
+                    setOpenModalPortifolio(false);
                   }}
                 >
                   Confirmar

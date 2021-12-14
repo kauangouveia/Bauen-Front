@@ -15,15 +15,13 @@ import {
   CardProfile,
 } from "./styles";
 import menu from "../../assets/menu.svg";
-import love from "../../assets/love.svg";
 import { useEffect } from "react";
 import { useState } from "react";
-import { serviceProvider } from "../../services";
+import { lisQuantityServices, serviceProvider } from "../../services";
 import { useHistory } from "react-router";
-import heartLike from "../../assets/heartLike.gif";
-import likeHurt from "../../assets/heartafeter.png";
 
 function ListServicesProvider() {
+
   const [heart, setHeart] = useState(false);
   const [serviceProviders, setServiceProviders] = useState([]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -31,7 +29,7 @@ function ListServicesProvider() {
     const data = await serviceProvider.listServiceProvider();
     setServiceProviders(data);
   }, []);
-
+  console.log()
   const saveRoomProvider = (room) => {
     localStorage.setItem("roomProvider", room);
   };
@@ -41,13 +39,18 @@ function ListServicesProvider() {
     localStorage.setItem("idServiceProviderSelect", id);
     history.push("/ProfileVclient");
   };
-  let type = love;
-  const timeExecution = (boolean) =>
-    setTimeout(() => {
-      setHeart(boolean);
-      type = likeHurt;
-    }, 2500);
+ 
 
+
+    const [quantityServices, setQuantityService] = useState([]);
+    // Mostrando quantidade de projetos realizados
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(async () => {
+      const data = await lisQuantityServices.quantityServices();
+      setQuantityService(data);
+    }, []);
+  
+console.log(quantityServices)
   return (
     <>
       <Container>
@@ -103,18 +106,10 @@ function ListServicesProvider() {
                         className="Favorite"
                         onClick={() => {
                           setHeart(true);
-                          timeExecution(false);
+                        
                         }}
                       >
-                        {heart === true ? (
-                          <img
-                            src={heartLike}
-                            alt="amei"
-                            className="heartlike"
-                          />
-                        ) : (
-                          <img src={type} alt="amei" className="heartlike" />
-                        )}
+                        
 
                         <img src={menu} alt="menu" />
                       </div>
