@@ -194,3 +194,11 @@ export const lisComments = {
     return result.data;
   },
 };
+
+
+export const lisQuantityServices = {
+  quantityServices: async (data) => {
+    const result = await api.get(`/quantityservices/${data}`);
+    return result.data;
+  },
+};
