@@ -7,7 +7,7 @@ import storm from "../../assets/storm.svg";
 import time from "../../assets/time.svg";
 import chat from "../../assets/chat.svg";
 import addWhite from "../../assets/addWhite.png";
-import LoadingPadrao from "../../components/LoadingPattern";
+
 import location from "../../assets/location.svg";
 import reward from "../../assets/reward.svg";
 import warning from "../../assets/warning.svg";
@@ -156,9 +156,9 @@ function Profile() {
       await portifolio.provider(data);
       setLoadingRun(false);
       setIsModalVisible(false);
-      toast.success("Foto adicionada ao portifolio com sucesso");
+      toast.success("Foto adicionada ao portfólio com sucesso");
     } catch (error) {
-      console.log("erro");
+      console.log("error");
     }
   };
 
