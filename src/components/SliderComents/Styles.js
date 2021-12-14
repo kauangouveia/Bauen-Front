@@ -31,7 +31,7 @@ export const ContainerCarousel = styled.div `
 
   .PhotoComments{
       border-radius: 100%;
-      border: 2px solid #dadada;
+      border: 2px solid gray;
       width: 70px;
       height: 70px;
       position: absolute;

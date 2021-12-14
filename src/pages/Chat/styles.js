@@ -17,7 +17,7 @@ export const ContainerChat = styled.div`
   .ChatBox {
     width: 1360px;
     height: 830px;
-    border: solid 0.3px #dadada;
+    border: solid 0.3px gray;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -141,7 +141,7 @@ export const ContainerChat = styled.div`
     height: 100px;
     display: flex;
     flex-direction: row;
-    border: solid 0.3px #dadada;
+    border: solid 0.3px gray;
     .Emojis {
       width: 360px;
       height: auto;
@@ -420,7 +420,7 @@ export const ModalContainer = styled.div`
       margin-right: 50px;
       padding: 5px;
       background-color: white;
-      border: 2px solid #dadada;
+      border: 2px solid gray;
       border-radius: 5px;
       font-size: 20px;
       font-weight: bold;

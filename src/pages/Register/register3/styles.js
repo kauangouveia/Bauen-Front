@@ -31,11 +31,11 @@ export const Container = styled.div`
           height: 40px;
           margin-bottom: 10px;
           border-radius: 2.5px;
-          border: 2px solid #dadada;
+          border: 2px solid gray;
           padding:15px;
           font-size: 18px;
         } input::placeholder {
-        color: #dadada;
+        color: gray;
       }
       }
       .EsqueciSenha{

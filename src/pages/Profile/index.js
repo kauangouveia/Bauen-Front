@@ -2,6 +2,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SliderPortifolio from "../../components/SliderPortifolio";
 import SliderComents from "../../components/SliderComents";
+import add from "../../assets/add.svg";
 import storm from "../../assets/storm.svg";
 import time from "../../assets/time.svg";
 import chat from "../../assets/chat.svg";
@@ -189,7 +190,7 @@ function Profile() {
               />
               <FaStar
                 className="Star"
-                color={ratingValue <= (hover || rating) ? "#FFC700" : "#F2F2F2"}
+                color={ratingValue <= (hover || rating) ? "#FFC700" : "gray"}
                 size={50}
                 onMouseEnter={() => setHouver(ratingValue)}
                 onMouseLeave={() => setHouver(null)}
@@ -227,8 +228,8 @@ function Profile() {
             <p>
               {" "}
               {quantityServices.length <= 0
-                ? "Nenhum serviço realizado no momento"
-                : `${quantityServices.length} projetos realizados`}
+                ? "Nenhum serviço realizado"
+                : `${quantityServices.length} projeto(s) realizado(s)`}
             </p>
           </div>
           <div className="AreaStars">
@@ -324,10 +325,11 @@ function Profile() {
                 {" "}
                 <img ref={imgRef} />
               </div>
+              <label for="file" className="Adicionar">
+                <img src={add} alt="add" />
+              </label>
               <div className="AreaButton">
-                <label for="file" className="Adicionar">
-                  Escolher Foto{" "}
-                </label>
+                
                 <input
                   type="file"
                   onChange={(event) => {
@@ -345,7 +347,7 @@ function Profile() {
                     setOpenModalPortifolio(false);
                   }}
                 >
-                  Confirmar
+                  Publicar
                 </button>
               </div>
             </div>

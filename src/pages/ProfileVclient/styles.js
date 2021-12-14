@@ -13,7 +13,7 @@ export const ProfileContainer = styled.div`
   display: flex;
   width: 100vw;
   height: 400px;
-  border-bottom: solid 0.5px #dadada;
+  border-bottom: solid 0.5px gray;
   align-items: center;
   justify-content: center;
   background-color: #074ead;
@@ -27,7 +27,7 @@ export const ProfileContainer = styled.div`
     display: flex;
     height: 250px;
     width: 250px;
-    background-color: #dadada;
+    background-color: gray;
     border-radius: 100%;
     background-position: center;
     border: solid 4px #ff5c00;
@@ -396,7 +396,7 @@ export const ModalContainer = styled.div`
       margin-right: 50px;
       padding: 5px;
       background-color: white;
-      border: 2px solid #dadada;
+      border: 2px solid gray;
       border-radius: 5px;
       font-size: 20px;
       font-weight: bold;

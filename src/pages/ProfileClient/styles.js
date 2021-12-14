@@ -12,7 +12,7 @@ export const ProfileContainer = styled.div`
   display: flex;
   width: 100vw;
   height: 380px;
-  border-bottom: solid 0.5px #dadada;
+  border-bottom: solid 0.5px gray;
   align-items: center;
   justify-content: center;
   background-color: #074ead;
@@ -27,9 +27,9 @@ export const ProfileContainer = styled.div`
     display: flex;
     height: 250px;
     width: 250px;
-    background-color: #dadada;
+    background-color: gray;
     border-radius: 100%;
-    border: solid 4px #dadada;
+    border: solid 4px gray;
     background-position: center;
     margin-top: 10px;
     align-items: flex-end;

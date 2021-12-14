@@ -119,7 +119,7 @@ function Chat() {
         <ModalContainer>
           <div className="ModalWarning">
             <img src={constructor} alt="warning" />
-            <h3>Deseja mesmo iniciar trativas com este prestador ?</h3>
+            <h3>Deseja iniciar trativas com este prestador?</h3>
             <div className="AreaButton">
               <button className="Back" onClick={() => backProfile()}>
                 Não desejo

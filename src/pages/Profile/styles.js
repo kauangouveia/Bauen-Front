@@ -11,7 +11,7 @@ export const ProfileContainer = styled.div`
   display: flex;
   width: 100vw;
   height: 370px;
-  border-bottom: solid 0.5px #dadada;
+  border-bottom: solid 0.5px gray;
   align-items: center;
   justify-content: center;
   background-color: #074ead;
@@ -43,7 +43,7 @@ export const ProfileContainer = styled.div`
     display: flex;
     height: 250px;
     width: 250px;
-    background-color: #dadada;
+    background-color: gray;
     border-radius: 100%;
     background-position: center;
     border: solid 4px #ff5c00;
@@ -535,7 +535,8 @@ export const ModalContainer = styled.div`
     width: 700px;
     height: 600px;
     font-size: 20px;
-    color: #00277d;
+    position: fixed;
+    color: #5679e0;
     border: 2px solid #00277d;
     border-radius: 5px;
     background-color: white;
@@ -544,22 +545,51 @@ export const ModalContainer = styled.div`
     input[type="file"] {
     display: none;
   }
+
+  h2{
+    margin-left: auto;
+    margin-right: auto;
+  }
     .AreaIamge {
-      height: 450px;
       width: 650px;
-      border-radius: 2.5px;
-      border: solid 2px #00277d;
+      height: 350px;
+      border: 4px solid #074ead;
+      border-bottom: 0px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
       overflow: hidden;
-      margin-top: 10px;
-      margin-bottom: 12px;
+
       img{
         width: 100%;
         width: 100%;
       }
     }
+
+    .Adicionar{
+        display: flex;
+        overflow: hidden;
+        width: 650px;
+        height: 90px;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 22px;
+        border: 4px solid #074ead;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+      
+        img{
+          display: flex;
+          width: 120px;
+          height: 90px;
+          cursor: pointer;
+        }
+      }
+
     .fechar {
       display: flex;
       height: auto;
@@ -568,9 +598,9 @@ export const ModalContainer = styled.div`
       align-items: center;
 
       .tile{
+        margin-bottom: 5px;
         width: 600px;
         padding-left: 5px;
-        margin-top: 10px;
         display: flex;
         align-items: flex-start;
         justify-content: start;
@@ -578,17 +608,18 @@ export const ModalContainer = styled.div`
         
       }
       .buttonFechar{
+        position: absolute;
+        margin-bottom: 10px;
         display: flex;
+        right: 20px;
         justify-content: center;
         align-items: center;
         width: 60px;
         overflow: hidden;
         height: 65px;
-        padding-top: 8px;
         cursor: pointer;
 
         img{
-          margin-top: 5px;
           width: 55px;
           height: 55px;
         }
@@ -603,24 +634,9 @@ export const ModalContainer = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 250px;
+        width: 350px;
         height: 50px;
-        background-color: #00277d;
-        border: 0px;
-        border-radius: 5px;
-        font-size: 20px;
-        font-weight: bold;
-        color: white;
-        cursor: pointer;
-      }
-      .Adicionar {
-        margin-right: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 250px;
-        height: 50px;
-        background-color: #00277d;
+        background-color: #074ead;
         border: 0px;
         border-radius: 5px;
         font-size: 20px;
@@ -688,7 +704,7 @@ export const ModalContainer = styled.div`
       margin-right: 50px;
       padding: 5px;
       background-color: white;
-      border: 2px solid #dadada;
+      border: 2px solid gray;
       border-radius: 5px;
       font-size: 20px;
       font-weight: bold;

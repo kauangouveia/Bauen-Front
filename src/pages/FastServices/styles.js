@@ -27,7 +27,7 @@ export const SearchContainer = styled.div`
         width: 500px;
         height: 50px;
         font-size: 20px;
-        border: solid 0.5px #dadada;
+        border: solid 0.5px gray;
         padding: 10px;
       }
     input::placeholder {
@@ -143,7 +143,7 @@ export const CardProfile = styled.div`
     width: 680px;
     height: 160px;
     margin-right: 10px;
-    border: 1px solid #DADADA;
+    border: 2px solid gray;
     display: flex;
     overflow-y: hidden;
     border-radius: 2.5px;

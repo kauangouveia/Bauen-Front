@@ -13,8 +13,8 @@ export const FeedContainer = styled.div`
   flex-direction: column;
   width: 1000px;
   height: 800px;
-  border-left: 2px solid #dadada;
-  border-right: 2px solid #dadada;
+  border-left: 2px solid gray;
+  border-right: 2px solid gray;
   margin-left: auto;
   margin-right: auto;
 `;
@@ -52,7 +52,7 @@ export const PostHeader = styled.div`
       img {
         width: 90px;
         height: 90px;
-        border: 4px solid #dadada;
+        border: 4px solid gray;
         border-radius: 50%;
       }
     }

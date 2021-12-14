@@ -12,7 +12,7 @@ export const SloganContainer = styled.div`
   display: flex;
   width: 100vw;
   height: 350px;
-  border-bottom: solid 0.5px #dadada;
+  border-bottom: solid 0.5px gray;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -43,7 +43,7 @@ export const SloganContainer = styled.div`
         width: 500px;
         height: 50px;
         font-size: 20px;
-        border: solid 0.5px #dadada;
+        border: solid 0.5px gray;
         padding: 10px;
       }
 
@@ -81,7 +81,7 @@ export const CardContainer = styled.div`
   display: flex;
   width: 100vw;
   height: 320px;
-  border-bottom: solid 0.5px #dadada;
+  border-bottom: solid 0.5px gray;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -113,7 +113,7 @@ export const CardContainerServices = styled.div`
   display: flex;
   width: 100vw;
   height: 385px;
-  border-bottom: solid 0.5px #dadada;
+  border-bottom: solid 0.5px gray;
   align-items: center;
   justify-content: center;
   flex-direction: column;

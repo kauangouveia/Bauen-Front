@@ -97,7 +97,7 @@ function FastServices() {
                       <h4>
                         {item.finished_at_by_service_provider === null
                           ? "Serviço ainda não finalizado"
-                          : "Serviço finalizado, aguardando confirmação do cliente"}
+                          : "Aguardando confirmação do cliente"}
                       </h4>
                     </div>
                     <div className="Options">
@@ -127,7 +127,7 @@ function FastServices() {
                   }
                 >
                   <img src={close} alt="Cancelar serviço" />
-                  <h2>Cancelar serviço</h2>
+                  <h2>Cancelar</h2>
                 </div>
               </CardProfile>
             ))}
