@@ -9,17 +9,20 @@ function HeaderHome() {
   let text2 = "";
   let text3 = "";
   let text4 = "";
+  let text5 = "";
 
   if (userType === "client") {
     text1 = "Post";
     text2 = "Perfil";
     text3 = "Contratar";
     text4 = "Favoritos";
+    text5 = "Sair";
   } else if (userType === "provider") {
     text1 = "Serviços Pendentes";
     text2 = "Serviços Rápidos";
     text3 = "Perfil";
     text4 = "Sala";
+    text5 = "Sair";
   } else {
     text1 = "Sou Prestador";
     text2 = "Sou Cliente";
@@ -49,6 +52,10 @@ function HeaderHome() {
       history.push("/chat");
     } else if (texto === "Sou Cliente") {
       history.push("/loginClient");
+    }else if (texto === "Sair" && userType === 'client' ) {
+      history.push("/loginClient");
+    }else if (texto === "Sair" && userType === 'provider' ) {
+      history.push("/login  ");
     }
   };
 
@@ -56,6 +63,7 @@ function HeaderHome() {
     <Header>
       <div>
         <div>
+          <span onClick={() => linkto(text5)}>{text5}</span>
           <span onClick={() => linkto(text1)}>{text1}</span>
           <span onClick={() => linkto(text2)}>{text2}</span>
           <span onClick={() => linkto(text3)}>{text3}</span>
