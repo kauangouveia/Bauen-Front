@@ -20,7 +20,7 @@ const MultipleSlidesExample = () => {
     setComment(data);
   }, []);
 
-
+  console.log(comment)
   const properties = {
     duration: 2000,
     slidesToShow: 3,
@@ -55,7 +55,7 @@ const MultipleSlidesExample = () => {
                 <p>{item.coment}</p>
               </div>
               <div className="ContainerTime">
-                <h3>postado dia {dataF}</h3>
+                <h3>{item.created_at}</h3>
               </div>
             </div>
           ))}

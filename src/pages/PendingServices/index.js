@@ -33,6 +33,7 @@ function FastServices() {
     const data = await listpendingFastServices.list(providerId);
     setService(data);
   }, []);
+  console.log(service)
 
   const finishService = async (IdFastService) => {
     const service = await confirmService.confirm(IdFastService);
