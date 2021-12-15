@@ -2,6 +2,7 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Star from "../../components/Star";
+import reward from "../../assets/reward.svg";
 import SliderPortifolioVclient from "../../components/SliderPortifolioVclient";
 import SliderComentsVclient from "../../components/SliderComentsVclient";
 import location from "../../assets/location.svg";
@@ -70,7 +71,7 @@ function ProfileVclient() {
               />
               <FaStar
                 className="Star"
-                color={ratingValue <= (hover || rating) ? "#FFC700" : "#F2F2F2"}
+                color={ratingValue <= (hover || rating) ? "#FFC700" : "gray"}
                 size={50}
                 onMouseEnter={() => setHouver(ratingValue)}
                 onMouseLeave={() => setHouver(null)}
@@ -87,11 +88,15 @@ function ProfileVclient() {
     <Container>
       <Header />
       <ProfileContainer>
+      <div className="AreaReward">
+          <img className="Reward" src={reward} alt="reward" />
+        </div>
         <div className="PictureProfile">
           <img src={informationsProvider.photo} alt="Foto de perfil" />
-          <div className="PictureAward"></div>
         </div>
-        <h1>{informationsProvider.name}</h1>
+        <div className="AreaName">
+          <h1>{informationsProvider.name}</h1>
+        </div>
       </ProfileContainer>
       <InformationsContainer>
         <div className="Informations">
@@ -104,17 +109,19 @@ function ProfileVclient() {
               {" "}
               {quantityServices.length <= 0
                 ? "Nenhum serviço realizado no momento"
-                : `${quantityServices.length} projetos realizados`}
+                : `${quantityServices.length} projeto(s) realizado(s)`}
             </p>
           </div>
-          <div className="Stars">
-            <StarRating />
+          <div className="AreaStars">
+            <div className="CenterStar">
+              <StarRating />
+            </div>
           </div>
           <div className="ButtonsOfProfile">
             <button onClick={() => joinRoom()}>
               <h2>ENTRAR EM CONTATO</h2>
             </button>
-            <img src={menu} alt="menu" />
+            <img className="Menu" src={menu} alt="menu" />
           </div>
         </div>
         <div className="services">

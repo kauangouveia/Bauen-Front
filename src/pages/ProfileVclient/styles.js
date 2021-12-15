@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const ProfileContainer = styled.div`
   display: flex;
   width: 100vw;
-  height: 400px;
+  height: 370px;
   border-bottom: solid 0.5px gray;
   align-items: center;
   justify-content: center;
@@ -20,6 +20,24 @@ export const ProfileContainer = styled.div`
   flex-direction: row-reverse;
   flex-direction: column;
   color: white;
+  position: relative;
+
+  .AreaReward {
+    display: flex;
+    width: 275px;
+    height: 255px;
+    margin-bottom: 52px;
+    position: absolute;
+    overflow-y: hidden;
+
+    .Reward {
+      position: absolute;
+      bottom: -25px;
+      right: -30px;
+      width: 150px;
+      height: 150px;
+    }
+  }
 
   .PictureProfile {
     flex-direction: column-reverse;
@@ -31,21 +49,23 @@ export const ProfileContainer = styled.div`
     border-radius: 100%;
     background-position: center;
     border: solid 4px #ff5c00;
+    margin-top: 10px;
     align-items: flex-end;
+
     img {
       width: 100%;
       height: 100%;
     }
+  }
 
-    .PictureAward {
-      height: 150px;
-      width: 90px;
-      background-image: url(${reward});
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      position: absolute;
-    }
+  .AreaName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin-top: 20px;
   }
 `;
 
@@ -58,31 +78,34 @@ export const InformationsContainer = styled.div`
   font-family: "Baloo 2";
   flex-direction: column;
   align-items: center;
+  padding-top: 10px;
   .services {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
     width: 1360px;
-    height: 55px;
+    height: 60px;
 
     .servicesType {
-      min-width: 1000px;
-      max-width: auto;
-      height: 50px;
+      height: 55px;
       display: flex;
       flex-direction: row;
-      display: flex;
+      align-items: center;
       justify-content: center;
-      margin-left: auto;
-      margin-right: auto;
-      overflow-y: hidden;
+
       .Card {
         width: 150px;
-        height: auto;
+        height: 50px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         background-color: #074ead;
-        margin-left: 10px;
         border-radius: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+
         h3 {
           color: white;
         }
@@ -90,41 +113,49 @@ export const InformationsContainer = styled.div`
     }
   }
   .Informations {
+    margin-left: 5px;
     display: flex;
     height: 100px;
     width: 1300px;
     justify-content: center;
+
     .ProfilesText {
       height: auto;
       width: 400px;
-
       margin-right: 20px;
+      padding-left: 10px;
       padding-top: 10px;
       h2 {
-        text-align: center;
+        display: flex;
+        align-items: center;
+        height: 45px;
+        text-align: start;
         font-family: "Baloo 2";
         color: #00277d;
         img {
-          height: 30px;
-          width: 30px;
+          margin-bottom: 5px;
+          height: 35px;
+          width: 35px;
         }
       }
       p {
-        text-align: center;
+        font-weight: bold;
+        text-align: start;
+        padding-left: 35px;
         font-family: "Baloo 2";
-        color: #00277d;
+        color: #074ead;
       }
     }
     .AreaStars {
       display: flex;
       height: auto;
-      width: 150px;
+      width: 450px;
       justify-content: center;
       align-items: center;
 
       .CenterStar {
         display: flex;
-        width: 350px;
+        width: 250px;
         height: auto;
 
         .Star {
@@ -137,13 +168,20 @@ export const InformationsContainer = styled.div`
     .ratingButton {
       display: none;
     }
-    .ButtonsOfProfile {
-      display: flex;
-      height: auto;
-      width: 400px;
-      justify-content: center;
-      align-items: center;
 
+    .ratingButton {
+      display: none;
+    }
+    .ButtonsOfProfile {
+      align-items: flex-end;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      flex-direction: row;
+      width: 400px;
+      height: auto;
+      margin-left: 20px;
+      padding-right: 5px;
       font-family: "Baloo 2";
       button {
         width: 300px;
@@ -156,6 +194,14 @@ export const InformationsContainer = styled.div`
         cursor: pointer;
         font-family: "Baloo 2";
       }
+    }
+
+    .Menu {
+      cursor: pointer;
+      margin-top: auto;
+      margin-bottom: auto;
+      width: 45px;
+      height: 45px;
     }
   }
 `;
