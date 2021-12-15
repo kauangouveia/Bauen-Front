@@ -16,6 +16,7 @@ import {
 } from "./styles";
 import menu from "../../assets/menu.svg";
 import { useEffect } from "react";
+import { FaStar } from "react-icons/fa";
 import { useState } from "react";
 import { lisQuantityServices, serviceProvider } from "../../services";
 import { useHistory } from "react-router";
@@ -39,18 +40,47 @@ function ListServicesProvider() {
     localStorage.setItem("idServiceProviderSelect", id);
     history.push("/ProfileVclient");
   };
- 
 
+  const [quantityServices, setQuantityService] = useState([]);
+  // Mostrando quantidade de projetos realizados
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const data = await lisQuantityServices.quantityServices();
+    setQuantityService(data);
+  }, []);
 
-    const [quantityServices, setQuantityService] = useState([]);
-    // Mostrando quantidade de projetos realizados
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect(async () => {
-      const data = await lisQuantityServices.quantityServices();
-      setQuantityService(data);
-    }, []);
-  
-console.log(quantityServices)
+  const StarRating = () => {
+    const [rating, setRating] = useState(null);
+    const [hover, setHouver] = useState(null);
+    return (
+      <div>
+        {[...Array(5)].map((star, i) => {
+          const ratingValue = i + 1;
+          return (
+            <label>
+              <input
+                className="ratingButton"
+                type="radio"
+                name="rating"
+                value={ratingValue}
+                onClick={() => setRating(ratingValue)}
+              />
+              <FaStar
+                className="Star"
+                color={ratingValue <= (hover || rating) ? "#FFC700" : "gray"}
+                size={35}
+                onMouseEnter={() => setHouver(ratingValue)}
+                onMouseLeave={() => setHouver(null)}
+              />
+            </label>
+          );
+        })}
+        <div className="StarText"></div>
+      </div>
+    );
+  };
+
+  console.log(quantityServices)
   return (
     <>
       <Container>
@@ -98,19 +128,26 @@ console.log(quantityServices)
                   <div className="Informations">
                     <div className="NameAndRating">
                       <h2>{item.name}</h2>
-                      <Star />
-                      <h3>Quantidade de projetos realizados</h3>
+                      <div className="AreaStars">
+                        <div className="CenterStar">
+                          <StarRating />
+                        </div>
+                      </div>
+                      <h3>
+                        {" "}
+                        {quantityServices.length <= 0
+                          ? "Nenhum serviço realizado no momento"
+                          : `${quantityServices.length} projeto(s) realizado(s)`}
+                      </h3>
                     </div>
                     <div className="Options">
                       <div
                         className="Favorite"
                         onClick={() => {
                           setHeart(true);
-                        
+
                         }}
                       >
-                        
-
                         <img src={menu} alt="menu" />
                       </div>
                       <div className="Services">

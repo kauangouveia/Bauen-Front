@@ -185,6 +185,7 @@ export const CardProfile = styled.div`
         color: #00277D;
         font-size: 25px;
         font-weight: bold;
+        margin-bottom: 5px;
       }
 
       h3{
@@ -192,13 +193,35 @@ export const CardProfile = styled.div`
       }
       
       .NameAndRating{
-        background-color: red;
         width: 400px;
         height: 150px;
         display: flex;
         flex-direction:column;
         justify-content: center;
+
+        .AreaStars {
+          display: flex;
+          height: auto;
+          width: 175px;
+          margin-bottom: 10px;
+          justify-content: center;
+          align-items: center;
+
+      .CenterStar {
+        display: flex;
+        width: 250px;
+        height: auto;
+
+        .Star {
+          cursor: pointer;
+          transition: color 200ms;
+        }
       }
+    }
+      .ratingButton {
+        display: none;
+      }
+    }
 
       .Options{
         width: 200px;
@@ -235,8 +258,8 @@ export const CardProfile = styled.div`
         }
         
         .Services{
-          width: 150px;
-          height: 120px;
+          width: 165px;
+          height: 60px;
           display: flex;
           text-align:right;
           padding-right: 40px;
