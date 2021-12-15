@@ -147,7 +147,7 @@ export const CardProfile = styled.div`
     width: 680px;
     height: 160px;
     margin-right: 10px;
-    border: 1px solid gray;
+    border: 2px solid gray;
     display: flex;
     overflow-y: hidden;
     border-radius: 2.5px;
@@ -192,6 +192,7 @@ export const CardProfile = styled.div`
       }
       
       .NameAndRating{
+        background-color: red;
         width: 400px;
         height: 150px;
         display: flex;
@@ -200,7 +201,7 @@ export const CardProfile = styled.div`
       }
 
       .Options{
-        width: 150px;
+        width: 200px;
         height: 150px;
         display: flex;
         flex-direction:column;

@@ -104,9 +104,6 @@ function ProfileClient() {
             <button onClick={changePagePost}>
               <h2>REALIZAR UMA NOVA POSTAGEM</h2>
             </button>
-            <button>
-              <h2>PRESTADORES FAVORITADOS</h2>
-            </button>
             <button onClick={changePageInProgress}>
               <h2>SEUS SERVIÇOS EM ANDAMENTO</h2>
             </button>

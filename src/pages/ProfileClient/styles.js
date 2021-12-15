@@ -58,6 +58,7 @@ export const ProfileContainer = styled.div`
     img{
       width: 45px;
       height: 45px;
+      margin-bottom: 7px;
     }
   }
 
@@ -140,7 +141,7 @@ export const InformationsContainer = styled.div`
         box-shadow: 0 0 0.5em gray;
         cursor: pointer;
         font-family: "Baloo 2";
-        margin-bottom: 15px;
+        margin-bottom: 20px;
       }
     }
   }

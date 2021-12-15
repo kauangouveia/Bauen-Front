@@ -7,10 +7,10 @@ import {
   sendComments,
   deleteFastService
 } from "../../services";
-import chat from "../../assets/chat.png";
+import chat from "../../assets/chat.svg";
 import search from "../../assets/search.png";
 import confirmed from "../../assets/confirmed.svg";
-import progress from "../../assets/progress.png";
+import progress from "../../assets/progress.svg";
 import Footer from "../../components/Footer";
 import {
   SearchContainer,
@@ -23,6 +23,7 @@ import {
 import menu from "../../assets/menu.svg";
 import { useEffect } from "react";
 import { useState } from "react";
+import { FaStar } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useHistory } from "react-router-dom";
@@ -73,6 +74,36 @@ function ServicesInProgress() {
     }
   };
 
+  const StarRating = () => {
+    const [rating, setRating] = useState(null);
+    const [hover, setHouver] = useState(null);
+    return (
+      <div>
+        {[...Array(5)].map((star, i) => {
+          const ratingValue = i + 1;
+          return (
+            <label>
+              <input
+                className="ratingButton"
+                type="radio"
+                name="rating"
+                value={ratingValue}
+                onClick={() => setRating(ratingValue)}
+              />
+              <FaStar
+                className="Star"
+                color={ratingValue <= (hover || rating) ? "#FFC700" : "gray"}
+                size={50}
+                onMouseEnter={() => setHouver(ratingValue)}
+                onMouseLeave={() => setHouver(null)}
+              />
+            </label>
+          );
+        })}
+        <div className="StarText"></div>
+      </div>
+    );
+  };
 
   return (
     <>
@@ -118,7 +149,7 @@ function ServicesInProgress() {
                     <div className="NameAndRating">
                       <h2>{item.title}</h2>
                       <h3>{item.type_service}</h3>
-                      <h3>{`Aceito por :${item.name}`}</h3>
+                      <h4>{`Aceito por ${item.name}`}</h4>
                     </div>
                     <div className="Options">
                       <div className="Favorite">
@@ -129,7 +160,7 @@ function ServicesInProgress() {
                   </div>
                 </div>
                 <div
-                  className="Contact"
+                  className="ContactPending"
                   onClick={() => {
                     setIsModalVisible(
                       true,
@@ -139,18 +170,10 @@ function ServicesInProgress() {
                     confirmServices({ idService: item.id_fast_service });
                   }}
                 >
-                  <img
-                    src={
-                      item.finished_at_by_service_provider === null
-                        ? progress
-                        : confirmed
-                    }
-                    alt="confirmação"
-                  />
                   <h2>
                     {item.finished_at_by_service_provider === null
-                      ? "em andamento"
-                      : "confirmar finalização"}
+                      ? "Serviço em andamento"
+                      : "Confirmar finalização"}
                   </h2>
                 </div>
                 <div className="Contact"
@@ -171,13 +194,17 @@ function ServicesInProgress() {
           <ModalContainer>
             {isOpenModalComment && (
               <div className="ModalComment">
-                <h2>Por favor insira um comentário sobre este prestador</h2>
-
+                <h2>Avalie o serviço</h2>
+                  <div className="AreaStars">
+                    <div className="CenterStar">
+                      <StarRating />
+                    </div>
+                  </div>
                 <div className="message">
                   <input
                     type="text"
                     name="coment"
-                    placeholder="Comentário"
+                    placeholder="Escreva seu comentário aqui."
                     maxlength="50"
                     onChange={(event) => setCommentClient(event.target.value)}
                   />
@@ -194,7 +221,7 @@ function ServicesInProgress() {
                       setIsModalVisible(false, setOpenModalComment(false));
                     }}
                   >
-                    Avançar {">"}
+                    Confirmar
                   </button>
                 </div>
               </div>
