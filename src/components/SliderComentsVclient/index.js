@@ -55,7 +55,7 @@ const MultipleSlidesExample = () => {
                 <p>{item.coment}</p>
               </div>
               <div className="ContainerTime">
-                <h3>{item.created_at}</h3>
+              <h3>postado dia {dataF}</h3>
               </div>
             </div>
           ))}
@@ -64,5 +64,5 @@ const MultipleSlidesExample = () => {
     </ContainerCarousel>
   );
 };
-
+  
 export default MultipleSlidesExample;
