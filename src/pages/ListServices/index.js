@@ -49,6 +49,8 @@ function ListServicesProvider() {
     setQuantityService(data);
   }, []);
 
+  console.log(quantityServices)
+
   const StarRating = () => {
     const [rating, setRating] = useState(null);
     const [hover, setHouver] = useState(null);
@@ -134,10 +136,7 @@ function ListServicesProvider() {
                         </div>
                       </div>
                       <h3>
-                        {" "}
-                        {quantityServices.length <= 0
-                          ? "Nenhum serviço realizado no momento"
-                          : `${quantityServices.length} projeto(s) realizado(s)`}
+                        Prestador verificado
                       </h3>
                     </div>
                     <div className="Options">
