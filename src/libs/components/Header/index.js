@@ -1,7 +1,8 @@
 import { Header } from "./styles";
-import logo from "../../assets/logo.png";
+import logo from "../../../assets/logo.png";
 
-function HeaderHome() {
+
+function HeaderComponent() {
   return (
     <Header>
       <div>
@@ -14,7 +15,7 @@ function HeaderHome() {
         <img src={logo} alt="logo" />
       </div>
     </Header>
-  );
-}
+  )
+};
 
-export default HeaderHome;
+export default HeaderComponent

@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
-  width: 100vw;
+  box-sizing: border-box;
+  width: 100%;
   height: 80px;
   background-color: white;
   display: flex;
   justify-content: center;
   border-bottom: solid 0.3px #dadada;
+  padding: 0 24px 0 24px;
   
   div {
     width: 1360px;
@@ -37,7 +39,7 @@ export const Header = styled.header`
       }
     }
     img {
-      height: 60px;
+      height: 40px;
     }
   }
 `;

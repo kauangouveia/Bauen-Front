@@ -4,8 +4,7 @@ import {
   CardContainer,
   CardContainerServices,
 } from "./styles";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import HeaderComponent from "../../libs/components/Header";
 import Illustration from "../../assets/Illustration.svg";
 import search from "../../assets/search.png";
 import doing from "../../assets/doing.svg";
@@ -13,12 +12,29 @@ import hire from "../../assets/hire.svg";
 import money from "../../assets/money.svg";
 import register from "../../assets/register.svg";
 import home from "../../assets/home.svg";
+import { FooterComponent } from "./footer";
 
-function Home() {
+
+export interface HomeTemplateProtocol {
+  data?: HomeTemplateDataProtocol;
+  child?: HomeTemplateChildProtocol;
+};
+
+interface HomeTemplateDataProtocol {
+
+}
+
+interface HomeTemplateChildProtocol {
+  
+}
+
+const HomePageExemple = (HomeTemplate:JSX.Element) => (HomeTemplate);
+
+export const HomePage = (props:HomeTemplateProtocol) => {
   return (
     <>
+      <HeaderComponent />
       <Container>
-        <Header />
         <SloganContainer>
           <div className="InputAndSlogan">
             <h1>
@@ -122,10 +138,8 @@ function Home() {
             </div>
           </div>
         </CardContainerServices>
-        <Footer/>
       </Container>
+      <FooterComponent/>
     </>
   );
 }
-
-export default Home;

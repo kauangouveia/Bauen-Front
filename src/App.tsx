@@ -1,15 +1,13 @@
 import { GlobalStyles } from "./GlobalStyles";
-import Router from "./router";
-// import Home from "./pages/Home";
+import Routes from "./routes/public";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      {/* <Home/> */}
-      <Router/>
+      <Routes />
     </>
-  );
-}
+  )
+};
 
 export default App;

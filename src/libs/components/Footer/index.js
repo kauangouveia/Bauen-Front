@@ -1,17 +1,19 @@
 import { Footer } from "./styles";
 
-function FooterHome() {
+function FooterOrganism() {
   return (
     <Footer>
-      <div className="ContainerFooter">
+      <div className="ContainerFooter" id="" data-itemID="">
         <div>
           <h1>Melhore sua casa</h1>
-          <p>Guia de Profissionais e Empresas</p>
-          <p>Peça orçamentos</p>
-          <p>Preços do setor</p>
-          <p>Perguntas à comunidade</p>
-          <p>Galeria de fotos</p>
-          <p>Ideias e Projetos</p>
+          <ul>
+            <li>Guia de Profissionais e Empresas</li>
+            <li>Peça orçamentos</li>
+            <li>Preços do setor</li>
+            <li>Perguntas à comunidade</li>
+            <li>Galeria de fotos</li>
+            <li>Ideias e Projetos</li>
+          </ul>
         </div>
         <div>
           <h1>Profissionais</h1>
@@ -39,4 +41,4 @@ function FooterHome() {
   );
 }
 
-export default FooterHome;
+export default FooterOrganism;

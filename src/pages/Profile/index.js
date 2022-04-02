@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import Header from "../../libs/components/Header";
 import { Container,ProfileContainer } from "./styles";
 
 function Profile() {
